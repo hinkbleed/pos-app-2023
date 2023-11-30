@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora Quiroz</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editora y distribuidora Quiroz</h1>
+        <div class="user">
+            <img class="user-icon" src="./img/user-icon.jpg" alt="user">
+            <span>Bellas Artes 2023</span>
+        </div>
+    </header>
+    <main>
+
+        <div class="navbar">
+            <ul class="menu">
+                <li class="menu-item active">Carrito</li>
+                <li class="menu-item">Ventas</li>
+                <li class="menu-item">Base de datos</li>
+            </ul>
+        </div>
+
+        <div class="screen">
+            <div class="module active" id="carritoModule">
+
+                <div class="formatBox">
+                    <form class="format" action="">
+                        <label for="titulo">Título</label>
+                        <input type="text">
+    
+                        <label for="precio">Precio</label>
+                        <input type="number">
+    
+                        <label for="proovedor">Proovedor</label>
+                        <input type="text">
+    
+                        <label for="autor">Autor</label>
+                        <input type="text">
+    
+                        <label for="año">Año</label>
+                        <input type="text">
+    
+                        <label for="codigo">Código de barras</label>
+                        <input type="text">
+    
+                        <button action="submit"></button>
+                    </form>
+                </div>
+                
+                <div class="comprasBox">
+                    <span>
+                        <p>Total: </p>
+                        <p>$ 7,600</p>
+                    </span>
+                    <div class="comprasList">
+                        <table>
+                            <th>
+                                <td>#</td>
+                                <td>Título</td>
+                                <td>Código</td>
+                                <td>Precio</td>
+                            </th>
+                            <tr>
+                                <td>1</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="module inactive" id="ventaModule">
+                Venta
+            </div>
+            <div class="module inactive" id="dbModule">
+                DB
+            </div>
+        </div>
+    </main>
+</body>
+</html>
