@@ -5,22 +5,23 @@
 }
 
 body {
-  background: #000000;
+  background: #131935;
   color: #c4c4c4;
   font-family: sans-serif;
   height: 100vh;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 body header {
   width: 100%;
   height: 80px;
-  background: #272766;
+  background: rgb(41, 82, 148);
+  background: linear-gradient(126deg, rgb(41, 82, 148) 0%, rgb(39, 39, 102) 51%, rgb(53, 1, 101) 100%);
   box-shadow: inset 0 -15px 30px 0 #1e1e5e;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  position: fixed;
   z-index: 100;
 }
 body header h1 {
@@ -49,82 +50,125 @@ body header .user .user-icon {
 body header .user span {
   font-size: 20px;
 }
-body main {
-  position: relative;
+body .screen {
   display: flex;
-  background: #131935;
-  width: 100%;
-  height: 100%;
   justify-content: center;
-  padding: 80px 0 0;
-}
-body main .navbar {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: flex-start;
-  background: #009d9b;
-  width: 300px;
-  box-shadow: inset -20px -20px 80px 0 #145a5d;
-  border-radius: 0 0 20px 0;
-}
-body main .navbar .menu {
-  display: flex;
-  flex-direction: column;
-  padding: 25px 0;
-  gap: 30px;
-  list-style: none;
-}
-body main .navbar .menu .menu-item {
-  font-size: 15px;
-  text-decoration: underline;
-  cursor: pointer;
-  color: #001140;
-  transition: 500ms;
-}
-body main .navbar .menu .menu-item.active {
-  color: #ffc48e;
-  font-size: 25px;
-}
-body main .screen {
-  width: 100%;
-  height: 93%;
-  margin: 20px;
+  width: 99%;
+  height: 97%;
+  margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  background: rgba(206, 223, 255, 0.0784313725);
+  background: transparent;
+}
+body .screen .module {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+body .screen .module.inactive {
+  display: none;
+}
+body .screen .module .current-compra {
+  width: 100%;
+  height: 400px;
+  display: flex;
+}
+body .screen .module .current-compra .current-compra-list {
+  width: 100%;
+  height: 100%;
+}
+body .screen .module .current-compra .current-compra-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #009d9b;
+  width: 280px;
+  height: 100%;
+  box-shadow: inset -20px -20px 80px 0 #145a5d;
+  border-radius: 0 50% 0 30%;
+}
+body .screen .module .current-compra .current-compra-total .current-total-element#currentTotalPrecio {
+  color: #ffffff;
+  font-size: 40px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+body .screen .module .current-compra .current-compra-total .current-total-element#currentTotalRealizarVenta {
+  color: #444444;
+  font-size: 13px;
+  width: 150px;
+  height: 40px;
+  background: #c8ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .screen .module .current-compra .current-compra-total .current-total-element#currentTotalGuardarCarrito {
+  color: #bebebe;
+  font-size: 10px;
+  width: 120px;
+  height: 30px;
+  background: #4813b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+body .screen .module .current-compra .current-compra-total .current-total-element#currentTotalCarritosPendientes {
+  color: #bebebe;
+  font-size: 10px;
+  width: 100px;
+  height: 30px;
+  background: #4813b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .screen .module .current-compra .current-compra-total .current-total-element#currentTotalLimpiar {
+  color: #c70000;
+  font-size: 10px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgb(255, 91, 91);
+  width: auto;
+  height: auto;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 20px 0;
+}
+body .screen .module .formatBox {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
   border: 1px solid #6b7292;
   box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.2549019608);
 }
-body main .screen .module {
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-body main .screen .module.inactive {
-  display: none;
-}
-body main .screen .module .formatBox {
-  width: 800px;
-  height: 550px;
-  background: green;
-}
-body main .screen .module .formatBox .format {
+body .screen .module .formatBox .format {
   display: flex;
   flex-direction: column;
   height: 550px;
   gap: 10px;
 }
-body main .screen .module .formatBox .format label {
+body .screen .module .formatBox .format label {
   font-size: 25px;
   font-style: italic;
   padding: 0 20px;
 }
-body main .screen .module .formatBox .format input {
+body .screen .module .formatBox .format input {
   width: 70%;
   background: transparent;
   border: 1px solid white;
@@ -132,12 +176,12 @@ body main .screen .module .formatBox .format input {
   height: 35px;
   border-radius: 10px;
 }
-body main .screen .module .formatBox .format button {
+body .screen .module .formatBox .format button {
   align-self: center;
   height: 30px;
   width: 50%;
 }
-body main .screen .module .comprasBox {
+body .screen .module .comprasBox {
   width: 400px;
   background: black;
 }/*# sourceMappingURL=styles.css.map */
