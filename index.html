@@ -1,86 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Distribuidora Quiroz</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <header>
-        <h1>Editora y distribuidora Quiroz</h1>
-        <div class="user">  <!--Este usuario cambia en cada feria-->
-            <img class="user-icon" src="./img/user-icon.jpg" alt="user">    <!--La imagen y el nombre cambian también-->
-            <span>Bellas Artes 2023</span>
-            <div>Salir</div>    <!--Puedes salir y crear más usuarios para iniciar una nueva feria-->
-            <div class="navbar">    <!--Recúerda cambiar las etiquetas y las clases por algo más adecuado a esta sección-->
-                <ul class="menu">   <!--Esta parte debe ser un botón que al hacer click despliega este menú-->
-                    <li class="menu-item active">Carrito</li>   <!--Cada sección te lleva a diferentes partes de la aplicación-->
-                    <li class="menu-item">Reporte de ventas</li>    <!--Las secciones están relacionadas entre sí-->
-                    <li class="menu-item">Lista de pagos</li>   <!--Cada sección debe ser un fractal de la anterior-->
-                    <li class="menu-item">Configuración</li>    <!--Aquí se manipularán cosas de la base de datos-->
-                </ul>
-            </div>
+      <h1>Editora y distribuidora Quiroz</h1>
+      <div class="user">
+        <!--Este usuario cambia en cada feria-->
+        <div>
+          <img class="user-icon" src="./img/user-icon.jpg" alt="user" />
+          <!--La imagen y el nombre cambian también-->
+          <span>Bellas Artes 2023</span>
         </div>
+        <div>
+          <p>Cambiar de usuario</p>
+        </div>
+      </div>
     </header>
     <main class="screen">
-            <div class="module active" id="carritoModule">
-                
-                <div class="current-compra" id="currentCompra">
-                    <div class="current-compra-list" id="currentCompraList">
+      <div class="pages">
+        <div class="page active">CARRITO DE COMPRA</div>
+        <div class="page inactive">REPORTE DE NEGOCIO</div>
+        <div class="page inactive">CONFIGURACIÓN DE DATOS</div>
+        <div class="des">lllX</div>
+      </div>
+      <div class="module active" id="carritoModule">
+        <div class="current-compra" id="currentCompra">
+          <div class="current-compra-list" id="currentCompraList">
+            <table>
+              <td>
+                <tr>
+                  2
+                </tr>
+                <tr>
+                  Drácula
+                </tr>
+                <tr>
+                  BOEK
+                </tr>
+                <tr>
+                  210
+                </tr>
+              </td>
+            </table>
+          </div>
+          <div class="formatBox">
+            <form class="format" action="">
+                <label for="titulo">Título</label>
+                <input type="text">
 
-                        <table>
-                            <td>
-                                <tr>2</tr>
-                                <tr>Drácula</tr>
-                                <tr>BOEK</tr>
-                                <tr>210</tr>
-                            </td>
-                        </table>
-                    </div>
-                    <div class="current-compra-total" id="currentCompraTotal">
-                        <div class="current-total-element" id="currentTotalPrecio">$96,734</div>
-                        <div class="current-total-element" id="currentTotalRealizarVenta">Realizar venta</div>
-                        <div class="current-total-element" id="currentTotalGuardarCarrito">Guardar carrito</div>
+                <label for="precio">Precio</label>
+                <input type="number">
 
-                        <div class="current-total-element" id="currentTotalCarritosPendientes">Carritos <br> pendientes</div>
-                        <div class="current-total-element" id="currentTotalLimpiar">Limpiar</div>
-                    </div>
-                </div>
-                <div class="formatBox">
-                    Aquí va a aparecer la info de los libritos
-                </div>
+                <label for="proovedor">Proovedor</label>
+                <input type="text">
 
-               <!-- <div class="formatBox">
-                    <form class="format" action="">
-                        <label for="titulo">Título</label>
-                        <input type="text">
-    
-                        <label for="precio">Precio</label>
-                        <input type="number">
-    
-                        <label for="proovedor">Proovedor</label>
-                        <input type="text">
-    
-                        <label for="autor">Autor</label>
-                        <input type="text">
-    
-                        <label for="año">Año</label>
-                        <input type="text">
-    
-                        <label for="codigo">Código de barras</label>
-                        <input type="text">
-    
-                        <button action="submit"></button>
-                    </form>
+                <label for="codigo">Código de barras</label>
+                <input type="text">
+
+                <button action="submit"></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="current-compra-total" id="currentCompraTotal">
+          <div>
+            <div>
+                <div class="current-total-element" id="currentTotalGuardarCarrito">
+                    Guardar lista de compras
+                  </div>
+        
+                  <div
+                    class="current-total-element"
+                    id="currentTotalCarritosPendientes"
+                  >
+                    Listas <br />
+                    guardadas
+                  </div>
+              </div>
+              <div class="current-total-element" id="currentTotalLimpiar">
+                Limpiar
+              </div>
+            </div>
+
+          <div class="current-total-element" id="currentTotalPrecio">
+            $96,734
+          </div>
+          <div class="current-total-element" id="currentTotalRealizarVenta">
+            Aceptar pago
+          </div>
+        </div>
+
+        <!-- <div class="formatBox">
+                    
                 </div>-->
-            </div>
-            <div class="module inactive" id="ventaModule">
-                Venta
-            </div>
-            <div class="module inactive" id="dbModule">
-                DB
-            </div>
+      </div>
+      <div class="module inactive" id="ventaModule">Venta</div>
+      <div class="module inactive" id="dbModule">DB</div>
     </main>
-</body>
+  </body>
 </html>

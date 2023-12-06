@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #131935;
+    background: #232b53;
     color: #c4c4c4;
     font-family: sans-serif;
     height: 100vh;
@@ -15,9 +15,9 @@ body {
     header {
         width: 100%;
         height: 80px;
-        background: rgb(41, 82, 148);
-        background: linear-gradient(126deg, rgba(41, 82, 148, 1) 0%, rgba(39, 39, 102, 1) 51%, rgba(53, 1, 101, 1) 100%);
-        box-shadow: inset 0 -15px 30px 0 #1e1e5e;
+        background: #295294;
+        background: linear-gradient(100deg, #295294 0%, #272766 51%, #350165 100%);
+        box-shadow: inset 0 -15px 30px 0 #0f0f3a9f;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -60,12 +60,28 @@ body {
     .screen {
         display: flex;
         justify-content: center;
-        width: 99%;
-        height: 97%;
-        margin: 10px;
-        padding: 10px;
+        width: 100%;
+        height: 100%;
         border-radius: 5px;
         background: transparent;
+        flex-direction: row;
+
+        .pages {
+            width: 250px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #131935;
+            border: 1px solid black;
+
+            .page {
+                width: 90%;
+                border: 1px solid #595959;
+                border-radius: 10px 10px 0 0;
+                color: white;
+                padding: 10px;
+            }
+        }
 
 
         .module {
@@ -73,7 +89,6 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
             width: 100%;
 
             &.inactive {
@@ -82,107 +97,108 @@ body {
 
             .current-compra {
                 width: 100%;
-                height: 400px;
+                height: 100%;
                 display: flex;
 
                 .current-compra-list {
                     width: 100%;
                     height: 100%;
+                    background: rgb(192, 181, 255) ;
+                    color: black;
+                    box-shadow: inset 0 -30px 70px 10px #00000061;
                 }
+            }
 
-                .current-compra-total {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    background: #009d9b;
-                    width: 280px;
-                    height: 100%;
-                    box-shadow: inset -20px -20px 80px 0 #145a5d;
-                    border-radius: 0 50% 0 30%;
+            .current-compra-total {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background: #009d9b;
+                width: 100%;
+                height: 200px;
+                box-shadow: inset -20px -20px 80px 0 #145a5d;
 
-                    .current-total-element {
+                .current-total-element {
 
-                        &#currentTotalPrecio {
-                            color: #ffffff;
-                            font-size: 40px;
-                            height: 150px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin: 20px 0;
-                        }
+                    &#currentTotalPrecio {
+                        color: #ffffff;
+                        font-size: 40px;
+                        height: 150px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 20px 0;
+                    }
 
-                        &#currentTotalRealizarVenta {
-                            color: #444444;
-                            font-size: 13px;
-                            width: 150px;
-                            height: 40px;
-                            background: #c8ff00;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 5px;
-                            cursor: pointer;
-                        }
+                    &#currentTotalRealizarVenta {
+                        color: #e6e6e6;
+                        font-size: 13px;
+                        width: 150px;
+                        height: 40px;
+                        background: #302766;
+                        background: radial-gradient(circle, #274166 30%, #272966 70%, #295294 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
 
-                        &#currentTotalGuardarCarrito {
-                            color: #bebebe;
-                            font-size: 10px;
-                            width: 120px;
-                            height: 30px;
-                            background: #4813b3;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 5px;
-                            cursor: pointer;
+                    &#currentTotalGuardarCarrito {
+                        color: #bebebe;
+                        font-size: 10px;
+                        width: 120px;
+                        height: 30px;
+                        background: #4813b3;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        cursor: pointer;
 
-                            margin: 20px 0;
-                        }
+                        margin: 20px 0;
+                    }
 
-                        &#currentTotalCarritosPendientes {
-                            color: #bebebe;
-                            font-size: 10px;
-                            width: 100px;
-                            height: 30px;
-                            background: #4813b3;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 5px;
-                            cursor: pointer;
-                        }
+                    &#currentTotalCarritosPendientes {
+                        color: #bebebe;
+                        font-size: 10px;
+                        width: 100px;
+                        height: 30px;
+                        background: #4813b3;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
 
-                        &#currentTotalLimpiar {
-                            color: #c70000;
-                            font-size: 10px;
-                            font-weight: 600;
-                            text-shadow: 0 0 10px rgb(255, 91, 91);
-                            width: auto;
-                            height: auto;
-                            background: transparent;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            cursor: pointer;
-                            margin: 20px 0;
-                        }
+                    &#currentTotalLimpiar {
+                        color: #c70000;
+                        font-size: 10px;
+                        font-weight: 600;
+                        text-shadow: 0 0 10px rgb(255, 91, 91);
+                        width: auto;
+                        height: auto;
+                        background: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        margin: 20px 0;
                     }
                 }
             }
 
             .formatBox {
-                width: 100%;
+                width: 500px;
                 height: 100%;
-                margin: 10px;
-                border: 1px solid #6b7292;
+                border: 1px solid #000000;
                 box-shadow: inset 0 0 10px 0 #ffffff41;
 
 
                 .format {
                     display: flex;
                     flex-direction: column;
-                    height: 550px;
                     gap: 10px;
 
                     label {
