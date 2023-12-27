@@ -27,29 +27,6 @@ body header {
 body header h1 {
   font-size: 25px;
 }
-body header .user {
-  border-radius: 10px;
-  background: #101045;
-  height: 60px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
-  gap: 10px;
-  cursor: pointer;
-  transition: 300ms;
-}
-body header .user:hover {
-  background: #3c3c82;
-}
-body header .user .user-icon {
-  width: 40px;
-  border-radius: 5px;
-}
-body header .user span {
-  font-size: 20px;
-}
 body .screen {
   display: flex;
   justify-content: center;
@@ -59,44 +36,121 @@ body .screen {
   background: transparent;
   flex-direction: row;
 }
-body .screen .pages {
-  width: 250px;
+body .screen .sidebar {
+  width: 150px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #131935;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid black;
+  background: rgb(80, 27, 111);
+  background: linear-gradient(180deg, #302f65 0%, #00a6af 4%, #00a6af 45%, #18166d 100%);
 }
-body .screen .pages .page {
-  width: 90%;
-  border: 1px solid #595959;
-  border-radius: 10px 10px 0 0;
+body .screen .sidebar .pages {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .screen .sidebar .pages .page {
+  width: 110px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: -2px 2px 1px #000000;
   color: white;
   padding: 10px;
+  height: 70px;
+  background: #29176b;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+  transition: 100ms ease-out;
+}
+body .screen .sidebar .pages .page:hover {
+  background: #3f1c92;
+}
+body .screen .sidebar .user {
+  border-radius: 5px;
+  background: #001d2d;
+  height: 60px;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 15px 0px;
+  padding: 10px;
+  gap: 10px;
+  cursor: pointer;
+  transition: 300ms;
+}
+body .screen .sidebar .user .user-icon {
+  width: 40px;
+  border-radius: 5px;
+}
+body .screen .sidebar .user span {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+body .screen .sidebar .user:hover {
+  background: #043450;
 }
 body .screen .module {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 body .screen .module.inactive {
   display: none;
 }
-body .screen .module .current-compra {
+body .screen .module .carrito {
   width: 100%;
   height: 100%;
   display: flex;
 }
-body .screen .module .current-compra .current-compra-list {
+body .screen .module .carrito .carrito-list {
   width: 100%;
   height: 100%;
-  background: rgb(192, 181, 255);
+  background: #dfdaff;
   color: black;
-  box-shadow: inset 0 -30px 70px 10px rgba(0, 0, 0, 0.3803921569);
+  box-shadow: inset 0 -30px 70px 10px rgba(0, 0, 0, 0.137254902);
 }
-body .screen .module .current-compra-total {
+body .screen .module .carrito .formatBox {
+  width: 500px;
+  height: 100%;
+  border: 1px solid #000000;
+  box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.2549019608);
+}
+body .screen .module .carrito .formatBox .format {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .screen .module .carrito .formatBox .format label {
+  font-size: 25px;
+  font-style: italic;
+  padding: 0 20px;
+}
+body .screen .module .carrito .formatBox .format input {
+  width: 70%;
+  background: transparent;
+  border: 1px solid white;
+  margin: 0 50px 20px 0;
+  height: 35px;
+  border-radius: 10px;
+}
+body .screen .module .carrito .formatBox .format button {
+  align-self: center;
+  height: 30px;
+  width: 50%;
+}
+body .screen .module .pago {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -105,16 +159,7 @@ body .screen .module .current-compra-total {
   height: 200px;
   box-shadow: inset -20px -20px 80px 0 #145a5d;
 }
-body .screen .module .current-compra-total .current-total-element#currentTotalPrecio {
-  color: #ffffff;
-  font-size: 40px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
-body .screen .module .current-compra-total .current-total-element#currentTotalRealizarVenta {
+body .screen .module .pago .list-btn#currentTotalRealizarVenta {
   color: #e6e6e6;
   font-size: 13px;
   width: 150px;
@@ -127,7 +172,7 @@ body .screen .module .current-compra-total .current-total-element#currentTotalRe
   border-radius: 5px;
   cursor: pointer;
 }
-body .screen .module .current-compra-total .current-total-element#currentTotalGuardarCarrito {
+body .screen .module .pago .list-btn#currentTotalGuardarCarrito {
   color: #bebebe;
   font-size: 10px;
   width: 120px;
@@ -140,7 +185,7 @@ body .screen .module .current-compra-total .current-total-element#currentTotalGu
   cursor: pointer;
   margin: 20px 0;
 }
-body .screen .module .current-compra-total .current-total-element#currentTotalCarritosPendientes {
+body .screen .module .pago .list-btn#currentTotalCarritosPendientes {
   color: #bebebe;
   font-size: 10px;
   width: 100px;
@@ -152,7 +197,7 @@ body .screen .module .current-compra-total .current-total-element#currentTotalCa
   border-radius: 5px;
   cursor: pointer;
 }
-body .screen .module .current-compra-total .current-total-element#currentTotalLimpiar {
+body .screen .module .pago .list-btn#currentTotalLimpiar {
   color: #c70000;
   font-size: 10px;
   font-weight: 600;
@@ -166,36 +211,12 @@ body .screen .module .current-compra-total .current-total-element#currentTotalLi
   cursor: pointer;
   margin: 20px 0;
 }
-body .screen .module .formatBox {
-  width: 500px;
-  height: 100%;
-  border: 1px solid #000000;
-  box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.2549019608);
-}
-body .screen .module .formatBox .format {
+body .screen .module .pago #currentTotalPrecio {
+  color: #ffffff;
+  font-size: 40px;
+  height: 150px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-body .screen .module .formatBox .format label {
-  font-size: 25px;
-  font-style: italic;
-  padding: 0 20px;
-}
-body .screen .module .formatBox .format input {
-  width: 70%;
-  background: transparent;
-  border: 1px solid white;
-  margin: 0 50px 20px 0;
-  height: 35px;
-  border-radius: 10px;
-}
-body .screen .module .formatBox .format button {
-  align-self: center;
-  height: 30px;
-  width: 50%;
-}
-body .screen .module .comprasBox {
-  width: 400px;
-  background: black;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
 }/*# sourceMappingURL=styles.css.map */
