@@ -6,7 +6,7 @@ Permitir el procesamiento de pagos en efectivo, tarjeta o transferencia
 
 Inventario:
 
-Agregar nuevos productos al inventario, incluyendo información básica como nombre, autor, cantidad inicial, proovedor precio de compra y precio de venta
+Agregar nuevos productos al inventario, incluyendo información básica como nombre, autor, cantidad inicial, proovedor, precio de compra y precio de venta
 Actualizar automáticamente la cantidad disponible después de cada venta.
 Visualizar el inventario en tiempo real.
 

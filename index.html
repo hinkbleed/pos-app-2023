@@ -1,104 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuidora Quiroz</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Distribuidora Quiroz</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-
-<body>
-  <header>
-    <h1>Editora y distribuidora Quiroz</h1>
-    <!--Este usuario cambia en cada feria-->
-
-  </header>
-  <main class="screen">
-    <div class="sidebar">
-      <div class="pages">
-        <div class="page active">CARRITO DE COMPRA</div>
-        <div class="page inactive">REPORTE DE NEGOCIO</div>
-        <div class="page inactive">CONFIGURACIÓN DE DATOS</div>
-
-      </div>
-      <div class="user">
-        <img class="user-icon" src="./img/user-icon.jpg" alt="user" />
-        <!--La imagen y el nombre cambian también-->
-        <span>Bellas Artes 2023</span>
-        <p></p>
-      </div>
-
-    </div>
-    <div class="module active" id="carritoModule">
-      <div class="carrito" id="currentCompra">
-        <div class="carrito-list" id="currentCompraList">
-          <table>
-            <td>
-              <tr>
-                2
-              </tr>
-              <tr>
-                Drácula
-              </tr>
-              <tr>
-                BOEK
-              </tr>
-              <tr>
-                210
-              </tr>
-            </td>
-          </table>
+  <body>
+    <header>
+      <h1>Editora y distribuidora Quiroz</h1>
+      <!--Este usuario cambia en cada feria-->
+    </header>
+    <main class="screen">
+      <div class="sidebar">
+        <div class="user">
+          <img class="user-icon" src="./img/user-icon.jpg" alt="user" />
+          <!--La imagen y el nombre cambian también-->
+          <span>Bellas Artes 2023</span>
         </div>
-        <div class="formatBox">
-          <form class="format" action="">
-            <label for="titulo">Título</label>
-            <input type="text">
-
-            <label for="precio">Precio</label>
-            <input type="number">
-
-            <label for="proovedor">Proovedor</label>
-            <input type="text">
-
-            <label for="codigo">Código de barras</label>
-            <input type="text">
-
-            <button action="submit"></button>
-          </form>
+        <div class="pages-box">
+          <div class="page-btn pay-something">Realizar pago</div>
         </div>
       </div>
+      <div class="module active" id="shopModule">
+        <div class="main-shop-view" id="mainShopView">
+          <div class="shop-list-box" id="shopListBox">
+            <table id="shop-list">
+              <thead>
+                <tr>
+                  <th class="th1">#</th>
+                  <th class="th2">Título</th>
+                  <th class="th3">Precio</th>
+                  <th class="th4">Cantidad</th>
+                  <th class="th5">Subtotal</th>
+                  <th class="th6">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>Narraciones Extraordinarias</td>
+                  <td>90</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">3</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>270</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Drácula</td>
+                  <td>120</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">2</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>240</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>20 mil leguas de viaje submarino</td>
+                  <td>110</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>110</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>Secretos de la Naturaleza</td>
+                  <td>390</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>390</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>Fauna</td>
+                  <td>1150</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>1035</td>
+                  <td>10%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item-box">
+            <div class="item-search">
+              <div id="searchItem">
+                <input id="typeSearch" type="text" />
+                <img src="./svg/search-icon.svg" class="search-icon" />
+              </div>
+            </div>
+            <div class="div-line"></div>
+            <div class="item-info">
+              <p id="itemTitle">20 mil leguas de viaje submarino</p>
+              <p id="price">$<span> 110.00</span></p>
+              <p id="itemDetail">Julio Verne, BOEK, 2018.</p>
+              <div id="codebarImg">
+                <img src="./codebars/descarga.png" alt="" />
+              </div>
+              <p id="codebarNumb">34534563452434</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="pago" id="currentCompraTotal">
+        <div class="pago" id="currentCompraTotal">
           <div class="list-options">
-            <div class="list-btn" id="currentTotalGuardarCarrito">
+            <div class="list-btn" id="limpiarLista">Limpiar lista actual</div>
+            <div class="list-btn" id="guardarLista">
               Guardar lista de compras
             </div>
-
-            <div class="list-btn" id="currentTotalCarritosPendientes">
-              Listas <br />
-              guardadas
+            <div class="list-btn" id="verListasGuardadas">Listas guardadas</div>
+          </div>
+          <div class="div-line"></div>
+          <div class="payment-options">
+            <div class="discount-options">
+              <!--<div class="discount-btn">Aplicar descuentos</div>-->
             </div>
-            <div class="list-btn" id="currentTotalLimpiar">
-              Limpiar
+            <div class="payment-label">
+              <p>Tarjeta</p>
+              <p>Transferencia</p>
+              <p>Efectivo</p>
+            </div>
+            <div class="payment-input">
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
             </div>
           </div>
           <div class="total-options">
-            <div class="total-price" id="currentTotalPrecio">
-              $96,734
+            <div class="total-price" id="totalPrice">
+              $<span>2045.00</span>
             </div>
-            <div class="list-btn" id="currentTotalRealizarVenta">
+            <div class="list-btn accept-payment" id="acceptPayment">
               Aceptar pago
             </div>
           </div>
-      </div>
+        </div>
 
-      <!-- <div class="formatBox">
+        <!-- <div class="formatBox">
                     
                 </div>-->
-    </div>
-    <div class="module inactive" id="ventaModule">Venta</div>
-    <div class="module inactive" id="dbModule">DB</div>
-  </main>
-</body>
+      </div>
+      <div class="module inactive" id="ventaModule">Venta</div>
+      <div class="module inactive" id="dbModule">DB</div>
+    </main>
+  </body>
 </html>
