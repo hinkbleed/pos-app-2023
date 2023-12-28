@@ -14,7 +14,7 @@ body {
 }
 body header {
   width: 100%;
-  height: 10%;
+  height: 7%;
   background: #295294;
   background: linear-gradient(100deg, #295294 0%, #272766 51%, #350165 100%);
   box-shadow: inset 0 -15px 30px 0 rgba(15, 15, 58, 0.6235294118);
@@ -31,7 +31,7 @@ body .screen {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 90%;
+  height: 93%;
   border-radius: 5px;
   background: transparent;
   flex-direction: row;
@@ -125,7 +125,7 @@ body .screen .module.inactive {
 }
 body .screen .module .main-shop-view {
   width: 100%;
-  max-height: 510px;
+  max-height: 480px;
   display: flex;
 }
 body .screen .module .main-shop-view .shop-list-box {
