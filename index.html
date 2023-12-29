@@ -18,10 +18,20 @@
     </header>
     <main class="screen">
       <div class="sidebar">
-        <div class="user">
-          <img class="user-icon" src="./img/user-icon.jpg" alt="user" />
-          <!--La imagen y el nombre cambian también-->
-          <span>Bellas Artes 2023</span>
+        <div class="user" id="user">
+          <div class="user-symbol" id="userSymbol">
+            <img class="user-icon" src="./img/user-icon.jpg" alt="user" />
+            <!--La imagen y el nombre cambian también-->
+            <span>Bellas Artes 2023</span>
+          </div>
+          <ul class="user-menu" id="userMenu">
+            <li class="user-menu-item" id="posBtn">Punto de venta</li>
+            <li class="user-menu-item" id="reportBtn">Reporte de Negocio</li>
+            <li class="user-menu-item" id="configBtn">
+              Configuración de datos
+            </li>
+          </ul>
+          <div class="logout" id="logout">Salir</div>
         </div>
         <div class="pages-box">
           <div class="page-btn pay-something">Realizar pago</div>
@@ -41,7 +51,127 @@
                   <th class="th6">%</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="tbody">
+                <tr>
+                  <th>1</th>
+                  <td>Narraciones Extraordinarias</td>
+                  <td>90</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">3</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>270</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Drácula</td>
+                  <td>120</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">2</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>240</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>20 mil leguas de viaje submarino</td>
+                  <td>110</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>110</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>Secretos de la Naturaleza</td>
+                  <td>390</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>390</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>Fauna</td>
+                  <td>1150</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>1035</td>
+                  <td>10%</td>
+                </tr>
+                <tr>
+                  <th>1</th>
+                  <td>Narraciones Extraordinarias</td>
+                  <td>90</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">3</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>270</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Drácula</td>
+                  <td>120</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">2</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>240</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>20 mil leguas de viaje submarino</td>
+                  <td>110</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>110</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>Secretos de la Naturaleza</td>
+                  <td>390</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>390</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>Fauna</td>
+                  <td>1150</td>
+                  <td>
+                    <div class="amount-btn less">-</div>
+                    <div class="amount-btn amount-numb">1</div>
+                    <div class="amount-btn more">+</div>
+                  </td>
+                  <td>1035</td>
+                  <td>10%</td>
+                </tr>
                 <tr>
                   <th>1</th>
                   <td>Narraciones Extraordinarias</td>
@@ -146,12 +276,12 @@
             <div class="payment-input">
               <input type="number" />
               <input type="number" />
-              <input type="number" />
+              <div class="input-efe">2045</div>
             </div>
           </div>
           <div class="total-options">
             <div class="total-price" id="totalPrice">
-              $<span>2045.00</span>
+              $<span id="totalPriceValue">2045.00</span>
             </div>
             <div class="list-btn accept-payment" id="acceptPayment">
               Aceptar pago
@@ -165,6 +295,8 @@
       </div>
       <div class="module inactive" id="ventaModule">Venta</div>
       <div class="module inactive" id="dbModule">DB</div>
-    </main>
+    </main>/
+    <script src="./ui-scripts/sidebar-behavior.js"></script>
+    <script src="./ui-scripts/shop-view-behavior.js"></script>
   </body>
 </html>
