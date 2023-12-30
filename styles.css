@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #232b53;
+  background: #000000;
   color: #c4c4c4;
   font-family: sans-serif;
   height: 100vh;
@@ -28,7 +28,7 @@ body header {
 body header h1 {
   font-size: 25px;
 }
-body .screen {
+body .screen-box {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -38,7 +38,10 @@ body .screen {
   flex-direction: row;
   position: relative;
 }
-body .screen .sidebar {
+body .screen-box.hide {
+  display: none;
+}
+body .screen-box .sidebar {
   width: 110px;
   height: 100%;
   display: flex;
@@ -46,11 +49,11 @@ body .screen .sidebar {
   align-items: center;
   justify-content: space-between;
   border: 1px solid black;
-  background: rgb(53, 1, 101);
-  background: linear-gradient(0deg, #2a0061 0%, #101327 70%);
+  background: #350165;
+  background: linear-gradient(0deg, #2a0061 0%, #101327 40%);
   position: relative;
 }
-body .screen .sidebar .user {
+body .screen-box .sidebar .user {
   border-radius: 5px;
   background: #1e0c4a;
   height: 130px;
@@ -63,7 +66,7 @@ body .screen .sidebar .user {
   cursor: pointer;
   transition: 300ms;
 }
-body .screen .sidebar .user .user-symbol {
+body .screen-box .sidebar .user .user-symbol {
   width: 70px;
   height: 120px;
   display: flex;
@@ -72,13 +75,13 @@ body .screen .sidebar .user .user-symbol {
   justify-content: space-evenly;
   margin: 10px 0;
 }
-body .screen .sidebar .user .user-symbol .user-icon {
+body .screen-box .sidebar .user .user-symbol .user-icon {
   height: 50px;
   border-radius: 15px;
   box-shadow: 0 0 10px #1e0c4a;
   transition: 300ms;
 }
-body .screen .sidebar .user .user-symbol span {
+body .screen-box .sidebar .user .user-symbol span {
   height: 70px;
   font-size: 15px;
   font-weight: 600;
@@ -89,35 +92,38 @@ body .screen .sidebar .user .user-symbol span {
   text-align: center;
   transition: 300ms;
 }
-body .screen .sidebar .user:hover {
+body .screen-box .sidebar .user:hover {
   background: #043450;
 }
-body .screen .sidebar .user:hover > .user-symbol .user-icon {
+body .screen-box .sidebar .user:hover > .user-symbol .user-icon {
   box-shadow: 0 0 10px white;
 }
-body .screen .sidebar .user:hover > .user-symbol span {
+body .screen-box .sidebar .user:hover > .user-symbol span {
   text-shadow: 0 0 10px white;
 }
-body .screen .sidebar .user.open {
+body .screen-box .sidebar .user.open {
   height: 380px;
 }
-body .screen .sidebar .user .user-menu {
+body .screen-box .sidebar .user .user-menu {
   width: 70px;
   height: 220px;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 500ms;
+  transition: 300ms;
   gap: 10px;
 }
-body .screen .sidebar .user .user-menu.open {
-  display: flex;
+body .screen-box .sidebar .user .user-menu.hide {
+  display: none;
 }
-body .screen .sidebar .user .user-menu .user-menu-item {
+body .screen-box .sidebar .user .user-menu.appear {
+  animation: 200ms appear;
+}
+body .screen-box .sidebar .user .user-menu .user-menu-item {
   width: 60px;
   height: 50px;
   border-radius: 10px;
-  border: 1px solid #007674;
+  border: 1px solid #001b3a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,13 +134,25 @@ body .screen .sidebar .user .user-menu .user-menu-item {
   color: #d3d3d3;
   transition: 100ms ease-out;
 }
-body .screen .sidebar .user .user-menu .user-menu-item:hover {
-  background: #181c35;
+body .screen-box .sidebar .user .user-menu .user-menu-item.active {
+  background: #267cad;
+  border: 1px solid #c7c7c7;
 }
-body .screen .sidebar .user .logout {
+body .screen-box .sidebar .user .user-menu .user-menu-item.active > .icon {
+  filter: invert(0%);
+}
+body .screen-box .sidebar .user .user-menu .user-menu-item .icon {
+  width: 40px;
+  height: 30px;
+  filter: invert(100%);
+}
+body .screen-box .sidebar .user .user-menu .user-menu-item:hover {
+  border: 1px solid white;
+}
+body .screen-box .sidebar .user .logout {
   width: 50px;
   height: 30px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -144,13 +162,16 @@ body .screen .sidebar .user .logout {
   background: rgba(255, 0, 0, 0.128);
   transition: 300ms;
 }
-body .screen .sidebar .user .logout:hover {
+body .screen-box .sidebar .user .logout:hover {
   background: red;
 }
-body .screen .sidebar .user .logout.open {
-  display: flex;
+body .screen-box .sidebar .user .logout.hide {
+  display: none;
 }
-body .screen .sidebar .pages-box {
+body .screen-box .sidebar .user .logout.appear {
+  animation: 200ms appear;
+}
+body .screen-box .sidebar .pages-box {
   width: 80px;
   height: 160px;
   display: flex;
@@ -159,7 +180,7 @@ body .screen .sidebar .pages-box {
   justify-content: end;
   margin: 18px 0;
 }
-body .screen .sidebar .pages-box .page-btn {
+body .screen-box .sidebar .pages-box .page-btn {
   width: 80px;
   height: 50px;
   border-radius: 10px;
@@ -174,26 +195,26 @@ body .screen .sidebar .pages-box .page-btn {
   color: #d3d3d3;
   transition: 100ms ease-out;
 }
-body .screen .sidebar .pages-box .page-btn:hover {
+body .screen-box .sidebar .pages-box .page-btn:hover {
   background: #181c35;
 }
-body .screen .module {
+body .screen-box .module {
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
   position: relative;
 }
-body .screen .module.inactive {
-  display: none;
+body .screen-box .module.active {
+  display: flex;
 }
-body .screen .module .main-shop-view {
+body .screen-box .module#shopModule .main-shop-view {
   width: 100%;
   max-height: 480px;
   display: flex;
   position: relative;
 }
-body .screen .module .main-shop-view .shop-list-box {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box {
   width: 70%;
   height: 100%;
   background: #101327;
@@ -201,16 +222,16 @@ body .screen .module .main-shop-view .shop-list-box {
   overflow-y: scroll;
   position: relative;
 }
-body .screen .module .main-shop-view .shop-list-box::-webkit-scrollbar {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box::-webkit-scrollbar {
   display: none;
 }
-body .screen .module .main-shop-view .shop-list-box table {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table {
   width: 100%;
   height: auto;
   border-collapse: collapse;
   position: relative;
 }
-body .screen .module .main-shop-view .shop-list-box table thead {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead {
   background: #000000;
   color: #ffffff;
   height: 25px;
@@ -218,65 +239,65 @@ body .screen .module .main-shop-view .shop-list-box table thead {
   position: sticky;
   top: 0;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr {
   box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.231372549);
   width: 100%;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr th {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr th {
   border-left: 2px solid #ffffff;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th1 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th1 {
   border-left: none;
   width: 40px;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th2 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th2 {
   width: 660px;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th3 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th3 {
   width: 100px;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th4 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th4 {
   width: 100px;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th5 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th5 {
   width: 100px;
 }
-body .screen .module .main-shop-view .shop-list-box table thead tr .th6 {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead tr .th6 {
   width: 100px;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody {
   color: white;
   font-size: 18px;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr {
   height: 45px;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr:hover {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr:hover {
   background: #1c2140;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr.selected {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr.selected {
   background: #232b53;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr th,
-body .screen .module .main-shop-view .shop-list-box table tbody tr td {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr th,
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td {
   border-bottom: 1px solid #3a2f99;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr td {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td {
   border-left: 1px solid #0f2442;
   text-align: center;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr td:nth-child(2) {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(2) {
   text-align: start;
   padding: 0 30px;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr td:nth-child(4) {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 45px;
   gap: 5px;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-btn {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-btn {
   width: 25px;
   height: 100%;
   display: flex;
@@ -284,10 +305,10 @@ body .screen .module .main-shop-view .shop-list-box table tbody tr td:nth-child(
   justify-content: center;
   cursor: pointer;
 }
-body .screen .module .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-numb {
+body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-numb {
   cursor: default;
 }
-body .screen .module .main-shop-view .item-box {
+body .screen-box .module#shopModule .main-shop-view .item-box {
   width: 30%;
   height: 100%;
   border: 1px solid #000000;
@@ -295,14 +316,15 @@ body .screen .module .main-shop-view .item-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #232b53;
 }
-body .screen .module .main-shop-view .item-box .item-search {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen .module .main-shop-view .item-box .item-search #searchItem {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search #searchItem {
   width: 95%;
   height: 35px;
   background: white;
@@ -313,15 +335,15 @@ body .screen .module .main-shop-view .item-box .item-search #searchItem {
   border: 1px solid #808080;
   transition: 300ms;
 }
-body .screen .module .main-shop-view .item-box .item-search #searchItem:hover {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search #searchItem:hover {
   border: 1px solid #ffffff;
   box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.3137254902);
 }
-body .screen .module .main-shop-view .item-box .item-search #searchItem:focus-within {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search #searchItem:focus-within {
   border: 1px solid #808080;
   box-shadow: 0 0 20px 1px #ffffff;
 }
-body .screen .module .main-shop-view .item-box .item-search #searchItem #typeSearch {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search #searchItem #typeSearch {
   width: 290px;
   height: 25px;
   margin: 0 0 0 10px;
@@ -330,25 +352,25 @@ body .screen .module .main-shop-view .item-box .item-search #searchItem #typeSea
   outline: none;
   border: none;
 }
-body .screen .module .main-shop-view .item-box .item-search #searchItem .search-icon {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-search #searchItem .search-icon {
   width: 30px;
   margin: 0 8px 0 0;
 }
-body .screen .module .main-shop-view .item-box .div-line {
+body .screen-box .module#shopModule .main-shop-view .item-box .div-line {
   width: 90%;
   height: 1px;
   background: white;
   box-shadow: 0 0 5px 1px white;
   margin: 5px 0 30px 0;
 }
-body .screen .module .main-shop-view .item-box .item-info {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info {
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
 }
-body .screen .module .main-shop-view .item-box .item-info #itemTitle {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #itemTitle {
   width: 300px;
   height: 110px;
   display: flex;
@@ -359,7 +381,7 @@ body .screen .module .main-shop-view .item-box .item-info #itemTitle {
   text-shadow: 2px 2px 5px #212121;
   overflow: hidden;
 }
-body .screen .module .main-shop-view .item-box .item-info #price {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #price {
   width: 300px;
   height: 70px;
   display: flex;
@@ -370,10 +392,10 @@ body .screen .module .main-shop-view .item-box .item-info #price {
   color: #ffffff;
   text-shadow: 2px 2px 5px #212121;
 }
-body .screen .module .main-shop-view .item-box .item-info #price span {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #price span {
   font-size: 60px;
 }
-body .screen .module .main-shop-view .item-box .item-info #itemDetail {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #itemDetail {
   width: 300px;
   height: 70px;
   display: flex;
@@ -384,24 +406,24 @@ body .screen .module .main-shop-view .item-box .item-info #itemDetail {
   color: #ffffff;
   text-shadow: 2px 2px 5px #212121;
 }
-body .screen .module .main-shop-view .item-box .item-info #codebarImg {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #codebarImg {
   width: 200px;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen .module .main-shop-view .item-box .item-info #codebarImg img {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #codebarImg img {
   height: 100%;
 }
-body .screen .module .main-shop-view .item-box .item-info #codebarNumb {
+body .screen-box .module#shopModule .main-shop-view .item-box .item-info #codebarNumb {
   width: 200px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .screen .module .pago {
+body .screen-box .module#shopModule .pago {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -412,7 +434,7 @@ body .screen .module .pago {
   box-shadow: inset -20px -10px 50px 0 #041830;
   position: relative;
 }
-body .screen .module .pago .list-options {
+body .screen-box .module#shopModule .pago .list-options {
   background: transparent;
   width: 250px;
   height: 170px;
@@ -423,7 +445,7 @@ body .screen .module .pago .list-options {
   left: 40px;
   gap: 20px;
 }
-body .screen .module .pago .list-options .list-btn {
+body .screen-box .module#shopModule .pago .list-options .list-btn {
   width: 250px;
   height: 40px;
   border-radius: 10px;
@@ -434,18 +456,18 @@ body .screen .module .pago .list-options .list-btn {
   justify-content: center;
   font-weight: 400;
 }
-body .screen .module .pago .list-options .list-btn#limpiarLista {
+body .screen-box .module#shopModule .pago .list-options .list-btn#limpiarLista {
   color: #ff0000;
   background: transparent;
   align-items: center;
   border: 1px solid #700000;
   transition: 300ms;
 }
-body .screen .module .pago .list-options .list-btn#limpiarLista:hover {
+body .screen-box .module#shopModule .pago .list-options .list-btn#limpiarLista:hover {
   background: #0f0202;
   border: 1px solid red;
 }
-body .screen .module .pago .list-options .list-btn#guardarLista {
+body .screen-box .module#shopModule .pago .list-options .list-btn#guardarLista {
   background: #959595;
   background: linear-gradient(0deg, #727272 0%, #1f1f1f 100%);
   color: #ffffff;
@@ -453,21 +475,21 @@ body .screen .module .pago .list-options .list-btn#guardarLista {
   transition: 300ms;
   filter: brightness(0.8);
 }
-body .screen .module .pago .list-options .list-btn#guardarLista:hover {
+body .screen-box .module#shopModule .pago .list-options .list-btn#guardarLista:hover {
   filter: brightness(1.1);
 }
-body .screen .module .pago .list-options .list-btn#verListasGuardadas {
+body .screen-box .module#shopModule .pago .list-options .list-btn#verListasGuardadas {
   background: #000000;
   border: 1px solid rgb(178, 178, 178);
   color: #bfbfbf;
   text-shadow: 1px 1px 3px #5e5e5e;
   transition: 300ms;
 }
-body .screen .module .pago .list-options .list-btn#verListasGuardadas:hover {
+body .screen-box .module#shopModule .pago .list-options .list-btn#verListasGuardadas:hover {
   border: 1px solid white;
   color: white;
 }
-body .screen .module .pago .div-line {
+body .screen-box .module#shopModule .pago .div-line {
   width: 1px;
   height: 85%;
   background: #757575;
@@ -478,7 +500,7 @@ body .screen .module .pago .div-line {
   align-items: center;
   justify-content: center;
 }
-body .screen .module .pago .payment-options {
+body .screen-box .module#shopModule .pago .payment-options {
   background: transparent;
   width: 600px;
   height: 200px;
@@ -512,14 +534,14 @@ body .screen .module .pago .payment-options {
 
   }*/
 }
-body .screen .module .pago .payment-options .payment-label {
+body .screen-box .module#shopModule .pago .payment-options .payment-label {
   width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-body .screen .module .pago .payment-options .payment-label p {
+body .screen-box .module#shopModule .pago .payment-options .payment-label p {
   width: 100%;
   height: 40px;
   font-size: 18px;
@@ -529,7 +551,7 @@ body .screen .module .pago .payment-options .payment-label p {
   color: rgb(255, 255, 255);
   padding: 0 20px;
 }
-body .screen .module .pago .payment-options .payment-input {
+body .screen-box .module#shopModule .pago .payment-options .payment-input {
   width: 250px;
   height: 200px;
   display: flex;
@@ -537,12 +559,12 @@ body .screen .module .pago .payment-options .payment-input {
   justify-content: space-evenly;
   align-items: center;
 }
-body .screen .module .pago .payment-options .payment-input input[type=number]::-webkit-inner-spin-button,
-body .screen .module .pago .payment-options .payment-input input[type=number]::-webkit-outer-spin-button {
+body .screen-box .module#shopModule .pago .payment-options .payment-input input[type=number]::-webkit-inner-spin-button,
+body .screen-box .module#shopModule .pago .payment-options .payment-input input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .screen .module .pago .payment-options .payment-input input {
+body .screen-box .module#shopModule .pago .payment-options .payment-input input {
   width: 200px;
   height: 40px;
   border: 1px solid #939393;
@@ -554,13 +576,13 @@ body .screen .module .pago .payment-options .payment-input input {
   padding: 0 10px;
   transition: 300ms;
 }
-body .screen .module .pago .payment-options .payment-input input:hover {
+body .screen-box .module#shopModule .pago .payment-options .payment-input input:hover {
   border: 1px solid white;
 }
-body .screen .module .pago .payment-options .payment-input input:focus {
+body .screen-box .module#shopModule .pago .payment-options .payment-input input:focus {
   border: 1px solid white;
 }
-body .screen .module .pago .payment-options .payment-input .input-efe {
+body .screen-box .module#shopModule .pago .payment-options .payment-input .input-efe {
   width: 200px;
   height: 40px;
   outline: none;
@@ -572,7 +594,7 @@ body .screen .module .pago .payment-options .payment-input .input-efe {
   display: flex;
   align-items: center;
 }
-body .screen .module .pago .total-options {
+body .screen-box .module#shopModule .pago .total-options {
   background: transparent;
   height: 190px;
   width: 25%;
@@ -582,7 +604,7 @@ body .screen .module .pago .total-options {
   justify-content: space-around;
   margin: 0 30px 10px 0;
 }
-body .screen .module .pago .total-options .total-price {
+body .screen-box .module#shopModule .pago .total-options .total-price {
   color: #ffffff;
   text-shadow: 0px 0px 2px #ffffff;
   font-size: 40px;
@@ -591,10 +613,10 @@ body .screen .module .pago .total-options .total-price {
   align-items: center;
   justify-content: center;
 }
-body .screen .module .pago .total-options .total-price span {
+body .screen-box .module#shopModule .pago .total-options .total-price span {
   font-size: 70px;
 }
-body .screen .module .pago .total-options .accept-payment {
+body .screen-box .module#shopModule .pago .total-options .accept-payment {
   color: #e6e6e6;
   font-size: 15px;
   width: 100%;
@@ -608,6 +630,61 @@ body .screen .module .pago .total-options .accept-payment {
   cursor: pointer;
   transition: 500ms;
 }
-body .screen .module .pago .total-options .accept-payment:hover {
+body .screen-box .module#shopModule .pago .total-options .accept-payment:hover {
   border: 1px solid rgb(204, 0, 255);
+}
+body .screen-box .module#reportModule .main-report-view {
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-navbar {
+  width: 500px;
+  height: 100px;
+  background: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-navbar .report-navbar-item {
+  width: 150px;
+  height: 70px;
+  background: blue;
+  border-radius: 50%;
+}
+body .screen-box .module#dataModule .main-data-view {
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box .module#dataModule .main-data-view .data-navbar {
+  width: 500px;
+  height: 100px;
+  background: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .screen-box .module#dataModule .main-data-view .data-navbar .data-navbar-item {
+  width: 150px;
+  height: 70px;
+  background: rgb(195, 0, 255);
+  border-radius: 50%;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */

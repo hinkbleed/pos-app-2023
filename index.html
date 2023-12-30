@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
       <h1>Editora y distribuidora Quiroz</h1>
       <!--Este usuario cambia en cada feria-->
     </header>
-    <main class="screen">
+    <main class="screen-box" id="screenBox">
       <div class="sidebar">
         <div class="user" id="user">
           <div class="user-symbol" id="userSymbol">
@@ -24,20 +24,24 @@
             <!--La imagen y el nombre cambian también-->
             <span>Bellas Artes 2023</span>
           </div>
-          <ul class="user-menu" id="userMenu">
-            <li class="user-menu-item" id="posBtn">Punto de venta</li>
-            <li class="user-menu-item" id="reportBtn">Reporte de Negocio</li>
+          <ul class="user-menu hide" id="userMenu">
+            <li class="user-menu-item active" id="posBtn">
+              <svg class="pos-icon icon" height="24" viewBox="0 -960 960 960" width="24"><path d="M40-200v-560h80v560H40Zm120 0v-560h80v560h-80Zm120 0v-560h40v560h-40Zm120 0v-560h80v560h-80Zm120 0v-560h120v560H520Zm160 0v-560h40v560h-40Zm120 0v-560h120v560H800Z"/></svg>
+            </li>
+            <li class="user-menu-item" id="reportBtn">
+              <svg class="report-icon icon" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-280h240v-80H240v80Zm120-160h240v-80H360v80Zm120-160h240v-80H480v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+            </li>
             <li class="user-menu-item" id="configBtn">
-              Configuración de datos
+              <svg class="data-icon icon" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-160v-80h120q17 0 28.5-11.5T720-280v-80q0-38 22-69t58-44v-14q-36-13-58-44t-22-69v-80q0-17-11.5-28.5T680-720H560v-80h120q50 0 85 35t35 85v80q0 17 11.5 28.5T840-560h40v160h-40q-17 0-28.5 11.5T800-360v80q0 50-35 85t-85 35H560Zm-280 0q-50 0-85-35t-35-85v-80q0-17-11.5-28.5T120-400H80v-160h40q17 0 28.5-11.5T160-600v-80q0-50 35-85t85-35h120v80H280q-17 0-28.5 11.5T240-680v80q0 38-22 69t-58 44v14q36 13 58 44t22 69v80q0 17 11.5 28.5T280-240h120v80H280Z"/></svg>
             </li>
           </ul>
-          <div class="logout" id="logout">Salir</div>
+          <div class="logout hide" id="logout">Salir</div>
         </div>
         <div class="pages-box">
           <div class="page-btn pay-something">Realizar pago</div>
         </div>
       </div>
-      <div class="module active" id="shopModule">
+      <div class="module" id="shopModule">
         <div class="main-shop-view" id="mainShopView">
           <div class="shop-list-box" id="shopListBox">
             <table id="shop-list">
@@ -293,8 +297,26 @@
                     
                 </div>-->
       </div>
-      <div class="module inactive" id="ventaModule">Venta</div>
-      <div class="module inactive" id="dbModule">DB</div>
+      <div class="module active" id="reportModule">
+        <div class="main-report-view">
+          <div class="report-navbar">
+            <div class="report-navbar-item"></div>
+            <div class="report-navbar-item"></div>
+            <div class="report-navbar-item"></div>
+          </div>
+          <p>Reporte de negocio</p>
+        </div>
+      </div>
+      <div class="module" id="dataModule">
+        <div class="main-data-view">
+          <div class="data-navbar">
+            <div class="data-navbar-item"></div>
+            <div class="data-navbar-item"></div>
+            <div class="data-navbar-item"></div>
+          </div>
+          <p>Configuración de datos</p>
+        </div>
+      </div>
     </main>
     <script src="./ui-scripts/sidebar-behavior.js"></script>
     <script src="./ui-scripts/shop-view-behavior.js"></script>
