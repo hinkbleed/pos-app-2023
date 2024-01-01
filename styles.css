@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "DMSans";
+  src: url("./fonts/DM_Sans/DMSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("./fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Cutive Mono";
+  src: url("./fonts/Cutive_Mono/CutiveMono-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +19,12 @@
 body {
   background: #000000;
   color: #c4c4c4;
-  font-family: sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "DMSans";
+  font-style: normal;
 }
 body header {
   width: 100%;
@@ -21,11 +34,14 @@ body header {
   box-shadow: inset 0 -15px 30px 0 rgba(15, 15, 58, 0.6235294118);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
   z-index: 100;
 }
-body header h1 {
+body header .header-logo {
+  width: 38px;
+  margin: 0 35px;
+}
+body header .header-text {
+  margin: 0 100px;
   font-size: 25px;
 }
 body .screen-box {
@@ -56,34 +72,33 @@ body .screen-box .sidebar {
 body .screen-box .sidebar .user {
   border-radius: 5px;
   background: #1e0c4a;
-  height: 130px;
-  width: 80px;
+  height: 150px;
+  width: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin: 15px 0px;
+  margin: 30px 0px;
   cursor: pointer;
   transition: 300ms;
 }
 body .screen-box .sidebar .user .user-symbol {
-  width: 70px;
+  width: 60px;
   height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 10px 0;
 }
 body .screen-box .sidebar .user .user-symbol .user-icon {
-  height: 50px;
+  height: 40px;
   border-radius: 15px;
   box-shadow: 0 0 10px #1e0c4a;
   transition: 300ms;
 }
 body .screen-box .sidebar .user .user-symbol span {
-  height: 70px;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 600;
   text-shadow: 0 0 1px white;
   display: flex;
@@ -102,7 +117,7 @@ body .screen-box .sidebar .user:hover > .user-symbol span {
   text-shadow: 0 0 10px white;
 }
 body .screen-box .sidebar .user.open {
-  height: 380px;
+  height: 420px;
 }
 body .screen-box .sidebar .user .user-menu {
   width: 70px;
@@ -210,7 +225,7 @@ body .screen-box .module.active {
 }
 body .screen-box .module#shopModule .main-shop-view {
   width: 100%;
-  max-height: 480px;
+  height: 470px;
   display: flex;
   position: relative;
 }
@@ -294,7 +309,7 @@ body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody t
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 45px;
+  height: 48px;
   gap: 5px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-btn {
@@ -425,14 +440,15 @@ body .screen-box .module#shopModule .main-shop-view .item-box .item-info #codeba
 }
 body .screen-box .module#shopModule .pago {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  background: #000a18;
-  height: 100%;
-  box-shadow: inset -20px -10px 50px 0 #041830;
   position: relative;
+  background: #000a18;
+  box-shadow: inset -20px -10px 50px 0 #041830;
+  font-family: "Raleway";
 }
 body .screen-box .module#shopModule .pago .list-options {
   background: transparent;
@@ -464,23 +480,26 @@ body .screen-box .module#shopModule .pago .list-options .list-btn#limpiarLista {
   transition: 300ms;
 }
 body .screen-box .module#shopModule .pago .list-options .list-btn#limpiarLista:hover {
-  background: #0f0202;
+  background: #220000;
   border: 1px solid red;
 }
 body .screen-box .module#shopModule .pago .list-options .list-btn#guardarLista {
-  background: #959595;
-  background: linear-gradient(0deg, #727272 0%, #1f1f1f 100%);
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  background: transparent;
+  background: linear-gradient(0deg, #727272 0%, transparent 10%);
+  color: #dbdbdb;
+  border: 1px solid #8a8a8a;
   transition: 300ms;
   filter: brightness(0.8);
 }
 body .screen-box .module#shopModule .pago .list-options .list-btn#guardarLista:hover {
   filter: brightness(1.1);
+  background: linear-gradient(0deg, #727272 0%, transparent 15%);
+  color: white;
+  text-shadow: 0 0 30px white;
 }
 body .screen-box .module#shopModule .pago .list-options .list-btn#verListasGuardadas {
   background: #000000;
-  border: 1px solid rgb(178, 178, 178);
+  border: 1px solid #8a8a8a;
   color: #bfbfbf;
   text-shadow: 1px 1px 3px #5e5e5e;
   transition: 300ms;
@@ -488,6 +507,7 @@ body .screen-box .module#shopModule .pago .list-options .list-btn#verListasGuard
 body .screen-box .module#shopModule .pago .list-options .list-btn#verListasGuardadas:hover {
   border: 1px solid white;
   color: white;
+  text-shadow: 0 0 50px #ffffff;
 }
 body .screen-box .module#shopModule .pago .div-line {
   width: 1px;
@@ -505,43 +525,39 @@ body .screen-box .module#shopModule .pago .payment-options {
   width: 600px;
   height: 200px;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   position: absolute;
   right: 30%;
-  /*.discount-options {
-      width: 100px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .discount-btn {
-          width: 180px;
-          height: 80px;
-          background: #0f0f0f;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          justify-content: center;
-          border-radius: 5px;
-          border: 1px solid #39007e;
-          color: #ac97ff;
-          text-shadow: 2px 2px 1px #3e0064;
-          box-shadow: inset 0 0 20px 1px #47009d;
-
-      }
-
-  }*/
+  gap: 5px;
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-label {
+body .screen-box .module#shopModule .pago .payment-options .payment-options-title {
+  width: 500px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 12px;
+  font-weight: 200;
+  color: #dbdbdb;
+}
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box {
+  width: 500px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-label {
   width: 200px;
-  height: 200px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: end;
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-label p {
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-label p {
   width: 100%;
   height: 40px;
   font-size: 18px;
@@ -551,48 +567,52 @@ body .screen-box .module#shopModule .pago .payment-options .payment-label p {
   color: rgb(255, 255, 255);
   padding: 0 20px;
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input {
-  width: 250px;
-  height: 200px;
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input {
+  width: 300px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input input[type=number]::-webkit-inner-spin-button,
-body .screen-box .module#shopModule .pago .payment-options .payment-input input[type=number]::-webkit-outer-spin-button {
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input input[type=number]::-webkit-inner-spin-button,
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input input {
-  width: 200px;
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input input {
+  width: 250px;
   height: 40px;
   border: 1px solid #939393;
   outline: none;
-  font-size: 23px;
+  font-size: 24px;
   border-radius: 5px;
   background: #000000;
   color: #d7d7d7;
   padding: 0 10px;
   transition: 300ms;
+  font-family: "cutive mono";
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input input:hover {
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input input:hover {
   border: 1px solid white;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.0745098039);
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input input:focus {
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input input:focus {
   border: 1px solid white;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1882352941);
 }
-body .screen-box .module#shopModule .pago .payment-options .payment-input .input-efe {
-  width: 200px;
+body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-input .input-efe {
+  width: 250px;
   height: 40px;
   outline: none;
-  font-size: 23px;
+  font-size: 24px;
   border-radius: 5px;
   background: #000000;
   color: #d7d7d7;
   padding: 0 10px;
   display: flex;
   align-items: center;
+  font-family: "cutive mono";
 }
 body .screen-box .module#shopModule .pago .total-options {
   background: transparent;
@@ -612,6 +632,7 @@ body .screen-box .module#shopModule .pago .total-options .total-price {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "cutive mono";
 }
 body .screen-box .module#shopModule .pago .total-options .total-price span {
   font-size: 70px;
@@ -636,25 +657,104 @@ body .screen-box .module#shopModule .pago .total-options .accept-payment:hover {
 body .screen-box .module#reportModule .main-report-view {
   width: 100%;
   height: 100%;
-  background: white;
+  background: #000a18;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
-body .screen-box .module#reportModule .main-report-view .report-navbar {
-  width: 500px;
-  height: 100px;
-  background: black;
+body .screen-box .module#reportModule .main-report-view .report-hub-box {
+  width: 96%;
+  height: 96%;
+  color: white;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
 }
-body .screen-box .module#reportModule .main-report-view .report-navbar .report-navbar-item {
-  width: 150px;
-  height: 70px;
-  background: blue;
-  border-radius: 50%;
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box {
+  height: 98%;
+  border: 1px solid #2c4c4f;
+  border-radius: 7px;
+  box-shadow: inset 0 0 70px 0px #041830;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details {
+  width: 65%;
+  padding: 15px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles {
+  width: 90%;
+  height: 8%;
+  color: white;
+  display: flex;
+  align-items: start;
+  font-size: 18px;
+  text-shadow: 0 0 50px white;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-title {
+  width: 50%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+  border: 1px solid #816dff;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 50px 0px #0c3362;
+  transition: 300ms;
+  background: #221d6d;
+  color: #b3b3b3;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul li.active {
+  background: transparent;
+  color: white;
+  box-shadow: 0 0 100px 0px #0069ea;
+  cursor: default;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box {
+  width: 100%;
+  height: 90%;
+  border: 1px solid #003371;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.0705882353);
+  background: #000a18;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module {
+  width: 100%;
+  height: 100%;
+  background: green;
+  display: none;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module.active {
+  display: flex;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.two {
+  width: 30%;
 }
 body .screen-box .module#dataModule .main-data-view {
   width: 100%;
