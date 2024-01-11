@@ -666,48 +666,50 @@ body .screen-box .module#reportModule .main-report-view {
   position: relative;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box {
-  width: 96%;
-  height: 96%;
-  color: white;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   position: relative;
+  color: white;
+  box-shadow: inset 0 0 70px 0px #041830;
+  padding: 10px;
+  gap: 10px;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box {
-  height: 98%;
-  border: 1px solid #2c4c4f;
+  height: 100%;
   border-radius: 7px;
-  box-shadow: inset 0 0 70px 0px #041830;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details {
-  width: 65%;
-  padding: 15px;
+  width: 75%;
+  height: 100%;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles {
   width: 90%;
-  height: 8%;
+  height: 40px;
+  margin: 0 0 10px 0;
   color: white;
   display: flex;
-  align-items: start;
+  align-items: center;
+  justify-content: space-between;
   font-size: 18px;
-  text-shadow: 0 0 50px white;
+  text-shadow: 0 0 30px white;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-title {
-  width: 50%;
+  width: 30%;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul {
   width: 100%;
@@ -721,63 +723,340 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35%;
-  border: 1px solid #816dff;
+  width: 170px;
+  height: 40px;
+  border: 1px solid #4e4e4e;
   border-radius: 7px;
   cursor: pointer;
-  box-shadow: 0 0 50px 0px #0c3362;
+  box-shadow: 0 0 50px 0px #212a35;
   transition: 300ms;
-  background: #221d6d;
-  color: #b3b3b3;
+  background: #0d0d12;
+  color: #cccccc;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul li:hover {
+  border: 1px solid #898989;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .report-box-details-titles .details-titles-btns-box ul li.active {
   background: transparent;
   color: white;
-  box-shadow: 0 0 100px 0px #0069ea;
+  box-shadow: 0 0 100px 0px #2788ff;
   cursor: default;
+  text-shadow: 0 0 50px white;
+  border: 1px solid #816dff;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box {
   width: 100%;
   height: 90%;
-  border: 1px solid #003371;
   border-radius: 8px;
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.0705882353);
+  box-shadow: 0 0 50px #002047;
   background: #000a18;
+  padding: 0 10px;
+  z-index: 100;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module {
   width: 100%;
   height: 100%;
-  background: green;
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  overflow-y: scroll;
+  gap: 20px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module::-webkit-scrollbar {
   display: none;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module.active {
   display: flex;
 }
-body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.two {
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+  padding: 0 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  font-size: 10px;
+  background: #000a18;
+  background: linear-gradient(180deg, #000a18 80%, rgba(0, 10, 24, 0) 100%);
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .day-date {
+  font-size: 22px;
+  width: 40%;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.8078431373);
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box {
+  width: 60%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary {
+  width: 50%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary .summary-item {
+  margin-bottom: 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary.labels {
+  width: 40%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary.labels .label {
+  height: 15px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary.cants {
   width: 30%;
+  margin: 0 15% 0 0;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary.cants .cant {
+  height: 15px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .daily-total-box {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .daily-total-box .daily-venta {
+  height: 40px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-shadow: 0 0 50px #000a18;
+  border-radius: 10px;
+  background: #0f5a36;
+  border: 1px solid #27504a;
+  box-shadow: 0 0 30px 1px #06011d;
+  font-weight: 400;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .daily-total-box .daily-venta:hover {
+  background: #37385e;
+  border: 1px solid #7f90ff;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .daily-total-box .daily-venta .daily-venta-numb {
+  font-size: 22px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta {
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px 30px 5px 5px;
+  margin: 0 10px 15px 0;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px 0px #1a1f3c;
+  border-bottom: 1px solid #5683ff;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: inset 0 10px 10px 0 rgba(80, 127, 255, 0.2431372549);
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item {
+  width: 30%;
+  height: 40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-id {
+  font-family: monospace;
+  font-weight: 100;
+  justify-content: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.date-hour {
+  font-size: 14px;
+  align-items: start;
+  padding: 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box {
+  justify-content: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box .price-carats {
+  height: 30px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  font-size: 16px;
+  text-shadow: 0 0 50px #000a18;
+  border-radius: 5px 20px 5px 5px;
+  background: #1c2e2e;
+  border: 1px solid #27504a;
+  box-shadow: 0 0 30px 1px #06011d;
+  font-weight: 400;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box .price-carats:hover {
+  background: #293c57;
+  border: 1px solid #58a79b;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box .price-carats .price-numb {
+  font-size: 20px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .div-line {
+  width: 90%;
+  height: 1px;
+  background: #000a18;
+  background: linear-gradient(90deg, #000a18 10%, #0046a8 40%, #75afff 50%, #0046a8 60%, #000a18 90%);
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: end;
+  font-size: 14px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary .summary-item {
+  margin-top: 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary .summary-item:nth-last-child(1) {
+  margin-bottom: 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary.labels {
+  width: 40%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary.labels .label {
+  height: 20px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary.cants {
+  width: 30%;
+  margin: 0 15% 0 0;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary.cants .cant {
+  height: 20px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 13px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #24225c;
+  border-radius: 5px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item:nth-child(odd) {
+  background: #0d0c29;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.cant {
+  width: 5%;
+  justify-content: end;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.titulo {
+  width: 40%;
+  justify-content: start;
+  padding: 0 30px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.codebar {
+  width: 15%;
+  justify-content: center;
+  padding: 0 30px;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.precio {
+  width: 10%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.disc {
+  width: 10%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.subtotal {
+  width: 20%;
+}
+body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.balance {
+  width: 25%;
+  height: 98%;
+  border-radius: 8px;
+  box-shadow: 0 0 50px #002047;
+  background: #000a18;
 }
 body .screen-box .module#dataModule .main-data-view {
   width: 100%;
   height: 100%;
-  background: white;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  background: #5769a9;
+  background: linear-gradient(36deg, #e2b7ff 20%, #5769a9 90%);
+  -webkit-backdrop-filter: blur(200px);
+          backdrop-filter: blur(200px);
 }
-body .screen-box .module#dataModule .main-data-view .data-navbar {
-  width: 500px;
-  height: 100px;
-  background: black;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-body .screen-box .module#dataModule .main-data-view .data-navbar .data-navbar-item {
-  width: 150px;
-  height: 70px;
-  background: rgb(195, 0, 255);
-  border-radius: 50%;
+body .screen-box .module#dataModule .main-data-view .data-hub {
+  width: 50%;
+  height: 50%;
+  background: green;
 }
 
 @keyframes appear {
