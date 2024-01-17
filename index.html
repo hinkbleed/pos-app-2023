@@ -13,16 +13,18 @@
 <body>
   <header>
     <img class="header-logo" src="./img/user-icon.jpg" alt="">
-    <h1 class="header-text">Editora y Distribuidora Quiroz POS ver. 0.1.1</h1>
+    <h1 class="header-text">Editora y Distribuidora Quiroz POS ver. 0.1.5</h1>
+
+
+    <!--La imagen y el nombre cambian también-->
+    <span>Politécnico 2023</span>
     <!--Este usuario cambia en cada feria-->
   </header>
   <main class="screen-box" id="screenBox">
     <div class="sidebar">
       <div class="user" id="user">
         <div class="user-symbol" id="userSymbol">
-          <img class="user-icon" src="./codebars/descarga.png" alt="user" />
-          <!--La imagen y el nombre cambian también-->
-          <span>Politécnico 2023</span>
+          <img class="user-icon" src="./svg/book-user.svg" alt="user" />
         </div>
         <ul class="user-menu hide" id="userMenu">
           <li class="user-menu-item active" id="posBtn">
@@ -44,10 +46,7 @@
             </svg>
           </li>
         </ul>
-        <div class="logout hide" id="logout">Salir</div>
-      </div>
-      <div class="pages-box">
-        <div class="page-btn pay-something">Realizar pago</div>
+
       </div>
     </div>
     <div class="module" id="shopModule">
@@ -216,13 +215,13 @@
             <div class="payment-input">
               <input type="number" />
               <input type="number" />
-              <div class="input-efe">2045</div>
+              <div class="input-efe">3875.00</div>
             </div>
           </div>
         </div>
         <div class="total-options">
           <div class="total-price" id="totalPrice">
-            $<span id="totalPriceValue">2045.00</span>
+            $<span id="totalPriceValue">3875.00</span>
           </div>
           <div class="list-btn accept-payment" id="acceptPayment">
             Aceptar pago
@@ -243,9 +242,9 @@
                 <p>Detalles del evento</p>
               </div>
               <div class="details-titles-btns-box">
-                <ul>
-                  <li class="active">Ventas</li>
-                  <li class="">Pagos</li>
+                <ul id="detailsOptions">
+                  <li class="details-btn active">Ventas</li>
+                  <li class="details-btn">Pagos</li>
                 </ul>
               </div>
             </div>
@@ -610,20 +609,90 @@
         <div class="data-hub">
           <div class="data-hub-section up">
             <div class="section inventario">
-              <div>Productos</div>
-              <div>Descuentos</div>
+              <p class="section-title">Configuración del inventario</p>
+              <div class="section-body">
+                <div class="bodypart">
+                  <div class="data-btn" id="viewStorage">Ver inventario</div>
+                  <div class="data-btn">Generar inventario</div>
+                  <div class="data-btn">Añadir descuento</div>
+                  <div class="data-btn">Configurar descuentos</div>
+                </div>
+                <div class="bodypart">
+                  <div class="data-btn">Añadir Artículo</div>
+                </div>
+                <div class="bodypart">
+
+                  <div class="data-btn">Añadir proveedor</div>
+                  <div class="data-btn">Añadir Editorial</div>
+                </div>
+              </div>
             </div>
-            <div class="section utilities">y</div>
+            <div class="section utilities">
+              <p class="section-title">Opciones de negocio</p>
+              <div>Realizar pago</div>
+              <div>Generar reporte completo</div>
+              <div>Otra opción de negocio</div>
+              <div>Otra opción de negocio</div>
+            </div>
           </div>
           <div class="data-hub-section down">
-            <div class="section perfil">e</div>
+            <div class="section perfil">
+              <p class="section-title">Configuración de perfil</p>
+              <div class="logout" id="logout">Salir</div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="section-data-view active" id="sectionDataView">
+        <div class="close-win" id="closeDataWin">
+          <img src="./svg/exit.svg" alt="">
+        </div>
+        <div class="article-module active">
+          <div class="data-box">
+            <div class="row one">
+              <div class="exit-space"></div>
+              <div class="box-name">
+                <p class="text-name">Inventario</p>
+              </div>
+
+            </div>
+            <div class="row two">
+              <div class="win-menu">
+                <div class="index-space">
+
+                  <div class="main-selectors">
+
+                    <div class="main-index-btn active">Todos los artículos</div>
+                    <div class="main-index-btn">Libros y revistas</div>
+                    <div class="main-index-btn">Separadores</div>
+                    <div class="main-index-btn">Juguetes</div>
+                    <div class="main-index-btn">Bolígrafos</div>
+                  </div>
+                </div>
+                <div class="options-index">
+                  <div>Añadir artículo</div>
+                </div>
+              </div>
+              <div class="content-tables">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article-module">
+          <div class="data-box">Generar Inventario</div>
+        </div>
+        <div class="article-module">Añadir descuento</div>
+        <div class="article-module">Configurar descuento</div>
+        <div class="article-module">Añadir artículo</div>
+        <div class="article-module">Añadir Proveedor</div>
+        <div class="article-module">Añadir Editorial</div>
       </div>
     </div>
   </main>
   <script src="./ui-scripts/sidebar-behavior.js"></script>
   <script src="./ui-scripts/shop-view-behavior.js"></script>
+  <script src="./ui-scripts/report-view-behavior.js"></script>
+  <script src="./ui-scripts/data-view-behavior.js"></script>
 </body>
 
 </html>

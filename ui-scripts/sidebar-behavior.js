@@ -1,6 +1,5 @@
 const userContainer = document.getElementById("user");
 const userMenu = document.getElementById("userMenu");
-const logoutBtn = document.getElementById("logout");
 const userSymbolBtn = document.getElementById("userSymbol");
 const menuItems = document.querySelectorAll(".user-menu-item");
 const modules = document.querySelectorAll(".module");
@@ -8,13 +7,11 @@ const screenBox = document.getElementById("screenBox");
 
 function change() {
   userMenu.classList.toggle("hide");
-  logoutBtn.classList.toggle("hide");
   userMenu.classList.toggle("appear");
-  logoutBtn.classList.toggle("appear");
 }
 
 function showItems() {
-  if (logoutBtn.classList.contains("hide")) {
+  if (userMenu.classList.contains("hide")) {
     setTimeout(change, 300);
   } else {
     change();
@@ -41,6 +38,4 @@ menuItems.forEach((item, index) => {
   });
 });
 
-logoutBtn.onclick = function () {
-  screenBox.classList.add("hide");
-};
+
