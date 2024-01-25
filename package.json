@@ -9,6 +9,7 @@
   "author": "@lex_xiuhuitl",
   "license": "ISC",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "picocolors": "1.0.0"
   }
 }
