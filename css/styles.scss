@@ -111,7 +111,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: start;
+                justify-content: flex-start;
                 margin: 30px 0px;
                 cursor: pointer;
                 transition: 300ms;
@@ -312,7 +312,7 @@ body {
                                         text-align: center;
 
                                         &:nth-child(2) {
-                                            text-align: start;
+                                            text-align: flex-start;
                                             padding: 0 30px;
                                         }
 
@@ -578,7 +578,7 @@ body {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        justify-content: start;
+                        justify-content: flex-start;
                         position: absolute;
                         right: 30%;
                         gap: 5px;
@@ -588,7 +588,7 @@ body {
                             height: 20px;
                             display: flex;
                             align-items: center;
-                            justify-content: start;
+                            justify-content: flex-start;
                             font-size: 12px;
                             font-weight: 200;
                             color: #dbdbdb;
@@ -607,7 +607,7 @@ body {
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: space-evenly;
-                                align-items: end;
+                                align-items: flex-end;
 
                                 p {
                                     width: 100%;
@@ -615,7 +615,7 @@ body {
                                     font-size: 18px;
                                     display: flex;
                                     align-items: center;
-                                    justify-content: end;
+                                    justify-content: flex-end;
                                     color: rgb(255, 255, 255);
                                     padding: 0 20px;
                                 }
@@ -845,7 +845,7 @@ body {
                                         height: 100%;
                                         display: none;
                                         flex-direction: column;
-                                        align-items: end;
+                                        align-items: flex-end;
                                         overflow-y: scroll;
                                         gap: 20px;
 
@@ -862,7 +862,7 @@ body {
                                             height: auto;
                                             display: flex;
                                             flex-direction: column;
-                                            align-items: end;
+                                            align-items: flex-end;
                                             gap: 10px;
                                             padding: 0 5px;
 
@@ -889,7 +889,7 @@ body {
                                                     height: 60px;
                                                     display: flex;
                                                     align-items: center;
-                                                    justify-content: end;
+                                                    justify-content: flex-end;
 
                                                     .details-summary {
                                                         width: 50%;
@@ -904,7 +904,7 @@ body {
                                                             height: auto;
                                                             display: flex;
                                                             flex-direction: column;
-                                                            align-items: end;
+                                                            align-items: flex-end;
 
                                                             .summary-item {
                                                                 margin-bottom: 5px;
@@ -1011,12 +1011,12 @@ body {
 
                                                         &.date-hour {
                                                             font-size: 14px;
-                                                            align-items: start;
+                                                            align-items: flex-start;
                                                             padding: 5px;
                                                         }
 
                                                         &.venta-price-box {
-                                                            justify-content: end;
+                                                            justify-content: flex-end;
 
 
 
@@ -1064,13 +1064,13 @@ body {
                                                     width: 100%;
                                                     height: auto;
                                                     display: flex;
-                                                    justify-content: end;
+                                                    justify-content: flex-end;
 
                                                     .details-summary {
                                                         width: 50%;
                                                         height: auto;
                                                         display: flex;
-                                                        justify-content: end;
+                                                        justify-content: flex-end;
                                                         font-size: 14px;
 
                                                         .summary {
@@ -1078,7 +1078,7 @@ body {
                                                             height: auto;
                                                             display: flex;
                                                             flex-direction: column;
-                                                            align-items: end;
+                                                            align-items: flex-end;
 
                                                             .summary-item {
                                                                 margin-top: 5px;
@@ -1148,12 +1148,12 @@ body {
 
                                                                 &.cant {
                                                                     width: 5%;
-                                                                    justify-content: end;
+                                                                    justify-content: flex-end;
                                                                 }
 
                                                                 &.titulo {
                                                                     width: 40%;
-                                                                    justify-content: start;
+                                                                    justify-content: flex-start;
                                                                     padding: 0 30px;
                                                                 }
 
@@ -1230,7 +1230,7 @@ body {
 
                             &.down {
                                 height: 35%;
-                                align-items: end;
+                                align-items: flex-end;
                             }
 
                             .section {
@@ -1404,7 +1404,7 @@ body {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            justify-content: start;
+                            justify-content: flex-start;
                             overflow: hidden;
 
                             .row {
@@ -1548,7 +1548,7 @@ body {
                                                     display: flex;
                                                     align-items: center;
                                                     justify-content: center;
-                                                    font-size: 18px;
+                                                    font-size: 16px;
                                                     border-right: 1px solid white;
 
                                                     &:nth-last-child(1) {
@@ -1561,7 +1561,7 @@ body {
 
                                                     &.product-name {
                                                         width: 25%;
-                                                        justify-content: start;
+                                                        justify-content: flex-start;
                                                         padding: 0 30px;
                                                     }
 
@@ -1578,11 +1578,11 @@ body {
                                                     }
 
                                                     &.product-specs {
-                                                        width: 10%;
+                                                        width: 5%;
                                                     }
 
                                                     &.product-providor {
-                                                        width: 5%;
+                                                        width: 10%;
                                                     }
 
                                                     &.last-product-inserc {
@@ -1614,7 +1614,7 @@ body {
                                                 height: 100%;
                                                 display: flex;
                                                 flex-direction: column;
-                                                font-size: 16px;
+                                                font-size: 14px;
                                                 overflow: scroll;
 
                                                 &::-webkit-scrollbar {
@@ -1660,7 +1660,7 @@ body {
 
                                                         &.item-name {
                                                             width: 25%;
-                                                            justify-content: start;
+                                                            justify-content: flex-start;
                                                             padding: 0 20px;
                                                         }
 
@@ -1673,11 +1673,11 @@ body {
                                                         }
 
                                                         &.item-spec {
-                                                            width: 10%;
+                                                            width: 5%;
                                                         }
 
                                                         &.item-providor {
-                                                            width: 5%;
+                                                            width: 10%;
                                                         }
 
                                                         &.item-price {

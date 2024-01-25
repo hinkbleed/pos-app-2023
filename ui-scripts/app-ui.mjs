@@ -13,55 +13,48 @@ rows.forEach((row) => {
 
     // Agregar la clase 'seleccionada' a la fila clickeada
     row.classList.add('selected');
-
   });
 });
-
 
 //      REPORT SECTION
 
-const detailsBtn = document.querySelectorAll(".details-btn");
+const detailsBtn = document.querySelectorAll('.details-btn');
 const detailsModule = document.querySelectorAll('.details-box-module');
 
-function changeReportModule(item) {
-  detailsBtn.forEach((btn) => btn.classList.remove("active"));
-  item.classList.add("active");
+function changeReportModule (item) {
+  detailsBtn.forEach((btn) => btn.classList.remove('active'));
+  item.classList.add('active');
 }
 
 detailsBtn.forEach((item, index) => {
-  item.addEventListener("click", () => {
+  item.addEventListener('click', () => {
     detailsModule.forEach((module) => {
-      module.style.display = "none";
+      module.style.display = 'none';
     });
-    detailsModule[index].style.display = "flex";
-    changeReportModule(item)
+    detailsModule[index].style.display = 'flex';
+    changeReportModule(item);
   });
 });
 
+//      DATA SECTION
 
-//      DATA SECTION 
-
-//import { createInvForm } from '../server/showInv.mjs'
-//createInvForm()
-
+//  import { createInvForm } from '../server/showInv.mjs'
+//  createInvForm()
 
 const dataBtn = document.querySelectorAll('.data-btn');
 const artModules = document.querySelectorAll('.article-module');
 const sectionView = document.getElementById('sectionDataView');
 const closeWinBtn = document.getElementById('closeDataWin');
-const logoutBtn = document.getElementById("logout");
-
+const logoutBtn = document.getElementById('logout');
 
 dataBtn.forEach((button, index) => {
-  button.addEventListener("click", () => {
-
+  button.addEventListener('click', () => {
     sectionView.classList.remove('disappear');
     sectionView.classList.add('active');
     artModules.forEach((module) => {
-      module.style.display = "none";
+      module.style.display = 'none';
     });
-    artModules[index].style.display = "flex";
-
+    artModules[index].style.display = 'flex';
   });
 });
 
@@ -73,61 +66,56 @@ closeWinBtn.addEventListener('click', () => {
 });
 
 logoutBtn.onclick = function () {
-  screenBox.classList.add("hide");
+  screenBox.classList.add('hide');
 };
-
 
 const mainIndexBtn = document.querySelectorAll('.main-index-btn');
 
 mainIndexBtn.forEach((button) => {
   button.addEventListener('click', () => {
-    mainIndexBtn.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
+    mainIndexBtn.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
   });
 });
 
-
 //      SIDEBAR SECTION
 
-const userContainer = document.getElementById("user");
-const userMenu = document.getElementById("userMenu");
-const userSymbolBtn = document.getElementById("userSymbol");
-const menuItems = document.querySelectorAll(".user-menu-item");
-const modules = document.querySelectorAll(".module");
-const screenBox = document.getElementById("screenBox");
+const userContainer = document.getElementById('user');
+const userMenu = document.getElementById('userMenu');
+const userSymbolBtn = document.getElementById('userSymbol');
+const menuItems = document.querySelectorAll('.user-menu-item');
+const modules = document.querySelectorAll('.module');
+const screenBox = document.getElementById('screenBox');
 
-function change() {
-  userMenu.classList.toggle("hide");
-  userMenu.classList.toggle("appear");
+function change () {
+  userMenu.classList.toggle('hide');
+  userMenu.classList.toggle('appear');
 }
 
-function showItems() {
-  if (userMenu.classList.contains("hide")) {
+function showItems () {
+  if (userMenu.classList.contains('hide')) {
     setTimeout(change, 300);
   } else {
     change();
   }
 }
 
-
 userSymbolBtn.onclick = function () {
-  userContainer.classList.toggle("open");
+  userContainer.classList.toggle('open');
   showItems();
 };
 
-function selectIcon(item) {
-  menuItems.forEach((item) => item.classList.remove("active"));
-  item.classList.add("active");
+function selectIcon (item) {
+  menuItems.forEach((item) => item.classList.remove('active'));
+  item.classList.add('active');
 }
 
 menuItems.forEach((item, index) => {
-  item.addEventListener("click", () => {
+  item.addEventListener('click', () => {
     modules.forEach((module) => {
-      module.style.display = "none";
+      module.style.display = 'none';
     });
-    modules[index].style.display = "flex";
-    selectIcon(item)
+    modules[index].style.display = 'flex';
+    selectIcon(item);
   });
 });
-
-

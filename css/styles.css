@@ -97,7 +97,7 @@ body .screen-box .sidebar .user {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 30px 0px;
   cursor: pointer;
   transition: 300ms;
@@ -258,7 +258,7 @@ body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody t
   text-align: center;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(2) {
-  text-align: start;
+  text-align: flex-start;
   padding: 0 30px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) {
@@ -483,7 +483,7 @@ body .screen-box .module#shopModule .pago .payment-options {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   position: absolute;
   right: 30%;
   gap: 5px;
@@ -493,7 +493,7 @@ body .screen-box .module#shopModule .pago .payment-options .payment-options-titl
   height: 20px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   font-size: 12px;
   font-weight: 200;
   color: #dbdbdb;
@@ -511,7 +511,7 @@ body .screen-box .module#shopModule .pago .payment-options .payment-options-box 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: end;
+  align-items: flex-end;
 }
 body .screen-box .module#shopModule .pago .payment-options .payment-options-box .payment-label p {
   width: 100%;
@@ -519,7 +519,7 @@ body .screen-box .module#shopModule .pago .payment-options .payment-options-box 
   font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   color: rgb(255, 255, 255);
   padding: 0 20px;
 }
@@ -714,7 +714,7 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   height: 100%;
   display: none;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   overflow-y: scroll;
   gap: 20px;
 }
@@ -729,7 +729,7 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   gap: 10px;
   padding: 0 5px;
 }
@@ -755,7 +755,7 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary {
   width: 50%;
@@ -769,7 +769,7 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header .options-box .details-summary .summary .summary-item {
   margin-bottom: 5px;
@@ -856,11 +856,11 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.date-hour {
   font-size: 14px;
-  align-items: start;
+  align-items: flex-start;
   padding: 5px;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box {
-  justify-content: end;
+  justify-content: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-head .head-item.venta-price-box .price-carats {
   height: 30px;
@@ -896,20 +896,20 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary {
   width: 50%;
   height: auto;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   font-size: 14px;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary {
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-details .details-summary .summary .summary-item {
   margin-top: 5px;
@@ -968,11 +968,11 @@ body .screen-box .module#reportModule .main-report-view .report-hub-box .report-
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.cant {
   width: 5%;
-  justify-content: end;
+  justify-content: flex-end;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.titulo {
   width: 40%;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0 30px;
 }
 body .screen-box .module#reportModule .main-report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .detailed-venta .venta-body .venta-item .bodypart .item-info.codebar {
@@ -1028,7 +1028,7 @@ body .screen-box .module#dataModule .main-data-view .data-hub .data-hub-section.
 }
 body .screen-box .module#dataModule .main-data-view .data-hub .data-hub-section.down {
   height: 35%;
-  align-items: end;
+  align-items: flex-end;
 }
 body .screen-box .module#dataModule .main-data-view .data-hub .data-hub-section .section {
   background: #000a18;
@@ -1180,7 +1180,7 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   overflow: hidden;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row {
@@ -1306,7 +1306,7 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   border-right: 1px solid white;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item:nth-last-child(1) {
@@ -1317,7 +1317,7 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-name {
   width: 25%;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0 30px;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-ed {
@@ -1330,10 +1330,10 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
   width: 15%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-specs {
-  width: 10%;
+  width: 5%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-providor {
-  width: 5%;
+  width: 10%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.last-product-inserc {
   width: 12%;
@@ -1358,7 +1358,7 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 14px;
   overflow: scroll;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table::-webkit-scrollbar {
@@ -1398,7 +1398,7 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-name {
   width: 25%;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0 20px;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-ed {
@@ -1408,10 +1408,10 @@ body .screen-box .module#dataModule .section-data-view .article-module .data-box
   width: 15%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-spec {
-  width: 10%;
+  width: 5%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-providor {
-  width: 5%;
+  width: 10%;
 }
 body .screen-box .module#dataModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-price {
   width: 10%;
