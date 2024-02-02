@@ -1,0 +1,24 @@
+### Recuperar información del inventario
+GET http://localhost:1234/storage/poli
+
+###  Crear un libro
+POST http://localhost:1234
+Content-Type: application/json
+
+{
+  "Otros Libros": {
+
+    "name": "Trainspotting",
+    "barcode": "549873564",
+    "type": "book",
+    "providor": "Alex",
+    "editorial": "Norton",
+    "year": 2017,
+    "authors": [
+      "Irvine Welsh"
+    ],
+    "kind": "Line",
+    "price": 450,
+    "amount": 3
+  }
+}

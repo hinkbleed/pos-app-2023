@@ -4,7 +4,9 @@
   "description": "point of sale",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev_1": "node --watch ./server_demo_1/express.js",
+    "dev_2": "node --watch ./server_2_demo/app.js"
   },
   "author": "@lex_xiuhuitl",
   "license": "ISC",

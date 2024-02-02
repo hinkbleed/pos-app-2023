@@ -1,0 +1,81 @@
+{
+  "Libros": [
+    {
+      "__comment__" : "La id es[Editorial][Distribuidora] [Quiroz] [000 proveedor] [000 editorial] [A Type(libro)] [A género(enciclopedia de ciencia)] [A subgénero(dinosaurios)] [Clase(Linea-Outlet)] [siete número al azar]",
+      "id": "EDQ201501ACEL2556808",
+      "name": "Dinosaurios y Vida Prehistórica",
+      "barcode": 95666666738,
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2017,
+      "authors": [
+        "Michelet Frangüini"
+      ],
+      "genres": ["Enciclopedia de Ciencias"],
+      "subgeneres": ["Dinosaurios"],
+      "kind": "Line",
+      "price": 1200
+    },
+    {
+      "id": "EDQ201501ACEO2556808",
+      "name": "Dinosaurios y Vida Prehistórica",
+      "barcode": 95666666738,
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2017,
+      "authors": [
+        "Michelet Frangüini"
+      ],
+      "genres": ["Enciclopedia de Ciencias"],
+      "subgenres": ["Dinosaurios"],
+      "kind": "Outlet",
+      "price": 780
+    },
+    {
+      "id": "EDQ201501ACAL8854343",
+      "name": "Artistas, Sus Vidas y Obras",
+      "barcode": 785474631,
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2017,
+      "authors": [
+        "Irvine Welsh"
+      ],
+      "genres": ["Enciclopedia de Arte"],
+      "subgenres": ["Artistas"],
+      "kind": "Line",
+      "price": 720
+    },
+    {
+      "id": "EDQ201501ACAO8854343",
+      "name": "Artistas, Sus Vidas y Obras",
+      "barcode": 785474631,
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2017,
+      "authors": [
+        "Irvine Welsh"
+      ],
+      "genres": ["Enciclopedia de Arte"],
+      "subgenres": ["Artistas"],
+      "kind": "Outlet",
+      "price": 350
+    }
+  ],
+  "Separadores": [
+    {"__comment__" : "La id es [Editorial] [Distribuidora] [Quiroz] [000 proveedor] [B Type(separador)] [A estilo(básico)] [A género(personajes)] [siete número al azar]",
+      "id": "EDQ101BAA2556808",
+      "name": "SEP. BASIC 1 IMPRESIÓN",
+      "barcode": 90485395,
+      "type": "sep",
+      "providor": "Paty Jornada",
+      "props": ["BASIC", "1 IMPRESIÓN"],
+      "genre": "personajes",
+      "price": 10
+    }
+  ]
+}
