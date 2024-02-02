@@ -6,3 +6,33 @@ GET http://localhost:1234/products/Libros/EDQ201501ACAL8854343
 
 ### Recuperar todos los libros por género
 GET http://localhost:1234/products/Libros?genre=enciclopedia+de+ciencias
+
+### Crear otro libro
+POST http://localhost:1234/products/Libros
+Content-Type: application/json
+
+{
+  "id": "",
+  "name": "Trainspotting",
+  "barcode": 9483467563,
+  "type": "book",
+  "providor": "Alex",
+  "editorial": "Norton",
+  "year": 1996,
+  "authors": [
+    "Irvine Welsh"
+  ],
+  "genres": ["Novela psiconautica"],
+  "subgenres": ["Drogas"],
+  "kind": "Line",
+  "price": 380
+}
+
+
+###Editar un libro
+PATCH http://localhost:1234/products/Libros/EDQ201501ACEO2556808
+Content-Type: application/json
+
+{
+  "year": 1970
+}
