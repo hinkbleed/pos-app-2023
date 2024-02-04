@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try API REST</title>
+  <style>
+    article {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+  <script type="module">
+    fetch('http://localhost:1234/products')
+      .then(res => res.json())
+      .then(products => {
+        const html = products.Libros.map(product => {
+        return `
+        <article data-id="${product.id}">
+          <h2>${product.name}</h2>
+          <p>${product.year}</p>
+        </article>
+        `;
+      }).join();
+      document.querySelector('main').innerHTML = html;
+    })
+  </script>
+</head>
+
+<body>
+  <main></main>
+</body>
+
+</html>

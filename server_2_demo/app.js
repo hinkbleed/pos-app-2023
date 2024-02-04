@@ -26,6 +26,7 @@ app.get('/products/:category', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   res.json(products);
 });
 
