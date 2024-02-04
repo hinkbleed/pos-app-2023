@@ -1,7 +1,6 @@
 {
   "Libros": [
     {
-      "__comment__" : "La id es[Editorial][Distribuidora] [Quiroz] [000 proveedor] [000 editorial] [A Type(libro)] [A género(enciclopedia de ciencia)] [A subgénero(dinosaurios)] [Clase(Linea-Outlet)] [siete número al azar]",
       "id": "EDQ201501ACEL2556808",
       "name": "Dinosaurios y Vida Prehistórica",
       "barcodes": [95666666738],
@@ -67,7 +66,7 @@
     }
   ],
   "Separadores": [
-    {"__comment__" : "La id es [Editorial] [Distribuidora] [Quiroz] [000 proveedor] [B Type(separador)] [A estilo(básico)] [A género(personajes)] [siete número al azar]",
+    {
       "id": "EDQ101BAA2556808",
       "name": "SEP. BASIC 1 IMPRESIÓN",
       "barcodes": [90485395],

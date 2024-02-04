@@ -5,11 +5,11 @@ const productSchema = z.object({
     invalid_type_error: 'name must be a string',
     required_error: 'product name is required'
   }),
-  barcodes: z.array[
+  barcodes: z.array(
     z.number({
       invalid_type_error: 'barcode must be a number'
     }).int().positive().max(99999999999999)
-  ],
+  ),
   type: z.string({
     invalid_type_error: 'type must be a string',
     required_error: 'type of product must be selected'
@@ -49,12 +49,12 @@ const productSchema = z.object({
   )
 });
 
-function validateProduct (input) {
-  return productSchema.safeParse(input);
+function validateProduct (object) {
+  return productSchema.safeParse(object);
 }
 
-function validatePartialProduct (input) {
-  return productSchema.partial().safeParse(input);
+function validatePartialProduct (object) {
+  return productSchema.partial().safeParse(object);
 }
 
 module.exports = {

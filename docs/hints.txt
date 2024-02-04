@@ -19,3 +19,6 @@ id": "EDQ714890AFHL8434533"
 
 Las primeras tres letras, EDQ son el nombre del negocio; los siguientes 3 numeros, 714 corresponden a los ultimos 3 digitos del id del proveedor del producto; los siguientes tres números, 890 corresponden a los ultimos tres digitos del id de la editorial del producto en caso de que sea un libro; los siguientes tres caracteres, AFH corresponden a, A, el tipo de producto, como es A es un libro, B es separadores, C es otra cosa y así, también debe haber un array de tipos de producto asignado a cada letra, la F corresponde al género del libro en este caso, la H corresponde al subgénero, tanto el género y el subgenero también deben estar en un array adignados a sus letras; la siguiente parte, la L, es lo que define el "kind" del producto, si es Line (L) u Outlet (O); los últimos 7 digitos son aleatorios
 
+"__comment__" : "La id es[Editorial][Distribuidora] [Quiroz] [000 proveedor] [000 editorial] [A Type(libro)] [A género(enciclopedia de ciencia)] [A subgénero(dinosaurios)] [Clase(Linea-Outlet)] [siete número al azar]",
+
+"__comment__" : "La id es [Editorial] [Distribuidora] [Quiroz] [000 proveedor] [B Type(separador)] [A estilo(básico)] [A género(personajes)] [siete número al azar]",

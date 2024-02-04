@@ -14,7 +14,7 @@ Content-Type: application/json
 {
   "id": "",
   "name": "Trainspotting",
-  "barcode": 9483467563,
+  "barcodes": [948346563],
   "type": "book",
   "providor": "Alex",
   "editorial": "Norton",
