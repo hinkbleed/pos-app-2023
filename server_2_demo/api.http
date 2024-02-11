@@ -36,3 +36,6 @@ Content-Type: application/json
 {
   "year": 1970
 }
+
+### ELIMINA UN PRODUCTO
+DELETE http://localhost:1234/products/:category/:id

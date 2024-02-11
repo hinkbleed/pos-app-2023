@@ -7,7 +7,14 @@ const app = express();
 app.use(express.json());
 app.disable('x-powered-by');
 
+//  const ACCEPTED_ORIGINS = [
+//    'http://localhost:1234',
+//    'http://127.0.0.1:5500/tryapi.html'
+//  ];
+
 app.get('/products/:category', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+
   const { category } = req.params;
 
   if (!(category in products)) {
@@ -31,6 +38,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/products/:category/:id', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const { category, id } = req.params;
 
   if (!(category in products)) {
@@ -46,6 +54,7 @@ app.get('/products/:category/:id', (req, res) => {
 });
 
 app.post('/products/:category', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const { category } = req.params;
 
   if (!(category in products)) {
@@ -70,6 +79,7 @@ app.post('/products/:category', (req, res) => {
 });
 
 app.patch('/products/:category/:id', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const { category, id } = req.params;
 
   if (!(category in products)) {
@@ -96,6 +106,31 @@ app.patch('/products/:category/:id', (req, res) => {
   productsCategory[productIndex] = updateProduct;
 
   return res.json(updateProduct);
+});
+
+app.delete('/products/:category/:id', (req, res) => {
+  const { category, id } = req.params;
+
+  if (!(category in products)) {
+    return res.status(404).json({ message: 'Category not found' });
+  }
+  const productsCategory = products[category];
+  const product = productsCategory.findIndex(product => product.id === id);
+  if (product === -1) {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+
+  productsCategory.splice(product, 1);
+
+  return res.json({ message: 'Product deleted' });
+});
+
+app.options('/products/Libros', (req, res) => {
+  const origin = req.header('origin');
+  res.header('Access-Control-Allow-Origin', origin);
+  res.header('Access-Control-Allow-Methods', 'GET, DELETE, POST, PATCH');
+
+  res.send();
 });
 
 const PORT = process.env.PORT ?? 1234;

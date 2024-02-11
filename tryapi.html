@@ -17,15 +17,36 @@
       .then(res => res.json())
       .then(products => {
         const html = products.Libros.map(product => {
-        return `
-        <article data-id="${product.id}">
+          return `
+        <article data-id="${product.id}" data-category="${product.category}">
           <h2>${product.name}</h2>
+          <p>${product.id}</p>
           <p>${product.year}</p>
+
+          
+        <button>Eliminar</button>
         </article>
         `;
-      }).join();
-      document.querySelector('main').innerHTML = html;
-    })
+        }).join();
+        document.querySelector('main').innerHTML = html;
+
+        document.addEventListener('click', e => {
+          if (e.target.matches('button')) {
+            const article = e.target.closest('article')
+            const id = article.dataset.id
+            const category = article.dataset.category
+
+            fetch(`http://localhost:1234/products/${category}/${id}`, {
+              method: 'DELETE'
+            })
+              .then(res => {
+                if (res.ok) {
+                  article.remove()
+                }
+              })
+          }
+        })
+      })
   </script>
 </head>
 
