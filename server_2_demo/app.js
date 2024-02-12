@@ -1,12 +1,16 @@
-const express = require('express');
-const products = require('./db/productos.json');
-const { validateProduct, validatePartialProduct } = require('./schemas/validateProduct');
-const { createEDQid } = require('./schemas/createEDQid');
-const cors = require('cors');
+import express, { json } from 'express';
+import { validateProduct, validatePartialProduct } from './schemas/validateProduct.js';
+import { createEDQid } from './schemas/createEDQid.js';
+import cors from 'cors';
+import { readJSON } from './utils/utils.js';
+
+const products = readJSON('../db/productos.json');
 
 const app = express();
-app.use(express.json());
+
 app.disable('x-powered-by');
+
+app.use(json());
 
 app.use(cors({
   origin: (origin, callback) => {

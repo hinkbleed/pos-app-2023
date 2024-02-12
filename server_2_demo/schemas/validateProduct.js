@@ -1,4 +1,4 @@
-const z = require('zod');
+import z from 'zod';
 
 const productSchema = z.object({
   name: z.string({
@@ -49,15 +49,10 @@ const productSchema = z.object({
   )
 });
 
-function validateProduct (object) {
+export function validateProduct (object) {
   return productSchema.safeParse(object);
 }
 
-function validatePartialProduct (object) {
+export function validatePartialProduct (object) {
   return productSchema.partial().safeParse(object);
 }
-
-module.exports = {
-  validateProduct,
-  validatePartialProduct
-};

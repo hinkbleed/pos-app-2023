@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "point of sale",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev_1": "node --watch ./server_demo_1/express.js",
