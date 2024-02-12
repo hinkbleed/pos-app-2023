@@ -2,19 +2,30 @@ const express = require('express');
 const products = require('./db/productos.json');
 const { validateProduct, validatePartialProduct } = require('./schemas/validateProduct');
 const { createEDQid } = require('./schemas/createEDQid');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
 app.disable('x-powered-by');
 
-//  const ACCEPTED_ORIGINS = [
-//    'http://localhost:1234',
-//    'http://127.0.0.1:5500/tryapi.html'
-//  ];
+app.use(cors({
+  origin: (origin, callback) => {
+    const ACCEPTED_ORIGINS = [
+      'http://localhost:1234',
+      'http://127.0.0.1:5500'
+    ];
+    if (ACCEPTED_ORIGINS.includes(origin)) {
+      return callback(null, true);
+    }
 
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Not allowed by CORS'));
+  }
+}));
 app.get('/products/:category', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
-
   const { category } = req.params;
 
   if (!(category in products)) {
@@ -33,12 +44,10 @@ app.get('/products/:category', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
   res.json(products);
 });
 
 app.get('/products/:category/:id', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
   const { category, id } = req.params;
 
   if (!(category in products)) {
@@ -54,7 +63,6 @@ app.get('/products/:category/:id', (req, res) => {
 });
 
 app.post('/products/:category', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
   const { category } = req.params;
 
   if (!(category in products)) {
@@ -79,7 +87,6 @@ app.post('/products/:category', (req, res) => {
 });
 
 app.patch('/products/:category/:id', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
   const { category, id } = req.params;
 
   if (!(category in products)) {
@@ -115,22 +122,15 @@ app.delete('/products/:category/:id', (req, res) => {
     return res.status(404).json({ message: 'Category not found' });
   }
   const productsCategory = products[category];
-  const product = productsCategory.findIndex(product => product.id === id);
-  if (product === -1) {
+  const productIndex = productsCategory.findIndex(product => product.id === id);
+
+  if (productIndex === -1) {
     return res.status(404).json({ message: 'Product not found' });
   }
 
-  productsCategory.splice(product, 1);
+  productsCategory.splice(productIndex, 1);
 
-  return res.json({ message: 'Product deleted' });
-});
-
-app.options('/products/Libros', (req, res) => {
-  const origin = req.header('origin');
-  res.header('Access-Control-Allow-Origin', origin);
-  res.header('Access-Control-Allow-Methods', 'GET, DELETE, POST, PATCH');
-
-  res.send();
+  return res.status(204).send();
 });
 
 const PORT = process.env.PORT ?? 1234;
