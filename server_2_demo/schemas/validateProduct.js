@@ -35,15 +35,15 @@ const productSchema = z.object({
       invalid_type_error: 'authors must be an array of strings'
     })
   ),
-  genres: z.array(
+  genre: z.array(
     z.string({
-      invalid_type_error: 'genres must be an array of strings',
+      invalid_type_error: 'genre must be an array of strings',
       required_error: 'product genre must be selected'
     })
   ),
-  subgenres: z.array(
+  subgenre: z.array(
     z.string({
-      invalid_type_error: 'subgenres must be an array of strings',
+      invalid_type_error: 'subgenre must be an array of strings',
       required_error: 'product subgenre must be selected'
     })
   )

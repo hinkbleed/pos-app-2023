@@ -1,80 +1,68 @@
-{
-  "Libros": [
-    {
-      "id": "EDQ201501ACEL2556808",
-      "name": "Dinosaurios y Vida Prehistórica",
-      "barcodes": [95666666738],
-      "category": "Libros",
-      "providor": "Hugo",
-      "editorial": "DK",
-      "year": 2017,
-      "authors": [
-        "Michelet Frangüini"
-      ],
-      "genres": ["Enciclopedia de Ciencias"],
-      "subgeneres": ["Dinosaurios"],
-      "kind": "Line",
-      "price": 1200
-    },
-    {
-      "id": "EDQ201501ACEO2556808",
-      "name": "Dinosaurios y Vida Prehistórica",
-      "barcodes": [95666666738],
-      "category": "Libros",
-      "providor": "Hugo",
-      "editorial": "DK",
-      "year": 2017,
-      "authors": [
-        "Michelet Frangüini"
-      ],
-      "genres": ["Enciclopedia de Ciencias"],
-      "subgenres": ["Dinosaurios"],
-      "kind": "Outlet",
-      "price": 780
-    },
-    {
-      "id": "EDQ201501ACAL8854343",
-      "name": "Artistas, Sus Vidas y Obras",
-      "barcodes": [785474631],
-      "category": "Libros",
-      "providor": "Hugo",
-      "editorial": "DK",
-      "year": 2017,
-      "authors": [
-        "Pablini Shumais"
-      ],
-      "genres": ["Enciclopedia de Arte"],
-      "subgenres": ["Artistas"],
-      "kind": "Line",
-      "price": 720
-    },
-    {
-      "id": "EDQ201501ACAO8854343",
-      "name": "Artistas, Sus Vidas y Obras",
-      "barcodes": [785474631],
-      "category": "Libros",
-      "providor": "Hugo",
-      "editorial": "DK",
-      "year": 2017,
-      "authors": [
-        "Pablini Schumais"
-      ],
-      "genres": ["Enciclopedia de Arte"],
-      "subgenres": ["Artistas"],
-      "kind": "Outlet",
-      "price": 350
-    }
-  ],
-  "Separadores": [
-    {
-      "id": "EDQ101BAA2556808",
-      "name": "SEP. BASIC 1 IMPRESIÓN",
-      "barcodes": [90485395],
-      "category": "Separadores",
-      "providor": "Paty Jornada",
-      "props": ["BASIC", "1 IMPRESIÓN"],
-      "genre": "personajes",
-      "price": 10
-    }
-  ]
-}
+[
+  {
+    "id": "EDQA201501CEL2556808",
+    "name": "Dinosaurios y Vida Prehistórica",
+    "barcodes": [95666666738],
+    "category": "Libros",
+    "providor": "Hugo",
+    "editorial": "DK",
+    "year": 2017,
+    "authors": ["Michelet Frangüini"],
+    "genre": ["Enciclopedia", "Ciencias"],
+    "subgenre": ["Dinosaurios", "Biología"],
+    "kind": "Line",
+    "price": 1200
+  },
+  {
+    "id": "EDQA201501CEO2556808",
+    "name": "Dinosaurios y Vida Prehistórica",
+    "barcodes": [95666666738],
+    "category": "Libros",
+    "providor": "Hugo",
+    "editorial": "DK",
+    "year": 2017,
+    "authors": ["Michelet Frangüini"],
+    "genre": ["Enciclopedia", "Ciencias"],
+    "subgenre": ["Dinosaurios", "Biología"],
+    "kind": "Outlet",
+    "price": 780
+  },
+  {
+    "id": "EDQA201501CAL8854343",
+    "name": "Artistas, Sus Vidas y Obras",
+    "barcodes": [785474631],
+    "category": "Libros",
+    "providor": "Hugo",
+    "editorial": "DK",
+    "year": 2017,
+    "authors": ["Pablini Shumais"],
+    "genre": ["Enciclopedia", "Arte"],
+    "subgenre": ["Artistas", "Vida y obra"],
+    "kind": "Line",
+    "price": 720
+  },
+  {
+    "id": "EDQA201501CAO8854343",
+    "name": "Artistas, Sus Vidas y Obras",
+    "barcodes": [785474631],
+    "category": "Libros",
+    "providor": "Hugo",
+    "editorial": "DK",
+    "year": 2017,
+    "authors": ["Pablini Schumais"],
+    "genre": ["Enciclopedia", "Arte"],
+    "subgenre": ["Artistas", "Vida y obra"],
+    "kind": "Outlet",
+    "price": 350
+  },
+  {
+    "id": "EDQB101AA2556808",
+    "name": "SEP. BASIC 1 IMPRESIÓN",
+    "barcodes": [90485395],
+    "category": "Separadores",
+    "providor": "Paty Jornada",
+    "props": ["BASIC", "1 IMPRESIÓN"],
+    "genre": ["Personajes"],
+    "price": 10
+  }
+]

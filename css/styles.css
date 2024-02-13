@@ -204,9 +204,9 @@ body .screen-box .module#shopModule .main-shop-view .shop-list-box table {
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead {
   background: #000000;
-  color: #ffffff;
+  color: #e3e3e3;
   height: 25px;
-  font-size: 15px;
+  font-size: 12px;
   position: sticky;
   top: 0;
 }
@@ -238,10 +238,10 @@ body .screen-box .module#shopModule .main-shop-view .shop-list-box table thead t
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody {
   color: white;
-  font-size: 14px;
+  font-size: 15px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr {
-  height: 35px;
+  height: 40px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr:hover {
   background: #040a30;
@@ -258,14 +258,14 @@ body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody t
   text-align: center;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(2) {
-  text-align: flex-start;
-  padding: 0 30px;
+  text-align: start;
+  padding: 0 50px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 35px;
+  height: 40px;
   gap: 5px;
 }
 body .screen-box .module#shopModule .main-shop-view .shop-list-box table tbody tr td:nth-child(4) .amount-btn {

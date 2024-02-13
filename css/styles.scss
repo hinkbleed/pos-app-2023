@@ -245,9 +245,9 @@ body {
 
                             thead {
                                 background: #000000;
-                                color: #ffffff;
+                                color: #e3e3e3;
                                 height: 25px;
-                                font-size: 15px;
+                                font-size: 12px;
                                 position: sticky;
                                 top: 0;
 
@@ -289,10 +289,10 @@ body {
 
                             tbody {
                                 color: white;
-                                font-size: 14px;
+                                font-size: 15px;
 
                                 tr {
-                                    height: 35px;
+                                    height: 40px;
 
                                     &:hover {
                                         background: #040a30;
@@ -312,8 +312,8 @@ body {
                                         text-align: center;
 
                                         &:nth-child(2) {
-                                            text-align: flex-start;
-                                            padding: 0 30px;
+                                            text-align: start;
+                                            padding: 0 50px;
                                         }
 
 
@@ -321,7 +321,7 @@ body {
                                             display: flex;
                                             align-items: center;
                                             justify-content: space-evenly;
-                                            height: 35px;
+                                            height: 40px;
                                             gap: 5px;
 
                                             .amount-btn {
