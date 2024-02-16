@@ -9,16 +9,54 @@
   "authors": [
     ""
   ],
-  "genres": [""],
-  "subgenres": [""],
+  "genre": [""],
+  "subgenre": [""],
   "kind": "",
   "price": 
 }
 
-id": "EDQ714890AFHL8434533"
+id: EDQA201501CREGL2556808  --EDQid de un libro
 
-Las primeras tres letras, EDQ son el nombre del negocio; los siguientes 3 numeros, 714 corresponden a los ultimos 3 digitos del id del proveedor del producto; los siguientes tres números, 890 corresponden a los ultimos tres digitos del id de la editorial del producto en caso de que sea un libro; los siguientes tres caracteres, AFH corresponden a, A, el tipo de producto, como es A es un libro, B es separadores, C es otra cosa y así, también debe haber un array de tipos de producto asignado a cada letra, la F corresponde al género del libro en este caso, la H corresponde al subgénero, tanto el género y el subgenero también deben estar en un array adignados a sus letras; la siguiente parte, la L, es lo que define el "kind" del producto, si es Line (L) u Outlet (O); los últimos 7 digitos son aleatorios
+EDQ son el nombre del negocio; A es el tipo de producto, como es A es un "Libro"; 201 corresponden a los ultimos 3 digitos del id del proveedor del producto, el id se asignó previamente al proveedor; 501 corresponden a los ultimos tres digitos del id de la editorial del producto en caso de que tenga una, la id de la editorial igualmente fue anteriormente asignada; CR corresponden a un código asignado al género y EG igualmente respecto al subgénero; L, es lo que define el "kind" del producto, si es Line (L) u Outlet (O); los últimos 7 digitos son aleatorios;
+al crearse un id cuando se crea un producto en la base de datos debe validarse si el edqid ya existe, si es así, los últimos 7 digitos aleatorios deben cambiar
 
-"__comment__" : "La id es[Editorial][Distribuidora] [Quiroz] [000 proveedor] [000 editorial] [A Type(libro)] [A género(enciclopedia de ciencia)] [A subgénero(dinosaurios)] [Clase(Linea-Outlet)] [siete número al azar]",
+id: EDQB101RA2556808   --EDQid de un separador
+EDQ; B es el tipo, Separador; 101, es el proveedor; RA, es el género; 7 números aleatorios
 
-"__comment__" : "La id es [Editorial] [Distribuidora] [Quiroz] [000 proveedor] [B Type(separador)] [A estilo(básico)] [A género(personajes)] [siete número al azar]",
+
+
+
+  LIBRO
+{
+    ["id": "EDQA001001CREG2556808L",
+    "name": "Dinosaurios y Vida Prehistórica",
+    "providor": "Hugo",
+    "editorial": "DK",
+    "year": 2017,
+    "author_1": "Michelete Frangüini",
+    "author_2": ''.
+    "author_3": '',
+    "kind": "Line",
+    "price": 1200]
+}
+  PROVEEDOR
+{
+  ["id": "EDQPROV30001",
+  "name": "Hugo"]
+}
+  EDITORIAL
+{
+  ["id": "EDQEDIT70001",
+  "name": "DK"]
+}
+  BARCODES
+{
+  ["barcode": 54674095343,
+  product_id: "EDQA201501CREGL2556808"],
+  ["barcode": 87526394059,
+  product_id: "EDQA201501CREGL2556808"]
+}
+{
+  EDQGEN
+}
+

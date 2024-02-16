@@ -1,0 +1,46 @@
+{
+  "Libros": [
+    {
+      "name": "Dinosaurios y Vida Prehistórica",
+      "barcode": 95666666738,
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2019,
+      "authors": [
+        "Michelet Frangüini"
+      ],
+      "kind": "Line",
+      "price": 1200,
+      "amount": 5
+    },
+    {
+      "name": "Artistas, Sus Vidas y Obras",
+      "barcode": "785474631",
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2021,
+      "authors": [
+        "Pablini Shumacher"
+      ],
+      "kind": "Line",
+      "price": 790,
+      "amount": 2
+    },
+    {
+      "name": "Artistas, Sus Vidas y Obras",
+      "barcode": "785474631",
+      "type": "book",
+      "providor": "Hugo",
+      "editorial": "DK",
+      "year": 2021,
+      "authors": [
+        "Pablini Shumacher"
+      ],
+      "kind": "Outlet",
+      "price": 420,
+      "amount": 5
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { createEDQid } from '../schemas/createEDQid.js';
-import { readJSON } from '../utils/utils.js';
+import { createEDQid } from '../../schemas/createEDQid.js';
+import { readJSON } from '../../utils/utils.js';
 const products = readJSON('../db/productos.json');
 
 export class ProductModel {
