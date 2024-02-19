@@ -2,7 +2,7 @@
 GET http://localhost:1234/products
 
 ### Recuperar todos los libros por género
-GET http://localhost:1234/products?genre=crimen
+GET http://localhost:1234/products?genre=ciencia
 
 ### Recuperar un producto por id
 GET http://localhost:1234/products/EDQA002005CPCF453464569L
@@ -12,15 +12,14 @@ POST http://localhost:1234/products
 Content-Type: application/json
 
 {
-  "name": "Trainspotting",
+  "name": "Revista Magia Prieta",
   "barcodes": [948346563],
-  "type": "book",
   "providor": "Alex",
-  "editorial": "Norton",
-  "year": 1996,
-  "author1": "Irvine Welsh",
+  "editorial": "Mosaico",
+  "year": 2022,
+  "author1": "Colectivo Mosaico",
   "kind": "Line",
-  "price": 380
+  "price": 50
 }
 
 
