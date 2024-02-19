@@ -1,15 +1,11 @@
 {
   "name": "pos-lexdev",
   "version": "1.0.0",
-  "description": "point of sale",
+  "description": "Point of Sale",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:mysql": "node --watch ./server_3_demo/server-mysql.js",
-    "start:local": "node --watch ./server_3_demo/server-local.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devone": "node --watch ./server_3_demo/app.js",
-    "dev_2": "node --watch ./server_2_demo/app.js"
+    "dev": "node --watch ./server_3_demo/server-mysql.js"
   },
   "author": "@lex_xiuhuitl",
   "license": "ISC",

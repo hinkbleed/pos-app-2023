@@ -15,6 +15,7 @@ export const createApp = ({ productModel }) => {
 
   const PORT = process.env.PORT ?? 1234;
 
+  //  Run server
   app.listen(PORT, () => {
     console.log(`serving in http://localhost:${PORT}`);
   });
