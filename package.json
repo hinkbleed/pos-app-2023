@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch ./server_3_demo/server-mysql.js"
+    "dev": "node --watch ./src/server-init.js",
+    "dev_1": "node --watch ./server_3_demo/server-mysql.js"
   },
   "author": "@lex_xiuhuitl",
   "license": "ISC",

@@ -1,0 +1,490 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas informativas sobre los productos
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../../fonts/Raleway/Raleway-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas quwe tengan que ver con información sobre el negocio
+}
+
+@font-face {
+  font-family: 'Cutive Mono';
+  src: url('../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf');
+}
+
+body {
+
+
+  .screen-box {
+
+    #appModule {
+
+      .report-view {
+        width: 100%;
+        height: 100%;
+        background: #000a18;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .report-hub-box {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          color: white;
+
+          box-shadow: inset 0 0 70px 0px #041830;
+          padding: 10px;
+          gap: 10px;
+
+
+
+          .report-box {
+            height: 100%;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &.details {
+              width: 75%;
+              height: 100%;
+
+              .report-box-details-titles {
+                width: 90%;
+                height: 40px;
+                margin: 0 0 10px 0;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 18px;
+                text-shadow: 0 0 30px white;
+
+                .details-titles-title {
+                  width: 30%;
+                }
+
+                .details-titles-btns-box {
+                  width: 50%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-evenly;
+
+                  ul {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    list-style: none;
+
+                    .details-btn {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 170px;
+                      height: 40px;
+                      border: 1px solid #4e4e4e;
+                      border-radius: 7px;
+                      cursor: pointer;
+                      box-shadow: 0 0 50px 0px #212a35;
+                      transition: 300ms;
+                      background: #0d0d12;
+                      color: #cccccc;
+
+                      &:hover {
+                        border: 1px solid #898989;
+                      }
+
+                      &.active {
+                        background: transparent;
+                        color: white;
+                        box-shadow: 0 0 100px 0px #2788ff;
+                        cursor: default;
+                        text-shadow: 0 0 50px white;
+                        border: 1px solid #816dff;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .event-details-box {
+                width: 100%;
+                height: 90%;
+                border-radius: 8px;
+                box-shadow: 0 0 50px #002047;
+                background: #000a18;
+                padding: 0 10px;
+                z-index: 100;
+
+                .details-box-module {
+                  width: 100%;
+                  height: 100%;
+                  display: none;
+                  flex-direction: column;
+                  align-items: flex-end;
+                  overflow-y: scroll;
+                  gap: 20px;
+
+                  &::-webkit-scrollbar {
+                    display: none;
+                  }
+
+                  &.active {
+                    display: flex;
+                  }
+
+                  .event-day {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: 10px;
+                    padding: 0 5px;
+
+                    .event-day-header {
+                      width: 100%;
+                      height: 100px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      position: sticky;
+                      top: 0;
+                      font-size: 10px;
+                      background: #000a18;
+                      background: linear-gradient(180deg, #000a18 80%, #000a1800 100%);
+
+                      .day-date {
+                        font-size: 22px;
+                        width: 40%;
+                        text-shadow: 0 0 40px #ffffffce;
+                      }
+
+                      .options-box {
+                        width: 60%;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        .details-summary {
+                          width: 50%;
+                          height: auto;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          font-size: 12px;
+
+                          .summary {
+
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+
+                            .summary-item {
+                              margin-bottom: 5px;
+                            }
+
+                            &.labels {
+                              width: 40%;
+
+                              .label {
+                                height: 15px;
+                              }
+                            }
+
+                            &.cants {
+                              width: 30%;
+                              margin: 0 15% 0 0;
+
+                              .cant {
+                                height: 15px;
+                              }
+
+                            }
+                          }
+                        }
+
+                        .daily-total-box {
+                          width: 40%;
+                          height: 100%;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+
+                          .daily-venta {
+                            height: 40px;
+                            width: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 10px 20px;
+                            font-size: 16px;
+                            text-shadow: 0 0 50px #000a18;
+                            border-radius: 10px;
+                            background: #0f5a36;
+                            border: 1px solid #27504a;
+                            box-shadow: 0 0 30px 1px #06011d;
+                            font-weight: 400;
+                            transition: all 300ms ease;
+
+                            cursor: pointer;
+
+                            &:hover {
+                              background: #37385e;
+
+                              border: 1px solid #7f90ff;
+                            }
+
+                            .daily-venta-numb {
+                              font-size: 22px;
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    .detailed-venta {
+                      width: 95%;
+                      height: auto;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      border-radius: 5px 30px 5px 5px;
+                      margin: 0 10px 15px 0;
+                      overflow: hidden;
+                      box-shadow: inset 0 0 50px 0px #1a1f3c;
+                      border-bottom: 1px solid #5683ff;
+
+                      &:nth-last-child(1) {
+                        margin-bottom: 20px;
+                      }
+
+                      .venta-head {
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 10px;
+                        box-shadow: inset 0 10px 10px 0 #507fff3e;
+
+                        .head-item {
+                          width: 30%;
+                          height: 40px;
+                          font-size: 16px;
+
+                          display: flex;
+                          align-items: center;
+
+                          &.venta-id {
+                            font-family: monospace;
+                            font-weight: 100;
+                            justify-content: center;
+
+                          }
+
+                          &.date-hour {
+                            font-size: 14px;
+                            align-items: flex-start;
+                            padding: 5px;
+                          }
+
+                          &.venta-price-box {
+                            justify-content: flex-end;
+
+
+
+                            .price-carats {
+                              height: 30px;
+                              width: auto;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              padding: 5px 15px;
+                              font-size: 16px;
+                              text-shadow: 0 0 50px #000a18;
+                              border-radius: 5px 20px 5px 5px;
+                              background: #1c2e2e;
+                              border: 1px solid #27504a;
+                              box-shadow: 0 0 30px 1px #06011d;
+                              font-weight: 400;
+                              transition: all 300ms ease;
+
+                              cursor: pointer;
+
+                              &:hover {
+                                background: #293c57;
+
+                                border: 1px solid #58a79b;
+                              }
+
+                              .price-numb {
+                                font-size: 20px;
+                              }
+                            }
+                          }
+                        }
+                      }
+
+                      .div-line {
+                        width: 90%;
+                        height: 1px;
+                        background: #000a18;
+                        background: linear-gradient(90deg, #000a18 10%, #0046a8 40%, #75afff 50%, #0046a8 60%, #000a18 90%);
+
+                      }
+
+                      .venta-details {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        .details-summary {
+                          width: 50%;
+                          height: auto;
+                          display: flex;
+                          justify-content: flex-end;
+                          font-size: 14px;
+
+                          .summary {
+
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+
+                            .summary-item {
+                              margin-top: 5px;
+
+                              &:nth-last-child(1) {
+                                margin-bottom: 5px;
+                              }
+                            }
+
+                            &.labels {
+                              width: 40%;
+
+                              .label {
+                                height: 20px;
+                              }
+                            }
+
+                            &.cants {
+                              width: 30%;
+                              margin: 0 15% 0 0;
+
+                              .cant {
+                                height: 20px;
+                              }
+
+                            }
+                          }
+                        }
+                      }
+
+                      .venta-body {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        font-size: 15px;
+
+                        .venta-item {
+                          width: 100%;
+                          height: 45px;
+                          display: flex;
+                          flex-direction: column;
+                          align-items: center;
+                          justify-content: center;
+                          border: 1px solid #24225c;
+                          border-radius: 5px;
+
+                          &:nth-child(odd) {
+                            background: #0d0c29;
+                          }
+
+                          .bodypart {
+                            width: 100%;
+                            height: 25px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: flex-end;
+
+                            .item-info {
+                              height: 25px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+
+                              &.cant {
+                                width: 5%;
+                                justify-content: flex-end;
+                              }
+
+                              &.titulo {
+                                width: 40%;
+                                justify-content: flex-start;
+                                padding: 0 30px;
+                              }
+
+                              &.codebar {
+                                width: 15%;
+                                justify-content: center;
+                                padding: 0 30px;
+                              }
+
+                              &.precio {
+                                width: 10%;
+                              }
+
+                              &.disc {
+                                width: 10%;
+                              }
+
+                              &.subtotal {
+                                width: 20%;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            &.balance {
+              width: 25%;
+              height: 98%;
+              border-radius: 8px;
+              box-shadow: 0 0 50px #002047;
+              background: #000a18;
+            }
+          }
+        }
+      }
+    }
+  }
+}

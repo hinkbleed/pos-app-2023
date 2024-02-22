@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/app/interface/styles.css">
+</head>
+
+<body>
+  <%- include('partials/interface/header') %>
+
+    <main class="screen-box" id="screenBox">
+      <%- include('partials/interface/sidebar') %>
+        <div class="module" id="appModule">
+          <%- include('partials/shop/shop') %>
+          <%- include('partials/report/report') %>
+          <%- include('partials/data/data') %>
+          <%- include('partials/data/articles/articles') %>
+        </div>
+
+    </main>
+    <script type="text/javascript" src="/scripts/interface/script.js"></script>
+    <script type="text/javascript" src="/scripts/shop/script.js"></script>
+    <script type="text/javascript" src="/scripts/report/script.js"></script>
+    <script type="text/javascript" src="/scripts/data/script.js"></script>
+</body>
+
+</html>
