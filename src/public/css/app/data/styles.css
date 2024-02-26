@@ -236,16 +236,14 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .index-space {
   width: 100%;
-  height: 80%;
+  height: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 10px;
   overflow-y: scroll;
   color: black;
-}
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .index-space::-webkit-scrollbar {
-  display: none;
+  scrollbar-width: none;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .index-space .main-selectors {
   width: 100%;
@@ -279,19 +277,29 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index {
   width: 100%;
-  height: 15%;
+  height: 30%;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 0;
+  gap: 10px;
+}
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index .storage-btn {
+  width: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index .add-item {
-  font-size: 20px;
-  transition: 200ms;
   cursor: pointer;
 }
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index .add-item:hover {
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index .storage-btn:hover {
   text-shadow: 0 0 1px black;
+}
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-menu .options-index .storage-btn.add {
+  font-size: 20px;
+  transition: 200ms;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables {
   height: 100%;
@@ -329,24 +337,24 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
   width: 4%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-name {
-  width: 25%;
+  width: 22%;
   justify-content: flex-start;
-  padding: 0 30px;
-}
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-ed {
-  width: 6%;
+  padding: 0 20px;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-price {
-  width: 10%;
+  width: 8%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-barcode {
-  width: 15%;
+  width: 14%;
 }
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-specs {
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-kind {
   width: 5%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-providor {
-  width: 10%;
+  width: 7%;
+}
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.product-edqId {
+  width: 19%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .heads .all-items-head .head-item.last-product-inserc {
   width: 12%;
@@ -365,13 +373,13 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
   align-items: center;
   justify-content: center;
   position: relative;
+  font-size: 12px;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-size: 14px;
   overflow: scroll;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table::-webkit-scrollbar {
@@ -379,7 +387,7 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item {
   width: 100%;
-  min-height: 40px;
+  min-height: 30px;
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -394,7 +402,7 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
   background: #130c27;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item:nth-last-child(1) {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop {
   height: 100%;
@@ -410,24 +418,24 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
   width: 4%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-name {
-  width: 25%;
+  width: 22%;
   justify-content: flex-start;
   padding: 0 20px;
 }
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-ed {
-  width: 6%;
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-price {
+  width: 8%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-barcode {
-  width: 15%;
+  width: 14%;
 }
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-spec {
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-kind {
   width: 5%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-providor {
-  width: 10%;
+  width: 7%;
 }
-body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-price {
-  width: 10%;
+body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-edqId {
+  width: 19%;
 }
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .inv-table .storage-item .stg-item-prop.last-item-inserc {
   width: 12%;
@@ -441,7 +449,7 @@ body .screen-box #appModule .section-data-view .article-module .data-box .row.tw
 body .screen-box #appModule .section-data-view .article-module .data-box .row.two .win-tables .items-tables .fade-line {
   background: transparent;
   width: 100%;
-  height: 5%;
+  height: 7%;
   position: absolute;
   bottom: 0;
   background: #000000;
