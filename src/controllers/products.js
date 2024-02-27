@@ -1,4 +1,5 @@
 import { validatePartialProduct, validateProduct } from '../schemas/validateProduct.js';
+import { structureProducts } from '../schemas/storageStructures.js';
 
 export class ProductController {
   constructor ({ productModel }) {
@@ -8,7 +9,8 @@ export class ProductController {
   getAll = async (req, res) => {
     const { genre } = req.query;
     const products = await this.productModel.getAll({ genre });
-    res.json(products);
+    const p = structureProducts(products);
+    res.send(p);
   };
 
   getById = async (req, res) => {

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "DMSans";
+  src: url("../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../../../onts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Cutive Mono";
+  src: url("../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .screen-box .entry-btn {
+  width: 200px;
+  height: 80px;
+  background: #1e0055;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */

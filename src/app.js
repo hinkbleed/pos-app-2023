@@ -16,7 +16,7 @@ export const createApp = ({ productModel }) => {
   app.use('/', appStarter());
   app.use(express.static(join(__dirname, 'public')));
 
-  app.use('/data/products', createProductRouter({ productModel }));
+  app.use('/data/storage', createProductRouter({ productModel }));
 
   const PORT = process.env.PORT ?? 1234;
 

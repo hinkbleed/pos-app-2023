@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title%></title>
-  <link rel="stylesheet" href="/css/app/interface/styles.css">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/home/interface/styles.css">
+  <link rel="stylesheet" href="/css/home/hub/styles.css">
 </head>
+
 <body>
   <%- include('partials/home/home-header') %>
 
-  <main class="screen-box" id="screenBox">
-    <%- include('partials/home/home') %>
-  </main>
-  
+    <main class="screen-box" id="screenBox">
+      <%- include('partials/home/home') %>
+    </main>
+
 </body>
+
 </html>

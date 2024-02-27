@@ -5,7 +5,7 @@ const config = {
   host: 'localhost',
   user: 'root',
   port: 3306,
-  password: 'teotDev',
+  password: 'edqdev',
   database: 'devDemOne'
 };
 const connection = await mysql.createConnection(config);
@@ -50,7 +50,6 @@ export class ProductModel {
     const [products] = await connection.query(
       'SELECT book_id, name, providor, editorial, year, author_1, kind, price FROM books;'
     );
-
     return products;
   }
 
