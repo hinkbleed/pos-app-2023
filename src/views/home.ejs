@@ -12,13 +12,31 @@
   <link rel="stylesheet" href="/css/home/hub/styles.css">
 </head>
 
-<body>
+<body onload="document.getElementById('password').focus();">
+  <div class="ver-box">
+    ver. 0.5.8
+  </div>
+
+  <div class="init-login">
+    <div class="logo-box">
+      <img class="logo" src="/img/logo.png" alt="">
+    </div>
+    <div class="init-hub">
+      <div class="icon-box">
+        <img class="login-icon" src="/svg/people-circle.svg" alt="">
+      </div>
+      <div class="login-box">
+        <label for="password">Bienvenidx</label>
+        <input type="password" id="password">
+        <a class="login-btn" href="/shop">Entrar</a>
+      </div>
+    </div>
+  </div>
+
+
+
   <%- include('partials/home/home-header') %>
-
-    <main class="screen-box" id="screenBox">
-      <%- include('partials/home/home') %>
-    </main>
-
+    <%- include('partials/home/home') %>
 </body>
 
 </html>

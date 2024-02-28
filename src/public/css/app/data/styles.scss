@@ -155,9 +155,12 @@ body {
                   background: rgba(255, 0, 0, 0.128);
                   transition: 300ms;
                   cursor: pointer;
+                  text-decoration: none;
+                  color: red;
 
                   &:hover {
                     background: red;
+                    color: white;
                   }
                 }
               }

@@ -22,82 +22,119 @@
 }
 
 body {
+  height: 100svh;
+  width: 100%;
+  display: block;
+  position: relative;
   background: #000000;
   color: #c4c4c4;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   font-family: 'DMSans';
   font-style: normal;
 
-  header {
-    position: relative;
-    width: 100%;
-    height: 6%;
-    background: #295294;
-    background: linear-gradient(100deg, #240942 10%, #272766 51%, #295294 100%);
-    box-shadow: inset 0 -15px 30px 0 #0f0f3a9f;
+  .ver-box {
+    position: absolute;
+    width: 5%;
+    height: 25px;
+    background: black;
+    margin: 5px;
     display: flex;
-    align-items: center;
-    z-index: 100;
-
-    .logo-box {
-      display: flex;
-      height: 100%;
-      width: 30%;
-      align-items: center;
-
-      .logo {
-        height: 40px;
-        margin: 40px;
-      }
-
-      .text {
-        font-size: 20px;
-      }
-    }
-
-
-    span {
-      position: absolute;
-      height: 100%;
-      font-size: 13px;
-      font-weight: 600;
-      text-shadow: 0 0 2px white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: 300ms;
-      right: 0;
-      margin: 0 120px 0 0;
-    }
-
-    .ver-box {
-      position: absolute;
-      width: 5%;
-      height: 25px;
-      background: black;
-      margin: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-      margin-left: 100px;
-      right: 0;
-    }
-  }
-
-  .screen-box {
-    width: 100%;
-    height: 94%;
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: transparent;
+    border-radius: 2px;
+    margin-left: 100px;
+    right: 0;
+    top: 0;
+
+    z-index: 100;
+  }
+
+  .init-login {
     position: relative;
+    width: 100%;
+    height: 100%;
+    background: #295294;
+    background: linear-gradient(100deg, #1f033f 10%, #272766 61%, #1652b3 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(100px);
+
+    .logo-box {
+      height: 20%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2%;
+
+      .logo {
+        height: 70%;
+      }
+    }
+
+    .init-hub {
+      width: 90%;
+      max-width: 300px;
+      height: 60%;
+      border: 1px solid #ffffff3c;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 0 20px #ffffff28, inset 0 0 40px #ffffff0d;
+
+      .icon-box {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .login-icon {
+          height: 80%;
+          filter: invert(1);
+        }
+      }
+
+      .login-box {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+          font-size: 28px;
+          font-weight: 400;
+          margin-bottom: 30px;
+        }
+
+        input {
+          width: 75%;
+          height: 30px;
+          outline: none;
+          background: transparent;
+          border: 1px solid #ffffffd6;
+          border-radius: 10px;
+          color: #ffffff;
+          padding: 0 10px;
+          font-size: 18px;
+        }
+
+        .login-btn {
+          width: 40%;
+          height: 35px;
+          margin-top: 40px;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ffffff;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
 

@@ -17,54 +17,16 @@
 }
 
 body {
+  height: 100svh;
+  width: 100%;
+  display: block;
+  position: relative;
   background: #000000;
   color: #c4c4c4;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   font-family: "DMSans";
   font-style: normal;
 }
-body header {
-  position: relative;
-  width: 100%;
-  height: 6%;
-  background: #295294;
-  background: linear-gradient(100deg, #240942 10%, #272766 51%, #295294 100%);
-  box-shadow: inset 0 -15px 30px 0 rgba(15, 15, 58, 0.6235294118);
-  display: flex;
-  align-items: center;
-  z-index: 100;
-}
-body header .logo-box {
-  display: flex;
-  height: 100%;
-  width: 30%;
-  align-items: center;
-}
-body header .logo-box .logo {
-  height: 40px;
-  margin: 40px;
-}
-body header .logo-box .text {
-  font-size: 20px;
-}
-body header span {
-  position: absolute;
-  height: 100%;
-  font-size: 13px;
-  font-weight: 600;
-  text-shadow: 0 0 2px white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: 300ms;
-  right: 0;
-  margin: 0 120px 0 0;
-}
-body header .ver-box {
+body .ver-box {
   position: absolute;
   width: 5%;
   height: 25px;
@@ -76,16 +38,88 @@ body header .ver-box {
   border-radius: 2px;
   margin-left: 100px;
   right: 0;
+  top: 0;
+  z-index: 100;
 }
-body .screen-box {
+body .init-login {
+  position: relative;
   width: 100%;
-  height: 94%;
+  height: 100%;
+  background: #295294;
+  background: linear-gradient(100deg, #1f033f 10%, #272766 61%, #1652b3 100%);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
+body .init-login .logo-box {
+  height: 20%;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2%;
+}
+body .init-login .logo-box .logo {
+  height: 70%;
+}
+body .init-login .init-hub {
+  width: 90%;
+  max-width: 300px;
+  height: 60%;
+  border: 1px solid rgba(255, 255, 255, 0.2352941176);
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1568627451), inset 0 0 40px rgba(255, 255, 255, 0.0509803922);
+}
+body .init-login .init-hub .icon-box {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .init-login .init-hub .icon-box .login-icon {
+  height: 80%;
+  filter: invert(1);
+}
+body .init-login .init-hub .login-box {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .init-login .init-hub .login-box label {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+body .init-login .init-hub .login-box input {
+  width: 75%;
+  height: 30px;
+  outline: none;
   background: transparent;
-  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.8392156863);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 0 10px;
+  font-size: 18px;
+}
+body .init-login .init-hub .login-box .login-btn {
+  width: 40%;
+  height: 35px;
+  margin-top: 40px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 @keyframes appear {

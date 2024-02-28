@@ -134,9 +134,12 @@ body .screen-box #appModule .data-view .data-hub .data-hub-section .section.perf
   background: rgba(255, 0, 0, 0.128);
   transition: 300ms;
   cursor: pointer;
+  text-decoration: none;
+  color: red;
 }
 body .screen-box #appModule .data-view .data-hub .data-hub-section .section.perfil .logout:hover {
   background: red;
+  color: white;
 }
 body .screen-box #appModule .section-data-view {
   position: absolute;

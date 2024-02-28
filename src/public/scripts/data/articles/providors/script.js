@@ -1,15 +1,11 @@
-const storageBtn = document.getElementById('viewStorage');
 const providorsBtn = document.getElementById('viewProvidors');
 const addProvidorBtn = document.getElementById('addProvidorBtn');
 const providorsScreen = document.getElementById('providorsScreen');
 const addProvidorScreen = document.getElementById('addProvidorScreen');
 const cancelAddProvBtn = document.getElementById('cancelAddProvBtn');
 const acceptProvForm = document.getElementById('addProvidorForm');
-
 const closeWin = document.getElementById('closeDataWin');
 const cardsBox = document.getElementById('cardsBox');
-
-storageBtn.addEventListener('click', viewStorage);
 
 providorsBtn.addEventListener('click', viewProvidors);
 
@@ -21,22 +17,6 @@ acceptProvForm.addEventListener('submit', function (event) {
   event.preventDefault();
   acceptAddProv();
 });
-
-function viewStorage () {
-  fetch('/data/storage')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById('stgTable').innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
-}
 
 function viewProvidors () {
   fetch('/data/providors')
@@ -59,21 +39,7 @@ function startAddProvidor () {
   providorsScreen.classList.add('hide');
   addProvidorScreen.classList.add('active');
 }
-/*  function startAddProvidor () {
-  fetch('/data/providors/add')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud Falló');
-      }
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById('providorsScreen').innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
-} */
+
 function cancelAddProv () {
   closeWin.classList.remove('hide');
   providorsScreen.classList.remove('hide');
