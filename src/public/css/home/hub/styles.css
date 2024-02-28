@@ -16,7 +16,13 @@
   box-sizing: border-box;
 }
 
-body .screen-box .entry-btn {
+body .screen-box .init-hub {
+  width: 100%;
+  height: 100%;
+  background: rgb(20, 0, 78);
+  background: linear-gradient(0deg, rgb(20, 0, 78) 50%, rgb(0, 115, 139) 100%);
+}
+body .screen-box .init-hub .entry-btn {
   width: 200px;
   height: 80px;
   background: #1e0055;

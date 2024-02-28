@@ -1,4 +1,3 @@
-console.log('shop');
 const ticketRows = document.querySelectorAll('.ticketRow');
 
 ticketRows.forEach(function (row) {

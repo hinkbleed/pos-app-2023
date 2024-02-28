@@ -1,24 +1,24 @@
-<div class="section-data-view active" id="sectionDataView">
+<div class="section-data-view" id="sectionDataView">
   <div class="close-win" id="closeDataWin">
     <img src="./svg/exit.svg" alt="">
   </div>
-  <div class="article-module" id="invView">
-    <div class="data-box">
+  <div class="article-socket">
+    <div class="data-box storage-box">
+
       <div class="row one">
-        <div class="exit-space"></div>
         <div class="box-name">
           <p class="text-name">Inventario: 57 artículos</p>
         </div>
 
       </div>
-      <div class="row two">
+      <div class="row two storage-screen">
         <div class="win-tables">
           <div class="heads">
             <div class="all-items-head">
               <div class="head-item list-position">#</div>
               <div class="head-item product-name">Nombre del artículo</div>
               <div class="head-item product-price">Precio</div>
-              
+
               <div class="head-item product-barcode">Barcode</div>
               <div class="head-item product-kind">Tipo</div>
               <div class="head-item product-providor">Prov.</div>
@@ -30,7 +30,7 @@
           </div>
           <div class="items-tables">
             <div class="inv-table" id="stgTable">
-              
+
             </div>
             <div class="fade-line"></div>
           </div>
@@ -53,17 +53,95 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="article-module">
-    <div class="data-box">Generar Inventario</div>
-  </div>
-  <div class="article-module">Añadir descuento</div>
-  <div class="article-module">Configurar descuento</div>
-  <div class="article-module">Añadir artículo</div>
-  <div class="article-module active">
-    <div class="data-box">
+    <div class="data-box storageOpt-box">
+      <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Opciones de Inventario</p>
+        </div>
 
+      </div>
+      <div class="row two">
+      </div>
+    </div>
+
+    <div class="data-box discounts-box">
+      <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Configuración de Descuentos</p>
+        </div>
+
+      </div>
+      <div class="row two">
+      </div>
+    </div>
+
+    <!--  <div class="data-box add-item-wtf">
+        <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Añadir artículo(?)</p>
+        </div>
+
+      </div>
+      <div class="row two">
+      </div>
+    </div> -->
+
+    <div class="data-box providors-box">
+      <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Proveedores</p>
+        </div>
+
+      </div>
+      <div class="row two providors-screen">
+        <div class="view-providors" id="providorsScreen">
+          <div class="win-providors">
+            <div class="cards-box" id="cardsBox"></div>
+          </div>
+          <div class="win-menu">
+            <div class="index-space">
+              <div class="main-selectors">
+                <div class="main-index-btn active">Todos</div>
+                <div class="main-index-btn">Disponible</div>
+                <div class="main-index-btn">Sin existencias</div>
+              </div>
+            </div>
+            <div class="options-index">
+              <div class="providor-btn add" id="addProvidorBtn">+ Añadir Proveedor</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="add-providor-screen" id="addProvidorScreen">
+          <div class="addProv-formBox">
+            <div class="tag">Añadir nuevo proveedor</div>
+            <form class="form" id="addProvidorForm">
+              <label for="provNameInput">Nuevo proveedor:</label>
+              <input type="text" name="provName" id="provNameInput" required>
+              <label for="provRespInput">Nombre del responsable:</label>
+              <input type="text" name="provResp" id="provRespInput" required>
+              <label for="provNumberInput">Número de contacto:</label>
+              <input type="text" name="provNumber" id="provNumberInput" maxlength="10">
+
+              <button type="button"class="cancel" id="cancelAddProvBtn">Cancelar</button>
+              <button type="submit" class="accept" id="acceptAddProvBtn">Aceptar</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="data-box">
+      <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Editoriales</p>
+        </div>
+
+      </div>
+      <div class="row two">
+      </div>
     </div>
   </div>
-  <div class="article-module">Añadir Editorial</div>
 </div>

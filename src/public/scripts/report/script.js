@@ -1,4 +1,3 @@
-console.log('report');
 const detailsBtn = document.querySelectorAll('.details-btn');
 const detailsModule = document.querySelectorAll('.details-box-module');
 

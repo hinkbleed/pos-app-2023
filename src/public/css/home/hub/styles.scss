@@ -25,14 +25,21 @@ body {
 
   .screen-box {
 
-    .entry-btn {
-      width: 200px;
-      height: 80px;
-      background: #1e0055;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .init-hub {
+      width: 100%;
+      height: 100%;
+      background: rgb(20, 0, 78);
+      background: linear-gradient(0deg, rgba(20, 0, 78, 1) 50%, rgba(0, 115, 139, 1) 100%);
+
+      .entry-btn {
+        width: 200px;
+        height: 80px;
+        background: #1e0055;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }

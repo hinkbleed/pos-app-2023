@@ -7,8 +7,7 @@ export class ProductController {
   }
 
   getAll = async (req, res) => {
-    const { genre } = req.query;
-    const products = await this.productModel.getAll({ genre });
+    const products = await this.productModel.getAll();
     const p = structureProducts(products);
     res.send(p);
   };

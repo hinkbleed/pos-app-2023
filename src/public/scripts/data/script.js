@@ -1,6 +1,5 @@
-console.log('data');
 const optionBtn = document.querySelectorAll('.option-btn');
-const artModules = document.querySelectorAll('.article-module');
+const artModules = document.querySelectorAll('.data-box');
 const sectionView = document.getElementById('sectionDataView');
 const closeWinBtn = document.getElementById('closeDataWin');
 
