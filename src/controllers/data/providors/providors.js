@@ -1,5 +1,5 @@
-import { structureProvidors } from '../../schemas/providors/htmlProvidors.js';
-import { validateProvidor } from '../../schemas/providors/validateProvidor.js';
+import { structureProvidors } from '../../../schemas/providors/htmlProvidors.js';
+import { validateProvidor } from '../../../schemas/providors/validateProvidor.js';
 
 export class ProvidorController {
   constructor ({ providorModel }) {

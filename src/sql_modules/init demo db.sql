@@ -2,17 +2,6 @@ DROP DATABASE IF EXISTS devDemOne;
 CREATE DATABASE devDemOne;
 USE devDemOne;
 
--- DROP TABLE providor;
-CREATE TABLE providor (
-	prov_id VARCHAR(13) PRIMARY KEY,
-    prov_name VARCHAR(255) NOT NULL
-);
-INSERT INTO providor (prov_id, prov_name) VALUES
-("EDQPROV030001", "Hugo"),
-("EDQPROV030002", "Alex"),
-("EDQPROV030003", "Carlos"),
-("EDQPROV030004", "Paty");
-
 -- DROP TABLE editorial;
 CREATE TABLE editorial (
 	edit_id VARCHAR(13) PRIMARY KEY,
@@ -62,7 +51,7 @@ CREATE TABLE genres (
 );
 INSERT INTO genres (genreId, genre_name) VALUES
 ('EDQGENR00EN','Enciclopedia'),
-('EDQGENR00CI', 'Ciencias'),
+('EDQGENR00CI', 'Ciencia'),
 ('EDQGENR00AR', 'Arte'),
 ('EDQGENR00NV', 'Novela'),
 ('EDQGENR00CR', 'Crimen');
@@ -82,6 +71,7 @@ VALUES
     ((SELECT book_id FROM books WHERE name = 'Artistas, Sus Vidas y Obras'),(SELECT genreId FROM genres WHERE genre_name = 'Enciclopedia'),(SELECT genre_name FROM genres WHERE genre_name = 'Enciclopedia')),
     ((SELECT book_id FROM books WHERE name = 'Artistas, Sus Vidas y Obras'),(SELECT genreId FROM genres WHERE genre_name = 'Arte'),(SELECT genre_name FROM genres WHERE genre_name = 'Arte')),
     ((SELECT book_id FROM books WHERE name = 'Dinosaurios y Vida Prehistórica'),(SELECT genreId FROM genres WHERE genre_name = 'Enciclopedia'),(SELECT genre_name FROM genres WHERE genre_name = 'Enciclopedia')),
-    ((SELECT book_id FROM books WHERE name = 'Dinosaurios y Vida Prehistórica'),(SELECT genreId FROM genres WHERE genre_name = 'Ciencias'),(SELECT genre_name FROM genres WHERE genre_name = 'Ciencias'));
+    ((SELECT book_id FROM books WHERE name = 'Dinosaurios y Vida Prehistórica'),(SELECT genreId FROM genres WHERE genre_name = 'Ciencia'),(SELECT genre_name FROM genres WHERE genre_name = 'Ciencia'));
     
     SELECT product_id, genreId, gen_name FROM books_genres;
+    

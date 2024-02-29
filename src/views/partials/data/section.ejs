@@ -96,7 +96,7 @@
       <div class="row two providors-screen">
         <div class="view-providors" id="providorsScreen">
           <div class="win-providors">
-            <div class="cards-box" id="cardsBox"></div>
+            <div class="cards-box" id="provCardsBox"></div>
           </div>
           <div class="win-menu">
             <div class="index-space">
@@ -123,8 +123,10 @@
               <label for="provNumberInput">Número de contacto:</label>
               <input type="text" name="provNumber" id="provNumberInput" maxlength="10">
 
-              <button type="button" class="cancel" id="cancelAddProvBtn">Cancelar</button>
+              <div class="btns">
+                <button type="button" class="cancel" id="cancelAddProvBtn">Cancelar</button>
               <button type="submit" class="accept" id="acceptAddProvBtn">Aceptar</button>
+              </div>
             </form>
           </div>
 
@@ -140,7 +142,41 @@
         </div>
 
       </div>
-      <div class="row two">
+      <div class="row two editorials-screen">
+        <div class="view-editorials" id="editorialsScreen">
+          <div class="win-editorials">
+            <div class="cards-box" id="editCardsBox"></div>
+          </div>
+  
+          <div class="win-menu">
+            <div class="index-space">
+              <div class="main-selectors">
+                <div class="main-index-btn active">Todos</div>
+                <div class="main-index-btn">Disponible</div>
+                <div class="main-index-btn">Sin existencias</div>
+              </div>
+            </div>
+            <div class="options-index">
+              <div class="editorial-btn add" id="addEditorialBtn">+ Añadir Editorial</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="add-editorial-screen" id="addEditorialScreen">
+          <div class="addEdit-formBox">
+            <div class="tag">Añadir nueva editorial</div>
+            <form class="form" id="addEditorialForm">
+              <label for="editNameInput">Nombre de la editorial:</label>
+              <input type="text" name="editName" id="editNameInput" required>
+
+              <div class="btns">
+                <button type="button" class="cancel" id="cancelAddEditBtn">Cancelar</button>
+              <button type="submit" class="accept" id="acceptAddEditBtn">Aceptar</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>

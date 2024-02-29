@@ -3,7 +3,7 @@ import { Router } from 'express';
 export const appStarter = () => {
   const appRouter = Router();
 
-  appRouter.get('/', (req, res) => res.render('home', { title: 'EDQ | Home' }));
+  appRouter.get('/', (req, res) => res.render('login', { title: 'EDQ | Home' }));
 
   appRouter.get('/shop', (req, res) => res.render('app', { title: 'EDQ | Shop' }));
   appRouter.get('/partials/:name', (req, res) => {

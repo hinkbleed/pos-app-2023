@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { ProvidorController } from '../../controllers/data/providors.js';
+import { ProvidorController } from '../../../controllers/data/providors/providors.js';
 
 export const createProvidorRouter = ({ providorModel }) => {
   const providorsRouter = Router();

@@ -5,7 +5,7 @@ const addProvidorScreen = document.getElementById('addProvidorScreen');
 const cancelAddProvBtn = document.getElementById('cancelAddProvBtn');
 const acceptProvForm = document.getElementById('addProvidorForm');
 const closeWin = document.getElementById('closeDataWin');
-const cardsBox = document.getElementById('cardsBox');
+const provCardsBox = document.getElementById('provCardsBox');
 
 providorsBtn.addEventListener('click', viewProvidors);
 
@@ -27,21 +27,29 @@ function viewProvidors () {
       return response.text();
     })
     .then(html => {
-      cardsBox.innerHTML = html;
+      provCardsBox.innerHTML = html;
     })
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
     });
 }
 
-function startAddProvidor () {
+export function hideCloseWin () {
   closeWin.classList.add('hide');
+}
+
+export function showCloseWin () {
+  closeWin.classList.remove('hide');
+}
+
+function startAddProvidor () {
+  hideCloseWin();
   providorsScreen.classList.add('hide');
   addProvidorScreen.classList.add('active');
 }
 
 function cancelAddProv () {
-  closeWin.classList.remove('hide');
+  showCloseWin();
   providorsScreen.classList.remove('hide');
   addProvidorScreen.classList.remove('active');
   viewProvidors();

@@ -1,0 +1,37 @@
+
+
+secciones a crear
+
+	-Libros
+	-varios tipos de productos
+
+
+--	--
+EDITORIAL
+
+Al hacer click en alguna editorial se debe redirigir a otra página, pues se está saliendo uno de la sección de shop
+para entrar a otra parte de la app, en la cual se podrá aceder a información detallada de las editoriales y configurar
+otras cosas como editar los datos o eliminar aunque a para entrar a esta sección se debe tener otra contraseña.
+
+--	--
+LOGIN
+
+Al iniciar la app se dirigirá siempre a la pantalla de login, si se coloca contraseña de empleado se podrá acceder
+a la app en general salvo la sección de datos sensibles, a la cual sólo se podrá acceder si se coloca una contraseña de gerente
+ya sea en este punto o más adelante en la entrada a esta sección
+
+--	--
+HOME
+
+Tras poner la contraseña se podrá ingresar al hub de eventos donde se podrá seleccionar un evento para comenzar a vender
+en este hub también habrá botones para acceder a la sección de datos sensibles entre otras configuraciones de la aplicación
+
+¡Importante!: Aquí sólo se permitirá la creación de eventos más no la edición o eliminación por razones de seguridad
+
+--	--
+SHOP
+Tras acceder a algún evento o crear uno nuevo se redirigira a la sección de shop que es donde se concentra el núcleo de la app
+Siempre se presentará la misma aplicación con la misma interfaz y la misma lógica detrás de los eventos
+pero dependiendo del evento seleccionado o creado se presentarán nuevos datos en la sección de inventario, editorial y proveedor
+
+--	--
