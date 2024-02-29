@@ -2,17 +2,6 @@ DROP DATABASE IF EXISTS devDemOne;
 CREATE DATABASE devDemOne;
 USE devDemOne;
 
--- DROP TABLE editorial;
-CREATE TABLE editorial (
-	edit_id VARCHAR(13) PRIMARY KEY,
-    edit_name VARCHAR(255) NOT NULL
-);
-INSERT INTO editorial (edit_id, edit_name) VALUES
-("EDQEDIT070001", "BOEK"),
-("EDQEDIT070002", "DK"),
-("EDQEDIT070003", "EMU"),
-("EDQEDIT070004", "Norton");
-
 -- DROP TABLE books;
 CREATE TABLE books (
 	book_id VARCHAR(255) PRIMARY KEY,
