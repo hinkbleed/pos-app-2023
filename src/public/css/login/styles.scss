@@ -80,6 +80,7 @@ body {
       border-radius: 10px;
       margin-top: 40px;
       box-shadow: 0 0 20px #ffffff28, inset 0 0 40px #ffffff0d;
+      background: #00000054;
 
       .icon-box {
         width: 100%;
@@ -95,7 +96,7 @@ body {
         }
       }
 
-      .login-box {
+      .login-form {
         width: 100%;
         height: 50%;
         display: flex;
@@ -118,6 +119,12 @@ body {
           color: #ffffff;
           padding: 0 10px;
           font-size: 18px;
+          box-shadow: 0 0 30px #0000004a, inset 0 0 5px #ffffff3a;
+          transition: 300ms ease;
+
+          &:focus {
+            box-shadow: 0 0 20px #ffffff58, inset 0 0 30px #00000080;
+          }
         }
 
         .login-btn {
@@ -125,6 +132,7 @@ body {
           height: 35px;
           margin-top: 40px;
           color: #ffffff;
+          background: transparent;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -132,6 +140,23 @@ body {
           border-radius: 5px;
           text-decoration: none;
           font-size: 16px;
+          cursor: pointer;
+          transition: 300ms ease;
+
+          &:hover {
+            box-shadow: 0 0 30px #ffffff51;
+            background: white;
+            color: black;
+          }
+
+          &:focus {
+            outline: none;
+
+            box-shadow: 0 0 30px #ffffff51;
+            background: white;
+            color: black;
+
+          }
         }
       }
     }
