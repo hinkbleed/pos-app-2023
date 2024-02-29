@@ -30,8 +30,13 @@ en este hub también habrá botones para acceder a la sección de datos sensible
 
 --	--
 SHOP
+
 Tras acceder a algún evento o crear uno nuevo se redirigira a la sección de shop que es donde se concentra el núcleo de la app
 Siempre se presentará la misma aplicación con la misma interfaz y la misma lógica detrás de los eventos
 pero dependiendo del evento seleccionado o creado se presentarán nuevos datos en la sección de inventario, editorial y proveedor
 
 --	--
+EVENTO
+
+Cuando se seleccione un evento se guardará una palabra clave en base de datos que será una palabra y su id estos datos son importantes pues se estarán usando como parámetros a la hora de llamar a una u otra base de datos a la hora de hacer operaciones con ella
+de este modo se garantiza que los datos se separen por evento, es decir por cada periodo de venta que se configure
