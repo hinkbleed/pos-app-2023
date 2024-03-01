@@ -9,9 +9,9 @@ passwordForm.addEventListener('submit', function (event) {
 
 function verifyPassword (password) {
   return fetch('/login/verifypassword', {
-    method: 'POST',
+    method: 'POST', // Cambia el método a POST para enviar datos al servidor
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json' // Indica que el cuerpo de la solicitud es JSON
     },
     body: JSON.stringify({ password })
   })

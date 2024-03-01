@@ -9,7 +9,7 @@ export class PasswordController {
     try {
       const storedPasswords = await this.passwordModel.getAll();
       console.log(storedPasswords);
-      const isPasswordCorrect = storedPasswords.password.value.includes(password);
+      const isPasswordCorrect = storedPasswords.some(storedPassword => storedPassword === password);
       console.log(isPasswordCorrect);
 
       if (isPasswordCorrect) {
