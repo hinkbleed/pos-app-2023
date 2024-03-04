@@ -5,7 +5,7 @@ const config = {
   host: 'localhost',
   user: 'root',
   port: 3306,
-  password: 'teotDev',
+  password: 'edqdev',
   database: 'EDQSTORAGE'
 };
 const connection = await mysql.createConnection(config);
