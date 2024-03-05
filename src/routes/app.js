@@ -1,16 +1,24 @@
 import { Router } from 'express';
 
+export const checkAuthentication = (req, res, next) => {
+  if (req.session && req.session.authenticated) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+};
+
 export const appStarter = () => {
   const appRouter = Router();
 
-  appRouter.get('/login', (req, res) => res.render('login', { title: 'EDQ | Home' }));
+  appRouter.get('/login', (req, res) => res.render('login', { title: 'EDQ | Login' }));
 
-  appRouter.get('/shop', (req, res) => res.render('app', { title: 'EDQ | Shop' }));
+  appRouter.get('/', checkAuthentication, (req, res) => res.redirect('/home'));
+  appRouter.get('/home', checkAuthentication, (req, res) => res.render('home', { title: 'EDQ | Home' }));
+  appRouter.get('/shop', checkAuthentication, (req, res) => res.render('app', { title: 'EDQ | Shop' }));
   appRouter.get('/partials/:name', (req, res) => {
     const name = req.params.name;
     res.render(`partials/${name}/${name}`);
   });
-  /*  appRouter.get('/report', (req, res) => res.render('report', { title: 'EDQ | Reporte de Negocio' }));
-  appRouter.get('/data', (req, res) => res.render('data', { title: 'EDQ | Datos' })); */
   return appRouter;
 };

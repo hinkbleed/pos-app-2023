@@ -1,38 +1,30 @@
-const passwordForm = document.getElementById('passwordForm');
+const loginForm = document.getElementById('passwordForm');
 
-passwordForm.addEventListener('submit', function (event) {
+loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
-  const passwordInput = document.getElementById('password'); // Obtener el elemento de entrada de contraseña
-  const password = passwordInput.value;
-  verifyPassword(password);
+  login();
+  loginForm.reset();
 });
 
-function verifyPassword (password) {
-  return fetch('/login/verifypassword', {
-    method: 'POST', // Cambia el método a POST para enviar datos al servidor
+function login () {
+  const password = document.getElementById('password').value;
+
+  // Realizar la solicitud POST al backend
+  fetch('/login/auth', {
+    method: 'POST',
     headers: {
-      'Content-Type': 'application/json' // Indica que el cuerpo de la solicitud es JSON
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({ password })
   })
     .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.success) {
-        // Si la autenticación fue exitosa, redirige al usuario a alguna página
-        window.location.href = '/shop'; // Cambia '/dashboard' por la ruta deseada
+      if (response.ok) {
+        window.location.href = '/home';
       } else {
-        // Si la autenticación falló, muestra un mensaje de error al usuario
-        console.error('La autenticación falló');
-        // Aquí podrías mostrar un mensaje de error al usuario
+        throw new Error('contraseña incorrecta');
       }
     })
     .catch(error => {
-      console.error('Error al comprobar contraseña:', error);
-      // Aquí podrías mostrar un mensaje de error genérico al usuario
+      console.log(error.message);
     });
 }

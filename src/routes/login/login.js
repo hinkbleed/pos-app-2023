@@ -6,7 +6,7 @@ export const createPasswordRouter = ({ passwordModel }) => {
 
   const passwordController = new PasswordController({ passwordModel });
 
-  passwordsRouter.post('/verifypassword', passwordController.verify);
+  passwordsRouter.post('/auth', passwordController.verify);
 
   return passwordsRouter;
 };

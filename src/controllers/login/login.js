@@ -1,3 +1,5 @@
+import { PasswordModel } from '../../models/login/login.js';
+
 export class PasswordController {
   constructor ({ passwordModel }) {
     this.passwordModel = passwordModel;
@@ -5,21 +7,18 @@ export class PasswordController {
 
   verify = async (req, res) => {
     const { password } = req.body;
-    console.log(password);
     try {
-      const storedPasswords = await this.passwordModel.getAll();
-      console.log(storedPasswords);
-      const isPasswordCorrect = storedPasswords.some(storedPassword => storedPassword === password);
-      console.log(isPasswordCorrect);
-
-      if (isPasswordCorrect) {
-        res.status(200).json({ success: true });
+      const result = await PasswordModel.verifyPassword(password, req, res);
+      console.log(result);
+      if (result) {
+        req.session.authenticated = true;
+        res.sendStatus(200);
       } else {
-        res.status(401).json({ success: false });
+        res.sendStatus(401);
       }
     } catch (error) {
       console.error('Error al verificar la contraseña:', error);
-      res.status(500).json({ error: 'Error interno del servidor' });
+      res.status(500).send('Error interno del servidor');
     }
   };
 }
