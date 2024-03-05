@@ -15,11 +15,16 @@ export class PasswordModel {
 
       const [result] = await connection.execute(
         `
-        SELECT employee_password AS password FROM employeePasswords WHERE employee_password = ?
-        UNION 
-        SELECT company_password AS password FROM companyPasswords WHERE company_password = ?`,
-        [password, password]);
-
+        SELECT password
+        FROM (
+            SELECT employee_password AS password FROM employeePasswords
+            UNION ALL
+            SELECT company_password AS password FROM companyPasswords
+        ) AS allPasswords
+        WHERE BINARY password IN (?, ?)
+        `,
+        [password, password]
+      );
       await connection.end();
 
       if (result.length > 0) {

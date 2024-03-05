@@ -1,0 +1,38 @@
+body .logo-box {
+  height: 10%;
+}
+body .home-box {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-evenly;
+}
+body .home-box .hub {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+body .home-box .hub .hubBox {
+  height: 97%;
+  border: 1px solid rgba(255, 255, 255, 0.2352941176);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1568627451), inset 0 0 40px rgba(255, 255, 255, 0.0509803922);
+  background: rgba(255, 255, 255, 0.1568627451);
+  transition: 300ms ease;
+}
+body .home-box .hub .hubBox:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6156862745);
+}
+body .home-box .hub .hubBox.eventsConfig-box {
+  width: 15%;
+}
+body .home-box .hub .hubBox.events-box {
+  width: 65%;
+}
+body .home-box .hub .hubBox.adminConfig-box {
+  width: 15%;
+}/*# sourceMappingURL=styles.css.map */

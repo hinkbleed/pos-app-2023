@@ -8,12 +8,20 @@
   <title>
     <%= title%>
   </title>
-  <link rel="stylesheet" href="/css/app/interface/styles.css">
+  <link rel="stylesheet" href="/css/home/basics/styles.css">
+  <link rel="stylesheet" href="/css/home/hub/styles.css">
 </head>
 
 <body>
-  Home bitch
-  <a href="/shop">Try me bitch</a>
+  <%- include('partials/home/interface/basics') %>
+
+    <div class="home-box">
+      <div class="hub">
+        <div class="hubBox eventsConfig-box"></div>
+        <div class="hubBox events-box"></div>
+        <div class="hubBox adminConfig-box"></div>
+      </div>
+    </div>
 </body>
 
 </html>

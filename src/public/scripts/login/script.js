@@ -21,6 +21,13 @@ function login () {
       if (response.ok) {
         window.location.href = '/home';
       } else {
+        const errorElement = loginForm.querySelector('.error-element');
+        if (errorElement) {
+          errorElement.remove();
+        }
+        loginForm.insertAdjacentHTML('beforeend', `
+          <div class="error-element">¡Contraseña Inválida!</div>
+        `);
         throw new Error('contraseña incorrecta');
       }
     })

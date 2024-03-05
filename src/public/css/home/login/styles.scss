@@ -1,90 +1,32 @@
-@font-face {
-  font-family: 'DMSans';
-  src: url('../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf');
-  //Esta fuente es para las pantallas informativas sobre los productos
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('../../../onts/Raleway/Raleway-VariableFont_wght.ttf');
-  //Esta fuente es para las pantallas quwe tengan que ver con información sobre el negocio
-}
-
-@font-face {
-  font-family: 'Cutive Mono';
-  src: url('../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf');
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  height: 100svh;
-  width: 100%;
-  display: block;
-  position: relative;
-  background: #000000;
-  color: #c4c4c4;
-  font-family: 'DMSans';
-  font-style: normal;
 
-  .ver-box {
-    position: absolute;
-    width: 5%;
-    height: 25px;
-    background: black;
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    margin-left: 100px;
-    right: 0;
-    top: 0;
-
-    z-index: 100;
+  .logo-box {
+    height: 20%;
   }
 
   .init-login {
     position: relative;
     width: 100%;
-    height: 100%;
-    background: #295294;
-    background: linear-gradient(100deg, #1f033f 10%, #272766 61%, #1652b3 100%);
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(100px);
-
-    .logo-box {
-      height: 20%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2%;
-
-      .logo {
-        height: 70%;
-      }
-    }
+    z-index: 30;
 
     .init-hub {
       width: 90%;
       max-width: 300px;
-      height: 60%;
+      height: 85%;
       border: 1px solid #ffffff3c;
       border-radius: 10px;
       margin-top: 40px;
       box-shadow: 0 0 20px #ffffff28, inset 0 0 40px #ffffff0d;
       background: #00000054;
+      z-index: 30;
 
       .icon-box {
         width: 100%;
-        height: 50%;
+        height: 45%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,7 +40,7 @@ body {
 
       .login-form {
         width: 100%;
-        height: 50%;
+        height: 55%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -106,7 +48,7 @@ body {
         label {
           font-size: 28px;
           font-weight: 400;
-          margin-bottom: 30px;
+          margin-bottom: 40px;
         }
 
         input {
@@ -127,10 +69,23 @@ body {
           }
         }
 
+        .error-element {
+          width: 200px;
+          height: 30px;
+          background: #ff0000;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 65%;
+          border-radius: 7px;
+          box-shadow: 0 0 30px red;
+        }
+
         .login-btn {
           width: 40%;
           height: 35px;
-          margin-top: 40px;
+          margin-top: 70px;
           color: #ffffff;
           background: transparent;
           display: flex;
