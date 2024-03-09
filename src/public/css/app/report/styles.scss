@@ -138,11 +138,10 @@ body {
                   flex-direction: column;
                   align-items: flex-end;
                   overflow-y: scroll;
+                  scroll-snap-type: y mandatory;
+                  scrollbar-width: none;
                   gap: 20px;
-
-                  &::-webkit-scrollbar {
-                    display: none;
-                  }
+                  
 
                   &.active {
                     display: flex;
@@ -156,6 +155,7 @@ body {
                     align-items: flex-end;
                     gap: 10px;
                     padding: 0 5px;
+                    scroll-snap-align: start;
 
                     .event-day-header {
                       width: 100%;

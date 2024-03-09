@@ -1,4 +1,4 @@
-USE EDQSTORAGE;
+USE EDQINFO;
 
 DROP TABLE editorials;
 CREATE TABLE editorials (
@@ -11,7 +11,7 @@ CREATE TABLE editIDcounter (
 	editIDcounter INT NOT NULL
 );
 INSERT INTO editIDcounter (editIDcounter) VALUES
-	(70000);
+	(50000);
     
     
     

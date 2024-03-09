@@ -1,0 +1,182 @@
+body .article-socket .dataconfig-box .body .main-screen .cards-box {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: 300ms;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 0 5px;
+  scroll-snap-align: start;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  font-size: 24px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-header .eventYear {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 2%;
+  font-size: 50px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body {
+  position: relative;
+  width: 86%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card {
+  position: relative;
+  height: 330px;
+  width: 23%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2% 2% 0;
+  background: #000000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card::before {
+  width: 200px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  background: rgba(255, 252, 157, 0.2);
+  border-radius: 50%;
+  right: 0;
+  bottom: 5%;
+  transition: 400ms;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  bottom: 0;
+  right: 0;
+  background: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover .card {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1921568627);
+  border: 1px solid #000000;
+  color: #000000;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover .card .eventName {
+  padding: 10px 10px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover .card .eventLocation {
+  color: #222222;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover .card .eventDate span {
+  transform: scale(1.1);
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card:hover .edit-box {
+  opacity: 1;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.737254902);
+  transition: 400ms;
+  color: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card .eventName {
+  width: 100%;
+  height: 42%;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  padding: 15px 30px;
+  transition: 400ms ease;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card .eventLocation {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: #dddddd;
+  margin: 0 25px;
+  transition: 400ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card .eventDate {
+  width: 80%;
+  height: 35%;
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card .eventDate span {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  transition: 400ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .card .eventId {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  font-size: 14px;
+  font-weight: 500;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .edit-box {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 2%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 800ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .events-year .year-body .event-card .edit-box .entry-icon {
+  width: 100%;
+  transform: rotate(180deg);
+}/*# sourceMappingURL=styles.css.map */

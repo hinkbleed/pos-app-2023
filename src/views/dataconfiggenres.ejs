@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/dataconfig/artinterface2/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/genres/main/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/genres/add/styles.css">
+</head>
+
+<body>
+  <%- include('partials/dataconfig/interface/exitarrow') %>
+
+    <%- include('partials/dataconfig/articles/genres/main') %>
+
+      <%- include('partials/dataconfig/articles/genres/addGenre') %>
+      
+      <%- include('partials/dataconfig/articles/genres/addSubgenre') %>
+
+        <script type="module" src="/scripts/dataconfig/articles/genres/script.js"></script>
+
+</body>
+
+</html>

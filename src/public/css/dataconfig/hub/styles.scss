@@ -1,0 +1,149 @@
+body {
+
+  .configdata-view {
+    position: relative;
+    width: 100%;
+    height: 93%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    animation: appear 300ms ease;
+
+    .config-hub {
+
+      &.storage-config {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 70px 100px;
+
+        .option-btn {
+          width: 250px;
+          height: 40px;
+          font-size: 13px;
+          background: #ffffff05;
+          border-radius: 3px;
+          border: 1px solid #ffffff55;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin: 35px 50px;
+          transition: 300ms;
+
+          &:hover {
+            background: #0900215c;
+            box-shadow: 0 0 30px #ffffff26;
+          }
+        }
+      }
+
+      &.profile-config {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .profile-box {
+          width: 90%;
+          height: 80%;
+          background: #000a18;
+          border-radius: 30px;
+          border: 1px solid #ffffff1e;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 25px 25px 10px;
+
+          .btns-box {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .change-password {
+              width: 250px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              margin: 40px 0;
+              border: 1px solid #ffffff83;
+              border-radius: 5px;
+              background: #00000021;
+              transition: 300ms;
+              cursor: pointer;
+              text-decoration: none;
+              color: #ffffff;
+
+              &:hover {
+                background: #7b00ff;
+                color: white;
+              }
+            }
+          }
+
+          .log-box {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .go-back {
+              width: 250px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              border: 1px solid #2660cb;
+              border-radius: 5px;
+              background: #00a6ff21;
+              transition: 300ms;
+              cursor: pointer;
+              text-decoration: none;
+              color: #649aff;
+
+              &:hover {
+                background: #2660cb;
+                color: white;
+              }
+            }
+
+            .logout {
+              width: 250px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              border: 1px solid red;
+              border-radius: 5px;
+              background: rgba(255, 0, 0, 0.128);
+              transition: 300ms;
+              cursor: pointer;
+              text-decoration: none;
+              color: red;
+
+              &:hover {
+                background: red;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

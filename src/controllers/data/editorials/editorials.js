@@ -1,3 +1,4 @@
+/*
 import { structureEditorials } from '../../../schemas/editorials/htmlEditorials.js';
 import { validateEditorial } from '../../../schemas/editorials/validateEditorial.js';
 
@@ -51,5 +52,5 @@ export class EditorialController {
       res.status(500).json({ error: 'Error al actualizar el valor en la base de datos.' });
     }
   };
-  */
 }
+*/

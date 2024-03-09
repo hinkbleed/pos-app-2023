@@ -6,7 +6,6 @@ Permitir el procesamiento de pagos en efectivo, tarjeta o transferencia
 
 Inventario:
 
-Agregar nuevos productos al inventario, incluyendo información básica como nombre, autor, cantidad inicial, proovedor, precio de compra y precio de venta
 Actualizar automáticamente la cantidad disponible después de cada venta.
 Visualizar el inventario en tiempo real.
 
@@ -22,10 +21,6 @@ Acceder a informes de inventario para conocer las existencias actuales.
 Escaneo de Productos:
 
 Implementar la capacidad de escanear códigos de barras para agilizar el proceso de ventas.
-
-Seguridad:
-
-Implementar medidas básicas de seguridad para proteger la información del inventario y las transacciones
 
 
 Aplicación Web:

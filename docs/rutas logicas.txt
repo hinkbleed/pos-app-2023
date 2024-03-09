@@ -1,32 +1,8 @@
-
-
-secciones a crear
-
-	-Libros
-	-varios tipos de productos
-
-
---	--
-EDITORIAL
-
-Al hacer click en alguna editorial se debe redirigir a otra página, pues se está saliendo uno de la sección de shop
-para entrar a otra parte de la app, en la cual se podrá aceder a información detallada de las editoriales y configurar
-otras cosas como editar los datos o eliminar aunque a para entrar a esta sección se debe tener otra contraseña.
-
---	--
-LOGIN
+HARD LOGIN
 
 Al iniciar la app se dirigirá siempre a la pantalla de login, si se coloca contraseña de empleado se podrá acceder
 a la app en general salvo la sección de datos sensibles, a la cual sólo se podrá acceder si se coloca una contraseña de gerente
 ya sea en este punto o más adelante en la entrada a esta sección
-
---	--
-HOME
-
-Tras poner la contraseña se podrá ingresar al hub de eventos donde se podrá seleccionar un evento para comenzar a vender
-en este hub también habrá botones para acceder a la sección de datos sensibles entre otras configuraciones de la aplicación
-
-¡Importante!: Aquí sólo se permitirá la creación de eventos más no la edición o eliminación por razones de seguridad
 
 --	--
 SHOP
@@ -40,3 +16,10 @@ EVENTO
 
 Cuando se seleccione un evento se guardará una palabra clave en base de datos que será una palabra y su id estos datos son importantes pues se estarán usando como parámetros a la hora de llamar a una u otra base de datos a la hora de hacer operaciones con ella
 de este modo se garantiza que los datos se separen por evento, es decir por cada periodo de venta que se configure
+
+--	--
+PENDIENTES - !!
+
+Programar la eliminación de datos y archivos de estilos en vista tras salir de su vista propiamente.
+
+Fragmentar y extender el codigo css para eficientar el performance de la app

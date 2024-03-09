@@ -1,0 +1,90 @@
+body .add-screen .add-formBox {
+  height: auto;
+  max-height: 90%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .add-screen .add-formBox .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 100;
+  font-size: 16px;
+}
+body .add-screen .add-formBox .form {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 30px;
+}
+body .add-screen .add-formBox .form label {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  margin: 15px 0 10px 0;
+  height: 25px;
+}
+body .add-screen .add-formBox .form input {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  margin: 0 0 35px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .add-screen .add-formBox .form .btns {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .add-screen .add-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .add-screen .add-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .add-screen .add-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .add-screen .add-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .add-screen .add-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}/*# sourceMappingURL=styles.css.map */

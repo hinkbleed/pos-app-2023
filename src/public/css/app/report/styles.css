@@ -116,10 +116,9 @@ body .screen-box #appModule .report-view .report-hub-box .report-box.details .ev
   flex-direction: column;
   align-items: flex-end;
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
   gap: 20px;
-}
-body .screen-box #appModule .report-view .report-hub-box .report-box.details .event-details-box .details-box-module::-webkit-scrollbar {
-  display: none;
 }
 body .screen-box #appModule .report-view .report-hub-box .report-box.details .event-details-box .details-box-module.active {
   display: flex;
@@ -132,6 +131,7 @@ body .screen-box #appModule .report-view .report-hub-box .report-box.details .ev
   align-items: flex-end;
   gap: 10px;
   padding: 0 5px;
+  scroll-snap-align: start;
 }
 body .screen-box #appModule .report-view .report-hub-box .report-box.details .event-details-box .details-box-module .event-day .event-day-header {
   width: 100%;

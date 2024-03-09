@@ -1,4 +1,6 @@
+/*
 import { structureProvidors } from '../../../schemas/providors/htmlProvidors.js';
+
 import { validateProvidor } from '../../../schemas/providors/validateProvidor.js';
 
 export class ProvidorController {
@@ -39,4 +41,6 @@ export class ProvidorController {
       res.status(500).json({ error: 'Error al actualizar el valor en la base de datos.' });
     }
   };
+
 }
+*/

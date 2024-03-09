@@ -1,0 +1,276 @@
+body .ask-screen .ask-box {
+  height: auto;
+  max-height: 90%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .ask-screen .ask-box .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 16px;
+}
+body .ask-screen .ask-box .product-types {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 20px 0;
+}
+body .ask-screen .ask-box .product-types .type-btn {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 300ms ease;
+  font-weight: 500;
+}
+body .ask-screen .ask-box .product-types .type-btn.book {
+  background: transparent;
+  border: 1px solid rgba(255, 200, 0, 0.2666666667);
+}
+body .ask-screen .ask-box .product-types .type-btn.book:hover {
+  background: #ffe600;
+  color: black;
+}
+body .ask-screen .ask-box .product-types .type-btn.separ {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 0, 0.2705882353);
+}
+body .ask-screen .ask-box .product-types .type-btn.separ:hover {
+  background: #b32222;
+}
+body .ask-screen .ask-box .product-types .type-btn.mag {
+  background: transparent;
+  border: 1px solid rgba(157, 0, 255, 0.5529411765);
+}
+body .ask-screen .ask-box .product-types .type-btn.mag:hover {
+  background: #a621ff;
+}
+body .ask-screen .ask-box .product-types .type-btn.toy {
+  background: transparent;
+  border: 1px solid rgba(0, 81, 255, 0.5529411765);
+}
+body .ask-screen .ask-box .product-types .type-btn.toy:hover {
+  background: #0051ff;
+}
+body .ask-screen .ask-box .product-types .type-btn.paper {
+  background: transparent;
+  border: 1px solid rgba(0, 255, 47, 0.5529411765);
+}
+body .ask-screen .ask-box .product-types .type-btn.paper:hover {
+  background: #00ff2f;
+}
+body .ask-screen .ask-box .product-types .type-btn.other {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 140, 0.5529411765);
+}
+body .ask-screen .ask-box .product-types .type-btn.other:hover {
+  background: #ff008c;
+}
+body .ask-screen .ask-box .product-types .type-btn:hover {
+  font-weight: 800;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.bookline {
+  background: #ffc800;
+  background: radial-gradient(circle, #ffc800 30%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #ffc800;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.separline {
+  background: #b32222;
+  background: radial-gradient(circle, #b32222 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #b32222;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.magline {
+  background: #a621ff;
+  background: radial-gradient(circle, #a621ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #a621ff;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.toyline {
+  background: #0051ff;
+  background: radial-gradient(circle, #0051ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #0051ff;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.paperline {
+  background: #00ff2f;
+  background: radial-gradient(circle, #00ff2f 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #00ff2f;
+}
+body .ask-screen .ask-box .product-types .type-btn .innerType-line.otherline {
+  background: #ff008c;
+  background: radial-gradient(circle, #ff008c 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #ff008c;
+}
+body .ask-screen .ask-box .product-types .type-btn .btns {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .ask-screen .ask-box .product-types .type-btn .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .ask-screen .ask-box .product-types .type-btn .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .ask-screen .ask-box .product-types .type-btn .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .ask-screen .ask-box .product-types .type-btn .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .ask-screen .ask-box .product-types .type-btn .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body .ask-screen .ask-box .cancel-type {
+  width: 30%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin: 30px 30px;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .ask-screen .ask-box .cancel-type:hover {
+  background: white;
+  color: black;
+}
+body .ask-screen .add-screen .add-formBox {
+  height: auto;
+  max-height: 90%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .ask-screen .add-screen .add-formBox .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 100;
+  font-size: 16px;
+}
+body .ask-screen .add-screen .add-formBox .form {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 30px;
+}
+body .ask-screen .add-screen .add-formBox .form label {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  margin: 15px 0 10px 0;
+  height: 25px;
+}
+body .ask-screen .add-screen .add-formBox .form input {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  margin: 0 0 35px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .ask-screen .add-screen .add-formBox .form .btns {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .ask-screen .add-screen .add-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .ask-screen .add-screen .add-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .ask-screen .add-screen .add-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .ask-screen .add-screen .add-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .ask-screen .add-screen .add-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,0 @@
-1 - El controlador Inicia la aplicación, solicita la información al modelo y la entrega a la vista
-
-2 - La vista puede hacer peticiones mediante el uso del usuario, las peticiones se mandan al controlador y el controlador manda indicaciones al modelo
-
-3 - El modelo constantemente realiza envíos de datos mientras realiza los procesos que le pide el controlador
-
-4 - El modelo está integrado con bases de datos, estas pueden ser SQL, noSQL, JSON, locales, remotas, etc.

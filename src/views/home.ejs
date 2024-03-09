@@ -8,20 +8,16 @@
   <title>
     <%= title%>
   </title>
-  <link rel="stylesheet" href="/css/home/basics/styles.css">
-  <link rel="stylesheet" href="/css/home/hub/styles.css">
+  <link rel="stylesheet" href="/css/home/interface/styles.css">
+  <link rel="stylesheet" href="/css/home/main/styles.css">
 </head>
 
 <body>
   <%- include('partials/home/interface/basics') %>
 
-    <div class="home-box">
-      <div class="hub">
-        <div class="hubBox eventsConfig-box"></div>
-        <div class="hubBox events-box"></div>
-        <div class="hubBox adminConfig-box"></div>
-      </div>
-    </div>
+  <%- include('partials/home/screen/main') %>
+
+    <script type="module" src="/scripts/home/script.js"></script>
 </body>
 
 </html>

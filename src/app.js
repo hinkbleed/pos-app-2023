@@ -1,15 +1,27 @@
 import express, { json } from 'express';
 import session from 'express-session';
-import { createProductRouter } from './routes/products.js';
-import { createProvidorRouter } from './routes/data/providors/providors.js';
-import { createEditorialRouter } from './routes/data/editorials/editorials.js';
 import { corsMiddleware } from './middlewares/cors.js';
 import { appStarter, checkAuthentication } from './routes/app.js';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { createPasswordRouter } from './routes/login/login.js';
 
-export const createApp = ({ productModel, providorModel, editorialModel, passwordModel }) => {
+import { createProductRouter } from './routes/products.js';
+/*
+import { createProvidorRouter } from './routes/data/providors/providors.js';
+import { createEditorialRouter } from './routes/data/editorials/editorials.js';
+*/
+import { createPasswordRouter } from './routes/login/login.js';
+import { createPartyRouter } from './routes/publicdata/parties/parties.js';
+import { createConfigprovidorRouter } from './routes/dataconfig/providors/providors.js';
+import { createConfigeditorialRouter } from './routes/dataconfig/editorials/editorials.js';
+import { createConfiggenreRouter } from './routes/dataconfig/genres/genres.js';
+import { createConfigsubgenreRouter } from './routes/dataconfig/subgenres/subgenres.js';
+import { createDataconfigRouter } from './routes/dataconfig/index/dataconfig.js';
+import { createPublicdataRouter } from './routes/publicdata/index/publicdata.js';
+import { createConfigpartyRouter } from './routes/dataconfig/parties/parties.js';
+import { createConfigproductRouter } from './routes/dataconfig/products/products.js';
+
+export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel }) => {
   const app = express();
   app.disable('x-powered-by');
   app.use(json());
@@ -23,17 +35,41 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
     secret: 'secreto',
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 15 * 60 * 60 * 1000 }
+    cookie: {
+      maxAge: 30 * 60 * 1000
+    }
   }));
 
   app.use('/', appStarter());
   app.use('/login', createPasswordRouter({ passwordModel }));
 
+  app.use('/home', createPartyRouter({ partyModel }));
+
+  app.use('/dataconfig', createDataconfigRouter());
+
+  app.use('/dataconfig/providors', createConfigprovidorRouter({ providorModel }));
+
+  app.use('/dataconfig/editorials', createConfigeditorialRouter({ editorialModel }));
+
+  app.use('/dataconfig/genres', createConfiggenreRouter({ genreModel }));
+
+  app.use('/dataconfig/subgenres', createConfigsubgenreRouter({ subgenreModel }));
+
+  app.use('/dataconfig/parties', createConfigpartyRouter({ partyModel }));
+
+  app.use('/dataconfig/products', createConfigproductRouter({ productModel }));
+
+  app.use('/publicdata', createPublicdataRouter());
+
+  app.use('/publicdata/parties', createPartyRouter({ partyModel }));
+
   app.use('/data/storage', createProductRouter({ productModel }));
 
-  app.use('/data/providors', createProvidorRouter({ providorModel }));
-
+  /*
   app.use('/data/editorials', createEditorialRouter({ editorialModel }));
+
+  app.use('/dataconfig', createDataRouter({ dataModel }));
+  */
 
   app.use(checkAuthentication, (req, res) => {
     res.redirect('/home');

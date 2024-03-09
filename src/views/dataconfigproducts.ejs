@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/dataconfig/artinterface3/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/main/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/add/styles.css">
+
+<body>
+  <%- include('partials/dataconfig/interface/exitarrow') %>
+
+    <%- include('partials/dataconfig/articles/products/main') %>
+    <%- include('partials/dataconfig/articles/products/ask') %>
+    
+    <%- include('partials/dataconfig/articles/products/addBook') %>
+
+      <script type="module" src="/scripts/dataconfig/articles/products/listener.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,4 @@
-CREATE DATABASE EDQSTORAGE;
-USE EDQSTORAGE;
+USE EDQSYSTEM;
 
 DROP TABLE providors;
 CREATE TABLE providors (
@@ -16,3 +15,8 @@ CREATE TABLE provIDcounter (
 
 INSERT INTO provIDcounter (provIDcounter) VALUES
 	(30000);
+    
+INSERT INTO providors (prov_id, prov_name, prov_resp, prov_number) VALUES
+    ("EDQPROV030000", "EDQ", "Angeles Quiroz", "5523247286");
+    
+    

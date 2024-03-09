@@ -1,54 +1,3 @@
-{
-  "id": "",
-  "name": "",
-  "barcode": ,
-  "type": "",
-  "providor": "",
-  "editorial": "",
-  "year": ,
-  "authors": [
-    ""
-  ],
-  "genre": [""],
-  "subgenre": [""],
-  "kind": "",
-  "price": 
-}
-
-id: EDQA201501CREGL2556808  --EDQid de un libro
-
-EDQ son el nombre del negocio; A es el tipo de producto, como es A es un "Libro"; 201 corresponden a los ultimos 3 digitos del id del proveedor del producto, el id se asignó previamente al proveedor; 501 corresponden a los ultimos tres digitos del id de la editorial del producto en caso de que tenga una, la id de la editorial igualmente fue anteriormente asignada; CR corresponden a un código asignado al género y EG igualmente respecto al subgénero; L, es lo que define el "kind" del producto, si es Line (L) u Outlet (O); los últimos 7 digitos son aleatorios;
-al crearse un id cuando se crea un producto en la base de datos debe validarse si el edqid ya existe, si es así, los últimos 7 digitos aleatorios deben cambiar
-
-id: EDQB101RA2556808   --EDQid de un separador
-EDQ; B es el tipo, Separador; 101, es el proveedor; RA, es el género; 7 números aleatorios
-
-
-
-
-  LIBRO
-{
-    ["id": "EDQA001001CREG2556808L",
-    "name": "Dinosaurios y Vida Prehistórica",
-    "providor": "Hugo",
-    "editorial": "DK",
-    "year": 2017,
-    "author_1": "Michelete Frangüini",
-    "author_2": ''.
-    "author_3": '',
-    "kind": "Line",
-    "price": 1200]
-}
-  PROVEEDOR
-{
-  ["id": "EDQPROV30001",
-  "name": "Hugo"]
-}
-  EDITORIAL
-{
-  ["id": "EDQEDIT70001",
-  "name": "DK"]
-}
   BARCODES
 {
   ["barcode": 54674095343,
@@ -56,7 +5,80 @@ EDQ; B es el tipo, Separador; 101, es el proveedor; RA, es el género; 7 número
   ["barcode": 87526394059,
   product_id: "EDQA201501CREGL2556808"]
 }
-{
-  EDQGEN
-}
 
+              <div class="year-header">
+                <span class="eventYear">2024</span>
+              </div>
+
+              <div class="year-body">
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">15va Feria del Libro en Alameda Central</p>
+                    <p class="eventLocation">Alameda Central, CDMX</p>
+                    <p class="eventDate">
+                      <span>Del 8 de Diciembre</span><span>Al 20 de Diciembre</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">Feria Internacional del Libro Infantil y Juvenil 41</p>
+                    <p class="eventLocation">Bosque de Chapultepec, CDMX</p>
+                    <p class="eventDate">
+                      <span>Del 10 de Noviembre</span><span>Al 20 de Noviembre</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">Segundo Festival de las Letras Vivas</p>
+                    <p class="eventLocation">Alameda Central, CDMX</p>
+                    <p class="eventDate">
+                      <span>Del 27 de Octubre</span><span>Al 5 de Noviembre</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">XXII Feria Internacional del Libro en el Zócalo</p>
+                    <p class="eventLocation">
+                      Plaza de la Constitución, Zócalo, CDMX
+                    </p>
+                    <p class="eventDate">
+                      <span>Del 13 de Octubre</span><span>Al 22 de Octubre</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">XL Feria Internacional del Libro del IPN</p>
+                    <p class="eventLocation">Plaza de la virtus, ESIME Zacatenco, CDMX</p>
+                    <p class="eventDate">
+                      <span>Del 1 de Septiembre</span><span>Al 10 de Septiembre</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="event-card">
+                  <div class="card">
+                    <p class="eventName">XVI Remate de Libros en Revolución</p>
+                    <p class="eventLocation">Monumento a la revolucion, Plaza de la República, CDMX</p>
+                    <p class="eventDate">
+                      <span>Del 2 de Agosto</span><span>Al 6 de Agosto</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="events-year">
+
+              <div class="year-header">
+                <span class="eventYear">2023</span>
+              </div>
+
+              <div class="year-body">
+                
+              </div>
+
+            </div>
