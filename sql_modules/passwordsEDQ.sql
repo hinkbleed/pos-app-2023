@@ -1,8 +1,8 @@
 -- PASSWORDS
 
-CREATE DATABASE EDQpasswords;
+CREATE DATABASE EDQPASSWORDS;
 
-USE EDQpasswords;
+USE EDQPASSWORDS;
 
 DROP TABLE employeePasswords;
 CREATE TABLE employeePasswords (
