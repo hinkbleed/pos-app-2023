@@ -27,8 +27,35 @@ DROP TABLE separators;
 CREATE TABLE separators (
 	separ_id VARCHAR(255) PRIMARY KEY,
     separ_name VARCHAR(255) NOT NULL,
-    separ_editorial_name VARCHAR(255) NOT NULL,
-    separ_editorial_id VARCHAR(255) NOT NULL,
 	separ_description VARCHAR (255) NOT NULL,
-    price INT
-)
+    separ_price INT
+);
+-- EDQB200001
+
+
+DROP TABLE magazines;
+CREATE TABLE magazines (
+	mag_id VARCHAR(255) PRIMARY KEY,
+    mag_name VARCHAR(255) NOT NULL,
+    mag_edtor_1 VARCHAR(255) NOT NULL,
+    mag_editor_2 VARCHAR(255),
+    mag_year INT NOT NULL,
+    mag_editorial_name VARCHAR(255) NOT NULL,
+    mag_editorial_id VARCHAR(255) NOT NULL,
+    mag_genre_name VARCHAR(255) NOT NULL,
+    mag_genre_id VARCHAR(255) NOT NULL,
+    mag_genre_abv VARCHAR(255) NOT NULL,
+    mag_subgenre_name VARCHAR(255) NOT NULL,
+    mag_subgenre_id VARCHAR(255) NOT NULL,
+    mag_subgenre_abv VARCHAR(255) NOT NULL,
+    mag_price INT
+);
+
+DROP TABLE toys;
+CREATE TABLE toys (
+	toy_id VARCHAR(255) PRIMARY KEY,
+    toy_name VARCHAR(255) NOT NULL,
+    toy_description VARCHAR(255) NOT NULL,
+    toy_price INT
+);
+-- PENDIENTE TERMINAR TOYS -- -- -- -- -- -- HAVE YOU LISTEN?
