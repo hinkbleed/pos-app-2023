@@ -77,34 +77,33 @@ body {
     .anim {
       width: 600%;
       height: 100%;
-      background: #295294;
-      background: linear-gradient(90deg, #200142 10%, #003261 30%, #36160e 50%, #07124f 70%, #37182e 90%);
+      background: linear-gradient(90deg, #180032 0%, #003261 25%, #36160e 50%, #07124f 75%, #37182e 90%);
       transform: translate(0, 0);
-      animation: paneo 50000ms ease-in-out infinite;
-      filter: blur(200px);
+      animation: paneo 20000ms ease infinite;
+      filter: brightness(2);
     }
   }
 }
 
 @keyframes paneo {
   0% {
-    transform: translate(0, -60%);
+    transform: translate(0, -20%);
   }
 
   25% {
-    transform: translate(0, -10%);
+    transform: translate(0, 0);
   }
 
   50% {
-    transform: translate(-80%, -60%);
+    transform: translate(-80%, -50%);
   }
 
   75% {
-    transform: translate(0, -10%);
+    transform: translate(0, 0);
   }
 
   100% {
-    transform: translate(0, -60%);
+    transform: translate(0, -20%);
   }
 }
 
