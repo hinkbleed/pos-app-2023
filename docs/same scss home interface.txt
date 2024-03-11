@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas informativas sobre los productos
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../../onts/Raleway/Raleway-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas quwe tengan que ver con información sobre el negocio
+}
+
+@font-face {
+  font-family: 'Cutive Mono';
+  src: url('../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  width: 100%;
+  display: block;
+  position: relative;
+  background: #000000;
+  color: #c4c4c4;
+  font-family: 'DMSans';
+  font-style: normal;
+  z-index: 0;
+
+
+  .ver-box {
+    position: absolute;
+    width: 5%;
+    height: 25px;
+    background: black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-left: 100px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 30;
+    animation: appear 300ms ease;
+
+    .logo {
+      height: 80%;
+    }
+  }
+
+  .bg-anim {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    animation: appear 500ms ease;
+    filter: blur(100px);
+
+    .anim {
+      width: 600%;
+      height: 100%;
+      background: linear-gradient(90deg, #180032 0%, #003261 25%, #36160e 50%, #07124f 75%, #37182e 90%);
+      transform: translate(0, 0);
+      animation: paneo 20000ms ease infinite;
+      filter: brightness(2);
+    }
+  }
+}
+
+@keyframes paneo {
+  0% {
+    transform: translate(0, -20%);
+  }
+
+  25% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-80%, -50%);
+  }
+
+  75% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -20%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
