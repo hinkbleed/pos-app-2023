@@ -3,6 +3,8 @@ const addProvidorScreen = document.getElementById('addScreen');
 const cancelAddProvidorBtn = document.getElementById('cancelBtn');
 const providorForm = document.getElementById('addForm');
 
+const editScreen = document.getElementById('editScreen');
+
 const exitBtn = document.getElementById('goBack');
 
 document.addEventListener('DOMContentLoaded', startProvidorsView);
@@ -31,6 +33,10 @@ function viewAllProvidors () {
     })
     .then(html => {
       configProvBox.innerHTML = html;
+
+      document.querySelectorAll('.opt-dots').forEach(card => {
+        card.addEventListener('click', showOptions);
+      });
     })
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
@@ -90,4 +96,36 @@ function getSendData () {
 
 function acceptAddProvidor () {
   getSendData();
+}
+
+function showOptions (event) {
+  const editAskElement = event.target.closest('.providor-card').querySelector('.options-ask');
+  editAskElement.classList.toggle('active');
+
+  const editBtn = editAskElement.querySelector('.editBtn');
+  const deleteBtn = editAskElement.querySelector('.deleteBtn');
+
+  editBtn.addEventListener('click', startEditProvidor);
+  deleteBtn.addEventListener('click', deleteProvidor);
+}
+
+function startEditProvidor (event) {
+  const providorId = event.target.closest('.providor-card').querySelector('.prov-bit.id').textContent;
+  const providorName = event.target.closest('.providor-card').querySelector('.providor-name').textContent;
+  document.getElementById('editTag').innerHTML = `
+  <div>Editar información de: <strong>${providorName}</strong></div>
+ <div>con ID: <strong>${providorId}</strong></div>`;
+
+  editScreen.classList.add('active');
+  console.log(`
+  Editar providor con Nombre ${providorName} e ID: ${providorId}`);
+  // Agregar lógica para editar el proveedor con el ID proporcionado
+}
+
+function deleteProvidor (event) {
+  const providorId = event.target.closest('.providor-card').querySelector('.prov-bit.id').textContent;
+  const providorName = event.target.closest('.providor-card').querySelector('.providor-name').textContent;
+  console.log(`
+  Eliminar providor con Nombre ${providorName} e ID: ${providorId}`);
+  // Agregar lógica para eliminar el proveedor con el ID proporcionado
 }

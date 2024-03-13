@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="products-table">
+    <div class="tableHead">
+      <div class="head-item list-position">#</div>
+      <div class="head-item product-name">Nombre del artículo</div>
+      <div class="head-item product-price">Precio</div>
+
+      <div class="head-item product-barcode">Barcode</div>
+      <div class="head-item product-kind">Tipo</div>
+      <div class="head-item product-providor">Prov.</div>
+      <div class="head-item product-edqId">EDQ ID</div>
+      <div class="head-item last-product-inserc">lst inserc</div>
+      <div class="head-item init-cant">init</div>
+      <div class="head-item current-cant">curr</div>
+    </div>
+
+    <div class="tableBody">
+      <div class="storage-item">
+        <div class="stg-item-prop item-list-option">${index + 1}</div>
+        <div class="stg-item-prop item-name">${product.name}</div>
+        <div class="stg-item-prop item-price">$${product.price.toFixed(2)}</div>
+        <div class="stg-item-prop item-barcode">${'falta configurar los barcodes en db'}</div>
+        <div class="stg-item-prop item-kind">${product.kind}</div>
+        <div class="stg-item-prop item-providor">${product.providor}</div>
+        <div class="stg-item-prop item-edqId">${product.book_id}</div>
+        <div class="stg-item-prop last-item-inserc">${new Date().toLocaleString()}</div>
+        <div class="stg-item-prop item-init-cant">0</div>
+        <div class="stg-item-prop item-current-cant">-</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<div class="header-box bookHeader">
+  <div class="product-headerColumn headerBookIndex">#</div>
+  <div class="product-headerColumn headerBookName">Nombre</div>
+  <div class="product-headerColumn headerBookAuthor">Autor</div>
+  <div class="product-headerColumn headerBookYear">Año</div>
+  <div class="product-headerColumn headerBookEditorial">Editorial</div>
+  <div class="product-headerColumn headerBookGenre">Género</div>
+  <div class="product-headerColumn headerBookSubgenre">Subgénero</div>
+  <div class="product-headerColumn headerBookPrice">Precio</div>
+  <div class="product-headerColumn headerBookBarcode">barcode</div>
+  <div class="product-headerColumn headerBookEDQid">EDQID</div>
+</div>
+
+<div class="product-card book-product">
+
+  <div class="product-cardColumn cardBookIndex">${book.index + 1}</div>
+  <div class="product-cardColumn cardBookName">${book.book_name}</div>
+  <div class="product-cardColumn cardBookAuthor">${book.book_author_1, if (book_author_2) {return book_author_2}}</div>
+  <div class="product-cardColumn cardBookYear">${book.book_year}</div>
+  <div class="product-cardColumn cardBookEditorial">${book.book_editorial_name, book.book_editorial_id}</div>
+  <div class="product-cardColumn cardBookGenre">${book.book_genre_name, book.book_genre_id}</div>
+  <div class="product-cardColumn cardBookSubgenre">${book.book_subgenre_name, book.book_subgenre_id}</div>
+  <div class="product-cardColumn cardBookPrice">${book.book_price}</div>
+  <div class="product-cardColumn cardBookBarcode">Pendiente chavín</div>
+  <div class="product-cardColumn cardBookEDQid">${book.book_id}</div>
+</div>
+
+
+
+
+export function structureAllProducts(products) {
+  let htmlBooks = '';
+  let htmlSeparators = '';
+  let htmlMagazines = '';
+
+  // Generar HTML para libros
+  htmlBooks = `
+    <div class="productType-box">
+      <div class="title-box">
+        <div class="type-text book-titleCard">Libros</div>
+        <div class="type-text pcs">${products.books.length} Registros</div>
+      </div>
+  `;
+  if (products.books.length > 0) {
+    htmlBooks += `
+      <div class="content-box">
+      
+        
+        <div class="header-box bookHeader">
+          <div class="product-headerColumn headerBookEDQid">ID</div>
+          <div class="product-headerColumn headerBookName">Título</div>
+          <div class="product-headerColumn headerBookAuthor">Autor</div>
+          <div class="product-headerColumn headerBookYear">Año</div>
+          <div class="product-headerColumn headerBookEditorial">Editorial</div>
+          <div class="product-headerColumn headerBookGenre">Género</div>
+          <div class="product-headerColumn headerBookSubgenre">Subgénero</div>
+          <div class="product-headerColumn headerBookPrice">Precio</div>
+          <div class="product-headerColumn headerBookBarcode">barcode</div>
+        </div>
+
+    ${products.books.map((book, index) => {
+      return `
+        <div class="product-card book-product">
+          <div class="product-cardColumn cardBookName">${book.book_name}</div>
+          <div class="product-cardColumn cardBookAuthor">${book.book_author_1},${book.book_auhtor_2}</div >
+          <div class="product-cardColumn cardBookYear">${book.book_year}</div>
+          <div class="product-cardColumn cardBookEditorial">${book.book_editorial_name}, ${book.book_editorial_id}</div>
+          <div class="product-cardColumn cardBookGenre">${book.book_genre_name}, ${book.book_genre_id}</div>
+          <div class="product-cardColumn cardBookSubgenre">${book.book_subgenre_name}. ${book.book_subgenre_id}</div>
+          <div class="product-cardColumn cardBookPrice">${book.book_price}</div>
+          <div class="product-cardColumn cardBookBarcode">Pendiente chavín</div>
+          <div class="product-cardColumn cardBookEDQid">${book.book_id}</div>
+        </div >
+
+
+
+      `;
+    }).join('')
+      }
+  `;
+  } else {
+    htmlBooks += '<div class="no-content">Sin libros disponibles</div>';
+  }
+  htmlBooks += `
+      </div >
+    </div > `;
+
+  // Generar HTML para separadores
+  htmlSeparators = `
+    <div class="productType-box">
+      <div class="title-box">
+        <div class="type-text separator-titleCard">Separadores</div>
+        <div class="type-text pcs">${products.separators.length} Registros</div>
+      </div>
+  `;
+  if (products.separators.length > 0) {
+    let separatorsCounter = 1;
+    htmlSeparators += `
+    <div class="content-box">
+      
+        
+    <div class="header-box separatorHeader">
+      <div class="product-headerColumn headerSeparIndex">#</div>
+      <div class="product-headerColumn headerSeparName">Nombre</div>
+      <div class="product-headerColumn headerSeparMaterialr">Material</div>
+      <div class="product-headerColumn headerSeparFace">Vista</div>
+      <div class="product-headerColumn headerSeparDescription">Editorial</div>
+      <div class="product-headerColumn headerSeparPrice">Precio</div>
+      <div class="product-headerColumn headerSeparBarcode">barcode</div>
+      <div class="product-headerColumn headerSeparEDQid">EDQID</div>
+    </div>
+
+      ${products.separators.map(separ => {
+      return `
+      <div class="product-card separator-product">
+
+        <div class="product-cardColumn cardSeparIndex">${separatorsCounter++}</div>
+        <div class="product-cardColumn cardSeparName">${separ.separ_name}</div>
+        <div class="product-cardColumn cardSeparMaterial">${separ.separ_material}</div>
+        <div class="product-cardColumn cardSeparFace">${separ.separ_face}</div>
+        <div class="product-cardColumn cardSeparPrice">${separ.separ_price}</div>
+      </div>
+        `;
+    }).join('')
+      }
+  `;
+  } else {
+    htmlSeparators += '<div class="no-content">Sin separadores disponibles</div>';
+  }
+  htmlSeparators += `
+  </div >
+  </div > `;
+
+  // Generar HTML para revistas
+  htmlMagazines = `
+    <div class="productType-box">
+      <div class="title-box">
+        <div class="type-text magazine-titleCard">Revistas / Cómics </div>
+        <div class="type-text pcs">${products.magazines.length} Registros</div>
+      </div>
+  `;
+  if (products.magazines.length > 0) {
+    let magazinesCounter = 1;
+    htmlMagazines += `
+    <div class="content-box">
+
+    <div class="header-box magazineHeader">
+          <div class="product-headerColumn headerMagIndex">#</div>
+          <div class="product-headerColumn headerMagName">Nombre</div>
+          <div class="product-headerColumn headerMagAuthor">Autor</div>
+          <div class="product-headerColumn headerMagYear">Año</div>
+          <div class="product-headerColumn headerMagEditorial">Editorial</div>
+          <div class="product-headerColumn headerMagGenre">Género</div>
+          <div class="product-headerColumn headerMagSubgenre">Subgénero</div>
+          <div class="product-headerColumn headerMagPrice">Precio</div>
+          <div class="product-headerColumn headerMagBarcode">barcode</div>
+          <div class="product-headerColumn headerMagEDQid">EDQID</div>
+        </div>
+      ${products.magazines.map(mag => {
+      return `
+      <div class="product-card magazine-product">
+      <div class="product-cardColumn cardMagazineIndex">${magazinesCounter++}</div>
+      <div class="product-cardColumn cardMagazineName">${mag.mag_name}</div>
+      <div class="product-cardColumn cardMagazineEditor">${mag.mag_edtor_1}, ${mag.mag_editor_2}</div> 
+      <div class="product-cardColumn cardMagazineYear">${mag.mag_year}</div>
+      <div class="product-cardColumn cardMagazineEditorial">${mag.mag_editorial_name}, ${mag.mag_editorial_id}</div>
+      <div class="product-cardColumn cardMagazineSubgenre">${mag.mag_subgenre_name}, ${mag.mag_subgenre_id}</div>
+      <div class="product-cardColumn cardMagazinePrice">${mag.mag_price}</div>
+      <div class="product-cardColumn cardMagazineEDQid">${mag.mag_id}</div>
+      </div>
+        `;
+    }).join('')
+      }
+  `;
+  } else {
+    htmlMagazines += '<div class="no-content">Sin revistas disponibles</div>';
+  }
+  htmlMagazines += `
+  </div >
+  </div > `;
+
+  return htmlBooks + htmlSeparators + htmlMagazines;
+}
+
+
+.header-box {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  z-index: 100;
+
+  &.bookHeader {
+
+    .product-headerColumn {
+      height: 100%;
+    }
+
+    .headerBookIndex {
+      width: 3%;
+      background: green;
+
+    }
+
+    .headerBookName {
+      width: 20%;
+      background: red;
+    }
+
+    .headerBookAuthor {
+      width: 12%;
+      background: blue;
+    }
+
+    .headerBookYear {
+      width: 10%;
+      background: purple;
+    }
+
+    .headerBookEditorial {
+      width: 15%;
+      background: yellow;
+    }
+
+    .headerBookGenre {
+      width: 10%;
+      background: blue;
+    }
+
+    .headerBookSubgenre {
+      width: 10%;
+      background: purple;
+    }
+
+    .headerBookPrice {
+      width: 10%;
+      background: green;
+    }
+
+    .headerBookBarcode {
+      width: 10%;
+      background: red;
+    }
+
+    .headerBookEDQid {
+      width: 10%;
+      background: blue;
+    }
+  }
+}

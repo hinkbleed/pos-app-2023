@@ -1,4 +1,4 @@
-import { structureProducts } from '../../../schemas/dataconfig/products/htmlProducts.js';
+import { structureAllProducts } from '../../../schemas/dataconfig/products/htmlProducts.js';
 
 export class ConfigproductController {
   constructor ({ productModel }) {
@@ -7,8 +7,8 @@ export class ConfigproductController {
 
   getAll = async (req, res) => {
     const products = await this.productModel.getAll();
-    const htmlProducts = structureProducts(products);
-    console.log(htmlProducts);
+    console.log(products);
+    const htmlProducts = structureAllProducts(products);
     if (htmlProducts === '') {
       res.send('<div class="no-prod">Sin Productos aún</div>');
     } else {

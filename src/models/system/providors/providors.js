@@ -29,8 +29,7 @@ export class ProvidorModel {
       'SELECT provIDcounter FROM provIDcounter;'
     );
     const provIDcounter = counterDB[0].provIDcounter;
-    const newIDcounter = provIDcounter + 1;
-    const provId = createProvEDQid(newIDcounter);
+    const provId = createProvEDQid(provIDcounter);
 
     try {
       await connection.query(
@@ -41,6 +40,7 @@ export class ProvidorModel {
     } catch (e) {
       throw new Error('Error creating providor');
     }
+    const newIDcounter = provIDcounter + 1;
     await connection.query(
       'UPDATE provIDcounter SET provIDcounter = ?', [newIDcounter]
     );

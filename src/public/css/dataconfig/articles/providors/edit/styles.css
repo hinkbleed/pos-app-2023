@@ -1,4 +1,4 @@
-body .add-screen {
+body .edit-screen {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -10,11 +10,11 @@ body .add-screen {
   background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
   z-index: 300;
 }
-body .add-screen.active {
+body .edit-screen.active {
   animation: appear 200ms ease;
   display: flex;
 }
-body .add-screen .add-formBox {
+body .edit-screen .edit-formBox {
   height: auto;
   max-height: 90%;
   background: rgba(0, 0, 0, 0.4823529412);
@@ -28,32 +28,34 @@ body .add-screen .add-formBox {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
 }
-body .add-screen .add-formBox .tag {
+body .edit-screen .edit-formBox .tag {
   width: -moz-fit-content;
   width: fit-content;
-  height: 80px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.7019607843);
   font-weight: 100;
   font-size: 16px;
+  gap: 10px;
 }
-body .add-screen .add-formBox .form {
-  width: 350px;
+body .edit-screen .edit-formBox .edit-form {
+  width: 400px;
   height: auto;
   display: flex;
   flex-direction: column;
   margin: 10px 20px 30px;
 }
-body .add-screen .add-formBox .form label {
+body .edit-screen .edit-formBox .edit-form label {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   margin: 15px 0 10px 0;
   height: 25px;
 }
-body .add-screen .add-formBox .form input {
+body .edit-screen .edit-formBox .edit-form input {
   width: 90%;
   height: 35px;
   align-self: center;
@@ -65,7 +67,7 @@ body .add-screen .add-formBox .form input {
   padding: 0 10px;
   font-size: 16px;
 }
-body .add-screen .add-formBox .form .btns {
+body .edit-screen .edit-formBox .edit-form .btns {
   width: 90%;
   height: 35px;
   align-self: center;
@@ -75,7 +77,7 @@ body .add-screen .add-formBox .form .btns {
   justify-content: space-around;
   margin-top: 30px;
 }
-body .add-screen .add-formBox .form .btns button {
+body .edit-screen .edit-formBox .edit-form .btns button {
   width: 40%;
   height: 100%;
   border-radius: 3px;
@@ -84,22 +86,22 @@ body .add-screen .add-formBox .form .btns button {
   cursor: pointer;
   transition: 300ms ease;
 }
-body .add-screen .add-formBox .form .btns button.cancel {
+body .edit-screen .edit-formBox .edit-form .btns button.cancel {
   background: rgba(255, 0, 0, 0.1607843137);
   color: #ff0000;
   border: 1px solid rgba(255, 0, 0, 0.3803921569);
 }
-body .add-screen .add-formBox .form .btns button.cancel:hover {
+body .edit-screen .edit-formBox .edit-form .btns button.cancel:hover {
   background: rgba(255, 0, 0, 0.462745098);
   border: 1px solid #ff0000;
   color: #ffffff;
 }
-body .add-screen .add-formBox .form .btns button.accept {
+body .edit-screen .edit-formBox .edit-form .btns button.accept {
   background: rgba(255, 255, 255, 0);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.7921568627);
 }
-body .add-screen .add-formBox .form .btns button.accept:hover {
+body .edit-screen .edit-formBox .edit-form .btns button.accept:hover {
   background: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;

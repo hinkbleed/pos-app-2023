@@ -1,5 +1,4 @@
 export function structureProducts (products) {
-  // Utilizamos map() para crear un nuevo array con los elementos div para cada producto
   const productsArray = products.map((product, index) => `
       <div class="storage-item">
           <div class="stg-item-prop item-list-option">${index + 1}</div>
@@ -14,8 +13,6 @@ export function structureProducts (products) {
           <div class="stg-item-prop item-current-cant">-</div>
       </div>
   `);
-
-  // Unimos los elementos del array en una cadena HTML utilizando join()
   const productsHtml = productsArray.join('');
 
   // Retornamos la cadena HTML

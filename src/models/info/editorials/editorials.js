@@ -27,8 +27,7 @@ export class EditorialModel {
       'SELECT editIDcounter FROM editIDcounter;'
     );
     const editIDcounter = counterDB[0].editIDcounter;
-    const newIDcounter = editIDcounter + 1;
-    const editId = createEditEDQid(newIDcounter);
+    const editId = createEditEDQid(editIDcounter);
 
     try {
       await connection.query(
@@ -39,6 +38,7 @@ export class EditorialModel {
     } catch (e) {
       throw new Error('Error creating editorial');
     }
+    const newIDcounter = editIDcounter + 1;
     await connection.query(
       'UPDATE editIDcounter SET editIDcounter = ?', [newIDcounter]
     );

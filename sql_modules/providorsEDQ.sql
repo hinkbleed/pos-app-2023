@@ -14,7 +14,7 @@ CREATE TABLE provIDcounter (
 );
 
 INSERT INTO provIDcounter (provIDcounter) VALUES
-	(30000);
+	(33000);
     
 INSERT INTO providors (prov_id, prov_name, prov_resp, prov_number) VALUES
     ("EDQPROV030000", "EDQ", "Angeles Quiroz", "5523247286");

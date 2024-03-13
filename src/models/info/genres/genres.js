@@ -28,8 +28,7 @@ export class GenreModel {
       'SELECT genreIDcounter FROM genreIDcounter;'
     );
     const genreIDcounter = counterDB[0].genreIDcounter;
-    const newIDcounter = genreIDcounter + 1;
-    const genreId = createGenreEDQid(newIDcounter);
+    const genreId = createGenreEDQid(genreIDcounter);
 
     try {
       await connection.query(
@@ -40,6 +39,7 @@ export class GenreModel {
     } catch (e) {
       throw new Error('Error creating genre');
     }
+    const newIDcounter = genreIDcounter + 1;
     await connection.query(
       'UPDATE genreIDcounter SET genreIDcounter = ?', [newIDcounter]
     );

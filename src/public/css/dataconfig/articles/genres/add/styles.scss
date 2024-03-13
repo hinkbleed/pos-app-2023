@@ -1,6 +1,21 @@
 body {
 
   .add-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+    background: #000a18;
+    background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+    z-index: 20;
+
+    &.active {
+      animation: appear 200ms ease;
+      display: flex;
+    }
 
     .add-formBox {
       height: auto;

@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
     animation: appear 300ms ease;
 
     .config-hub {
@@ -25,8 +25,8 @@ body {
         padding: 70px 100px;
 
         .option-btn {
-          width: 250px;
-          height: 40px;
+          width: 280px;
+          height: 50px;
           font-size: 13px;
           background: #ffffff05;
           border-radius: 3px;
@@ -35,12 +35,13 @@ body {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          margin: 35px 50px;
+          margin: 30px 50px;
           transition: 300ms;
 
           &:hover {
             background: #0900215c;
             box-shadow: 0 0 30px #ffffff26;
+            border: 1px solid #ffffff83;
           }
         }
       }

@@ -28,7 +28,7 @@ body {
             }
 
             .editorial-card {
-              width: 20%;
+              width: 22%;
               height: 120px;
               display: flex;
               flex-direction: column;
@@ -42,7 +42,7 @@ body {
               cursor: pointer;
               --editgradient: linear-gradient(to right, #16ffaa, #5f5fff, #8b3fe1);
               transition: 300ms ease;
-              margin: 20px;
+              margin: 10px;
 
               &:after {
                 position: absolute;
@@ -59,7 +59,7 @@ body {
                 border: 1px solid #3122228b;
 
                 & .editorial-name {
-                  transform: translateY(-15px) scale(1.3);
+                  transform: translateY(-15px) scale(1.2);
                 }
 
                 & .glow {
@@ -99,7 +99,7 @@ body {
                 justify-content: flex-end;
                 color: white;
                 font-weight: 500;
-                font-size: 18px;
+                font-size: 17px;
                 transition: transform 300ms ease;
                 z-index: 5;
               }

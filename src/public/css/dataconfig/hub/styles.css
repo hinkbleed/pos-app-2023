@@ -20,8 +20,8 @@ body .configdata-view .config-hub.storage-config {
   padding: 70px 100px;
 }
 body .configdata-view .config-hub.storage-config .option-btn {
-  width: 250px;
-  height: 40px;
+  width: 280px;
+  height: 50px;
   font-size: 13px;
   background: rgba(255, 255, 255, 0.0196078431);
   border-radius: 3px;
@@ -30,12 +30,13 @@ body .configdata-view .config-hub.storage-config .option-btn {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 35px 50px;
+  margin: 30px 50px;
   transition: 300ms;
 }
 body .configdata-view .config-hub.storage-config .option-btn:hover {
   background: rgba(9, 0, 33, 0.3607843137);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1490196078);
+  border: 1px solid rgba(255, 255, 255, 0.5137254902);
 }
 body .configdata-view .config-hub.profile-config {
   height: 30%;

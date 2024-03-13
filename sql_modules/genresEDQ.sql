@@ -25,10 +25,10 @@ CREATE TABLE subgenreIDcounter (
 );
 
 INSERT INTO genreIDcounter (genreIDcounter) VALUES
-	(70000);
+	(77001);
     
 INSERT INTO subgenreIDcounter (subgenreIDcounter) VALUES
-	(90000);
+	(90001);
     
 INSERT INTO genres (genre_id, genre_name, genre_abv) VALUES 
 		("EDQGENR070001", "Enciclopedia", "EN"),

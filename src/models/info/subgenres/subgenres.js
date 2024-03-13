@@ -28,8 +28,7 @@ export class SubgenreModel {
       'SELECT subgenreIDcounter FROM subgenreIDcounter;'
     );
     const subgenreIDcounter = counterDB[0].subgenreIDcounter;
-    const newIDcounter = subgenreIDcounter + 1;
-    const subgenreId = createSubgenreEDQid(newIDcounter);
+    const subgenreId = createSubgenreEDQid(subgenreIDcounter);
 
     try {
       await connection.query(
@@ -40,6 +39,7 @@ export class SubgenreModel {
     } catch (e) {
       throw new Error('Error creating Subgenre');
     }
+    const newIDcounter = subgenreIDcounter + 1;
     await connection.query(
       'UPDATE subgenreIDcounter SET subgenreIDcounter = ?', [newIDcounter]
     );

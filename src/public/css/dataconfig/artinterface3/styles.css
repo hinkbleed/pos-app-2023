@@ -146,10 +146,10 @@ body .article-socket .dataconfig-box .body .main-screen {
 body .article-socket .dataconfig-box .body .main-screen .bttm-borderline {
   width: 100%;
   background: #000a18;
-  background: linear-gradient(0deg, #000a18 10%, rgba(0, 10, 24, 0) 70%);
+  background: linear-gradient(0deg, #000a18 10%, rgba(0, 10, 24, 0) 100%);
   position: fixed;
   bottom: 0;
-  height: 70px;
+  height: 50px;
 }
 body .ask-screen {
   position: absolute;

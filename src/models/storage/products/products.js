@@ -12,36 +12,35 @@ const connection = await mysql.createConnection(config);
 
 export class ProductModel {
   static async getAll () {
-    const [books] = await connection.query(
+    const [dbbooks] = await connection.query(
       'SELECT book_id, book_name, book_author_1, book_author_2, book_year, book_editorial_name, book_editorial_id, book_genre_name, book_genre_id, book_subgenre_name, book_subgenre_id, book_price FROM books;'
     );
 
-    const [separators] = await connection.query(
+    const [dbseparators] = await connection.query(
       `SELECT separ_id,
               separ_name,
+              separ_material,
+              separ_face,
               separ_description,
               separ_price
       FROM separators;`
     );
 
-    const [magazines] = await connection.query(
+    const [dbmagazines] = await connection.query(
       `SELECT mag_id,
               mag_name,
-              mag_editor_1,
-              mag_editor_2,
+              mag_author_1,
+              mag_author_2,
               mag_year,
               mag_editorial_name,
               mag_editorial_id,
-              mag_genre_name,
-              mag_genre_id,
               mag_subgenre_name,
               mag_subgenre_id,
               mag_price
       FROM magazines;`
     );
 
-    const products = [books, separators, magazines];
-    return products;
+    return { books: dbbooks, separators: dbseparators, magazines: dbmagazines };
   }
 
   /*  static async getById ({ id }) {

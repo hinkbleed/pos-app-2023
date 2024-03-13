@@ -18,7 +18,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .no-prov {
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card {
   width: 20%;
-  height: 160px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -77,7 +77,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-car
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .providor-name {
   width: -moz-fit-content;
   width: fit-content;
-  height: 20%;
+  height: 35%;
   display: flex;
   align-items: center;
   margin: 10px 20px 0;
@@ -102,12 +102,112 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-car
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .prov-bit.resp {
   color: #c1c1c1;
-  margin: 20px 0 0 20px;
+  margin: 0 0 0 20px;
   height: 20%;
   font-size: 14px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .prov-bit.numb {
   color: #c1c1c1;
   margin: 0 0 0 20px;
-  height: 20%;
+  height: 15%;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .opt-dots {
+  position: absolute;
+  right: 3%;
+  bottom: 2%;
+  width: 10%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 250;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .opt-dots:hover .dot {
+  background: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .opt-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #808080;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 200;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns {
+  width: 60%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns .btn-icon {
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns.editBtn:hover {
+  background: blue;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns.editBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns.deleteBtn:hover {
+  background: red;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .options-ask .provBtns.deleteBtn:hover .btn-icon {
+  filter: invert(1);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

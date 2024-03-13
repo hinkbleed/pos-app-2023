@@ -17,7 +17,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .no-edit {
   font-size: 20px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card {
-  width: 20%;
+  width: 22%;
   height: 120px;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-ca
   cursor: pointer;
   --editgradient: linear-gradient(to right, #16ffaa, #5f5fff, #8b3fe1);
   transition: 300ms ease;
-  margin: 20px;
+  margin: 10px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card:after {
   position: absolute;
@@ -47,7 +47,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-ca
   border: 1px solid rgba(49, 34, 34, 0.5450980392);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card:hover .editorial-name {
-  transform: translateY(-15px) scale(1.3);
+  transform: translateY(-15px) scale(1.2);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card:hover .glow {
   opacity: 0.1;
@@ -81,7 +81,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-ca
   justify-content: flex-end;
   color: white;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   transition: transform 300ms ease;
   z-index: 5;
 }
