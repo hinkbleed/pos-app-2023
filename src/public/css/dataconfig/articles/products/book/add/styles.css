@@ -1,0 +1,106 @@
+body .addBook-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms ease;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  z-index: 20;
+}
+body .addBook-screen.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .addBook-screen .addBook-formBox {
+  height: auto;
+  max-height: 90%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .addBook-screen .addBook-formBox .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 100;
+  font-size: 16px;
+}
+body .addBook-screen .addBook-formBox .form {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 30px;
+}
+body .addBook-screen .addBook-formBox .form label {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  margin: 15px 0 10px 0;
+  height: 25px;
+}
+body .addBook-screen .addBook-formBox .form input {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  margin: 0 0 35px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .addBook-screen .addBook-formBox .form .btns {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .addBook-screen .addBook-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .addBook-screen .addBook-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .addBook-screen .addBook-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .addBook-screen .addBook-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .addBook-screen .addBook-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}/*# sourceMappingURL=styles.css.map */

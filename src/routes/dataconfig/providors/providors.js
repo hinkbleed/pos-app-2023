@@ -9,9 +9,8 @@ export const createConfigprovidorRouter = ({ providorModel }) => {
 
   providorsRouter.get('/all', providorController.getAll);
   providorsRouter.post('/add', providorController.create);
-  /*
-  providorsRouter.patch('/add/idact', providorController.updateID);
-  */
+  providorsRouter.patch('/update/:id', providorController.update);
+  providorsRouter.delete('/delete/:id', providorController.delete);
 
   return providorsRouter;
 };

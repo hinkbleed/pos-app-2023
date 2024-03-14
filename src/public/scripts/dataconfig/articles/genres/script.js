@@ -116,13 +116,18 @@ function sendGenreToServer (data) {
 }
 
 function getSendGenreData () {
-  const name = document.getElementById('genreNameInput').value;
-  const abv = document.getElementById('genreAbvInput').value;
+  const nameInput = document.getElementById('genreNameInput').value;
+  const abvInput = document.getElementById('genreAbvInput').value;
+
+  const formattedName = nameInput.charAt(0).toUpperCase() + nameInput.slice(1).toLowerCase();
+
+  const formattedAbv = abvInput.toUpperCase();
 
   const data = {
-    genreName: name,
-    genreAbv: abv
+    genreName: formattedName,
+    genreAbv: formattedAbv
   };
+
   sendGenreToServer(data);
 }
 
@@ -155,13 +160,18 @@ function sendSubgenreToServer (data) {
 }
 
 function getSendSubgenreData () {
-  const name = document.getElementById('subgenreNameInput').value;
-  const abv = document.getElementById('subgenreAbvInput').value;
+  const nameInput = document.getElementById('subgenreNameInput').value;
+  const abvInput = document.getElementById('subgenreAbvInput').value;
+
+  const formattedName = nameInput.charAt(0).toUpperCase() + nameInput.slice(1).toLowerCase();
+
+  const formattedAbv = abvInput.toUpperCase();
 
   const data = {
-    subgenreName: name,
-    subgenreAbv: abv
+    subgenreName: formattedName,
+    subgenreAbv: formattedAbv
   };
+
   sendSubgenreToServer(data);
 }
 

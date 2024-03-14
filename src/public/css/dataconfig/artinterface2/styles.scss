@@ -100,8 +100,16 @@ body {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-end;
             padding: 0 2%;
+
+            &.navbarGenre {
+              justify-content: flex-end;
+            }
+
+            &.navbarSubgenre {
+              justify-content: flex-start;
+            }
+
 
             .navbar-btn {
               position: relative;

@@ -21,7 +21,7 @@ body {
 }
 body .ver-box {
   position: absolute;
-  width: 5%;
+  width: 7%;
   height: 25px;
   background: black;
   margin: 5px;
@@ -30,9 +30,32 @@ body .ver-box {
   justify-content: center;
   border-radius: 2px;
   margin-left: 100px;
-  right: 0;
-  top: 0;
+  right: 25%;
+  top: 10%;
   z-index: 100;
+}
+body .close-win {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+  transition: 300ms ease;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body .close-win:hover {
+  background: white;
+}
+body .close-win:hover img {
+  filter: invert(0);
+}
+body .close-win img {
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+  transition: 300ms ease;
 }
 body .logo-box {
   position: relative;

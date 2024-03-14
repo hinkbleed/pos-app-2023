@@ -46,17 +46,45 @@ export class ProvidorModel {
     );
     return counterDB;
   }
-/*
-  static async update ({ newValue }) {
-    await connection.query(
-      'UPDATE provIDcounter SET provIDcounter = ?;',
-      [newValue]
-    );
 
-    const [currentProvID] = await connection.query(
-      'SELECT provIDcounter FROM provIDcounter'
-    );
-    return currentProvID;
+  static async update ({ id, newData }) {
+    try {
+      // Obtener la información actual del proveedor
+      const currentInfo = await connection.query(
+        'SELECT prov_resp, prov_number FROM providors WHERE prov_id = ?',
+        [id]
+      );
+      if (currentInfo.length === 0) {
+        throw new Error('Proveedor no encontrado');
+      }
+      await connection.query(
+        'UPDATE providors SET prov_resp = ?, prov_number = ? WHERE prov_id = ?',
+        [newData.provResp, newData.provNumber, id]
+      );
+      // Devolver un mensaje de éxito
+      return { message: 'Información del proveedor actualizada correctamente' };
+    } catch (error) {
+      console.error('Error al actualizar la información del proveedor:', error);
+      throw error; // Propagar el error para manejarlo en el controlador
+    }
   }
-  */
+
+  static async delete ({ id }) {
+    try {
+      const deleteQuery = 'DELETE FROM providors WHERE prov_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+
+      // Verificamos si se eliminó correctamente el proveedor
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('El proveedor no existe o no se pudo eliminar');
+      }
+      // La eliminación fue exitosa
+      console.log('Proveedor eliminado exitosamente');
+      return { message: 'Proveedor eliminado exitosamente' };
+    } catch (error) {
+    // Capturamos y manejamos cualquier error que ocurra durante la eliminación del proveedor
+      console.error('Error al eliminar el proveedor:', error);
+      throw error; // Relanzamos el error para que el controlador pueda manejarlo adecuadamente
+    }
+  }
 }

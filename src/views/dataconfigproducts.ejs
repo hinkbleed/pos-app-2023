@@ -12,18 +12,27 @@
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/main/styles.css">
 
-  <link rel="stylesheet" href="/css/dataconfig/articles/products/add/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/ask/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/book/add/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/add/styles.css">
 
 <body>
   <%- include('partials/dataconfig/interface/exitarrow') %>
 
     <%- include('partials/dataconfig/articles/products/main') %>
-    <%- include('partials/dataconfig/articles/products/ask') %>
-    
-    <%- include('partials/dataconfig/articles/products/addBook') %>
+      <%- include('partials/dataconfig/articles/products/askAdd') %>
 
-      <script type="module" src="/scripts/dataconfig/articles/products/listener.js"></script>
+        <%- include('partials/dataconfig/articles/products/book/addBook') %>
 
+        <%- include('partials/dataconfig/articles/products/separ/addSepar') %>
+
+          <script type="module" src="/scripts/dataconfig/articles/products/script.js"></script>
+
+          <script type="module" src="/scripts/dataconfig/articles/products/book/add.js"></script>
+
+          <script type="module" src="/scripts/dataconfig/articles/products/separ/add.js"></script>
 </body>
 
 </html>

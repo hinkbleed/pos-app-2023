@@ -101,7 +101,7 @@ body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box 
 }
 body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .content .item.genre-abv {
   height: 30%;
-  width: 40px;
+  width: 50px;
   justify-content: center;
   color: black;
   background: white;
@@ -189,7 +189,7 @@ body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box 
 }
 body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .content .item.subgenre-abv {
   height: 30%;
-  width: 40px;
+  width: 50px;
   justify-content: center;
   color: black;
   background: white;

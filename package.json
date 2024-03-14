@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch ./src/server-init.js",
-    "dev_1": "node --watch ./server_3_demo/server-mysql.js"
+    "dev_1": "node --watch ./server_3_demo/server-mysql.js",
+    "start": "node ./src/server-init.js"
   },
   "author": "@lex_xiuhuitl",
   "license": "ISC",

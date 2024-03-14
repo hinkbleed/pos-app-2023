@@ -97,8 +97,13 @@ body .article-socket .dataconfig-box .head .navbar .navbar-part {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
   padding: 0 2%;
+}
+body .article-socket .dataconfig-box .head .navbar .navbar-part.navbarGenre {
+  justify-content: flex-end;
+}
+body .article-socket .dataconfig-box .head .navbar .navbar-part.navbarSubgenre {
+  justify-content: flex-start;
 }
 body .article-socket .dataconfig-box .head .navbar .navbar-part .navbar-btn {
   position: relative;

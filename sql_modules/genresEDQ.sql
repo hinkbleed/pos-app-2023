@@ -44,6 +44,7 @@ INSERT INTO subgenres (subgenre_id, subgenre_name, subgenre_abv) VALUES
         
 SELECT * FROM genres;
 SELECT * FROM subgenres;
+DELETE FROM subgenres WHERE prov_id = ?
     
     
     

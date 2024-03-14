@@ -17,10 +17,11 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .no-prov {
   font-size: 20px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card {
-  width: 20%;
-  height: 180px;
+  width: 30%;
+  height: 160px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   position: relative;
   background: #000000;
   border-radius: 5px;
@@ -77,9 +78,9 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-car
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .providor-name {
   width: -moz-fit-content;
   width: fit-content;
-  height: 35%;
+  height: 40%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 10px 20px 0;
   color: white;
   font-weight: 500;
@@ -89,7 +90,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-car
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .prov-bit {
   width: -moz-fit-content;
   width: fit-content;
-  height: 15%;
+  height: 10%;
   display: flex;
   align-items: center;
   margin: 0 20px;
@@ -113,10 +114,10 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-car
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .providor-card .opt-dots {
   position: absolute;
-  right: 3%;
-  bottom: 2%;
-  width: 10%;
-  height: 35%;
+  right: 1%;
+  bottom: 1%;
+  width: 6%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;

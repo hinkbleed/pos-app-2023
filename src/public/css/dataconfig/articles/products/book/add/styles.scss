@@ -1,0 +1,119 @@
+body {
+
+  .addBook-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+    background: #000a18;
+    background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+    z-index: 20;
+
+    &.active {
+      animation: appear 200ms ease;
+      display: flex;
+    }
+
+    .addBook-formBox {
+      height: auto;
+      max-height: 90%;
+      background: #0000007b;
+      box-shadow: 0 0 100px #000000;
+      border-radius: 5px;
+      border: 1px solid #ffffff46;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      backdrop-filter: blur(50px);
+
+      .tag {
+        width: fit-content;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffffb3;
+        font-weight: 100;
+        font-size: 16px;
+      }
+
+      .form {
+        width: 350px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 20px 30px;
+
+        label {
+          width: fit-content;
+          font-size: 16px;
+          margin: 15px 0 10px 0;
+          height: 25px;
+        }
+
+        input {
+          width: 90%;
+          height: 35px;
+          align-self: center;
+          margin: 0 0 35px 0;
+          outline: none;
+          background: transparent;
+          border: 1px solid #ffffff8d;
+          color: white;
+          padding: 0 10px;
+          font-size: 16px;
+        }
+
+        .btns {
+          width: 90%;
+          height: 35px;
+          align-self: center;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          margin-top: 30px;
+
+          button {
+            width: 40%;
+            height: 100%;
+            border-radius: 3px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: 300ms ease;
+
+            &.cancel {
+              background: #ff000029;
+              color: #ff0000;
+              border: 1px solid #ff000061;
+
+              &:hover {
+                background: #ff000076;
+                border: 1px solid #ff0000;
+                color: #ffffff;
+              }
+            }
+
+            &.accept {
+              background: #ffffff00;
+              color: #ffffff;
+              border: 1px solid #ffffffca;
+
+              &:hover {
+
+                background: #ffffff;
+                color: #000000;
+                border: 1px solid #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -36,7 +36,7 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 30 * 60 * 1000
+      maxAge: 15 * 60 * 60 * 1000
     }
   }));
 
