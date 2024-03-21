@@ -8,10 +8,10 @@ export const createConfigproductRouter = ({ productModel }) => {
   const productController = new ConfigproductController({ productModel });
 
   productsRouter.get('/all', productController.getAll);
-  //  productsRouter.post('/add', providorController.create);
-  /*
-  providorsRouter.patch('/add/idact', providorController.updateID);
-  */
+  productsRouter.post('/addbook', productController.createBook);
+
+  productsRouter.post('/addsepar', productController.createSepar);
+  productsRouter.post('/addmag', productController.createMag);
 
   return productsRouter;
 };

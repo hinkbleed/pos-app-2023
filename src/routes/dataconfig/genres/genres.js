@@ -9,9 +9,8 @@ export const createConfiggenreRouter = ({ genreModel }) => {
 
   genresRouter.get('/all', genreController.getAll);
   genresRouter.post('/add', genreController.create);
-  /*
-  providorsRouter.patch('/add/idact', providorController.updateID);
-  */
+
+  genresRouter.get('/allToProducts', genreController.getAllToProducts);
 
   return genresRouter;
 };

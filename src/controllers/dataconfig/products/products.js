@@ -1,4 +1,7 @@
 import { structureAllProducts } from '../../../schemas/dataconfig/products/htmlProducts.js';
+import { validateBook } from '../../../schemas/dataconfig/products/validateBook.js';
+import { validateMag } from '../../../schemas/dataconfig/products/validateMag.js';
+import { validateSepar } from '../../../schemas/dataconfig/products/validateSepar.js';
 
 export class ConfigproductController {
   constructor ({ productModel }) {
@@ -16,32 +19,45 @@ export class ConfigproductController {
     }
   };
 
-  /*
-  create = async (req, res) => {
-    const result = validateProvidor(req.body);
+  createBook = async (req, res) => {
+    const result = validateBook(req.body);
+    if (!result.success) {
+      console.error(result.error.errors); // Imprimir errores en la consola
+    }
 
     if (result.error) {
       return res.status(400).json({ error: JSON.parse(result.error.message) });
     }
 
-    const newProvidor = await this.providorModel.create({ input: result.data });
-    res.status(201).json({ message: 'Proveedor creado exitosamente', providor: newProvidor });
+    const newBook = await this.productModel.createBook({ input: result.data });
+    res.status(201).json({ message: 'Libro creado exitosamente', book: newBook });
   };
-  */
 
-  /*
-  updateID = async (req, res) => {
-    try {
-      const newValue = req.body.provIDcounter;
-      console.log(newValue);
-      const change = await this.providorModel.update({ newValue });
-      console.log(change);
-      res.status(200).json({ message: 'Valor actualizado correctamente en la base de datos.' });
-    } catch (error) {
-      console.error('Error al actualizar el valor en la base de datos:', error);
-      res.status(500).json({ error: 'Error al actualizar el valor en la base de datos.' });
+  createSepar = async (req, res) => {
+    const result = validateSepar(req.body);
+    if (!result.success) {
+      console.error(result.error.errors); // Imprimir errores en la consola
     }
+
+    if (result.error) {
+      return res.status(400).json({ error: JSON.parse(result.error.message) });
+    }
+
+    const newSepar = await this.productModel.createSepar({ input: result.data });
+    res.status(201).json({ message: 'Separador creado exitosamente', separ: newSepar });
   };
 
-  */
+  createMag = async (req, res) => {
+    const result = validateMag(req.body);
+    if (!result.success) {
+      console.error(result.error.errors); // Imprimir errores en la consola
+    }
+
+    if (result.error) {
+      return res.status(400).json({ error: JSON.parse(result.error.message) });
+    }
+
+    const newMag = await this.productModel.createMag({ input: result.data });
+    res.status(201).json({ message: 'Revista creada exitosamente', mag: newMag });
+  };
 }

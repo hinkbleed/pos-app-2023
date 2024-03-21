@@ -25,7 +25,7 @@ export const createDataconfigRouter = () => {
   dataconfigRouter.get('/employees', (req, res) => res.render('dataconfigemployees', { title: 'EDQ | Employees' }));
 
   //  CUSTOMERS
-  dataconfigRouter.get('/customers', (req, res) => res.render('Customers', { title: 'EDQ | Data Configuration' }));
+  dataconfigRouter.get('/customers', (req, res) => res.render('dataconfigcustomers', { title: 'EDQ | Data Configuration' }));
 
   //  TICKETS
   dataconfigRouter.get('/tickets', (req, res) => res.render('dataconfigtickets', { title: 'EDQ | Tickets' }));

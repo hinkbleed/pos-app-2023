@@ -1,0 +1,34 @@
+<div class="addSepar-screen" id="addSeparScreen">
+  <div class="addSepar-formBox">
+    <div class="tag">Añadir nuevo separador</div>
+    <form class="form" id="addSeparForm">
+      <div class="inputs">
+
+
+        <label for="separBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="separBarcodeInput" required>
+
+        <label for="separNameInput">Nombre: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="separNameInput" required>
+
+        <label for="separMaterialInput">Material: <i>(requerido)</i></label>
+        <input type="text" name="prodMaterial" id="separMaterialInput" required>
+
+        <label for="separPrintInput">Impresión: <i>(requerido)</i></label>
+        <input type="text" name="prodPrint" id="separPrintInput" required>
+
+        <label for="separDescriptionInput">Descripción: <i>(requerido)</i></label>
+        <input type="textarea" name="prodDescription" id="separDescriptionInput" required>
+
+        <label for="separPriceInput">Precio:</label>
+        <input type="number" name="prodPrice" id="separPriceInput">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddSeparBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddSeparBtn">Aceptar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

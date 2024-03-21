@@ -1,0 +1,41 @@
+<div class="addMag-screen" id="addMagScreen">
+  <div class="addMag-formBox">
+    <div class="tag">Añadir nueva/o revista/cómic</div>
+    <form class="form" id="addMagForm">
+
+      <div class="inputs">
+
+
+        <label for="magBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="magBarcodeInput" required>
+
+        <label for="magNameInput">Título: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="magNameInput" required>
+
+        <label for="magAuthorInput">Autor: <i>(requerido)</i></label>
+        <input type="text" name="prodAuthor" id="magAuthorInput" required>
+
+        <label for="magYearInput">Año: <i>(requerido)</i></label>
+        <input type="number" name="prodYear" id="magYearInput" required>
+
+        <label for="magPriceInput">Precio:</label>
+        <input type="number" name="prodPrice" id="magPriceInput">
+
+        <label for="magEditorialInput">Editorial: <i>(requerido)</i></label>
+        <select name="prodEditorial" id="magEditorialInput" placeholder="Selecciona una editorial">
+        </select>
+
+        <label for="magSubgenreInput">Subgénero: <i>(requerido)</i></label>
+        <select name="prodSubgenre" id="magSubgenreInput">
+        </select>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddMagBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddSeparBtn">Aceptar</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

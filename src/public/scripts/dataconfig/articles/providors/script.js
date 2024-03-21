@@ -181,7 +181,7 @@ function startEditProvidor (event) {
   const providorNumbElement = event.target.closest('.providor-card').querySelector('.prov-bit.numb');
   const providorNumb = providorNumbElement.textContent.replace(/\s/g, '');
   console.log(`Recovery information: ${providorId}, ${providorName}, ${providorResp}, ${providorNumb}`);
-  document.getElementById('editTag').innerHTML = `
+  document.getElementById('editProvidorTag').innerHTML = `
   <div>Editar información de: <strong>${providorName}</strong></div>
  <div>con ID: <strong>${providorId}</strong></div>`;
   document.getElementById('editRespInput').value = providorResp;

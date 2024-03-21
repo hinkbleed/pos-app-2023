@@ -9,9 +9,8 @@ export const createConfigeditorialRouter = ({ editorialModel }) => {
 
   editorialsRouter.get('/all', editorialController.getAll);
   editorialsRouter.post('/add', editorialController.create);
-  /*
-  providorsRouter.patch('/add/idact', providorController.updateID);
-  */
+
+  editorialsRouter.get('/alltoproducts', editorialController.getAllToProducts);
 
   return editorialsRouter;
 };

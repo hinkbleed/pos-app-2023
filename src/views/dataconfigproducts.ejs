@@ -15,24 +15,37 @@
   <link rel="stylesheet" href="/css/dataconfig/articles/products/ask/styles.css">
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/book/add/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/book/edit/styles.css">
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/add/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/edit/styles.css">
+
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/mag/add/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/mag/edit/styles.css">
 
 <body>
   <%- include('partials/dataconfig/interface/exitarrow') %>
 
     <%- include('partials/dataconfig/articles/products/main') %>
+
       <%- include('partials/dataconfig/articles/products/askAdd') %>
 
-        <%- include('partials/dataconfig/articles/products/book/addBook') %>
+        <%- include('partials/dataconfig/articles/products/book/add') %>
+          <%- include('partials/dataconfig/articles/products/book/edit') %>
 
-        <%- include('partials/dataconfig/articles/products/separ/addSepar') %>
+            <%- include('partials/dataconfig/articles/products/separ/add') %>
+            <%- include('partials/dataconfig/articles/products/separ/edit') %>
 
-          <script type="module" src="/scripts/dataconfig/articles/products/script.js"></script>
+              <%- include('partials/dataconfig/articles/products/mag/add') %>
+              <%- include('partials/dataconfig/articles/products/mag/edit') %>
 
-          <script type="module" src="/scripts/dataconfig/articles/products/book/add.js"></script>
+                <script type="module" src="/scripts/dataconfig/articles/products/script.js"></script>
 
-          <script type="module" src="/scripts/dataconfig/articles/products/separ/add.js"></script>
+                <script type="module" src="/scripts/dataconfig/articles/products/book/add.js"></script>
+
+                <script type="module" src="/scripts/dataconfig/articles/products/separ/add.js"></script>
+
+                <script type="module" src="/scripts/dataconfig/articles/products/magazine/add.js"></script>
 </body>
 
 </html>

@@ -19,18 +19,28 @@ export function structureAllProducts (products) {
     ${products.books.map((book, index) => {
       return `
         <div class="product-card book-product">
-          <div class="product-cardColumn cardBookName">${book.book_name}</div>
-          <div class="product-cardColumn cardBookPrice">$${book.book_price}.00</div>
-          <div class="product-cardColumn cardBookBarcode">Pend.</div>
-          <div class="product-cardColumn cardBookAuthor">
-            <div class="author1">${book.book_author_1}</div>
-            ${book.book_author_2 ? `<div class="author2">${book.book_author_2}</div>` : ''}
-          </div >
+          <div class="productOptions-ask">
+            <div class="prodBtns editBookBtn editBtn">
+              Editar
+              <img class="btn-icon" src="/svg/edit-icon.svg"/>
+          
+            </div>
+            <div class="prodBtns addBookToPartyBtn addBtn">
+              Añadir a inventario
+              <img class="btn-icon" src="/svg/add-icon.svg"/>
+            </div>
+          </div>
+          <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
+          ${book.book_price ? `<div class="product-cardColumn cardBookPrice">$${book.book_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardBookPrice empty">n/a</div>'}
+        
+
+          <div class="product-cardColumn cardBookBarcode">${book.barcode_number}</div>
+          <div class="product-cardColumn cardBookAuthor">${book.book_author}</div >
           <div class="product-cardColumn cardBookEditorial">${book.book_editorial_name}</div>
           <div class="product-cardColumn cardBookYear">${book.book_year}</div>
           <div class="product-cardColumn cardBookGenres">
             <div class="genre">${book.book_genre_name}</div>
-            <div>${book.book_sybgenre_name}</div>
+            <div>${book.book_subgenre_name}</div>
           </div>
           <div class="product-cardColumn cardBookEDQid">${book.book_id}</div>
         </div >
@@ -64,11 +74,22 @@ export function structureAllProducts (products) {
       ${products.separators.map(separ => {
       return `
       <div class="product-card separator-product">
-        <div class="product-cardColumn cardSeparName">${separ.separ_name}</div>
+        <div class="productOptions-ask">
+          <div class="prodBtns editSeparBtn editBtn">
+            Editar
+            <img class="btn-icon" src="/svg/edit-icon.svg"/>
+    
+          </div>
+          <div class="prodBtns addSeparToPartyBtn addBtn">
+            Añadir a inventario
+            <img class="btn-icon" src="/svg/add-icon.svg"/>
+          </div>
+        </div>
+        <div class="product-cardColumn cardSeparName separ-toggle-btn">${separ.separ_name}</div>
         <div class="product-cardColumn cardSeparPrice">$${separ.separ_price}.00</div>  
-        <div class="product-cardColumn cardSeparBarcode">pend. barcode</div>
+        <div class="product-cardColumn cardSeparBarcode">${separ.barcode_number}</div>
         <div class="product-cardColumn cardSeparMaterial">${separ.separ_material}</div>
-        <div class="product-cardColumn cardSeparFace">${separ.separ_face}</div>
+        <div class="product-cardColumn cardSeparPrint">${separ.separ_print}</div>
         <div class="product-cardColumn cardSeparDescription">${separ.separ_description}</div>
         <div class="product-cardColumn cardSeparEDQid">${separ.separ_id}</div>
       </div>
@@ -98,13 +119,20 @@ export function structureAllProducts (products) {
       ${products.magazines.map(mag => {
       return `
       <div class="product-card magazine-product">
-        <div class="product-cardColumn cardMagazineName">${mag.mag_name}</div>
+        <div class="productOptions-ask">
+          <div class="prodBtns editMagBtn editBtn">
+            Editar
+            <img class="btn-icon" src="/svg/edit-icon.svg"/>
+          </div>
+          <div class="prodBtns addMagToPartyBtn addBtn">
+            Añadir a inventario
+            <img class="btn-icon" src="/svg/add-icon.svg"/>
+          </div>
+        </div>
+        <div class="product-cardColumn cardMagazineName mag-toggle-btn">${mag.mag_name}</div>
         <div class="product-cardColumn cardMagazinePrice">$${mag.mag_price}.00</div>
-        <div class="product-cardColumn cardMagazineBarcode">barcode pend.</div>
-        <div class="product-cardColumn cardMagazineAuthor">
-          <div class="author1">${mag.mag_author_1}</div>
-          ${mag.mag_author_2 ? `<div class="author2">${mag.mag_author_2}</div>` : ''}
-        </div >
+        <div class="product-cardColumn cardMagazineBarcode">${mag.barcode_number}</div>
+        <div class="product-cardColumn cardMagazineAuthor">${mag.mag_author}</div >
         
         <div class="product-cardColumn cardMagazineEditorial">${mag.mag_editorial_name}</div>
         <div class="product-cardColumn cardMagazineYear">${mag.mag_year}</div>

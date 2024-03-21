@@ -13,3 +13,12 @@ export function structureSubgenres (subgenres) {
   const subgenresHtml = subgenresArray.join('');
   return subgenresHtml;
 }
+
+export function structureSubgenresToProducts (subgenres) {
+  const subgenresArray = subgenres.map((subgenre) => `
+  <option data-id="${subgenre.subgenre_id}" data-name="${subgenre.subgenre_name}" data-abv="${subgenre.subgenre_abv}">${subgenre.subgenre_name} / ${subgenre.subgenre_abv}</option>
+     `);
+  const emptyRule = '<option>-- Selecciona un subgénero --</option>';
+  const subgenresHtml = emptyRule + subgenresArray.join('');
+  return subgenresHtml;
+}

@@ -23,7 +23,7 @@ body .home-box .hub .hubBox {
   border: 1px solid rgba(255, 255, 255, 0.2352941176);
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1333333333), inset 0 0 30px #000000;
-  background: rgba(0, 0, 0, 0.2666666667);
+  background: rgba(0, 0, 0, 0);
   transition: 300ms ease;
   overflow: hidden;
   display: flex;
@@ -291,17 +291,17 @@ body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.newEvent {
   flex-direction: column;
   position: relative;
   width: 80%;
-  height: 45px;
+  height: 60px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.fullStorage {
   font-size: 14px;
   width: 65%;
-  height: 35px;
+  height: 45px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.dataConfig {
   font-size: 14px;
   width: 65%;
-  height: 35px;
+  height: 45px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .session-btn {
   width: 40%;

@@ -8,14 +8,6 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box {
   transition: 300ms;
   gap: 100px;
 }
-body .article-socket .dataconfig-box .body .main-screen .cards-box .no-prod {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box {
   position: relative;
   width: 98%;
@@ -62,7 +54,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.book-titleCard {
-  filter: hue-rotate(120deg);
+  filter: hue-rotate(130deg) brightness(2) saturate(2);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.book-titleCard::after {
   content: "";
@@ -87,10 +79,10 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   height: 300px;
   background: #8b4da9;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(100px) saturate(3);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.magazine-titleCard {
-  filter: hue-rotate(0deg);
+  filter: hue-rotate(0deg) saturate(2);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.magazine-titleCard::after {
   content: "";
@@ -124,12 +116,12 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  gap: 5px;
+  gap: 3px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card {
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -138,6 +130,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   border-radius: 5px;
   overflow: hidden;
   font-size: 16px;
+  cursor: pointer;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card:after {
   content: "";
@@ -153,6 +146,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   box-shadow: 0 0 30px mediumslateblue;
   opacity: 0;
   filter: blur(10px);
+  z-index: 19;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card:hover:after {
   top: 35%;
@@ -168,17 +162,18 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   width: 20%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
+  z-index: 20;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
-  width: 7%;
+  width: 8%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
-  width: 15%;
+  width: 17%;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookAuthor {
-  width: 13%;
+  width: 7%;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -191,14 +186,17 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   font-style: italic;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookGenres {
-  width: 10%;
+  width: 12%;
   flex-direction: column;
   padding: 2px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
-  width: 20%;
-  height: 60%;
+  width: 19%;
+  height: 50%;
   background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn {
   height: 100%;
@@ -207,32 +205,38 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   justify-content: center;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
-  width: 20%;
+  width: 21%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
+  z-index: 20;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
-  width: 10%;
+  width: 8%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
-  width: 15%;
+  width: 17%;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparMaterial {
   width: 10%;
 }
-body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparFace {
-  width: 10%;
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrint {
+  width: 14%;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparDescription {
-  width: 15%;
+  width: 20%;
   padding: 2px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
-  width: 20%;
+  width: 18%;
   height: 60%;
   background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn {
   height: 100%;
@@ -241,25 +245,26 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   justify-content: center;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
-  width: 20%;
+  width: 21%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
+  z-index: 20;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
-  width: 7%;
+  width: 8%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
-  width: 15%;
+  width: 17%;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAuthor {
-  width: 12%;
+  width: 7%;
   flex-direction: column;
   align-items: flex-start;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEditorial {
-  width: 8%;
+  width: 10%;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineYear {
   width: 5%;
@@ -267,14 +272,75 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   font-style: italic;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineSubgenre {
-  width: 13%;
+  width: 12%;
   flex-direction: column;
   padding: 2px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
-  width: 20%;
+  width: 18%;
   height: 60%;
   background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8078431373);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+  margin: 0 10%;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+  background: blue;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+  background: #00962d;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(1);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .no-content {
   width: 100%;
@@ -282,5 +348,28 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -10,3 +10,12 @@ export function structureEditorials (editorials) {
   const editorialsHtml = editorialsArray.join('');
   return editorialsHtml;
 }
+
+export function structureEditorialsToProducts (editorials) {
+  const editorialsArray = editorials.map((editorial) => `
+    <option data-id="${editorial.edit_id}" data-name="${editorial.edit_name}">${editorial.edit_name}</option>
+    `);
+  const emptyRule = '<option data-id="">-- Selecciona una editorial --</option>';
+  const editorialsHtml = emptyRule + editorialsArray.join('');
+  return editorialsHtml;
+}

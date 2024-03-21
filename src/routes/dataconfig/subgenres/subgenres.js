@@ -9,9 +9,8 @@ export const createConfigsubgenreRouter = ({ subgenreModel }) => {
 
   subgenresRouter.get('/all', subgenreController.getAll);
   subgenresRouter.post('/add', subgenreController.create);
-  /*
-  providorsRouter.patch('/add/idact', providorController.updateID);
-  */
+
+  subgenresRouter.get('/alltoproducts', subgenreController.getAllToProducts);
 
   return subgenresRouter;
 };

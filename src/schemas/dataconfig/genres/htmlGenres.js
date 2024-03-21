@@ -13,3 +13,12 @@ export function structureGenres (genres) {
   const genresHtml = genresArray.join('');
   return genresHtml;
 }
+
+export function structureGenresToProducts (genres) {
+  const genresArray = genres.map((genre) => `
+    <option data-id="${genre.genre_id}" data-name="${genre.genre_name}" data-abv="${genre.genre_abv}">${genre.genre_name} / ${genre.genre_abv}</option>
+      `);
+  const emptyRule = '<option>-- Selecciona un género --</option>';
+  const genresHtml = emptyRule + genresArray.join('');
+  return genresHtml;
+}
