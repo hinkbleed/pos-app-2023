@@ -9,6 +9,7 @@ export const createConfiggenreRouter = ({ genreModel }) => {
 
   genresRouter.get('/all', genreController.getAll);
   genresRouter.post('/add', genreController.create);
+  genresRouter.delete('/delete/:id', genreController.delete);
 
   genresRouter.get('/allToProducts', genreController.getAllToProducts);
 

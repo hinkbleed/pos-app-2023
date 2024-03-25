@@ -27,6 +27,19 @@ export class ConfigsubgenreController {
     res.status(201).json({ message: 'Proveedor creado exitosamente', providor: newSubgenre });
   };
 
+  delete = async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      const deletion = await this.subgenreModel.delete({ id });
+      console.log(deletion);
+      res.status(200).json({ message: 'Subgénero eliminado correctamente de la base de datos.' });
+    } catch (error) {
+      console.error('Error al eliminar Subgénero de la base de datos:', error);
+      res.status(500).json({ error: 'Error al eliminar Subgénero de la base de datos.' });
+    }
+  };
+
   getAllToProducts = async (req, res) => {
     const subgenres = await this.subgenreModel.getAll();
     const htmlSubgenres = structureSubgenresToProducts(subgenres);

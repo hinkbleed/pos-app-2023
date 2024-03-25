@@ -19,7 +19,7 @@ const separSchema = z.object({
   }),
   separPrice: z.number({
     invalid_type_error: 'price must be a number'
-  }).int().positive(),
+  }).positive(),
   separBarcode: z.string({
     invalid_type_error: 'barcode must be a valid barcode',
     required_error: 'separator barcode is required'
@@ -28,4 +28,18 @@ const separSchema = z.object({
 
 export function validateSepar (object) {
   return separSchema.safeParse(object);
+}
+
+const partialSeparSchema = z.object({
+  separPrice: z.number({
+    invalid_type_error: 'price must be a number'
+  }).positive(),
+  separDescription: z.string({
+    invalid_type_error: 'description must be a string',
+    required_error: 'separator description is required'
+  })
+});
+
+export function validatePartialSepar (object) {
+  return partialSeparSchema.safeParse(object);
 }

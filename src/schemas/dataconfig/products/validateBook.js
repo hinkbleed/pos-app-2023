@@ -27,7 +27,7 @@ const bookSchema = z.object({
   }),
   bookPrice: z.number({
     invalid_type_error: 'price must be a number'
-  }).int().positive(),
+  }).positive(),
   bookGenreName: z.string({
     invalid_type_error: 'genre name must be a string',
     required_error: 'book genre name is required'
@@ -56,4 +56,14 @@ const bookSchema = z.object({
 
 export function validateBook (object) {
   return bookSchema.safeParse(object);
+}
+
+const partialBookSchema = z.object({
+  bookPrice: z.number({
+    invalid_type_error: 'price must be a number'
+  }).positive()
+});
+
+export function validatePartialBook (object) {
+  return partialBookSchema.safeParse(object);
 }

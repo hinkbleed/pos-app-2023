@@ -15,6 +15,7 @@ body .editBook-screen.active {
   display: flex;
 }
 body .editBook-screen .editBook-formBox {
+  position: relative;
   height: 90%;
   width: 70%;
   background: rgba(0, 0, 0, 0.4823529412);
@@ -24,7 +25,6 @@ body .editBook-screen .editBook-formBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
 }
@@ -33,19 +33,24 @@ body .editBook-screen .editBook-formBox .tag {
   width: fit-content;
   height: 10%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: rgba(255, 255, 255, 0.7019607843);
   font-weight: 100;
   font-size: 16px;
 }
-body .editBook-screen .editBook-formBox .form {
+body .editBook-screen .editBook-formBox .tag div {
+  margin-top: 10px;
+}
+body .editBook-screen .editBook-formBox form {
+  position: relative;
   width: 100%;
   height: 90%;
   display: flex;
   flex-direction: column;
 }
-body .editBook-screen .editBook-formBox .form .inputs {
+body .editBook-screen .editBook-formBox form .inputs {
   width: 100%;
   height: 85%;
   display: flex;
@@ -54,7 +59,7 @@ body .editBook-screen .editBook-formBox .form .inputs {
   flex-wrap: wrap;
   padding: 20px 0;
 }
-body .editBook-screen .editBook-formBox .form .inputs label {
+body .editBook-screen .editBook-formBox form .inputs .bookEditLabel {
   width: 35%;
   font-size: 16px;
   margin: 10px 60px;
@@ -64,11 +69,49 @@ body .editBook-screen .editBook-formBox .form .inputs label {
   align-items: center;
   justify-content: space-between;
 }
-body .editBook-screen .editBook-formBox .form .inputs label i {
+body .editBook-screen .editBook-formBox form .inputs .bookEditLabel i {
   font-size: 11px;
   color: rgb(125, 125, 255);
 }
-body .editBook-screen .editBook-formBox .form .inputs input {
+body .editBook-screen .editBook-formBox form .inputs .bookEditInput {
+  width: 35%;
+  height: 35px;
+  margin: 0 0 35px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.0823529412);
+  color: rgba(255, 255, 255, 0.456);
+  padding: 0 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+body .editBook-screen .editBook-formBox form .inputs label {
+  width: 35%;
+  font-size: 16px;
+  margin: 10px 60px;
+  height: 25px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .editBook-screen .editBook-formBox form .inputs label i {
+  font-size: 11px;
+  color: #7d7dff;
+}
+body .editBook-screen .editBook-formBox form .inputs input {
+  width: 35%;
+  height: 35px;
+  margin: 0 0 35px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid #7d7dff;
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .editBook-screen .editBook-formBox form .inputs select {
   width: 35%;
   height: 35px;
   margin: 0 0 35px 0;
@@ -79,31 +122,21 @@ body .editBook-screen .editBook-formBox .form .inputs input {
   padding: 0 10px;
   font-size: 16px;
 }
-body .editBook-screen .editBook-formBox .form .inputs select {
-  width: 35%;
-  height: 35px;
-  margin: 0 0 35px 0;
-  outline: none;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5529411765);
-  color: white;
-  padding: 0 10px;
-  font-size: 16px;
-}
-body .editBook-screen .editBook-formBox .form .inputs select option {
+body .editBook-screen .editBook-formBox form .inputs select option {
   background: black;
   display: flex;
   justify-content: space-between;
 }
-body .editBook-screen .editBook-formBox .form .inputs select option span {
+body .editBook-screen .editBook-formBox form .inputs select option span {
   font-size: 11px;
 }
-body .editBook-screen .editBook-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
-body .editBook-screen .editBook-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+body .editBook-screen .editBook-formBox form .inputs input[type=number]::-webkit-inner-spin-button,
+body .editBook-screen .editBook-formBox form .inputs input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .editBook-screen .editBook-formBox .form .btns {
+body .editBook-screen .editBook-formBox form .btns {
+  position: relative;
   width: 90%;
   height: 15%;
   align-self: center;
@@ -112,7 +145,8 @@ body .editBook-screen .editBook-formBox .form .btns {
   align-items: center;
   justify-content: space-around;
 }
-body .editBook-screen .editBook-formBox .form .btns button {
+body .editBook-screen .editBook-formBox form .btns button {
+  position: relative;
   width: 40%;
   height: 30px;
   border-radius: 3px;
@@ -121,23 +155,53 @@ body .editBook-screen .editBook-formBox .form .btns button {
   cursor: pointer;
   transition: 300ms ease;
 }
-body .editBook-screen .editBook-formBox .form .btns button.cancel {
+body .editBook-screen .editBook-formBox form .btns button.cancel {
   background: rgba(255, 0, 0, 0.1607843137);
   color: #ff0000;
   border: 1px solid rgba(255, 0, 0, 0.3803921569);
 }
-body .editBook-screen .editBook-formBox .form .btns button.cancel:hover {
+body .editBook-screen .editBook-formBox form .btns button.cancel:hover {
   background: rgba(255, 0, 0, 0.462745098);
   border: 1px solid #ff0000;
   color: #ffffff;
 }
-body .editBook-screen .editBook-formBox .form .btns button.accept {
+body .editBook-screen .editBook-formBox form .btns button.accept {
   background: rgba(255, 255, 255, 0);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.7921568627);
 }
-body .editBook-screen .editBook-formBox .form .btns button.accept:hover {
+body .editBook-screen .editBook-formBox form .btns button.accept:hover {
   background: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;
+}
+body .editBook-screen .editBook-formBox form .btns .deleteBookBtn {
+  position: absolute;
+  top: -100%;
+  right: 5%;
+  width: 20%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid #ff5b5b;
+  cursor: pointer;
+  transition: 300ms ease;
+  background: #ffd5d5;
+  color: #000000;
+}
+body .editBook-screen .editBook-formBox form .btns .deleteBookBtn:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .editBook-screen .editBook-formBox form .btns .deleteBookBtn:hover img {
+  filter: invert(1);
+}
+body .editBook-screen .editBook-formBox form .btns .deleteBookBtn img {
+  height: 70%;
+  transition: 300ms ease;
 }/*# sourceMappingURL=styles.css.map */

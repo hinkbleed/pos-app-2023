@@ -117,6 +117,54 @@ export class ProductModel {
     }
   }
 
+  static async updateBook ({ id, input }) {
+    const {
+      bookPrice
+    } = input;
+
+    try {
+      const currentInfo = await connection.query(
+        'SELECT book_name FROM books WHERE book_id = ?',
+        [id]
+      );
+      if (currentInfo.length === 0) {
+        throw new Error('Libro no encontrado');
+      }
+      await connection.query(
+        `UPDATE books 
+        SET book_price = ?
+        WHERE book_id = ?;`,
+        [bookPrice || 0, id]
+      );
+    } catch (error) {
+      throw new Error('Error updating product: ' + error.message);
+    }
+    return true;
+  }
+
+  static async deleteBook ({ id }) {
+    try {
+      const deleteBarcodeQuery = 'DELETE FROM bookBarcodes WHERE book_id = ?';
+      const deleteBarcodeResult = await connection.query(deleteBarcodeQuery, [id]);
+
+      if (deleteBarcodeResult.affectedRows === 0) {
+        throw new Error('El codigo de barras del libro no existe o no se pudo eliminar');
+      }
+      const deleteQuery = 'DELETE FROM books WHERE book_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('El libro no existe o no se pudo eliminar');
+      }
+      console.log('Libro eliminado exitosamente');
+      return { message: 'Libro eliminado exitosamente' };
+    } catch (error) {
+      // Capturamos y manejamos cualquier error que ocurra durante la eliminación del proveedor
+      console.error('Error al eliminar el Libro:', error);
+      throw error; // Relanzamos el error para que el controlador pueda manejarlo adecuadamente
+    }
+  }
+
   static async createSepar ({ input }) {
     const {
       separName,
@@ -155,6 +203,56 @@ export class ProductModel {
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);
+    }
+  }
+
+  static async updateSepar ({ id, input }) {
+    const {
+      separPrice,
+      separDescription
+    } = input;
+
+    try {
+      const currentInfo = await connection.query(
+        'SELECT separ_name FROM separators WHERE separ_id = ?',
+        [id]
+      );
+      if (currentInfo.length === 0) {
+        throw new Error('Separador no encontrado');
+      }
+      await connection.query(
+        `UPDATE separators 
+        SET separ_price = ?,
+            separ_description = ?
+        WHERE separ_id = ?;`,
+        [separPrice || 0, separDescription, id]
+      );
+    } catch (error) {
+      throw new Error('Error updating product: ' + error.message);
+    }
+    return true;
+  }
+
+  static async deleteSepar ({ id }) {
+    try {
+      const deleteBarcodeQuery = 'DELETE FROM separBarcodes WHERE separ_id = ?';
+      const deleteBarcodeResult = await connection.query(deleteBarcodeQuery, [id]);
+
+      if (deleteBarcodeResult.affectedRows === 0) {
+        throw new Error('El codigo de barras del separador no existe o no se pudo eliminar');
+      }
+      const deleteQuery = 'DELETE FROM separators WHERE separ_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('El separador no existe o no se pudo eliminar');
+      }
+      console.log('Separador eliminado exitosamente');
+      return { message: 'Separador eliminado exitosamente' };
+    } catch (error) {
+      // Capturamos y manejamos cualquier error que ocurra durante la eliminación del proveedor
+      console.error('Error al eliminar el Separador:', error);
+      throw error; // Relanzamos el error para que el controlador pueda manejarlo adecuadamente
     }
   }
 
@@ -200,6 +298,54 @@ export class ProductModel {
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);
+    }
+  }
+
+  static async updateMag ({ id, input }) {
+    const {
+      magPrice
+    } = input;
+
+    try {
+      const currentInfo = await connection.query(
+        'SELECT mag_name FROM magazines WHERE mag_id = ?',
+        [id]
+      );
+      if (currentInfo.length === 0) {
+        throw new Error('Revista no encontrada');
+      }
+      await connection.query(
+        `UPDATE magazines 
+        SET mag_price = ?
+        WHERE mag_id = ?;`,
+        [magPrice || 0, id]
+      );
+    } catch (error) {
+      throw new Error('Error updating product: ' + error.message);
+    }
+    return true;
+  }
+
+  static async deleteMag ({ id }) {
+    try {
+      const deleteBarcodeQuery = 'DELETE FROM magBarcodes WHERE mag_id = ?';
+      const deleteBarcodeResult = await connection.query(deleteBarcodeQuery, [id]);
+
+      if (deleteBarcodeResult.affectedRows === 0) {
+        throw new Error('El codigo de barras de la revista no existe o no se pudo eliminar');
+      }
+      const deleteQuery = 'DELETE FROM magazines WHERE mag_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('La revista no existe o no se pudo eliminar');
+      }
+      console.log('Revista eliminada exitosamente');
+      return { message: 'Revista eliminada exitosamente' };
+    } catch (error) {
+      // Capturamos y manejamos cualquier error que ocurra durante la eliminación del proveedor
+      console.error('Error al eliminar la Revista:', error);
+      throw error; // Relanzamos el error para que el controlador pueda manejarlo adecuadamente
     }
   }
 }

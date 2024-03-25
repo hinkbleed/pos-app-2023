@@ -218,7 +218,7 @@ function finishEditProvidorScreen () {
   viewAllProvidors();
 }
 
-let currentprovidorId = null;
+let currentProvidorId = null;
 function startDeleteProvidor (event) {
   const providorId = event.target.closest('.providor-card').querySelector('.prov-bit.id').textContent;
   const providorName = event.target.closest('.providor-card').querySelector('.providor-name').textContent;
@@ -228,7 +228,7 @@ function startDeleteProvidor (event) {
   console.log(`Recovery information: ${providorId}, ${providorName}, ${providorResp}, ${providorNumb}`);
   deleteProvidorScreen.classList.add('active');
 
-  currentprovidorId = providorId;
+  currentProvidorId = providorId;
 
   const idLabel = document.getElementById('idLabel');
   const nameLabel = document.getElementById('nameLabel');
@@ -244,5 +244,5 @@ function startDeleteProvidor (event) {
 const acceptConfirmdeleteBtn = document.getElementById('acceptConfirmdeleteBtn');
 
 acceptConfirmdeleteBtn.addEventListener('click', function () {
-  deleteProvidor(currentprovidorId);
+  deleteProvidor(currentProvidorId);
 });

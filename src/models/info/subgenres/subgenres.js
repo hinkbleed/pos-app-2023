@@ -45,4 +45,19 @@ export class SubgenreModel {
     );
     return counterDB;
   }
+
+  static async delete ({ id }) {
+    try {
+      const deleteQuery = 'DELETE FROM subgenres WHERE subgenre_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('El subgénero no existe o no se pudo eliminar');
+      }
+      console.log('Subgénero eliminado exitosamente');
+      return { message: 'Subgénero eliminado exitosamente' };
+    } catch (error) {
+      console.error('Error al eliminar el Subgénero:', error);
+      throw error;
+    }
+  }
 }

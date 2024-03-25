@@ -31,8 +31,11 @@ export function structureAllProducts (products) {
             </div>
           </div>
           <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
-          ${book.book_price ? `<div class="product-cardColumn cardBookPrice">$${book.book_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardBookPrice empty">n/a</div>'}
-        
+
+
+          ${book.book_price ? `<div class="product-cardColumn cardBookPrice">$${typeof book.book_price === 'string' ? book.book_price.includes('.') ? book.book_price.padEnd(book.book_price.indexOf('.') + 3, '0') : book.book_price + '.00' : book.book_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardBookPrice">$0.00</div>'}
+
+  
 
           <div class="product-cardColumn cardBookBarcode">${book.barcode_number}</div>
           <div class="product-cardColumn cardBookAuthor">${book.book_author}</div >
@@ -86,7 +89,9 @@ export function structureAllProducts (products) {
           </div>
         </div>
         <div class="product-cardColumn cardSeparName separ-toggle-btn">${separ.separ_name}</div>
-        <div class="product-cardColumn cardSeparPrice">$${separ.separ_price}.00</div>  
+
+        ${separ.separ_price ? `<div class="product-cardColumn cardSeparPrice">$${typeof separ.separ_price === 'string' ? separ.separ_price.includes('.') ? separ.separ_price.padEnd(separ.separ_price.indexOf('.') + 3, '0') : separ.separ_price + '.00' : separ.separ_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardSeparPrice">$0.00</div>'}
+
         <div class="product-cardColumn cardSeparBarcode">${separ.barcode_number}</div>
         <div class="product-cardColumn cardSeparMaterial">${separ.separ_material}</div>
         <div class="product-cardColumn cardSeparPrint">${separ.separ_print}</div>
@@ -130,7 +135,9 @@ export function structureAllProducts (products) {
           </div>
         </div>
         <div class="product-cardColumn cardMagazineName mag-toggle-btn">${mag.mag_name}</div>
-        <div class="product-cardColumn cardMagazinePrice">$${mag.mag_price}.00</div>
+        
+        ${mag.mag_price ? `<div class="product-cardColumn cardMagazinePrice">$${typeof mag.mag_price === 'string' ? mag.mag_price.includes('.') ? mag.mag_price.padEnd(mag.mag_price.indexOf('.') + 3, '0') : mag.mag_price + '.00' : mag.mag_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardMagazinePrice">$0.00</div>'}
+
         <div class="product-cardColumn cardMagazineBarcode">${mag.barcode_number}</div>
         <div class="product-cardColumn cardMagazineAuthor">${mag.mag_author}</div >
         

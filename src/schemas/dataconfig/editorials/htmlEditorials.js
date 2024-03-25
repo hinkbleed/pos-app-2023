@@ -4,7 +4,20 @@ export function structureEditorials (editorials) {
       <div class="glow"></div>
       <div class="borderglow"></div>
       <div class="editorial-name">${editorial.edit_name}</div>
-      <div class="edit-bit id">${editorial.edit_id}</div>
+      <div class="editorial-id">${editorial.edit_id}</div>
+      
+      <div class="opt-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      
+      <div class="options-ask">
+        <div class="editorialBtns deleteBtn">
+          Eliminar
+          <img class="btn-icon" src="/svg/trash-icon.svg"/>
+        </div>
+      </div>
     </div>
     `);
   const editorialsHtml = editorialsArray.join('');

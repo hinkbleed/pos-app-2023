@@ -8,6 +8,17 @@ export function structureSubgenres (subgenres) {
         
         <div class="item subgenre-id">${subgenre.subgenre_id}</div>
       </div>
+
+      <div class="opt-dots subgenre-dots">
+      <div class="dot"></div>
+    </div>
+      
+    <div class="subgenreOptions-ask options-ask">
+      <div class="subgenreBtns deleteBtn">
+        Eliminar
+        <img class="btn-icon" src="/svg/trash-icon.svg"/>
+      </div>
+    </div>
     </div>
      `);
   const subgenresHtml = subgenresArray.join('');

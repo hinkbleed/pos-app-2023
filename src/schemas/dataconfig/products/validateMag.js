@@ -27,7 +27,7 @@ const magSchema = z.object({
   }),
   magPrice: z.number({
     invalid_type_error: 'price must be a number'
-  }).int().positive(),
+  }).positive(),
   magSubgenreName: z.string({
     invalid_type_error: 'subgenre name must be a string',
     required_error: 'book subgenre name is required'
@@ -44,4 +44,14 @@ const magSchema = z.object({
 
 export function validateMag (object) {
   return magSchema.safeParse(object);
+}
+
+const partialMagSchema = z.object({
+  magPrice: z.number({
+    invalid_type_error: 'price must be a number'
+  }).positive()
+});
+
+export function validatePartialMag (object) {
+  return partialMagSchema.safeParse(object);
 }

@@ -1,11 +1,36 @@
 <div class="editSepar-screen" id="editSeparScreen">
   <div class="editSepar-formBox">
-    <div class="tag" id="editSeparTag">Editar libro</div>
+    <div class="tag" id="editSeparTag">Editar Separador</div>
     <form class="editSepar-form" id="editSeparForm">
+
+      <div class="inputs">
+
+        <div class="separEditLabel">Código de Barras:</div>
+        <div class="separEditInput" id="separBarcodeEditInput"></div>
+
+        <div class="separEditLabel">Nombre:</div>
+        <div class="separEditInput" id="separNameEditInput"></div>
+
+        <div class="separEditLabel">Material:</div>
+        <div class="separEditInput" id="separMaterialEditInput"></div>
+
+        <div class="separEditLabel">Impresión:</div>
+        <div class="separEditInput" id="separPrintEditInput"></div>
+
+        <label for="separPriceEditInput">Precio:</label>
+        <input type="text" name="prodPrice" id="separPriceEditInput">
+
+        <label for="separDescriptionEditInput">Descripción: <i>(requerido):</i></label>
+        <input type="text" name="prodDescription" id="separDescriptionEditInput">
+      </div>
 
       <div class="btns">
         <button type="button" class="cancel" id="cancelEditSeparBtn">Cancelar</button>
         <button type="submit" class="accept" id="AcceptEditSeparBtn">Aceptar</button>
+
+        
+        <button type="button" class="deleteSeparBtn" id="deleteSeparBtn">Eliminar este Separador<img src="/svg/trash-icon.svg" />
+        </button>
       </div>
     </form>
   </div>

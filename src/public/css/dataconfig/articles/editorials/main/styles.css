@@ -17,13 +17,13 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .no-edit {
   font-size: 20px;
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card {
+  position: relative;
   width: 22%;
   height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   background: #000000;
   border-radius: 3px;
   border: 1px solid #0f0f0f;
@@ -85,7 +85,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-ca
   transition: transform 300ms ease;
   z-index: 5;
 }
-body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .edit-bit {
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .editorial-id {
   width: -moz-fit-content;
   width: fit-content;
   height: 40%;
@@ -97,7 +97,82 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-ca
   z-index: 5;
   font-size: 14px;
 }
-body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .edit-bit.id {
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .editorial-id.id {
   color: #595959;
   font-family: monospace;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .opt-dots {
+  position: absolute;
+  right: 1%;
+  bottom: 2%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 250;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .opt-dots:hover .dot {
+  background: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .opt-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #808080;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 200;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask.active .opt-dots {
+  transform: rotate(90deg);
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask .editorialBtns {
+  width: 60%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask .editorialBtns .btn-icon {
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask .editorialBtns.deleteBtn:hover {
+  background: red;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .editorial-card .options-ask .editorialBtns.deleteBtn:hover .btn-icon {
+  filter: invert(1);
 }/*# sourceMappingURL=styles.css.map */

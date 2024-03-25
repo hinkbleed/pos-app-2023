@@ -2,11 +2,39 @@
   <div class="editMag-formBox">
     <div class="tag" id="editMagTag">Editar libro</div>
 
-    
-    <div class="btns">
-      <button type="button" class="cancel" id="cancelEditMagBtn">Cancelar</button>
-      <button type="submit" class="accept" id="AcceptEditMagBtn">Aceptar</button>
-    </div>
+    <form class="editMag-form" id="editMagForm">
+      <div class="inputs">
+
+        <div class="magEditLabel">Código de Barras:</div>
+        <div class="magEditInput" id="magBarcodeEditInput"></div>
+
+        <div class="magEditLabel">Título:</div>
+        <div class="magEditInput" id="magTitleEditInput"></div>
+
+        <div class="magEditLabel">Autor:</div>
+        <div class="magEditInput" id="magAuthorEditInput"></div>
+
+        <div class="magEditLabel">Año:</div>
+        <div class="magEditInput" id="magYearEditInput"></div>
+
+        <div class="magEditLabel">Editorial:</div>
+        <div class="magEditInput" id="magEditorialEditInput"></div>
+
+        <div class="magEditLabel">Subgénero:</div>
+        <div class="magEditInput" id="magSubgenreEditInput"></div>
+
+        <label for="magPriceEditInput">Precio:</label>
+        <input type="text" name="prodPrice" id="magPriceEditInput">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelEditMagBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptEditMag-Btn">Aceptar</button>
+
+        <button type="button" class="deleteMagBtn" id="deleteMagBtn">Eliminar esta revista <img src="/svg/trash-icon.svg" />
+        </button>
+      </div>
+    </form>
   </div>
 
 </div>

@@ -117,6 +117,81 @@ body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box 
   font-size: 10px;
   font-weight: 500;
 }
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .opt-dots {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 250;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .opt-dots:hover .dot {
+  background: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .opt-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #808080;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 200;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask.active .opt-dots {
+  transform: rotate(90deg);
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask .genreBtns {
+  width: 80%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask .genreBtns .btn-icon {
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask .genreBtns.deleteBtn:hover {
+  background: red;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .genre-card .genreOptions-ask .genreBtns.deleteBtn:hover .btn-icon {
+  filter: invert(1);
+}
 body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card {
   width: 22%;
   height: 130px;
@@ -204,6 +279,81 @@ body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box 
   align-self: center;
   font-size: 10px;
   font-weight: 500;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .opt-dots {
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 25px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 250;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .opt-dots:hover .dot {
+  background: #ffffff;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .opt-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #808080;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 200;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask.active .opt-dots {
+  transform: rotate(90deg);
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask .subgenreBtns {
+  width: 60%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask .subgenreBtns .btn-icon {
+  transition: 300ms ease;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask .subgenreBtns.deleteBtn:hover {
+  background: red;
+  color: white;
+}
+body .article-socket .dataconfig-box .body .main-screen .part-screen .cards-box .subgenre-card .subgenreOptions-ask .subgenreBtns.deleteBtn:hover .btn-icon {
+  filter: invert(1);
 }
 
 @keyframes rotation_right {

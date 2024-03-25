@@ -3,9 +3,36 @@
     <div class="tag" id="editBookTag">Editar libro</div>
     <form class="editBook-form" id="editBookForm">
 
+      <div class="inputs">
+
+        <div class="bookEditLabel">Código de Barras:</div>
+        <div class="bookEditInput" id="bookBarcodeEditInput"></div>
+
+        <div class="bookEditLabel">Título:</div>
+        <div class="bookEditInput" id="bookTitleEditInput"></div>
+
+        <div class="bookEditLabel">Autor:</div>
+        <div class="bookEditInput" id="bookAuthorEditInput"></div>
+
+        <div class="bookEditLabel">Año:</div>
+        <div class="bookEditInput" id="bookYearEditInput"></div>
+
+        <div class="bookEditLabel">Editorial:</div>
+        <div class="bookEditInput" id="bookEditorialEditInput"></div>
+
+        <div class="bookEditLabel">Géneros:</div>
+        <div class="bookEditInput" id="bookGenreEditInput"></div>
+
+        <label for="bookPriceEditInput">Precio:</label>
+        <input type="text" name="prodPrice" id="bookPriceEditInput">
+      </div>
+
       <div class="btns">
         <button type="button" class="cancel" id="cancelEditBookBtn">Cancelar</button>
         <button type="submit" class="accept" id="AcceptEditBookBtn">Aceptar</button>
+
+        <button type="button" class="deleteBookBtn" id="deleteBookBtn">Eliminar este libro<img src="/svg/trash-icon.svg" />
+        </button>
       </div>
     </form>
   </div>

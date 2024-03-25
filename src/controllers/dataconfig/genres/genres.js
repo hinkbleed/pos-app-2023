@@ -27,6 +27,19 @@ export class ConfiggenreController {
     res.status(201).json({ message: 'Género creado exitosamente', providor: newGenre });
   };
 
+  delete = async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      const deletion = await this.genreModel.delete({ id });
+      console.log(deletion);
+      res.status(200).json({ message: 'Género eliminado correctamente de la base de datos.' });
+    } catch (error) {
+      console.error('Error al eliminar Género de la base de datos:', error);
+      res.status(500).json({ error: 'Error al eliminar Género de la base de datos.' });
+    }
+  };
+
   getAllToProducts = async (req, res) => {
     const genres = await this.genreModel.getAll();
     const htmlGenres = structureGenresToProducts(genres);

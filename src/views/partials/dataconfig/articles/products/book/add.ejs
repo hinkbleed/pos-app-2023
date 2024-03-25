@@ -19,7 +19,8 @@
         <input type="number" name="prodYear" id="bookYearInput" required>
 
         <label for="bookPriceInput">Precio:</label>
-        <input type="number" name="prodPrice" id="bookPriceInput">
+        <input type="text" name="prodPrice" id="bookPriceInput" pattern="\d+(\.\d{1,2})?">
+        
 
         <label for="bookEditorialInput">Editorial: <i>(requerido)</i></label>
         <select name="prodEdit" id="bookEditorialInput" placeholder="Selecciona una editorial">

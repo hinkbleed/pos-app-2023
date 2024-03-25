@@ -1,5 +1,5 @@
 import mysql from 'mysql2/promise';
-import { createEditEDQid } from '../../../schemas/editorials/createEditEDQid.js';
+import { createEditEDQid } from '../../../schemas/dataconfig/editorials/createEditEDQid.js';
 
 const config = {
   host: 'localhost',
@@ -43,5 +43,20 @@ export class EditorialModel {
       'UPDATE editIDcounter SET editIDcounter = ?', [newIDcounter]
     );
     return counterDB;
+  }
+
+  static async delete ({ id }) {
+    try {
+      const deleteQuery = 'DELETE FROM editorials WHERE edit_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('La editorial no existe o no se pudo eliminar');
+      }
+      console.log('Editorial eliminada exitosamente');
+      return { message: 'Editorial eliminada exitosamente' };
+    } catch (error) {
+      console.error('Error al eliminar la Editorial:', error);
+      throw error;
+    }
   }
 }

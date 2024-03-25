@@ -1,3 +1,4 @@
+
 const dataconfigAddGenre = document.getElementById('dataconfigAddBtn1');
 const dataconfigAddSubgenre = document.getElementById('dataconfigAddBtn2');
 const addGenreScreen = document.getElementById('addGenreScreen');
@@ -43,9 +44,84 @@ function viewAllGenres () {
     })
     .then(html => {
       configGenreBox.innerHTML = html;
+      document.querySelectorAll('.genre-dots').forEach(card => {
+        card.addEventListener('click', showGenreOptions);
+      });
     })
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
+    });
+}
+
+function showGenreOptions (event) {
+  const editAskElement = event.target.closest('.genre-card').querySelector('.genreOptions-ask');
+  editAskElement.classList.toggle('active');
+
+  const deleteBtn = editAskElement.querySelector('.deleteBtn');
+
+  deleteBtn.addEventListener('click', startDeleteGenre);
+}
+const deleteGenreScreen = document.getElementById('deleteGenreScreen');
+
+let currentGenreId = null;
+function startDeleteGenre (event) {
+  const genreId = event.target.closest('.genre-card').querySelector('.genre-id').textContent;
+  const genreName = event.target.closest('.genre-card').querySelector('.genre-name').textContent;
+  const genreAbv = event.target.closest('.genre-card').querySelector('.genre-abv').textContent;
+  console.log(`Recovery information: ${genreId}, ${genreName}, ${genreAbv}`);
+  deleteGenreScreen.classList.add('active');
+
+  currentGenreId = genreId;
+
+  const idLabel = document.getElementById('genreIdLabel');
+  const nameLabel = document.getElementById('genreNameLabel');
+  const abvLabel = document.getElementById('genreAbvLabel');
+
+  idLabel.innerHTML = genreId;
+  nameLabel.innerHTML = genreName;
+  abvLabel.innerHTML = genreAbv;
+}
+
+const cancelDeleteGenreBtn = document.getElementById('cancelDeleteGenreBtn');
+const acceptDeleteGenreBtn = document.getElementById('acceptDeleteGenreBtn');
+const confirmDeleteGenreScreen = document.getElementById('confirmDeleteGenreScreen');
+const cancelConfirmDeleteGenreBtn = document.getElementById('cancelConfirmDeleteGenreBtn');
+const acceptConfirmDeleteGenreBtn = document.getElementById('acceptConfirmDeleteGenreBtn');
+
+cancelDeleteGenreBtn.addEventListener('click', cancelDeleteGenre);
+acceptDeleteGenreBtn.addEventListener('click', acceptDeleteGenre);
+cancelConfirmDeleteGenreBtn.addEventListener('click', cancelConfirmDeleteGenre);
+acceptConfirmDeleteGenreBtn.addEventListener('click', deleteGenre);
+
+function cancelDeleteGenre () {
+  deleteGenreScreen.classList.remove('active');
+}
+
+function acceptDeleteGenre () {
+  confirmDeleteGenreScreen.classList.add('active');
+}
+
+function cancelConfirmDeleteGenre () {
+  deleteGenreScreen.classList.remove('active');
+  confirmDeleteGenreScreen.classList.remove('active');
+}
+
+function deleteGenre () {
+  fetch(`/dataconfig/genres/delete/${currentGenreId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('La solicitud falló');
+      }
+      cancelConfirmDeleteGenre();
+      viewAllGenres();
+    })
+    .catch(error => {
+      console.error('Error al eliminar el proveedor:', error);
     });
 }
 
@@ -60,9 +136,85 @@ function viewAllSubgenres () {
     })
     .then(html => {
       configSubgenreBox.innerHTML = html;
+      document.querySelectorAll('.subgenre-dots').forEach(card => {
+        card.addEventListener('click', showSubgenreOptions);
+      });
     })
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
+    });
+}
+
+function showSubgenreOptions (event) {
+  const editAskElement = event.target.closest('.subgenre-card').querySelector('.subgenreOptions-ask');
+  editAskElement.classList.toggle('active');
+
+  const deleteBtn = editAskElement.querySelector('.deleteBtn');
+
+  deleteBtn.addEventListener('click', startDeleteSubgenre);
+}
+
+const deleteSubgenreScreen = document.getElementById('deleteSubgenreScreen');
+
+let currentSubgenreId = null;
+function startDeleteSubgenre (event) {
+  const subgenreId = event.target.closest('.subgenre-card').querySelector('.subgenre-id').textContent;
+  const subgenreName = event.target.closest('.subgenre-card').querySelector('.subgenre-name').textContent;
+  const subgenreAbv = event.target.closest('.subgenre-card').querySelector('.subgenre-abv').textContent;
+  console.log(`Recovery information: ${subgenreId}, ${subgenreName}, ${subgenreAbv}`);
+  deleteSubgenreScreen.classList.add('active');
+
+  currentSubgenreId = subgenreId;
+
+  const idLabel = document.getElementById('subgenreIdLabel');
+  const nameLabel = document.getElementById('subgenreNameLabel');
+  const abvLabel = document.getElementById('subgenreAbvLabel');
+
+  idLabel.innerHTML = subgenreId;
+  nameLabel.innerHTML = subgenreName;
+  abvLabel.innerHTML = subgenreAbv;
+}
+
+const cancelDeleteSubgenreBtn = document.getElementById('cancelDeleteSubgenreBtn');
+const acceptDeleteSubgenreBtn = document.getElementById('acceptDeleteSubgenreBtn');
+const confirmDeleteSubgenreScreen = document.getElementById('confirmDeleteSubgenreScreen');
+const cancelConfirmDeleteSubgenreBtn = document.getElementById('cancelConfirmDeleteSubgenreBtn');
+const acceptConfirmDeleteSubgenreBtn = document.getElementById('acceptConfirmDeleteSubgenreBtn');
+
+cancelDeleteSubgenreBtn.addEventListener('click', cancelDeleteSubgenre);
+acceptDeleteSubgenreBtn.addEventListener('click', acceptDeleteSubgenre);
+cancelConfirmDeleteSubgenreBtn.addEventListener('click', cancelConfirmDeleteSubgenre);
+acceptConfirmDeleteSubgenreBtn.addEventListener('click', deleteSubgenre);
+
+function cancelDeleteSubgenre () {
+  deleteSubgenreScreen.classList.remove('active');
+}
+
+function acceptDeleteSubgenre () {
+  confirmDeleteSubgenreScreen.classList.add('active');
+}
+
+function cancelConfirmDeleteSubgenre () {
+  deleteSubgenreScreen.classList.remove('active');
+  confirmDeleteSubgenreScreen.classList.remove('active');
+}
+
+function deleteSubgenre () {
+  fetch(`/dataconfig/subgenres/delete/${currentSubgenreId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('La solicitud falló');
+      }
+      cancelConfirmDeleteSubgenre();
+      viewAllSubgenres();
+    })
+    .catch(error => {
+      console.error('Error al eliminar el subgénero:', error);
     });
 }
 

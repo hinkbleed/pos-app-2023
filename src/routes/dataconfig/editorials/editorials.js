@@ -9,6 +9,7 @@ export const createConfigeditorialRouter = ({ editorialModel }) => {
 
   editorialsRouter.get('/all', editorialController.getAll);
   editorialsRouter.post('/add', editorialController.create);
+  editorialsRouter.delete('/delete/:id', editorialController.delete);
 
   editorialsRouter.get('/alltoproducts', editorialController.getAllToProducts);
 

@@ -9,19 +9,23 @@
     <%= title%>
   </title>
   <link rel="stylesheet" href="/css/dataconfig/artinterface3/styles.css">
-
   <link rel="stylesheet" href="/css/dataconfig/articles/products/main/styles.css">
-
   <link rel="stylesheet" href="/css/dataconfig/articles/products/ask/styles.css">
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/book/add/styles.css">
   <link rel="stylesheet" href="/css/dataconfig/articles/products/book/edit/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/book/delete/styles.css">
+
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/add/styles.css">
   <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/edit/styles.css">
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/separ/delete/styles.css">
+
 
   <link rel="stylesheet" href="/css/dataconfig/articles/products/mag/add/styles.css">
   <link rel="stylesheet" href="/css/dataconfig/articles/products/mag/edit/styles.css">
+  
+  <link rel="stylesheet" href="/css/dataconfig/articles/products/mag/delete/styles.css">
 
 <body>
   <%- include('partials/dataconfig/interface/exitarrow') %>
@@ -32,20 +36,30 @@
 
         <%- include('partials/dataconfig/articles/products/book/add') %>
           <%- include('partials/dataconfig/articles/products/book/edit') %>
+          <%- include('partials/dataconfig/articles/products/book/delete') %>
 
             <%- include('partials/dataconfig/articles/products/separ/add') %>
-            <%- include('partials/dataconfig/articles/products/separ/edit') %>
+              <%- include('partials/dataconfig/articles/products/separ/edit') %>
+              <%- include('partials/dataconfig/articles/products/separ/delete') %>
 
-              <%- include('partials/dataconfig/articles/products/mag/add') %>
-              <%- include('partials/dataconfig/articles/products/mag/edit') %>
+                <%- include('partials/dataconfig/articles/products/mag/add') %>
+                  <%- include('partials/dataconfig/articles/products/mag/edit') %>
+                  <%- include('partials/dataconfig/articles/products/mag/delete') %>
 
-                <script type="module" src="/scripts/dataconfig/articles/products/script.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/script.js"></script>
 
-                <script type="module" src="/scripts/dataconfig/articles/products/book/add.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/book/add.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/book/edit.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/book/delete.js"></script>
 
-                <script type="module" src="/scripts/dataconfig/articles/products/separ/add.js"></script>
 
-                <script type="module" src="/scripts/dataconfig/articles/products/magazine/add.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/separ/add.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/separ/edit.js"></script>    <script type="module" src="/scripts/dataconfig/articles/products/separ/delete.js"></script>
+
+
+                    <script type="module" src="/scripts/dataconfig/articles/products/magazine/add.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/magazine/edit.js"></script>
+                    <script type="module" src="/scripts/dataconfig/articles/products/magazine/delete.js"></script>
 </body>
 
 </html>

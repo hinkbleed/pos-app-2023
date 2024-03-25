@@ -45,4 +45,19 @@ export class GenreModel {
     );
     return counterDB;
   }
+
+  static async delete ({ id }) {
+    try {
+      const deleteQuery = 'DELETE FROM genres WHERE genre_id = ?';
+      const deleteResult = await connection.query(deleteQuery, [id]);
+      if (deleteResult.affectedRows === 0) {
+        throw new Error('El género no existe o no se pudo eliminar');
+      }
+      console.log('Género eliminado exitosamente');
+      return { message: 'Género eliminado exitosamente' };
+    } catch (error) {
+      console.error('Error al eliminar el Género:', error);
+      throw error;
+    }
+  }
 }
