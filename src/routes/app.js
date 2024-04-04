@@ -16,7 +16,9 @@ export const appStarter = () => {
   appRouter.get('/', checkAuthentication, (req, res) => res.redirect('/home'));
   appRouter.get('/home', checkAuthentication, (req, res) => res.render('home', { title: 'EDQ | Home' }));
 
-  appRouter.get('/dataconfig', checkAuthentication, (req, res) => res.render('dataconfig', { title: 'EDQ | Data Configuration' }));
+  appRouter.get('/fullstorage', (req, res) => res.render('fullstorage', { title: 'EDQ | Full Storage' }));
+
+  appRouter.get('/dataconfig', (req, res) => res.render('dataconfig', { title: 'EDQ | Data Configuration' }));
 
   appRouter.get('/shop', checkAuthentication, (req, res) => res.render('app', { title: 'EDQ | Shop' }));
   appRouter.get('/partials/:name', (req, res) => {

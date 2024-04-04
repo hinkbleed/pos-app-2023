@@ -11,7 +11,7 @@ CREATE TABLE editIDcounter (
 	editIDcounter INT NOT NULL
 );
 INSERT INTO editIDcounter (editIDcounter) VALUES
-	(50000);
+	(50001);
     
     
     

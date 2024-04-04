@@ -1,9 +1,6 @@
+import { formatPhoneNumber } from '../../universal-formats/phoneNumber.js';
+
 export function structureProvidors (providors) {
-  function formatPhoneNumber (phoneNumber) {
-    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
-    const formatted = cleaned.substring(0, 2) + ' ' + cleaned.substring(2, 6) + ' ' + cleaned.substring(6, 10);
-    return formatted;
-  }
   const providorsArray = providors.map((providor) => `
     <div class="providor-card">
       <div class="glow"></div>

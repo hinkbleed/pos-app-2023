@@ -7,5 +7,6 @@ import { PartyModel } from './models/system/parties/parties.js';
 import { GenreModel } from './models/info/genres/genres.js';
 import { SubgenreModel } from './models/info/subgenres/subgenres.js';
 import { ProductModel } from './models/storage/products/products.js';
+import { EmployeeModel } from './models/company/employees/employees.js';
 
-createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel });
+createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel, employeeModel: EmployeeModel });

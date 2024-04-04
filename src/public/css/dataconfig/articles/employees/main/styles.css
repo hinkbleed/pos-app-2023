@@ -1,0 +1,112 @@
+body .article-socket .dataconfig-box .body .main-screen .cards-box {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: 300ms;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .no-employees {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card {
+  position: relative;
+  width: 13%;
+  height: 120px;
+  box-sizing: border-box;
+  background-color: #011025;
+  border: 2px solid #011025;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 20px;
+  margin: 35px 5% 0;
+  box-shadow: rgba(0, 0, 0, 0.7176470588) 0px 10px 20px, rgba(0, 0, 0, 0.631372549) 0px 6px 6px, inset rgba(0, 0, 0, 0.3960784314) 0px 10px 20px, inset rgba(0, 0, 0, 0.4901960784) 0px 6px 6px;
+  transition: all ease-in-out 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card:hover {
+  background-color: #17455a;
+  box-shadow: rgba(0, 79, 128, 0.4705882353) 0px 10px 60px, rgba(14, 111, 150, 0.4509803922) 0px 6px 20px;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card:hover .employee-card-entry {
+  opacity: 1;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card .employee-card-id {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card .employee-card-name {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card .employee-card-entry {
+  width: 20px;
+  position: absolute;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  right: 30px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  animation: textanimate 0.8s alternate infinite;
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .employee-card .employee-card-entry .edit-icon {
+  filter: invert(1);
+}
+body .article-socket .dataconfig-box .body .main-screen .cards-box .arrow-icon {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes textanimate {
+  0% {
+    right: 30px;
+  }
+  100% {
+    right: 15px;
+  }
+}/*# sourceMappingURL=styles.css.map */

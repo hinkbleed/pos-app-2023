@@ -276,22 +276,25 @@ body {
             }
 
             &.main {
-              height: 18%;
+              height: 25%;
             }
 
             &.other {
-              height: 40%;
-              justify-content: space-evenly;
+              height: 60%;
+              justify-content: space-between;
+              padding: 50px 0;
             }
 
             &.session {
-              position: absolute;
-              bottom: 0;
-              height: 18%;
+              position: relative;
+              height: 15%;
               justify-content: center;
 
               .div-line {
                 top: 0;
+                background: #000000;
+                background: radial-gradient(circle, #000000e5 0%, #00000000 100%);
+                box-shadow: 0 0 30px #000000a0;
               }
             }
 
@@ -301,7 +304,7 @@ body {
               align-items: center;
               justify-content: center;
               border: 1px solid #ffffff9d;
-              border-radius: 5px;
+              border-radius: 3px;
               transition: 300ms ease;
               cursor: pointer;
               font-weight: 500;
@@ -331,19 +334,27 @@ body {
                 flex-direction: column;
                 position: relative;
                 width: 80%;
-                height: 60px;
+                height: 45px;
               }
 
               &.fullStorage {
                 font-size: 14px;
-                width: 65%;
-                height: 45px;
+                width: 60%;
+                height: 35px;
               }
 
               &.dataConfig {
-                font-size: 14px;
-                width: 65%;
-                height: 45px;
+                font-size: 12px;
+                width: 70%;
+                height: 40px;
+                border: 1px solid #7d7dff;
+
+                &:hover {
+                  background: #0f152e;
+                  color: white;
+                  box-shadow: 0 0 40px 10px #000000c3;
+                  font-weight: 800;
+                }
               }
             }
 
@@ -353,7 +364,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: #ff00003c;
+              background: #360a0a;
               border-radius: 5px;
               border: 1px solid #ff0000;
               color: #ff0000;

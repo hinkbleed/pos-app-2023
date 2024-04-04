@@ -20,8 +20,9 @@ import { createDataconfigRouter } from './routes/dataconfig/index/dataconfig.js'
 import { createPublicdataRouter } from './routes/publicdata/index/publicdata.js';
 import { createConfigpartyRouter } from './routes/dataconfig/parties/parties.js';
 import { createConfigproductRouter } from './routes/dataconfig/products/products.js';
+import { createConfigemployeeRouter } from './routes/dataconfig/employees/employees.js';
 
-export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel }) => {
+export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel }) => {
   const app = express();
   app.disable('x-powered-by');
   app.use(json());
@@ -54,6 +55,8 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
   app.use('/dataconfig/genres', createConfiggenreRouter({ genreModel }));
 
   app.use('/dataconfig/subgenres', createConfigsubgenreRouter({ subgenreModel }));
+
+  app.use('/dataconfig/employees', createConfigemployeeRouter({ employeeModel }));
 
   app.use('/dataconfig/parties', createConfigpartyRouter({ partyModel }));
 

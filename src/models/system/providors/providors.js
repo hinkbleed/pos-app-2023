@@ -49,7 +49,6 @@ export class ProvidorModel {
 
   static async update ({ id, newData }) {
     try {
-      // Obtener la información actual del proveedor
       const currentInfo = await connection.query(
         'SELECT prov_resp, prov_number FROM providors WHERE prov_id = ?',
         [id]
@@ -61,11 +60,10 @@ export class ProvidorModel {
         'UPDATE providors SET prov_resp = ?, prov_number = ? WHERE prov_id = ?',
         [newData.provResp, newData.provNumber, id]
       );
-      // Devolver un mensaje de éxito
       return { message: 'Información del proveedor actualizada correctamente' };
     } catch (error) {
       console.error('Error al actualizar la información del proveedor:', error);
-      throw error; // Propagar el error para manejarlo en el controlador
+      throw error;
     }
   }
 

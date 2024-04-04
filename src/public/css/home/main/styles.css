@@ -242,20 +242,23 @@ body .home-box .hub .hubBox.options-box .btnsBox .div-line {
   position: absolute;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.main {
-  height: 18%;
+  height: 25%;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.other {
-  height: 40%;
-  justify-content: space-evenly;
+  height: 60%;
+  justify-content: space-between;
+  padding: 50px 0;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.session {
-  position: absolute;
-  bottom: 0;
-  height: 18%;
+  position: relative;
+  height: 15%;
   justify-content: center;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.session .div-line {
   top: 0;
+  background: #000000;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8980392157) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6274509804);
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn {
   position: relative;
@@ -263,7 +266,7 @@ body .home-box .hub .hubBox.options-box .btnsBox .mainBtn {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.6156862745);
-  border-radius: 5px;
+  border-radius: 3px;
   transition: 300ms ease;
   cursor: pointer;
   font-weight: 500;
@@ -291,17 +294,24 @@ body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.newEvent {
   flex-direction: column;
   position: relative;
   width: 80%;
-  height: 60px;
+  height: 45px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.fullStorage {
   font-size: 14px;
-  width: 65%;
-  height: 45px;
+  width: 60%;
+  height: 35px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.dataConfig {
-  font-size: 14px;
-  width: 65%;
-  height: 45px;
+  font-size: 12px;
+  width: 70%;
+  height: 40px;
+  border: 1px solid #7d7dff;
+}
+body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.dataConfig:hover {
+  background: #0f152e;
+  color: white;
+  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.7647058824);
+  font-weight: 800;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .session-btn {
   width: 40%;
@@ -309,7 +319,7 @@ body .home-box .hub .hubBox.options-box .btnsBox .session-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 0, 0, 0.2352941176);
+  background: #360a0a;
   border-radius: 5px;
   border: 1px solid #ff0000;
   color: #ff0000;

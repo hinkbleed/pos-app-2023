@@ -1,19 +1,20 @@
 const partiesBox = document.getElementById('eventsBox');
 
-const homeDataConfig = document.getElementById('homeDataConfig');
+const homeFullStorage = document.getElementById('homeFullStorage');
+
+const homeDataConfigBtn = document.getElementById('homeDataConfig');
+
 const homeLogOut = document.getElementById('logout');
 
-homeDataConfig.addEventListener('click', viewDataConfig);
+document.addEventListener('DOMContentLoaded', initHub);
 
-function viewDataConfig () {
-  window.location.href = '/dataconfig';
-}
+homeFullStorage.addEventListener('click', viewFullStorage);
+
+homeDataConfigBtn.addEventListener('click', viewDataConfig);
 
 homeLogOut.addEventListener('click', function () {
   window.location.href = '/login';
 });
-
-document.addEventListener('DOMContentLoaded', initHub);
 
 function initHub () {
   fetch('/home/parties')
@@ -38,4 +39,12 @@ function initHub () {
 
 function goToShop () {
   window.location.href = '/shop';
+}
+
+function viewFullStorage () {
+  window.location.href = '/fullstorage';
+}
+
+function viewDataConfig () {
+  window.location.href = '/dataconfig';
 }

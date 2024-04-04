@@ -1,12 +1,6 @@
-const dataconfigLogout = document.getElementById('dataconfigLogout');
-
 const optionBtns = document.querySelectorAll('.option-btn');
 
 const exitBtn = document.getElementById('goBack');
-
-dataconfigLogout.addEventListener('click', function () {
-  window.location.href = '/login';
-});
 
 optionBtns.forEach(btn => {
   btn.addEventListener('click', enterConfig);

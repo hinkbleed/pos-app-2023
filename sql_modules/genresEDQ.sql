@@ -30,22 +30,6 @@ INSERT INTO genreIDcounter (genreIDcounter) VALUES
 INSERT INTO subgenreIDcounter (subgenreIDcounter) VALUES
 	(90001);
     
-INSERT INTO genres (genre_id, genre_name, genre_abv) VALUES 
-		("EDQGENR070001", "Enciclopedia", "EN"),
-        ("EDQGENR070002", "Novela", "NV"),
-        ("EDQGENR070003", "Compilación", "CO"),
-        ("EDQGENR070004", "Cuento", "CU");
-        
-INSERT INTO subgenres (subgenre_id, subgenre_name, subgenre_abv) VALUES 
-		("EDQSGEN090001", "Romance", "RC"),
-        ("EDQSGEN090002", "Terror", "TR"),
-        ("EDQSGEN090003", "Ciencia Ficción", "CF"),
-        ("EDQSGEN090004", "Fantasía", "FA");
-        
-SELECT * FROM genres;
-SELECT * FROM subgenres;
-DELETE FROM subgenres WHERE prov_id = ?
-    
     
     
     
