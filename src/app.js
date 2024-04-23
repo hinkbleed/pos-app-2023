@@ -5,24 +5,12 @@ import { appStarter, checkAuthentication } from './routes/app.js';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
-import { createProductRouter } from './routes/products.js';
-/*
-import { createProvidorRouter } from './routes/data/providors/providors.js';
-import { createEditorialRouter } from './routes/data/editorials/editorials.js';
-*/
 import { createPasswordRouter } from './routes/login/login.js';
 import { createPartyRouter } from './routes/publicdata/parties/parties.js';
-import { createConfigprovidorRouter } from './routes/dataconfig/providors/providors.js';
-import { createConfigeditorialRouter } from './routes/dataconfig/editorials/editorials.js';
-import { createConfiggenreRouter } from './routes/dataconfig/genres/genres.js';
-import { createConfigsubgenreRouter } from './routes/dataconfig/subgenres/subgenres.js';
+import { createFullstorageRouter } from './routes/fullstorage/index/fullstorage.js';
 import { createDataconfigRouter } from './routes/dataconfig/index/dataconfig.js';
-import { createPublicdataRouter } from './routes/publicdata/index/publicdata.js';
-import { createConfigpartyRouter } from './routes/dataconfig/parties/parties.js';
-import { createConfigproductRouter } from './routes/dataconfig/products/products.js';
-import { createConfigemployeeRouter } from './routes/dataconfig/employees/employees.js';
 
-export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel }) => {
+export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel, fullproductsModel }) => {
   const app = express();
   app.disable('x-powered-by');
   app.use(json());
@@ -46,27 +34,9 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
 
   app.use('/home', createPartyRouter({ partyModel }));
 
-  app.use('/dataconfig', createDataconfigRouter());
+  app.use('/fullstorage', createFullstorageRouter({ fullproductsModel }));
 
-  app.use('/dataconfig/providors', createConfigprovidorRouter({ providorModel }));
-
-  app.use('/dataconfig/editorials', createConfigeditorialRouter({ editorialModel }));
-
-  app.use('/dataconfig/genres', createConfiggenreRouter({ genreModel }));
-
-  app.use('/dataconfig/subgenres', createConfigsubgenreRouter({ subgenreModel }));
-
-  app.use('/dataconfig/employees', createConfigemployeeRouter({ employeeModel }));
-
-  app.use('/dataconfig/parties', createConfigpartyRouter({ partyModel }));
-
-  app.use('/dataconfig/products', createConfigproductRouter({ productModel }));
-
-  app.use('/publicdata', createPublicdataRouter());
-
-  app.use('/publicdata/parties', createPartyRouter({ partyModel }));
-
-  app.use('/data/storage', createProductRouter({ productModel }));
+  app.use('/dataconfig', createDataconfigRouter({ productModel, providorModel, editorialModel, genreModel, subgenreModel, employeeModel }));
 
   /*
   app.use('/data/editorials', createEditorialRouter({ editorialModel }));

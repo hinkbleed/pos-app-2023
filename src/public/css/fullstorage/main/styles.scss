@@ -1,0 +1,471 @@
+body {
+
+  .fullstorage-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    animation: appear 300ms ease;
+
+    .fullstorage-menu-box {
+      position: relative;
+      width: 20%;
+      height: 91%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fullstorage-list-box {
+      position: relative;
+      width: 80%;
+      height: 91%;
+      overflow-y: scroll;
+      scrollbar-width: none;
+
+      .fullstorage-existence {
+        position: relative;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 300ms;
+        gap: 100px;
+
+        .productType-box {
+          position: relative;
+          width: 98%;
+          height: auto;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-end;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            bottom: -50px;
+            background: #ffffff;
+            background: radial-gradient(circle, #ffffff74 0%, #00000000 100%);
+            box-shadow: 0 0 20px #ffffff40;
+          }
+
+          .title-box {
+            width: 18%;
+            height: 400px;
+            position: sticky;
+            top: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .type-text {
+              width: 90%;
+              height: 80px;
+              display: flex;
+              align-items: center;
+              font-size: 26px;
+              font-weight: 200;
+              font-style: italic;
+              background: black;
+              padding: 0 20px;
+              border-radius: 3px;
+              text-shadow: 0 10px 10px #000000;
+              border-radius: 20px;
+              filter: saturate(3);
+              background-color: #14141a;
+              background-image: radial-gradient(at 88% 40%,
+                  #14141a 0px,
+                  transparent 85%),
+                radial-gradient(at 49% 30%, #14141a 0px, transparent 85%),
+                radial-gradient(at 14% 26%, #14141a 0px, transparent 85%),
+                radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+                radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+                radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+
+              &.book-titleCard {
+
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: -900px;
+                  width: 800px;
+                  height: 300px;
+                  background: #8b4da9;
+                  border-radius: 50%;
+                  filter: blur(100px);
+                }
+
+                filter: hue-rotate(130deg) brightness(2) saturate(2);
+              }
+
+              &.separator-titleCard {
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: -900px;
+                  width: 800px;
+                  height: 300px;
+                  background: #8b4da9;
+                  border-radius: 50%;
+                  filter: blur(100px) saturate(3);
+                }
+
+                filter: hue-rotate(50deg);
+              }
+
+              &.magazine-titleCard {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: -900px;
+                  width: 800px;
+                  height: 300px;
+                  background: #8b4da9;
+                  border-radius: 50%;
+                  filter: blur(100px);
+                }
+
+                filter: hue-rotate(0deg) saturate(2);
+              }
+
+              &.pcs {
+                width: 60%;
+                height: 30px;
+                border: 1px solid #ffffff83;
+                border-radius: 50px;
+                font-style: normal;
+                font-size: 16px;
+                font-weight: 500;
+                text-shadow: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                filter: saturate(0) contrast(1.3);
+              }
+            }
+          }
+
+          .content-box {
+            width: 82%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 3px;
+
+            .product-card {
+              position: relative;
+              width: 100%;
+              height: 75px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              background-color: #00000095;
+              border: 1px solid #ffffff14;
+              border-radius: 5px;
+              overflow: hidden;
+              font-size: 16px;
+              cursor: pointer;
+
+              &:after {
+                content: "";
+                height: 100%;
+                width: 10px;
+                position: absolute;
+                left: 0%;
+                top: 65%;
+                transition: top, opacity;
+                transition-duration: 600ms;
+                transition-timing-function: ease;
+                background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+                box-shadow: 0 0 30px mediumslateblue;
+                opacity: 0;
+                filter: blur(10px);
+                z-index: 19;
+              }
+
+              &:hover:after {
+                top: 35%;
+                opacity: 1;
+              }
+
+              &.book-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardBookName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardBookPrice {
+                    width: 8%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+
+                  &.cardBookBarcode {
+                    width: 17%;
+                  }
+
+                  &.cardBookAuthor {
+                    width: 7%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                  }
+
+                  &.cardBookEditorial {
+                    width: 10%;
+                  }
+
+                  &.cardBookYear {
+                    width: 5%;
+                    height: 60%;
+                    font-style: italic;
+                  }
+
+                  &.cardBookGenres {
+                    width: 12%;
+                    flex-direction: column;
+                    padding: 2px;
+                  }
+
+                  &.cardBookEDQid {
+                    width: 19%;
+                    height: 50%;
+                    background: black;
+                    margin: 0 1%;
+                    border: 1px solid #ffffff1d;
+                    border-radius: 5px;
+                  }
+                }
+              }
+
+              &.separator-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardSeparName {
+                    width: 21%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardSeparPrice {
+                    width: 8%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+
+                  &.cardSeparBarcode {
+                    width: 17%;
+                  }
+
+                  &.cardSeparMaterial {
+                    width: 10%;
+                  }
+
+                  &.cardSeparPrint {
+                    width: 14%;
+                  }
+
+                  &.cardSeparDescription {
+                    width: 20%;
+                    padding: 2px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                  }
+
+                  &.cardSeparEDQid {
+                    width: 18%;
+                    height: 60%;
+                    background: black;
+                    margin: 0 1%;
+                    border: 1px solid #ffffff1d;
+                    border-radius: 5px;
+                  }
+                }
+              }
+
+              &.magazine-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardMagazineName {
+                    width: 21%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardMagazinePrice {
+                    width: 8%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+
+                  &.cardMagazineBarcode {
+                    width: 17%;
+                  }
+
+                  &.cardMagazineAuthor {
+                    width: 7%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                  }
+
+                  &.cardMagazineEditorial {
+                    width: 10%;
+                  }
+
+                  &.cardMagazineYear {
+                    width: 5%;
+                    height: 60%;
+                    font-style: italic;
+                  }
+
+                  &.cardMagazineSubgenre {
+                    width: 12%;
+                    flex-direction: column;
+                    padding: 2px;
+                  }
+
+                  &.cardMagazineEDQid {
+                    width: 18%;
+                    height: 60%;
+                    background: black;
+                    margin: 0 1%;
+                    border: 1px solid #ffffff1d;
+                    border-radius: 5px;
+                  }
+                }
+              }
+
+              .productOptions-ask {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                transition: 300ms ease;
+                z-index: 10;
+                animation: disappear 300ms ease;
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: row;
+
+                &.active {
+
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: #000000ce;
+                  backdrop-filter: blur(15px);
+                  transition: 300ms ease;
+                  animation: appear 300ms ease;
+                  display: flex;
+                }
+
+                .prodBtns {
+                  width: 20%;
+                  height: 40%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: white;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  color: black;
+                  transition: 300ms ease;
+                  margin: 0 10%;
+
+                  .btn-icon {
+                    transition: 300ms ease;
+                    margin: 0 10px;
+                  }
+
+                  &.editBtn {
+                    &:hover {
+                      background: blue;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+
+                  &.addBtn {
+                    &:hover {
+                      background: #00962d;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+
+          .no-content {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            z-index: 10;
+          }
+        }
+      }
+    }
+
+    .innerFade-line {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: #000a18;
+      background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+      mask-image: linear-gradient(0deg, #000, transparent);
+
+    }
+  }
+}

@@ -1,6 +1,13 @@
 import { Router } from 'express';
+import { createConfigprovidorRouter } from '../providors/providors.js';
+import { createConfigeditorialRouter } from '../editorials/editorials.js';
+import { createConfigsubgenreRouter } from '../subgenres/subgenres.js';
+import { createConfigemployeeRouter } from '../employees/employees.js';
+import { createConfiggenreRouter } from '../genres/genres.js';
+import { createConfigpartyRouter } from '../parties/parties.js';
+import { createConfigproductRouter } from '../products/products.js';
 
-export const createDataconfigRouter = () => {
+export const createDataconfigRouter = ({ providorModel, editorialModel, genreModel, subgenreModel, employeeModel, partyModel, productModel }) => {
   const dataconfigRouter = Router();
 
   //  PRODUCTS
@@ -32,6 +39,20 @@ export const createDataconfigRouter = () => {
 
   //  PASSWORDS
   dataconfigRouter.get('/passwords', (req, res) => res.render('dataconfigpasswords', { title: 'EDQ | Passwords' }));
+
+  dataconfigRouter.use('/providors', createConfigprovidorRouter({ providorModel }));
+
+  dataconfigRouter.use('/editorials', createConfigeditorialRouter({ editorialModel }));
+
+  dataconfigRouter.use('/genres', createConfiggenreRouter({ genreModel }));
+
+  dataconfigRouter.use('/subgenres', createConfigsubgenreRouter({ subgenreModel }));
+
+  dataconfigRouter.use('/employees', createConfigemployeeRouter({ employeeModel }));
+
+  dataconfigRouter.use('/parties', createConfigpartyRouter({ partyModel }));
+
+  dataconfigRouter.use('/products', createConfigproductRouter({ productModel }));
 
   return dataconfigRouter;
 };

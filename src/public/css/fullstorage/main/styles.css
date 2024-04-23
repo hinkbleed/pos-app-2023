@@ -1,0 +1,390 @@
+body .fullstorage-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  animation: appear 300ms ease;
+}
+body .fullstorage-view .fullstorage-menu-box {
+  position: relative;
+  width: 20%;
+  height: 91%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .fullstorage-view .fullstorage-list-box {
+  position: relative;
+  width: 80%;
+  height: 91%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 300ms;
+  gap: 100px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box {
+  position: relative;
+  width: 98%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 1px;
+  bottom: -50px;
+  background: #ffffff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4549019608) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2509803922);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box {
+  width: 18%;
+  height: 400px;
+  position: sticky;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text {
+  width: 90%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 200;
+  font-style: italic;
+  background: black;
+  padding: 0 20px;
+  border-radius: 3px;
+  text-shadow: 0 10px 10px #000000;
+  border-radius: 20px;
+  filter: saturate(3);
+  background-color: #14141a;
+  background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.book-titleCard {
+  filter: hue-rotate(130deg) brightness(2) saturate(2);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.book-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -900px;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.separator-titleCard {
+  filter: hue-rotate(50deg);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.separator-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -900px;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px) saturate(3);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.magazine-titleCard {
+  filter: hue-rotate(0deg) saturate(2);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.magazine-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -900px;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text.pcs {
+  width: 60%;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5137254902);
+  border-radius: 50px;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  filter: saturate(0) contrast(1.3);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box {
+  width: 82%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 3px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  border: 1px solid rgba(255, 255, 255, 0.0784313725);
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 16px;
+  cursor: pointer;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 8%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 17%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookAuthor {
+  width: 7%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookEditorial {
+  width: 10%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookYear {
+  width: 5%;
+  height: 60%;
+  font-style: italic;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookGenres {
+  width: 12%;
+  flex-direction: column;
+  padding: 2px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 19%;
+  height: 50%;
+  background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 21%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 8%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 17%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparMaterial {
+  width: 10%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrint {
+  width: 14%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparDescription {
+  width: 20%;
+  padding: 2px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+  width: 18%;
+  height: 60%;
+  background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 21%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 8%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 17%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAuthor {
+  width: 7%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEditorial {
+  width: 10%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineYear {
+  width: 5%;
+  height: 60%;
+  font-style: italic;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineSubgenre {
+  width: 12%;
+  flex-direction: column;
+  padding: 2px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+  width: 18%;
+  height: 60%;
+  background: black;
+  margin: 0 1%;
+  border: 1px solid rgba(255, 255, 255, 0.1137254902);
+  border-radius: 5px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8078431373);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+  margin: 0 10%;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+  background: blue;
+  color: white;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+  background: #00962d;
+  color: white;
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .fullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .no-content {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+body .fullstorage-view .innerFade-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent);
+          mask-image: linear-gradient(0deg, #000, transparent);
+}/*# sourceMappingURL=styles.css.map */
