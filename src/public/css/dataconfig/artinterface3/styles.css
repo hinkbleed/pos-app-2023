@@ -92,8 +92,7 @@ body .article-socket .dataconfig-box .head .navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 10%;
+  justify-content: flex-start;
 }
 body .article-socket .dataconfig-box .head .navbar .navbar-btn {
   position: relative;
@@ -110,7 +109,7 @@ body .article-socket .dataconfig-box .head .navbar .navbar-btn {
   transition: 300ms ease;
   background: #000000;
   color: #ffffff;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 body .article-socket .dataconfig-box .head .navbar .navbar-btn .innerDiv-line {
   width: 100%;
@@ -144,12 +143,14 @@ body .article-socket .dataconfig-box .body .main-screen {
   scrollbar-width: none;
 }
 body .article-socket .dataconfig-box .body .main-screen .bttm-borderline {
-  width: 100%;
-  background: #000a18;
-  background: linear-gradient(0deg, #000a18 10%, rgba(0, 10, 24, 0) 100%);
   position: fixed;
   bottom: 0;
   height: 50px;
+  width: 100%;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 20%, #17455a 100%);
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent);
+          mask-image: linear-gradient(0deg, #000, transparent);
 }
 body .ask-screen {
   position: absolute;

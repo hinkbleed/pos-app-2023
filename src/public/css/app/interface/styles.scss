@@ -73,20 +73,22 @@ body {
       right: 0;
       margin: 0 120px 0 0;
     }
+  }
 
-    .ver-box {
-      position: absolute;
-      width: 5%;
-      height: 25px;
-      background: black;
-      margin: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-      margin-left: 100px;
-      right: 0;
-    }
+  .ver-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 7%;
+    height: 25px;
+    background: black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-left: 100px;
+    z-index: 100;
   }
 
   .screen-box {

@@ -10,7 +10,7 @@ export class FullproductsController {
     const htmlAllBooks = structureAllBooks(allBooks);
     console.log(htmlAllBooks);
     if (htmlAllBooks === '') {
-      res.send('<div class="no-fullstorage">Sin Libros en existencia aún</div>');
+      res.send('<div class="no-fullstorage">Error al solicitar datos</div>');
     } else {
       res.send(htmlAllBooks);
     }
@@ -21,7 +21,7 @@ export class FullproductsController {
     const htmlAllSepars = structureAllSepars(allSepars);
     console.log(htmlAllSepars);
     if (htmlAllSepars === '') {
-      res.send('<div class="no-fullstorage">Sin Separadores en existencia aún</div>');
+      res.send('<div class="no-fullstorage">Error al solicitar datos</div>');
     } else {
       res.send(htmlAllSepars);
     }
@@ -32,7 +32,7 @@ export class FullproductsController {
     const htmlAllMags = structureAllMags(allMags);
     console.log(htmlAllMags);
     if (htmlAllMags === '') {
-      res.send('<div class="no-fullstorage">Sin Revistas en existencia aún</div>');
+      res.send('<div class="no-fullstorage">Error al solicitar datos</div>');
     } else {
       res.send(htmlAllMags);
     }

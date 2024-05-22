@@ -10,6 +10,21 @@ const separsExistenceBox = document.getElementById('separsExistenceBox');
 const magsExistenceBox = document.getElementById('magsExistenceBox');
 const nonSelection = document.getElementById('nonSelection');
 
+const addFullstorageBtn = document.getElementById('addToFullstorageBtn');
+const askScreen1 = document.getElementById('askScreen1');
+const cancelTypeBtn = document.getElementById('cancelType');
+const askBtnZero = document.getElementById('askBtnZero');
+
+const askScreen2 = document.getElementById('askScreen2');
+
+const cancelType2 = document.getElementById('cancelType2');
+
+const askBtnBook = document.getElementById('askBtnBook');
+
+const addBookScreen = document.getElementById('addBookScreen');
+
+const cancelAddBookBtn = document.getElementById('cancelAddBookBtn');
+
 // #region LISTENERS
 document.addEventListener('DOMContentLoaded', initFullstorageWin);
 
@@ -44,6 +59,16 @@ productsSwitch.forEach(checkbox => {
     checkPathSelector();
   });
 });
+
+addFullstorageBtn.addEventListener('click', showAddOptions);
+cancelTypeBtn.addEventListener('click', hideAddOptions);
+askBtnZero.addEventListener('click', startAddFromZero);
+
+cancelType2.addEventListener('click', hideAddFromZeroOptions);
+
+askBtnBook.addEventListener('click', showAddBookWindow);
+
+cancelAddBookBtn.addEventListener('click', hideAddBookWindow);
 
 // #region FUNCTIONS
 // #region init
@@ -98,24 +123,27 @@ function choosePath (results) {
 
 function noBooks () {
   booksExistenceBox.innerHTML = '';
+  booksExistenceBox.classList.add('hide');
 }
 
 function noSepars () {
   separsExistenceBox.innerHTML = '';
+  separsExistenceBox.classList.add('hide');
 }
 function noMags () {
   magsExistenceBox.innerHTML = '';
+  magsExistenceBox.classList.add('hide');
 }
 
 function noSelection () {
   noBooks();
   noSepars();
   noMags();
-  nonSelection.innerHTML = 'Selecciona al menos un tipo de producto';
+  nonSelection.classList.add('active');
 }
 
 function viewBooks () {
-  nonSelection.innerHTML = '';
+  nonSelection.classList.remove('active');
   fetch('/fullstorage/products/books/all')
     .then(response => {
       if (!response.ok) {
@@ -129,10 +157,12 @@ function viewBooks () {
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
     });
+
+  booksExistenceBox.classList.remove('hide');
 }
 
 function viewSepars () {
-  nonSelection.innerHTML = '';
+  nonSelection.classList.remove('active');
   fetch('/fullstorage/products/separs/all')
     .then(response => {
       if (!response.ok) {
@@ -146,10 +176,12 @@ function viewSepars () {
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
     });
+
+  separsExistenceBox.classList.remove('hide');
 }
 
 function viewMags () {
-  nonSelection.innerHTML = '';
+  nonSelection.classList.remove('active');
   fetch('/fullstorage/products/mags/all')
     .then(response => {
       if (!response.ok) {
@@ -163,4 +195,30 @@ function viewMags () {
     .catch(error => {
       console.error('Error al cargar el contenido:', error);
     });
+
+  magsExistenceBox.classList.remove('hide');
+}
+
+function showAddOptions () {
+  askScreen1.classList.add('active');
+}
+
+function hideAddOptions () {
+  askScreen1.classList.remove('active');
+}
+
+function startAddFromZero () {
+  askScreen2.classList.add('active');
+}
+
+function hideAddFromZeroOptions () {
+  askScreen2.classList.remove('active');
+}
+
+function showAddBookWindow () {
+  addBookScreen.classList.add('active');
+}
+
+function hideAddBookWindow () {
+  addBookScreen.classList.remove('active');
 }

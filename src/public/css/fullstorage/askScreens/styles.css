@@ -1,0 +1,436 @@
+body .ask-screen1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  display: none;
+  z-index: 150;
+  align-items: center;
+  justify-content: center;
+}
+body .ask-screen1.active {
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .ask-screen1 .ask-box {
+  height: 50%;
+  width: 30%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .ask-screen1 .ask-box .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1e2ff;
+  font-weight: 400;
+  font-size: 14px;
+}
+body .ask-screen1 .ask-box .product-types {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 20px 0;
+}
+body .ask-screen1 .ask-box .product-types .type-btn {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 300ms ease;
+  font-weight: 500;
+}
+body .ask-screen1 .ask-box .product-types .type-btn.zero {
+  background: transparent;
+  border: 1px solid rgba(149, 147, 255, 0.2705882353);
+}
+body .ask-screen1 .ask-box .product-types .type-btn.database {
+  background: transparent;
+  border: 1px solid rgba(149, 147, 255, 0.2705882353);
+}
+body .ask-screen1 .ask-box .product-types .type-btn.csv {
+  background: transparent;
+  border: 1px solid rgba(195, 155, 255, 0.5529411765);
+}
+body .ask-screen1 .ask-box .product-types .type-btn:hover {
+  font-weight: 800;
+  font-size: 24;
+  background: #000000;
+  color: white;
+}
+body .ask-screen1 .ask-box .product-types .type-btn .innerType-line {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+}
+body .ask-screen1 .ask-box .product-types .type-btn .innerType-line.zeroline {
+  background: #2252b3;
+  background: radial-gradient(circle, #2252b3 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #2252b3;
+  filter: brightness(2);
+}
+body .ask-screen1 .ask-box .product-types .type-btn .innerType-line.databaseline {
+  background: #2252b3;
+  background: radial-gradient(circle, #2252b3 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #2252b3;
+  filter: brightness(2);
+}
+body .ask-screen1 .ask-box .product-types .type-btn .innerType-line.csvline {
+  background: #a621ff;
+  background: radial-gradient(circle, #a621ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #a621ff;
+}
+body .ask-screen1 .ask-box .cancel-type {
+  width: 30%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin: 30px 30px;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .ask-screen1 .ask-box .cancel-type:hover {
+  background: white;
+  color: black;
+}
+body .ask-screen2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  display: none;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+body .ask-screen2.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .ask-screen2 .ask-box {
+  height: auto;
+  max-height: 90%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .ask-screen2 .ask-box .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 16px;
+}
+body .ask-screen2 .ask-box .product-types {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 20px 0;
+}
+body .ask-screen2 .ask-box .product-types .type-btn {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 300ms ease;
+  font-weight: 500;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.book {
+  background: transparent;
+  border: 1px solid rgba(255, 200, 0, 0.2666666667);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.book:hover {
+  background: #ffe600;
+  color: black;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.separ {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 0, 0.2705882353);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.separ:hover {
+  background: #b32222;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.mag {
+  background: transparent;
+  border: 1px solid rgba(157, 0, 255, 0.5529411765);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.mag:hover {
+  background: #a621ff;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.toy {
+  background: transparent;
+  border: 1px solid rgba(0, 81, 255, 0.5529411765);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.toy:hover {
+  background: #0051ff;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.paper {
+  background: transparent;
+  border: 1px solid rgba(0, 255, 47, 0.5529411765);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.paper:hover {
+  background: #00ff2f;
+}
+body .ask-screen2 .ask-box .product-types .type-btn.other {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 140, 0.5529411765);
+}
+body .ask-screen2 .ask-box .product-types .type-btn.other:hover {
+  background: #ff008c;
+}
+body .ask-screen2 .ask-box .product-types .type-btn:hover {
+  font-weight: 800;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.bookline {
+  background: #ffc800;
+  background: radial-gradient(circle, #ffc800 30%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #ffc800;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.separline {
+  background: #b32222;
+  background: radial-gradient(circle, #b32222 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #b32222;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.magline {
+  background: #a621ff;
+  background: radial-gradient(circle, #a621ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #a621ff;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.toyline {
+  background: #0051ff;
+  background: radial-gradient(circle, #0051ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #0051ff;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.paperline {
+  background: #00ff2f;
+  background: radial-gradient(circle, #00ff2f 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #00ff2f;
+}
+body .ask-screen2 .ask-box .product-types .type-btn .innerType-line.otherline {
+  background: #ff008c;
+  background: radial-gradient(circle, #ff008c 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #ff008c;
+}
+body .ask-screen2 .ask-box .cancel-type2 {
+  width: 30%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin: 30px 30px;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .ask-screen2 .ask-box .cancel-type2:hover {
+  background: white;
+  color: black;
+}
+body .add-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  display: none;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+body .add-screen.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .add-screen .add-formBox {
+  height: 80%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+body .add-screen .add-formBox .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 100;
+  font-size: 16px;
+}
+body .add-screen .add-formBox .form {
+  width: 90%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .add-screen .add-formBox .form .inputs {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .add-screen .add-formBox .form .inputs label {
+  width: 40%;
+  font-size: 16px;
+  margin: 10px 0 10px 0;
+  height: 30px;
+}
+body .add-screen .add-formBox .form .inputs input {
+  width: 40%;
+  height: 35px;
+  align-self: center;
+  margin: 0 0 25px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .add-screen .add-formBox .form .inputs select {
+  width: 40%;
+  height: 35px;
+  margin: 0 0 25px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .add-screen .add-formBox .form .inputs select option {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+body .add-screen .add-formBox .form .inputs select option span {
+  font-size: 11px;
+}
+body .add-screen .add-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .add-screen .add-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .add-screen .add-formBox .form .btns {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .add-screen .add-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .add-screen .add-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .add-screen .add-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .add-screen .add-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .add-screen .add-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */

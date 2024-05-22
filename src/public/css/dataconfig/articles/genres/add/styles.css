@@ -8,7 +8,7 @@ body .add-screen {
   transition: 300ms ease;
   background: #000a18;
   background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
-  z-index: 20;
+  z-index: 300;
 }
 body .add-screen.active {
   animation: appear 200ms ease;

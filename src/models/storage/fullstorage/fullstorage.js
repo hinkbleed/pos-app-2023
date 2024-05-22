@@ -14,26 +14,28 @@ export class FullproductsModel {
   static async getAllBooks () {
     const [fsbooks] = await connection.query(
       `SELECT bfs.bookfs_id,
-                  bfs.book_id,
-                  bfs.bookfs_name,
-                  bfs.bookfs_author,
-                  bfs.bookfs_year,
-                  bfs.bookfs_editorial_name,
-                  bfs.bookfs_editorial_id,
-                  bfs.bookfs_genre_name,
-                  bfs.bookfs_genre_id,
-                  bfs.bookfs_subgenre_name,
-                  bfs.bookfs_subgenre_id,
-                  bfs.bookfs_providor_id,
-                  bfs.bookfs_providor_name,
-                  bfs.bookfs_kind,
-                  bfs.bookfs_price,
-                  bbc.barcode_number
+              bfs.book_id,
+              bfs.bookfs_kind,
+              bfs.bookfs_amount,
+              bfs.bookfs_price,
+              bbc.barcode_number,
+              b.book_name,
+              b.book_author,
+              b.book_year,
+              b.book_editorial_name,
+              b.book_editorial_id,
+              b.book_genre_name,
+              b.book_genre_id,
+              b.book_subgenre_name,
+              b.book_subgenre_id
           FROM booksFullstorage
           AS bfs
           LEFT JOIN bookBarcodes
           AS bbc
-          ON bfs.book_id = bbc.book_id;`
+          ON bfs.book_id = bbc.book_id
+          LEFT JOIN books
+          AS b
+          ON bfs.book_id = b.book_id;`
     );
 
     console.log(fsbooks);
@@ -44,18 +46,21 @@ export class FullproductsModel {
     const [fsseparators] = await connection.query(
       `SELECT sfs.separfs_id,
               sfs.separ_id,
-              sfs.separfs_name,
-              sfs.separfs_material,
-              sfs.separfs_print,
-              sfs.separfs_description,
               sfs.separfs_amount,
               sfs.separfs_price,
-              sbc.barcode_number
+              sbc.barcode_number,
+              s.separ_name,
+              s.separ_material,
+              s.separ_print,
+              s.separ_description
       FROM separatorsFullstorage
       AS sfs
       LEFT JOIN separBarcodes
       AS sbc
-      ON sfs.separ_id = sbc.separ_id;`
+      ON sfs.separ_id = sbc.separ_id
+      LEFT JOIN separators
+      AS s
+      ON sfs.separ_id = s.separ_id;`
     );
     console.log(fsseparators);
     return { separators: fsseparators };
@@ -65,22 +70,24 @@ export class FullproductsModel {
     const [fsmagazines] = await connection.query(
       `SELECT mfs.magfs_id,
               mfs.mag_id,
-              mfs.magfs_name,
-              mfs.magfs_author,
-              mfs.magfs_year,
-              mfs.magfs_editorial_name,
-              mfs.magfs_editorial_id,
-              mfs.magfs_subgenre_name,
-              mfs.magfs_subgenre_id,
-              mfs.magfs_providor_id,
-              mfs.magfs_providor_name,
               mfs.magfs_price,
-              mbc.barcode_number
+              mfs.magfs_amount,
+              mbc.barcode_number,
+              m.mag_name,
+              m.mag_author,
+              m.mag_year,
+              m.mag_editorial_name,
+              m.mag_editorial_id,
+              m.mag_subgenre_name,
+              m.mag_subgenre_id
       FROM magazinesFullstorage
       AS mfs
       LEFT JOIN magBarcodes
       AS mbc
-      ON mfs.mag_id = mbc.mag_id;`
+      ON mfs.mag_id = mbc.mag_id
+      LEFT JOIN magazines
+      AS m
+      ON mfs.mag_id = m.mag_id;`
     );
 
     console.log(fsmagazines);

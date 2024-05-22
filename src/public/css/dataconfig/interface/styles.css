@@ -63,9 +63,9 @@ body header .logo-box .logo {
 body header .logo-box .text {
   font-size: 20px;
 }
-body header .ver-box {
+body .ver-box {
   position: absolute;
-  width: 5%;
+  width: 7%;
   height: 25px;
   background: black;
   margin: 5px;

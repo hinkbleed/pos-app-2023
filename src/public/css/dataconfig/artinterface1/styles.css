@@ -145,12 +145,14 @@ body .article-socket .dataconfig-box .body .main-screen {
   scrollbar-width: none;
 }
 body .article-socket .dataconfig-box .body .main-screen .bttm-borderline {
-  width: 100%;
-  background: #000a18;
-  background: linear-gradient(0deg, #000a18 10%, rgba(0, 10, 24, 0) 70%);
   position: fixed;
   bottom: 0;
+  width: 100%;
   height: 70px;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 20%, #17455a 100%);
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent);
+          mask-image: linear-gradient(0deg, #000, transparent);
 }
 
 @keyframes appear {

@@ -1,0 +1,45 @@
+<div class="add-screen addBook" id="addBookScreen">
+  <div class="add-formBox addBook">
+    <div class="tag">Añadir nuevo libro</div>
+    <form class="form" id="addBookForm">
+
+      <div class="inputs">
+
+        
+        <label for="bookBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="bookBarcodeInput" required>
+
+        <label for="bookNameInput">Título: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="bookNameInput" required>
+
+        <label for="bookAuthorInput">Autor: <i>(requerido)</i></label>
+        <input type="text" name="prodAuthor" id="bookAuthorInput" required>
+
+        <label for="bookYearInput">Año: <i>(requerido)</i></label>
+        <input type="number" name="prodYear" id="bookYearInput" required>
+
+        <label for="bookPriceInput">Precio:</label>
+        <input type="text" name="prodPrice" id="bookPriceInput" pattern="\d+(\.\d{1,2})?">
+        
+
+        <label for="bookEditorialInput">Editorial: <i>(requerido)</i></label>
+        <select name="prodEdit" id="bookEditorialInput" placeholder="Selecciona una editorial">
+        </select>
+
+        <label for="bookGenreInput">Género: <i>(requerido)</i></label>
+        <select name="prodGenre" id="bookGenreInput">
+        </select>
+
+        <label for="bookSubgenreInput">Subgénero: <i>(requerido)</i></label>
+        <select name="prodSubgenre" id="bookSubgenreInput">
+        </select>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddBookBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddBookBtn">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

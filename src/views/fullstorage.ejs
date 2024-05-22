@@ -13,15 +13,24 @@
   <link rel="stylesheet" href="/css/fullstorage/pathselector/styles.css">
   
   <link rel="stylesheet" href="/css/fullstorage/main/styles.css">
+
+  <link rel="stylesheet" href="/css/fullstorage/askScreens/styles.css">
 </head>
 
 <body>
   <%- include('partials/fullstorage/interface/header') %>
+  
+  <%- include('partials/interface/version') %>
 
   <%- include('partials/fullstorage/interface/pathselector') %>
   
   <%- include('partials/fullstorage/interface/main') %>
+  
+  <%- include('partials/fullstorage/interface/askscreen1') %>
 
+  <%- include('partials/fullstorage/interface/askscreen2') %>
+  
+  <%- include('partials/fullstorage/pages/fromZero/books/add') %>
 
   <script type="module" src="/scripts/fullstorage/hub/script.js"></script>
   

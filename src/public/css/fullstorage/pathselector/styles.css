@@ -5,7 +5,7 @@ body .pathselector-box {
   display: flex;
   width: 60%;
   height: 9%;
-  z-index: 500;
+  z-index: 100;
 }
 body .pathselector-box .pathselector-buttons {
   width: 100%;

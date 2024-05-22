@@ -3,7 +3,7 @@ export function createBookEDQid (newIDcounter, genreAbv, subgenreAbv, editorial)
 
   // Obtener las tres primeras siglas de genreAbv y subgenreAbv
   const genreSiglas = genreAbv.slice(0, 3);
-  const subgenreSiglas = subgenreAbv.slice(0, 3);
+  const subgenreSiglas = subgenreAbv.slice(0, 4);
 
   // Convertir newIDcounter a una cadena y rellenar con ceros a la izquierda si es necesario
   const paddedNumber = String(newIDcounter).padStart(8, '0');

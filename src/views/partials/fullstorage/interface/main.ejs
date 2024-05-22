@@ -1,19 +1,50 @@
 <main class="fullstorage-view">
-  <div class="fullstorage-menu-box">
-    <div class="">Añadir productos al inventario</div>
-    <div class="">Añadir productos a db e inventario</div>
-    <div class="">Subir archivo CSV</div>
-    <div class="">
-      <div class="">Filtros faker</div>
+  <div class="fullstorage-options-box">
+
+    <div class="store-options">
+      <div class="fs-button" id="addToFullstorageBtn">Añadir productos a inventario</div>
     </div>
+
+    <div class="filters-box">
+      
+
+      <div class="searchBar-box">
+        <div class="search-bar">
+          <input type="text" placeholder="Busca aquí por título, detalles, id, código de barras, etc.">
+          <img src="./svg/search-icon.svg">
+        </div>
+      </div>
+      
+      <div class="parameters-box">
+        <div class="parameter-btn">
+          Título A-Z
+        </div>
+        <div class="parameter-btn">
+          Autor A-Z
+        </div>
+        <div class="parameter-btn">
+          Cantidad  ar
+        </div>
+        <div class="parameter-btn">
+          Precio ar
+        </div>
+      </div>
+    </div>
+
   </div>
+
 
   <div class="fullstorage-list-box">
     <div class="fullstorage-existence" id="fullstorageExistence">
-      <div class="nonselection" id="nonSelection"></div>
-      <div class="" id="booksExistenceBox">Libros</div>
-      <div class="" id="separsExistenceBox">Separadores</div>
-      <div class="" id="magsExistenceBox">Revistas</div>
+      <div class="nonselection" id="nonSelection">Activa la selección de al menos un tipo de producto</div>
+      <div class="productType-box" id="booksExistenceBox">
+      </div>
+
+      <div class="productType-box" id="separsExistenceBox">
+      </div>
+
+      <div class="productType-box" id="magsExistenceBox">
+      </div>
       
     </div>
   </div>

@@ -10,20 +10,137 @@ body {
     align-items: flex-end;
     animation: appear 300ms ease;
 
-    .fullstorage-menu-box {
+    .fullstorage-options-box {
       position: relative;
-      width: 20%;
+      width: 100%;
       height: 91%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
+
+      .store-options {
+        width: 10%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .fs-button {
+          width: 90%;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background: #00000000;
+          color: #ffffff;
+          padding: 10px;
+          font-size: 13px;
+          font-weight: 500;
+          border-radius: 10px;
+          border: 1px solid #ffffff7b;
+          cursor: pointer;
+          transition: 300ms ease;
+
+          box-shadow: inset 0 10px 10px 0 #ffffff21, 0 -10px 30px 0 rgba(255, 255, 255, 0);
+
+          &:hover {
+            background: #00000051;
+            border: 1px solid #ffffff0b;
+            box-shadow: inset 0 3px 5px 0 #ffffffb8, 0 -10px 20px 0 #ffffff21;
+          }
+        }
+      }
+
+      .filters-box {
+        position: relative;
+        width: 90%;
+        height: 6%;
+        display: flex;
+        flex-direction: row;
+
+
+        .searchBar-box {
+          height: 100%;
+          width: 45%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .search-bar {
+            width: 90%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff51;
+            border-radius: 30px;
+            background: #3074965f;
+            overflow: hidden;
+            box-shadow: 0 0 150px 0 #c3c9ff00;
+            transition: 300ms ease;
+
+            &:focus-within {
+              box-shadow: 0 0 100px 0 #d6bfff60;
+              border: 1px solid #d1d5ff83;
+            }
+
+            input {
+              width: 90%;
+              height: 95%;
+              background: none;
+              border: none;
+              outline: none;
+              color: white;
+              font-size: 20px;
+
+              &::placeholder {
+                font-size: 16px;
+                color: #ffffff6a;
+              }
+            }
+
+            img {
+              width: 5%;
+              filter: invert(1);
+              cursor: pointer;
+            }
+
+          }
+        }
+
+        .parameters-box {
+          width: 55%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .parameter-btn {
+            width: 17%;
+            height: 80%;
+            background: #00000057;
+            border: 1px solid #ffffff7b;
+            border-radius: 5px;
+            color: rgba(255, 255, 255, 0.455);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            cursor: pointer;
+          }
+        }
+      }
+
     }
 
     .fullstorage-list-box {
-      position: relative;
-      width: 80%;
-      height: 91%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 90%;
+      height: 85%;
       overflow-y: scroll;
       scrollbar-width: none;
 
@@ -35,142 +152,276 @@ body {
         flex-direction: column;
         align-items: center;
         transition: 300ms;
-        gap: 100px;
+
+        .nonselection {
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
+          display: none;
+
+          &.active {
+            display: flex;
+          }
+        }
 
         .productType-box {
           position: relative;
           width: 98%;
           height: auto;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: flex-start;
           justify-content: flex-end;
+          margin: 10px 0 60px;
+
+          &.hide {
+            display: none;
+          }
 
           &::after {
             content: '';
             position: absolute;
-            width: 80%;
+            width: 100%;
             height: 1px;
-            bottom: -50px;
+            bottom: 0;
             background: #ffffff;
             background: radial-gradient(circle, #ffffff74 0%, #00000000 100%);
             box-shadow: 0 0 20px #ffffff40;
           }
 
           .title-box {
-            width: 18%;
-            height: 400px;
             position: sticky;
-            top: 5%;
+            top: 0;
+            width: 100%;
+            height: 60px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            text-shadow: 0 10px 10px #000000;
+            border-radius: 20px 20px 0 0;
+            filter: saturate(3);
+            overflow: hidden;
+            background-color: #14141a;
+            background-image: radial-gradient(at 88% 40%,
+                #14141a 0px,
+                transparent 85%),
+              radial-gradient(at 49% 30%, #14141a 0px, transparent 85%),
+              radial-gradient(at 14% 26%, #14141a 0px, transparent 85%),
+              radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+              radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+              radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+
+            &.book-titleCard {
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(110deg) brightness(1.5) saturate(0.8);
+            }
+
+            &.separator-titleCard {
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(65deg) brightness(1.5) saturate(0.8);
+
+              .type-text {
+                filter: brightness(5);
+                z-index: 100;
+              }
+            }
+
+            &.magazine-titleCard {
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(-10deg) brightness(1.5) saturate(0.8);
+            }
 
             .type-text {
-              width: 90%;
-              height: 80px;
+              width: 100%;
+              height: 35%;
               display: flex;
               align-items: center;
-              font-size: 26px;
+              justify-content: flex-start;
+              padding: 0 50px;
+              font-size: 13px;
               font-weight: 200;
               font-style: italic;
-              background: black;
-              padding: 0 20px;
-              border-radius: 3px;
-              text-shadow: 0 10px 10px #000000;
-              border-radius: 20px;
-              filter: saturate(3);
-              background-color: #14141a;
-              background-image: radial-gradient(at 88% 40%,
-                  #14141a 0px,
-                  transparent 85%),
-                radial-gradient(at 49% 30%, #14141a 0px, transparent 85%),
-                radial-gradient(at 14% 26%, #14141a 0px, transparent 85%),
-                radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
-                radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
-                radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+              color: #ffffffcf;
+            }
 
-              &.book-titleCard {
+            .book-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
 
+              .book-head-item {
 
-                &::after {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  right: -900px;
-                  width: 800px;
-                  height: 300px;
-                  background: #8b4da9;
-                  border-radius: 50%;
-                  filter: blur(100px);
-                }
-
-                filter: hue-rotate(130deg) brightness(2) saturate(2);
-              }
-
-              &.separator-titleCard {
-
-                &::after {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  right: -900px;
-                  width: 800px;
-                  height: 300px;
-                  background: #8b4da9;
-                  border-radius: 50%;
-                  filter: blur(100px) saturate(3);
-                }
-
-                filter: hue-rotate(50deg);
-              }
-
-              &.magazine-titleCard {
-                &::after {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  right: -900px;
-                  width: 800px;
-                  height: 300px;
-                  background: #8b4da9;
-                  border-radius: 50%;
-                  filter: blur(100px);
-                }
-
-                filter: hue-rotate(0deg) saturate(2);
-              }
-
-              &.pcs {
-                width: 60%;
-                height: 30px;
-                border: 1px solid #ffffff83;
-                border-radius: 50px;
-                font-style: normal;
-                font-size: 16px;
-                font-weight: 500;
-                text-shadow: none;
+                height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 20px 0;
-                filter: saturate(0) contrast(1.3);
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.title {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 25%;
+                }
+
+                &.id {
+                  width: 18%;
+                }
+
+                &.barcode {
+                  width: 15%;
+                }
+
+                &.kind {
+                  width: 7%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
+              }
+            }
+
+            .separ-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .separ-head-item {
+
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.name {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 30%;
+                }
+
+                &.id {
+                  width: 15%;
+                }
+
+                &.barcode {
+                  width: 20%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
+              }
+            }
+
+            .mag-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .mag-head-item {
+
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.title {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 30%;
+                }
+
+                &.id {
+                  width: 15%;
+                }
+
+                &.barcode {
+                  width: 20%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
               }
             }
           }
 
+
           .content-box {
-            width: 82%;
+            width: 100%;
             height: auto;
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
             border-radius: 10px;
-            gap: 3px;
+            gap: 2px;
 
             .product-card {
               position: relative;
               width: 100%;
-              height: 75px;
+              height: 50px;
               display: flex;
               flex-direction: row;
               align-items: center;
@@ -178,7 +429,7 @@ body {
               border: 1px solid #ffffff14;
               border-radius: 5px;
               overflow: hidden;
-              font-size: 16px;
+              font-size: 13px;
               cursor: pointer;
 
               &:after {
@@ -207,9 +458,18 @@ body {
 
                 .product-cardColumn {
                   height: 100%;
+                  width: 100%;
                   display: flex;
                   align-items: center;
                   justify-content: center;
+
+                  &.cardBookAmount {
+                    width: 6%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
 
                   &.cardBookName {
                     width: 20%;
@@ -218,45 +478,35 @@ body {
                     z-index: 20;
                   }
 
-                  &.cardBookPrice {
-                    width: 8%;
-                    height: 60%;
-                    text-shadow: 0 0 40px white;
-                  }
-
-                  &.cardBookBarcode {
-                    width: 17%;
-                  }
-
-                  &.cardBookAuthor {
-                    width: 7%;
+                  &.cardBookInfo {
+                    width: 25%;
                     flex-direction: column;
                     align-items: flex-start;
-                  }
-
-                  &.cardBookEditorial {
-                    width: 10%;
-                  }
-
-                  &.cardBookYear {
-                    width: 5%;
-                    height: 60%;
-                    font-style: italic;
-                  }
-
-                  &.cardBookGenres {
-                    width: 12%;
-                    flex-direction: column;
-                    padding: 2px;
+                    padding: 0 10px;
                   }
 
                   &.cardBookEDQid {
-                    width: 19%;
+                    width: 18%;
                     height: 50%;
-                    background: black;
-                    margin: 0 1%;
-                    border: 1px solid #ffffff1d;
-                    border-radius: 5px;
+                  }
+
+                  &.cardBookBarcode {
+                    width: 15%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 10px;
+                  }
+
+                  &.cardBookKind {
+                    width: 7%;
+                    height: 60%;
+                  }
+
+
+                  &.cardBookPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
                   }
                 }
               }
@@ -269,45 +519,38 @@ body {
                   align-items: center;
                   justify-content: center;
 
+                  &.cardSeparAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
                   &.cardSeparName {
-                    width: 21%;
+                    width: 20%;
                     justify-content: flex-start;
                     padding: 0 10px 0 20px;
                     z-index: 20;
                   }
 
-                  &.cardSeparPrice {
-                    width: 8%;
-                    height: 60%;
-                    text-shadow: 0 0 40px white;
-                  }
-
-                  &.cardSeparBarcode {
-                    width: 17%;
-                  }
-
-                  &.cardSeparMaterial {
-                    width: 10%;
-                  }
-
-                  &.cardSeparPrint {
-                    width: 14%;
-                  }
-
-                  &.cardSeparDescription {
-                    width: 20%;
-                    padding: 2px;
+                  &.cardSeparDetails {
+                    width: 30%;
+                    padding: 0 10px;
                     flex-direction: column;
                     align-items: flex-start;
                   }
 
                   &.cardSeparEDQid {
-                    width: 18%;
+                    width: 15%;
                     height: 60%;
-                    background: black;
-                    margin: 0 1%;
-                    border: 1px solid #ffffff1d;
-                    border-radius: 5px;
+                  }
+
+                  &.cardSeparBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardSeparPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
                   }
                 }
               }
@@ -320,52 +563,38 @@ body {
                   align-items: center;
                   justify-content: center;
 
+                  &.cardMagazineAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
                   &.cardMagazineName {
-                    width: 21%;
+                    width: 20%;
                     justify-content: flex-start;
                     padding: 0 10px 0 20px;
                     z-index: 20;
                   }
 
-                  &.cardMagazinePrice {
-                    width: 8%;
-                    height: 60%;
-                    text-shadow: 0 0 40px white;
-                  }
-
-                  &.cardMagazineBarcode {
-                    width: 17%;
-                  }
-
-                  &.cardMagazineAuthor {
-                    width: 7%;
+                  &.cardMagazineInfo {
+                    width: 30%;
                     flex-direction: column;
                     align-items: flex-start;
-                  }
-
-                  &.cardMagazineEditorial {
-                    width: 10%;
-                  }
-
-                  &.cardMagazineYear {
-                    width: 5%;
-                    height: 60%;
-                    font-style: italic;
-                  }
-
-                  &.cardMagazineSubgenre {
-                    width: 12%;
-                    flex-direction: column;
-                    padding: 2px;
+                    padding: 0 10px;
                   }
 
                   &.cardMagazineEDQid {
-                    width: 18%;
+                    width: 15%;
                     height: 60%;
-                    background: black;
-                    margin: 0 1%;
-                    border: 1px solid #ffffff1d;
-                    border-radius: 5px;
+                  }
+
+                  &.cardMagazineBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardMagazinePrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
                   }
                 }
               }
