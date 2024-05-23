@@ -1,4 +1,5 @@
 import mysql from 'mysql2/promise';
+import { createFullstorageBookEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
 
 const config = {
   host: 'localhost',
@@ -37,8 +38,6 @@ export class FullproductsModel {
           AS b
           ON bfs.book_id = b.book_id;`
     );
-
-    console.log(fsbooks);
     return { books: fsbooks };
   }
 
@@ -62,7 +61,6 @@ export class FullproductsModel {
       AS s
       ON sfs.separ_id = s.separ_id;`
     );
-    console.log(fsseparators);
     return { separators: fsseparators };
   }
 
@@ -89,59 +87,40 @@ export class FullproductsModel {
       AS m
       ON mfs.mag_id = m.mag_id;`
     );
-
-    console.log(fsmagazines);
     return { magazines: fsmagazines };
   }
 
-  /*
   static async createBook ({ input }) {
-    const {
-      bookName,
-      bookAuthor,
-      bookYear,
-      bookEditorialName,
-      bookEditorialId,
-      bookBarcode,
-      bookPrice,
-      bookGenreName,
-      bookGenreId,
-      bookGenreAbv,
-      bookSubgenreName,
-      bookSubgenreId,
-      bookSubgenreAbv
-    } = input;
-
     try {
-      // Obtener el contador del libro
-      const [counterDB] = await connection.query('SELECT bookIDcounter FROM bookIDcounter;');
-      const bookIDcounter = counterDB[0].bookIDcounter;
-
-      // Crear el ID del libro usando la función createBookEDQid
-      const bookId = createBookEDQid(bookIDcounter, bookGenreAbv, bookSubgenreAbv, bookEditorialId);
-      const barcodeId = createBookBarcodeEDQid(bookBarcode);
+      const fullstorageBookId = createFullstorageBookEDQid(input);
 
       // Insertar el libro en la base de datos
       await connection.query(
-        `INSERT INTO books (book_id, book_name, book_author, book_year, book_editorial_name, book_editorial_id, book_genre_name, book_genre_id, book_subgenre_name, book_subgenre_id, book_price)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
-        [bookId, bookName, bookAuthor, bookYear, bookEditorialName, bookEditorialId, bookGenreName, bookGenreId, bookSubgenreName, bookSubgenreId, bookPrice || 0]
+        `INSERT INTO booksFullstorage (bookfs_id, book_id, bookfs_kind, bookfs_amount, bookfs_price)
+        VALUES (?, ?, ?, ?, ?);`,
+        [fullstorageBookId, input.book_id, input.bookfs_kind, input.bookfs_amount, input.bookfs_price || 0]
       );
-
-      await connection.query(`
-      INSERT INTO bookBarcodes (barcode_id, barcode_number, book_id) VALUES (?, ?, ?);`,
-      [barcodeId, bookBarcode, bookId]
-      );
-      // Incrementar el contador del libro para el próximo libro
-      await connection.query('UPDATE bookIDcounter SET bookIDcounter = ?;', [bookIDcounter + 1]);
-
-      // Si todo ha ido bien, retornar sin lanzar un error
       return true;
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);
     }
   }
+
+  static async getBooksById (id) {
+    const [fsbooksbyid] = await connection.query(
+      `SELECT bfs.bookfs_id,
+              bfs.book_id,
+              bfs.bookfs_kind,
+              bfs.bookfs_amount,
+              bfs.bookfs_price
+          FROM booksFullstorage  AS bfs
+          WHERE bfs.book_id = ?;`, [id]
+    );
+    return { books: fsbooksbyid };
+  }
+
+  /*
 
   static async updateBook ({ id, input }) {
     const {

@@ -15,8 +15,8 @@ body .addSepar-screen.active {
   display: flex;
 }
 body .addSepar-screen .addSepar-formBox {
-  height: 90%;
-  width: 70%;
+  height: 80%;
+  width: 80%;
   background: rgba(0, 0, 0, 0.4823529412);
   box-shadow: 0 0 100px #000000;
   border-radius: 5px;
@@ -40,7 +40,7 @@ body .addSepar-screen .addSepar-formBox .tag {
   font-size: 16px;
 }
 body .addSepar-screen .addSepar-formBox .form {
-  width: 100%;
+  width: 90%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -70,8 +70,8 @@ body .addSepar-screen .addSepar-formBox .form .inputs label i {
 }
 body .addSepar-screen .addSepar-formBox .form .inputs input {
   width: 35%;
-  height: 35px;
-  margin: 0 0 35px 0;
+  height: 40px;
+  margin: 0 0 30px 0;
   outline: none;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5529411765);

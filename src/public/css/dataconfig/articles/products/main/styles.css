@@ -51,7 +51,7 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
   border-radius: 20px;
   filter: saturate(3);
   background-color: #14141a;
-  background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+  background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, #7626f7 0px, transparent 85%), radial-gradient(at 41% 94%, #e9adff 0px, transparent 85%), radial-gradient(at 100% 99%, #ff7bf2 0px, transparent 85%);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.book-titleCard {
   filter: hue-rotate(130deg) brightness(2) saturate(2);
@@ -59,13 +59,13 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.book-titleCard::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 150px;
   right: -900px;
   width: 800px;
-  height: 300px;
+  height: 200px;
   background: #8b4da9;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(200px);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.separator-titleCard {
   filter: hue-rotate(50deg);
@@ -73,13 +73,13 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.separator-titleCard::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 150px;
   right: -900px;
   width: 800px;
-  height: 300px;
+  height: 200px;
   background: #8b4da9;
   border-radius: 50%;
-  filter: blur(100px) saturate(3);
+  filter: blur(200px) saturate(3);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.magazine-titleCard {
   filter: hue-rotate(0deg) saturate(2);
@@ -87,13 +87,13 @@ body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.magazine-titleCard::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 150px;
   right: -900px;
   width: 800px;
-  height: 300px;
+  height: 200px;
   background: #8b4da9;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(200px);
 }
 body .article-socket .dataconfig-box .body .main-screen .cards-box .productType-box .title-box .type-text.pcs {
   width: 60%;

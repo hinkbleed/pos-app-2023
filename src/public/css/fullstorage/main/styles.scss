@@ -140,7 +140,7 @@ body {
       right: 0;
       bottom: 0;
       width: 90%;
-      height: 85%;
+      height: 84%;
       overflow-y: scroll;
       scrollbar-width: none;
 
@@ -158,6 +158,7 @@ body {
           justify-content: center;
           width: 100%;
           height: 50%;
+          margin-top: 100px;
           display: none;
 
           &.active {
@@ -173,7 +174,7 @@ body {
           flex-direction: column;
           align-items: flex-start;
           justify-content: flex-end;
-          margin: 10px 0 60px;
+          margin: 0 0 60px;
 
           &.hide {
             display: none;
@@ -198,7 +199,6 @@ body {
             display: flex;
             flex-direction: column;
             text-shadow: 0 10px 10px #000000;
-            border-radius: 20px 20px 0 0;
             filter: saturate(3);
             overflow: hidden;
             background-color: #14141a;
@@ -210,6 +210,7 @@ body {
               radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
               radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
               radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+              z-index: 100;
 
             &.book-titleCard {
 

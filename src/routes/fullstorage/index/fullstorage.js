@@ -5,5 +5,7 @@ export const createFullstorageRouter = ({ fullproductsModel }) => {
   const fullstorageRouter = Router();
 
   fullstorageRouter.use('/products', createFullproductsRouter({ fullproductsModel }));
+
+  fullstorageRouter.get('/addfromzero', (req, res) => res.render('addfromzero', { title: 'EDQ | Add from zero' }));
   return fullstorageRouter;
 };

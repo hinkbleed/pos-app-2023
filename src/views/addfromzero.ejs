@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/fullstorage/addFromZero/interface/styles.css">
+  
+  <link rel="stylesheet" href="/css/fullstorage/main/styles.css">
+
+  <link rel="stylesheet" href="/css/fullstorage/addFromZero/askScreens/styles.css">
+
+  <link rel="stylesheet" href="/css/fullstorage/addFromZero/book/add/styles.css">
+
+  <link rel="stylesheet" href="/css/fullstorage/addFromZero/separ/add/styles.css">
+</head>
+
+<body>
+  
+  <%- include('partials/interface/version') %>
+
+  <%- include('partials/fullstorage/interface/components/exitarrow') %>
+  
+  <%- include('partials/fullstorage/addFromZero/askproducttype') %>
+
+  <%- include('partials/fullstorage/addFromZero/book/addbookscreens') %>
+
+  <%- include('partials/fullstorage/addFromZero/separ/addseparscreens') %>
+
+  
+
+  <script type="module" src="/scripts/fullstorage/addFromZero/script.js"></script>
+  <script type="module" src="/scripts/fullstorage/addFromZero/book/add.js"></script>
+  <script type="module" src="/scripts/fullstorage/addFromZero/separ/add.js"></script>
+  
+</body>
+
+</html>

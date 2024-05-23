@@ -16,7 +16,6 @@ export function createBookEDQid (newIDcounter, genreAbv, subgenreAbv, editorial)
 export function createBookBarcodeEDQid (bookBarcode) {
   const randomThreeDigits = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
   const newBookBarcodeEDQid = `EDQBAR${randomThreeDigits}${bookBarcode}`;
-  console.log(newBookBarcodeEDQid);
   return newBookBarcodeEDQid;
 }
 

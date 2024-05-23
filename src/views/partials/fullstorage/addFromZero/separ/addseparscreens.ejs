@@ -1,0 +1,86 @@
+<div class="addSepar-screen" id="addSeparScreen">
+  <div class="add-formBox addSepar">
+    <div class="tag">Añadir nuevo separador</div>
+    <form class="form" id="addSeparForm">
+
+      <div class="inputs">
+
+
+        <label for="separBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="separBarcodeInput" required>
+
+        <label for="separNameInput">Nombre: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="separNameInput" required>
+
+        <label for="separMaterialInput">Material: <i>(requerido)</i></label>
+        <input type="text" name="prodMaterial" id="separMaterialInput" required>
+
+        <label for="separPrintInput">Impresión: <i>(requerido)</i></label>
+        <input type="text" name="prodPrint" id="separPrintInput" required>
+
+        <label for="separDescriptionInput">Descripción: <i>(requerido)</i></label>
+        <input type="textarea" name="prodDescription" id="separDescriptionInput" required>
+
+        <label for="separPriceInput">Precio:</label>
+        <input type="text" name="prodPrice" id="separPriceInput" pattern="\d+(\.\d{1,2})?">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddSeparBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddSeparBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!--
+<div class="addBookToStorage-screen" id="addBookToStorageScreen">
+  <div class="addToStorage-formBox addBookToStorage">
+    <div class="tag" id="bookNameTag"></div>
+    <form class="form" id="addBookToStorageForm">
+
+      <div class="inputs">
+
+        <label for="bookToStorageKindInput">Tipo:</label>
+        <select name="prodKind" id="bookToStorageKindInput">
+          <option value="Linea">Línea</option>
+          <option value="Outlet">Outlet</option>
+        </select>
+
+        <label for="bookToStorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="bookToStorageAmountInput" required>
+
+        <label for="bookNewpriceInput">Nuevo precio: <i>(requerido)</i></label>
+        <input type="text" name="prodPrice" id="bookNewpriceInput" pattern="\d+(\.\d{1,2})?" required>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddBookToStorageBtn">Cancelar</button>
+        
+        <button type="submit" class="accept" id="AcceptAddBookToStorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askBookToStorage-screen" id="askBookToStorageScreen">
+  <div class="askToStorage-formBox askBookToStorage">
+    <div class="tag" id="bookAfterTag"></div>  
+    <div class="btns">
+      <div  class="btn zero" id="addAnotherProductBtn">Añadir un nuevo producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn variable" id="addVariableBtn">Añadir variable de este libro
+        <div class="inner-line variableline"></div>
+      </div>
+      <div class="btn getout" id="getOut">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+-->

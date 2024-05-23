@@ -110,7 +110,7 @@ export class ProductModel {
       await connection.query('UPDATE bookIDcounter SET bookIDcounter = ?;', [bookIDcounter + 1]);
 
       // Si todo ha ido bien, retornar sin lanzar un error
-      return true;
+      return bookId;
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);

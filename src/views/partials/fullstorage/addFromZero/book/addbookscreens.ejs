@@ -1,0 +1,95 @@
+<div class="addBook-screen" id="addBookScreen">
+  <div class="add-formBox addBook">
+    <div class="tag">Añadir nuevo libro</div>
+    <form class="form" id="addBookForm">
+
+      <div class="inputs">
+
+        
+        <label for="bookBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="bookBarcodeInput" required>
+
+        <label for="bookNameInput">Título: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="bookNameInput" required>
+
+        <label for="bookAuthorInput">Autor: <i>(requerido)</i></label>
+        <input type="text" name="prodAuthor" id="bookAuthorInput" required>
+
+        <label for="bookYearInput">Año: <i>(requerido)</i></label>
+        <input type="number" name="prodYear" id="bookYearInput" required>
+
+        <label for="bookPriceInput">Precio:</label>
+        <input type="text" name="prodPrice" id="bookPriceInput" pattern="\d+(\.\d{1,2})?">
+        
+
+        <label for="bookEditorialInput">Editorial: <i>(requerido)</i></label>
+        <select name="prodEdit" id="bookEditorialInput" placeholder="Selecciona una editorial">
+        </select>
+
+        <label for="bookGenreInput">Género: <i>(requerido)</i></label>
+        <select name="prodGenre" id="bookGenreInput">
+        </select>
+
+        <label for="bookSubgenreInput">Subgénero: <i>(requerido)</i></label>
+        <select name="prodSubgenre" id="bookSubgenreInput">
+        </select>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddBookBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddBookBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="addBookToStorage-screen" id="addBookToStorageScreen">
+  <div class="addToStorage-formBox addBookToStorage">
+    <div class="tag" id="bookNameTag"></div>
+    <form class="form" id="addBookToStorageForm">
+
+      <div class="inputs">
+
+        <label for="bookToStorageKindInput">Tipo:</label>
+        <select name="prodKind" id="bookToStorageKindInput">
+          <option value="Linea">Línea</option>
+          <option value="Outlet">Outlet</option>
+        </select>
+
+        <label for="bookToStorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="bookToStorageAmountInput" required>
+
+        <label for="bookNewpriceInput">Nuevo precio: <i>(requerido)</i></label>
+        <input type="text" name="prodPrice" id="bookNewpriceInput" pattern="\d+(\.\d{1,2})?" required>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddBookToStorageBtn">Cancelar</button>
+        
+        <button type="submit" class="accept" id="AcceptAddBookToStorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askBookToStorage-screen" id="askBookToStorageScreen">
+  <div class="askToStorage-formBox askBookToStorage">
+    <div class="tag" id="bookAfterTag"></div>  
+    <div class="btns">
+      <div  class="btn zero" id="addAnotherProductBtn">Añadir un nuevo producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn variable" id="addVariableBtn">Añadir variable de este libro
+        <div class="inner-line variableline"></div>
+      </div>
+      <div class="btn getout" id="getOut">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

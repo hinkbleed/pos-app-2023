@@ -31,6 +31,7 @@ export class ConfigproductController {
 
     const newBook = await this.productModel.createBook({ input: result.data });
     res.status(201).json({ message: 'Libro creado exitosamente', book: newBook });
+    return newBook;
   };
 
   updateBook = async (req, res) => {

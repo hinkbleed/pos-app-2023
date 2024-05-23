@@ -67,9 +67,9 @@ body {
                       transparent 85%),
                     radial-gradient(at 49% 30%, #14141a 0px, transparent 85%),
                     radial-gradient(at 14% 26%, #14141a 0px, transparent 85%),
-                    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
-                    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
-                    radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+                    radial-gradient(at 0% 64%, #7626f7 0px, transparent 85%),
+                    radial-gradient(at 41% 94%, #e9adff 0px, transparent 85%),
+                    radial-gradient(at 100% 99%, #ff7bf2 0px, transparent 85%);
 
                   &.book-titleCard {
 
@@ -77,13 +77,13 @@ body {
                     &::after {
                       content: '';
                       position: absolute;
-                      top: 0;
+                      top: 150px;
                       right: -900px;
                       width: 800px;
-                      height: 300px;
+                      height: 200px;
                       background: #8b4da9;
                       border-radius: 50%;
-                      filter: blur(100px);
+                      filter: blur(200px);
                     }
 
                     filter: hue-rotate(130deg) brightness(2) saturate(2);
@@ -94,13 +94,13 @@ body {
                     &::after {
                       content: '';
                       position: absolute;
-                      top: 0;
+                      top: 150px;
                       right: -900px;
                       width: 800px;
-                      height: 300px;
+                      height: 200px;
                       background: #8b4da9;
                       border-radius: 50%;
-                      filter: blur(100px) saturate(3);
+                      filter: blur(200px) saturate(3);
                     }
 
                     filter: hue-rotate(50deg);
@@ -110,13 +110,13 @@ body {
                     &::after {
                       content: '';
                       position: absolute;
-                      top: 0;
+                      top: 150px;
                       right: -900px;
                       width: 800px;
-                      height: 300px;
+                      height: 200px;
                       background: #8b4da9;
                       border-radius: 50%;
-                      filter: blur(100px);
+                      filter: blur(200px);
                     }
 
                     filter: hue-rotate(0deg) saturate(2);

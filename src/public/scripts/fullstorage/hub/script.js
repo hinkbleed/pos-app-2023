@@ -15,16 +15,6 @@ const askScreen1 = document.getElementById('askScreen1');
 const cancelTypeBtn = document.getElementById('cancelType');
 const askBtnZero = document.getElementById('askBtnZero');
 
-const askScreen2 = document.getElementById('askScreen2');
-
-const cancelType2 = document.getElementById('cancelType2');
-
-const askBtnBook = document.getElementById('askBtnBook');
-
-const addBookScreen = document.getElementById('addBookScreen');
-
-const cancelAddBookBtn = document.getElementById('cancelAddBookBtn');
-
 // #region LISTENERS
 document.addEventListener('DOMContentLoaded', initFullstorageWin);
 
@@ -63,12 +53,6 @@ productsSwitch.forEach(checkbox => {
 addFullstorageBtn.addEventListener('click', showAddOptions);
 cancelTypeBtn.addEventListener('click', hideAddOptions);
 askBtnZero.addEventListener('click', startAddFromZero);
-
-cancelType2.addEventListener('click', hideAddFromZeroOptions);
-
-askBtnBook.addEventListener('click', showAddBookWindow);
-
-cancelAddBookBtn.addEventListener('click', hideAddBookWindow);
 
 // #region FUNCTIONS
 // #region init
@@ -208,17 +192,5 @@ function hideAddOptions () {
 }
 
 function startAddFromZero () {
-  askScreen2.classList.add('active');
-}
-
-function hideAddFromZeroOptions () {
-  askScreen2.classList.remove('active');
-}
-
-function showAddBookWindow () {
-  addBookScreen.classList.add('active');
-}
-
-function hideAddBookWindow () {
-  addBookScreen.classList.remove('active');
+  window.location.href = '/fullstorage/addfromzero';
 }
