@@ -1,5 +1,5 @@
 import mysql from 'mysql2/promise';
-import { createFullstorageBookEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
+import { createFullstorageBookEDQid, createFullstorageSeparEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
 
 const config = {
   host: 'localhost',
@@ -118,6 +118,23 @@ export class FullproductsModel {
           WHERE bfs.book_id = ?;`, [id]
     );
     return { books: fsbooksbyid };
+  }
+
+  static async createSepar ({ input }) {
+    try {
+      const fullstorageSeparId = createFullstorageSeparEDQid(input);
+
+      // Insertar el libro en la base de datos
+      await connection.query(
+        `INSERT INTO separatorsFullstorage (separfs_id, separ_id, separfs_amount, separfs_price)
+        VALUES (?, ?, ?, ?);`,
+        [fullstorageSeparId, input.separ_id, input.separfs_amount, input.separfs_price || 0]
+      );
+      return true;
+    } catch (error) {
+      // Si hay un error, lanzar una excepción
+      throw new Error('Error creating product: ' + error.message);
+    }
   }
 
   /*

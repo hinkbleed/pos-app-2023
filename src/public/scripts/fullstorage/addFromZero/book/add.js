@@ -1,46 +1,77 @@
-import { goBackBtn } from '../script.js';
+import { askProductTypeScreen, goBackBtn } from '../script.js';
 
 const addBtnBook = document.getElementById('addBtnBook');
+const addBookForm = document.getElementById('addBookForm');
 const addBookScreen = document.getElementById('addBookScreen');
 const cancelAddBookBtn = document.getElementById('cancelAddBookBtn');
 const bookEditorialInput = document.getElementById('bookEditorialInput');
 const bookGenreInput = document.getElementById('bookGenreInput');
 const bookSubgenreInput = document.getElementById('bookSubgenreInput');
-
-const addBookForm = document.getElementById('addBookForm');
-
 const addBookToStorageScreen = document.getElementById('addBookToStorageScreen');
-
-const askProductTypeScreen = document.getElementById('askProductTypeScreen');
-
+const bookNameTag = document.getElementById('bookNameTag');
+const cancelAddBookToStorageBtn = document.getElementById('cancelAddBookToStorageBtn');
+const addBookToStorageForm = document.getElementById('addBookToStorageForm');
 const askBookToStorageScreen = document.getElementById('askBookToStorageScreen');
 const bookAfterTag = document.getElementById('bookAfterTag');
+const addAnotherBookBtn = document.getElementById('addAnotherBookBtn');
+const addVariableBookBtn = document.getElementById('addVariableBookBtn');
+const addAnotherProductFBookBtn = document.getElementById('addAnotherProductFBookBtn');
+const getOutFBook = document.getElementById('getOutFBook');
 
-const addAnotherProductBtn = document.getElementById('addAnotherProductBtn');
-const addVariableBtn = document.getElementById('addVariableBtn');
-const getOut = document.getElementById('getOut');
+let addBookEditorialName;
+let addBookEditorialId;
+let addBookGenreName;
+let addBookGenreId;
+let addBookGenreAbv;
+let addBookSubgenreName;
+let addBookSubgenreId;
+let addBookSubgenreAbv;
+
+addBtnBook.addEventListener('click', startAddBook);
+
+cancelAddBookBtn.addEventListener('click', cancelAddBook);
 
 addBookForm.addEventListener('submit', function (event) {
   event.preventDefault();
   getSendNewBook();
 });
-addBtnBook.addEventListener('click', startAddBook);
 
-cancelAddBookBtn.addEventListener('click', cancelAddBook);
+cancelAddBookToStorageBtn.addEventListener('click', cancelAddingBookToStorage);
 
-addAnotherProductBtn.addEventListener('click', startAddBook);
+addBookToStorageForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  getSendBookToStorage();
+});
 
-getOut.addEventListener('click', function () {
+addAnotherBookBtn.addEventListener('click', startAddBook);
+
+addVariableBookBtn.addEventListener('click', addVariableBook);
+
+addAnotherProductFBookBtn.addEventListener('click', startAgainFBook);
+
+getOutFBook.addEventListener('click', function () {
   window.location.href = '/fullstorage';
 });
 
-addVariableBtn.addEventListener('click', addVariableBook);
+bookEditorialInput.addEventListener('change', function () {
+  const selectedOption = this.options[this.selectedIndex];
+  addBookEditorialId = selectedOption.dataset.id;
+  addBookEditorialName = selectedOption.dataset.name;
+});
 
-function cancelAddBook () {
-  addBookScreen.classList.remove('active');
-  askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
-}
+bookGenreInput.addEventListener('change', function () {
+  const selectedOption = this.options[this.selectedIndex];
+  addBookGenreName = selectedOption.dataset.name;
+  addBookGenreId = selectedOption.dataset.id;
+  addBookGenreAbv = selectedOption.dataset.abv;
+});
+
+bookSubgenreInput.addEventListener('change', function () {
+  const selectedOption = this.options[this.selectedIndex];
+  addBookSubgenreName = selectedOption.dataset.name;
+  addBookSubgenreId = selectedOption.dataset.id;
+  addBookSubgenreAbv = selectedOption.dataset.abv;
+});
 
 function startAddBook () {
   addBookForm.reset();
@@ -102,60 +133,11 @@ function startAddBook () {
   }
 }
 
-function createBook (data) {
-  fetch('/dataconfig/products/addbook', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al enviar los datos al servidor.');
-      }
-
-      return response.json();
-    })
-    .then(result => {
-      const newBookId = result.book;
-      showBookToStorage(newBookId, data); // Usa el ID como sea necesario
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+function cancelAddBook () {
+  addBookScreen.classList.remove('active');
+  askProductTypeScreen.classList.remove('hide');
+  goBackBtn.classList.remove('hide');
 }
-
-let addBookEditorialName;
-let addBookEditorialId;
-
-let addBookGenreName;
-let addBookGenreId;
-let addBookGenreAbv;
-
-let addBookSubgenreName;
-let addBookSubgenreId;
-let addBookSubgenreAbv;
-
-bookEditorialInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookEditorialId = selectedOption.dataset.id;
-  addBookEditorialName = selectedOption.dataset.name;
-});
-
-bookGenreInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookGenreName = selectedOption.dataset.name;
-  addBookGenreId = selectedOption.dataset.id;
-  addBookGenreAbv = selectedOption.dataset.abv;
-});
-
-bookSubgenreInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookSubgenreName = selectedOption.dataset.name;
-  addBookSubgenreId = selectedOption.dataset.id;
-  addBookSubgenreAbv = selectedOption.dataset.abv;
-});
 
 function getSendNewBook () {
   const name = document.getElementById('bookNameInput').value;
@@ -190,30 +172,48 @@ function getSendNewBook () {
   createBook(data);
 }
 
-const cancelAddBookToStorageBtn = document.getElementById('cancelAddBookToStorageBtn');
-const bookNameTag = document.getElementById('bookNameTag');
-const addBookToStorageForm = document.getElementById('addBookToStorageForm');
+function createBook (data) {
+  fetch('/dataconfig/products/addbook', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al enviar los datos al servidor.');
+      }
 
-cancelAddBookToStorageBtn.addEventListener('click', cancelAddingToStorage);
-
-addBookToStorageForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  getSendBookToStorage();
-});
-
-function cancelAddingToStorage () {
-  askProductTypeScreen.classList.remove('hide');
-  addBookScreen.classList.remove('active');
-  addBookToStorageScreen.classList.remove('active');
-  goBackBtn.classList.remove('hide');
+      return response.json();
+    })
+    .then(result => {
+      const newBookId = result.book;
+      showBookToStorage(newBookId, data); // Usa el ID como sea necesario
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 }
 
 function showBookToStorage (newBookId, data) {
+  addBookToStorageForm.reset();
+  const bookToStorageKindInput = document.getElementById('bookToStorageKindInput');
+  bookToStorageKindInput.innerHTML = `
+  <option value="Linea">Línea</option>
+  <option value="Outlet">Outlet</option>`;
   bookNameTag.innerHTML = `Se ha añadido ${data.bookName} correctamente a la base de datos.
   Ingresa los datos faltantes para añadir el libro al inventario`;
   bookNameTag.dataset.id = newBookId;
   addBookToStorageScreen.classList.add('active');
   addBookScreen.classList.remove('active');
+}
+
+function cancelAddingBookToStorage () {
+  askProductTypeScreen.classList.remove('hide');
+  addBookScreen.classList.remove('active');
+  addBookToStorageScreen.classList.remove('active');
+  goBackBtn.classList.remove('hide');
 }
 
 function getSendBookToStorage () {
@@ -267,9 +267,9 @@ function startAfterAddBook (info) {
       console.log(duplicate);
       console.log('Duplicate:', data.duplicate);
       if (data.duplicate) {
-        addVariableBtn.classList.add('hide');
+        addVariableBookBtn.classList.add('hide');
       } else {
-        addVariableBtn.classList.remove('hide');
+        addVariableBookBtn.classList.remove('hide');
       }
     })
     .catch(error => {
@@ -297,4 +297,12 @@ function addVariableBook () {
   addBookToStorageForm.reset();
   addBookToStorageScreen.classList.add('active');
   askBookToStorageScreen.classList.remove('active');
+}
+
+function startAgainFBook () {
+  addBookScreen.classList.remove('active');
+  addBookToStorageScreen.classList.remove('active');
+  askBookToStorageScreen.classList.remove('active');
+  askProductTypeScreen.classList.remove('hide');
+  goBackBtn.classList.remove('hide');
 }

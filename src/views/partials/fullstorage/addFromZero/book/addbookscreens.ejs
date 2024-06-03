@@ -54,8 +54,6 @@
 
         <label for="bookToStorageKindInput">Tipo:</label>
         <select name="prodKind" id="bookToStorageKindInput">
-          <option value="Linea">Línea</option>
-          <option value="Outlet">Outlet</option>
         </select>
 
         <label for="bookToStorageAmountInput">Cantidad: <i>(requerido)</i></label>
@@ -66,7 +64,7 @@
       </div>
 
       <div class="btns">
-        <button type="button" class="cancel" id="cancelAddBookToStorageBtn">Cancelar</button>
+        <button type="button" class="cancel" id="cancelAddBookToStorageBtn">No agregar a inventario</button>
         
         <button type="submit" class="accept" id="AcceptAddBookToStorageBtn">Continuar</button>
       </div>
@@ -80,13 +78,16 @@
   <div class="askToStorage-formBox askBookToStorage">
     <div class="tag" id="bookAfterTag"></div>  
     <div class="btns">
-      <div  class="btn zero" id="addAnotherProductBtn">Añadir un nuevo producto
+      <div class="btn zero" id="addAnotherBookBtn">Añadir un nuevo Libro
         <div class="inner-line zeroline"></div>
       </div>
-      <div class="btn variable" id="addVariableBtn">Añadir variable de este libro
+      <div class="btn variable" id="addVariableBookBtn">Añadir variable de este libro
         <div class="inner-line variableline"></div>
       </div>
-      <div class="btn getout" id="getOut">Salir al inventario
+      <div  class="btn zero" id="addAnotherProductFBookBtn">Añadir un nuevo producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn getout" id="getOutFBook">Salir al inventario
         <div class="inner-line getoutline"></div>
       </div>
     </div>

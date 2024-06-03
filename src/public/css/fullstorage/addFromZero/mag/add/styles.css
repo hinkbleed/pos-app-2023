@@ -1,4 +1,4 @@
-body .addSepar-screen {
+body .addMag-screen {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -8,11 +8,11 @@ body .addSepar-screen {
   justify-content: center;
   animation: disappear 200ms ease;
 }
-body .addSepar-screen.active {
+body .addMag-screen.active {
   animation: appear 200ms ease;
   display: flex;
 }
-body .addSepar-screen .add-formBox {
+body .addMag-screen .add-formBox {
   height: 80%;
   width: 80%;
   background: rgba(0, 0, 0, 0.4823529412);
@@ -26,7 +26,7 @@ body .addSepar-screen .add-formBox {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
 }
-body .addSepar-screen .add-formBox .tag {
+body .addMag-screen .add-formBox .tag {
   width: -moz-fit-content;
   width: fit-content;
   height: 10%;
@@ -37,14 +37,14 @@ body .addSepar-screen .add-formBox .tag {
   font-weight: 100;
   font-size: 16px;
 }
-body .addSepar-screen .add-formBox .form {
+body .addMag-screen .add-formBox .form {
   width: 90%;
   height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body .addSepar-screen .add-formBox .form .inputs {
+body .addMag-screen .add-formBox .form .inputs {
   width: 100%;
   height: 80%;
   display: flex;
@@ -52,7 +52,7 @@ body .addSepar-screen .add-formBox .form .inputs {
   align-items: center;
   flex-wrap: wrap;
 }
-body .addSepar-screen .add-formBox .form .inputs label {
+body .addMag-screen .add-formBox .form .inputs label {
   width: 35%;
   font-size: 16px;
   margin: 10px 60px;
@@ -62,11 +62,11 @@ body .addSepar-screen .add-formBox .form .inputs label {
   align-items: center;
   justify-content: space-between;
 }
-body .addSepar-screen .add-formBox .form .inputs label i {
+body .addMag-screen .add-formBox .form .inputs label i {
   font-size: 11px;
   color: #7d7dff;
 }
-body .addSepar-screen .add-formBox .form .inputs input {
+body .addMag-screen .add-formBox .form .inputs input {
   width: 40%;
   height: 40px;
   align-self: center;
@@ -78,7 +78,7 @@ body .addSepar-screen .add-formBox .form .inputs input {
   padding: 0 10px;
   font-size: 16px;
 }
-body .addSepar-screen .add-formBox .form .inputs select {
+body .addMag-screen .add-formBox .form .inputs select {
   width: 40%;
   height: 40px;
   margin: 0 0 30px 0;
@@ -89,20 +89,20 @@ body .addSepar-screen .add-formBox .form .inputs select {
   padding: 0 10px;
   font-size: 16px;
 }
-body .addSepar-screen .add-formBox .form .inputs select option {
+body .addMag-screen .add-formBox .form .inputs select option {
   background: black;
   display: flex;
   justify-content: space-between;
 }
-body .addSepar-screen .add-formBox .form .inputs select option span {
+body .addMag-screen .add-formBox .form .inputs select option span {
   font-size: 11px;
 }
-body .addSepar-screen .add-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
-body .addSepar-screen .add-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+body .addMag-screen .add-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .addMag-screen .add-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .addSepar-screen .add-formBox .form .btns {
+body .addMag-screen .add-formBox .form .btns {
   width: 90%;
   height: 35px;
   align-self: center;
@@ -112,7 +112,7 @@ body .addSepar-screen .add-formBox .form .btns {
   justify-content: space-around;
   margin-top: 30px;
 }
-body .addSepar-screen .add-formBox .form .btns button {
+body .addMag-screen .add-formBox .form .btns button {
   width: 40%;
   height: 100%;
   border-radius: 3px;
@@ -121,27 +121,27 @@ body .addSepar-screen .add-formBox .form .btns button {
   cursor: pointer;
   transition: 300ms ease;
 }
-body .addSepar-screen .add-formBox .form .btns button.cancel {
+body .addMag-screen .add-formBox .form .btns button.cancel {
   background: rgba(255, 0, 0, 0.1607843137);
   color: #ff0000;
   border: 1px solid rgba(255, 0, 0, 0.3803921569);
 }
-body .addSepar-screen .add-formBox .form .btns button.cancel:hover {
+body .addMag-screen .add-formBox .form .btns button.cancel:hover {
   background: rgba(255, 0, 0, 0.462745098);
   border: 1px solid #ff0000;
   color: #ffffff;
 }
-body .addSepar-screen .add-formBox .form .btns button.accept {
+body .addMag-screen .add-formBox .form .btns button.accept {
   background: rgba(255, 255, 255, 0);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.7921568627);
 }
-body .addSepar-screen .add-formBox .form .btns button.accept:hover {
+body .addMag-screen .add-formBox .form .btns button.accept:hover {
   background: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;
 }
-body .addSeparToStorage-screen {
+body .addMagToStorage-screen {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -151,11 +151,11 @@ body .addSeparToStorage-screen {
   animation: disappear 200ms ease;
   display: none;
 }
-body .addSeparToStorage-screen.active {
+body .addMagToStorage-screen.active {
   animation: appear 200ms ease;
   display: flex;
 }
-body .addSeparToStorage-screen .addToStorage-formBox {
+body .addMagToStorage-screen .addToStorage-formBox {
   height: 65%;
   width: 35%;
   background: rgba(0, 0, 0, 0.4823529412);
@@ -169,7 +169,7 @@ body .addSeparToStorage-screen .addToStorage-formBox {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
 }
-body .addSeparToStorage-screen .addToStorage-formBox .tag {
+body .addMagToStorage-screen .addToStorage-formBox .tag {
   width: 90%;
   height: 20%;
   display: flex;
@@ -180,14 +180,14 @@ body .addSeparToStorage-screen .addToStorage-formBox .tag {
   font-size: 16px;
   text-align: center;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form {
+body .addMagToStorage-screen .addToStorage-formBox .form {
   width: 90%;
   height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs {
   width: 100%;
   height: 80%;
   display: flex;
@@ -195,7 +195,7 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .inputs {
   align-items: center;
   flex-wrap: wrap;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs label {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs label {
   width: 80%;
   font-size: 16px;
   margin: 10px 60px;
@@ -205,11 +205,11 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .inputs label {
   align-items: center;
   justify-content: space-between;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs label i {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs label i {
   font-size: 11px;
   color: #7d7dff;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs input {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs input {
   width: 80%;
   height: 40px;
   align-self: center;
@@ -221,7 +221,7 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .inputs input {
   padding: 0 10px;
   font-size: 16px;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs select {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs select {
   width: 80%;
   height: 40px;
   margin: 0 0 30px 0;
@@ -232,20 +232,20 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .inputs select {
   padding: 0 10px;
   font-size: 16px;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs select option {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs select option {
   background: black;
   display: flex;
   justify-content: space-between;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs select option span {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs select option span {
   font-size: 11px;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
-body .addSeparToStorage-screen .addToStorage-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .addMagToStorage-screen .addToStorage-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns {
   width: 90%;
   height: 35px;
   align-self: center;
@@ -255,7 +255,7 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .btns {
   justify-content: space-around;
   margin: 20px 0 30px;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns button {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns button {
   width: 40%;
   height: 100%;
   border-radius: 3px;
@@ -264,27 +264,27 @@ body .addSeparToStorage-screen .addToStorage-formBox .form .btns button {
   cursor: pointer;
   transition: 300ms ease;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns button.cancel {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns button.cancel {
   background: rgba(255, 0, 0, 0.1607843137);
   color: #ff0000;
   border: 1px solid rgba(255, 0, 0, 0.3803921569);
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns button.cancel:hover {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns button.cancel:hover {
   background: rgba(255, 0, 0, 0.462745098);
   border: 1px solid #ff0000;
   color: #ffffff;
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns button.accept {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns button.accept {
   background: rgba(255, 255, 255, 0);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.7921568627);
 }
-body .addSeparToStorage-screen .addToStorage-formBox .form .btns button.accept:hover {
+body .addMagToStorage-screen .addToStorage-formBox .form .btns button.accept:hover {
   background: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;
 }
-body .askSeparToStorage-screen {
+body .askMagToStorage-screen {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -294,11 +294,11 @@ body .askSeparToStorage-screen {
   animation: disappear 200ms ease;
   display: none;
 }
-body .askSeparToStorage-screen.active {
+body .askMagToStorage-screen.active {
   animation: appear 200ms ease;
   display: flex;
 }
-body .askSeparToStorage-screen .askToStorage-formBox {
+body .askMagToStorage-screen .askToStorage-formBox {
   height: 70%;
   width: 35%;
   background: rgba(0, 0, 0, 0.4823529412);
@@ -312,7 +312,7 @@ body .askSeparToStorage-screen .askToStorage-formBox {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
 }
-body .askSeparToStorage-screen .askToStorage-formBox .tag {
+body .askMagToStorage-screen .askToStorage-formBox .tag {
   width: 90%;
   height: 30%;
   display: flex;
@@ -323,7 +323,7 @@ body .askSeparToStorage-screen .askToStorage-formBox .tag {
   font-size: 20px;
   text-align: center;
 }
-body .askSeparToStorage-screen .askToStorage-formBox .btns {
+body .askMagToStorage-screen .askToStorage-formBox .btns {
   width: 90%;
   height: 70%;
   align-self: center;
@@ -334,7 +334,7 @@ body .askSeparToStorage-screen .askToStorage-formBox .btns {
   gap: 15px;
   margin: 20px 0 30px;
 }
-body .askSeparToStorage-screen .askToStorage-formBox .btns .btn {
+body .askMagToStorage-screen .askToStorage-formBox .btns .btn {
   position: relative;
   width: 80%;
   height: 70px;
@@ -351,13 +351,13 @@ body .askSeparToStorage-screen .askToStorage-formBox .btns .btn {
   background: transparent;
   border: 1px solid rgba(149, 147, 255, 0.2705882353);
 }
-body .askSeparToStorage-screen .askToStorage-formBox .btns .btn:hover {
+body .askMagToStorage-screen .askToStorage-formBox .btns .btn:hover {
   font-weight: 800;
   font-size: 24;
   background: #000000;
   color: white;
 }
-body .askSeparToStorage-screen .askToStorage-formBox .btns .btn .inner-line {
+body .askMagToStorage-screen .askToStorage-formBox .btns .btn .inner-line {
   width: 100%;
   position: absolute;
   bottom: 0;

@@ -1,0 +1,89 @@
+<div class="addMag-screen" id="addMagScreen">
+  <div class="add-formBox addMag">
+    <div class="tag">Añadir nueva revista</div>
+    <form class="form" id="addMagForm">
+
+      <div class="inputs">
+
+        
+        <label for="magBarcodeInput">Código de Barras: <i>(requerido)</i></label>
+        <input type="number" name="prodBarcode" id="magBarcodeInput" required>
+
+        <label for="magNameInput">Título: <i>(requerido)</i></label>
+        <input type="text" name="prodName" id="magNameInput" required>
+
+        <label for="magAuthorInput">Editor: <i>(requerido)</i></label>
+        <input type="text" name="prodAuthor" id="magAuthorInput" required>
+
+        <label for="magYearInput">Año: <i>(requerido)</i></label>
+        <input type="number" name="prodYear" id="magYearInput" required>
+
+        <label for="magPriceInput">Precio:</label>
+        <input type="text" name="prodPrice" id="magPriceInput" pattern="\d+(\.\d{1,2})?">
+        
+
+        <label for="magEditorialInput">Editorial: <i>(requerido)</i></label>
+        <select name="prodEdit" id="magEditorialInput" placeholder="Selecciona una editorial">
+        </select>
+
+        <label for="magSubgenreInput">Subgénero: <i>(requerido)</i></label>
+        <select name="prodSubgenre" id="magSubgenreInput">
+        </select>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddMagBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddMagBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="addMagToStorage-screen" id="addMagToStorageScreen">
+  <div class="addToStorage-formBox addMagToStorage">
+    <div class="tag" id="magNameTag"></div>
+    <form class="form" id="addMagToStorageForm">
+
+      <div class="inputs">
+
+        <label for="magToStorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="magToStorageAmountInput" required>
+
+        <label for="magNewpriceInput">Nuevo precio: <i>(requerido)</i></label>
+        <input type="text" name="prodPrice" id="magNewpriceInput" pattern="\d+(\.\d{1,2})?" required>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddMagToStorageBtn">No agregar a inventario</button>
+        
+        <button type="submit" class="accept" id="AcceptAddMagToStorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askMagToStorage-screen" id="askMagToStorageScreen">
+  <div class="askToStorage-formBox askMagToStorage">
+    <div class="tag" id="magAfterTag"></div>  
+    <div class="btns">
+
+      <div class="btn zero" id="addAnotherMagBtn">Añadir una nueva Revista
+        <div class="inner-line zeroline"></div>
+      </div>
+
+      <div  class="btn zero" id="addAnotherProductFMagBtn">Añadir un nuevo producto
+        <div class="inner-line zeroline"></div>
+      </div>
+
+      <div class="btn getout" id="getOutFMag">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -2,5 +2,7 @@
 export const goBackBtn = document.getElementById('goBack');
 
 goBackBtn.addEventListener('click', function () {
-  window.history.back();
+  window.location.href = '/fullstorage';
 });
+
+export const askProductTypeScreen = document.getElementById('askProductTypeScreen');

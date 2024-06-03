@@ -30,7 +30,6 @@ export function createSeparEDQid (newIDcounter) {
 export function createSeparBarcodeEDQid (separBarcode) {
   const randomThreeDigits = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
   const newSeparBarcodeEDQid = `EDQBAR${randomThreeDigits}${separBarcode}`;
-  console.log(newSeparBarcodeEDQid);
   return newSeparBarcodeEDQid;
 }
 

@@ -1,110 +1,90 @@
-/*
-import { goBackBtn } from '../script.js';
+import { askProductTypeScreen, goBackBtn } from '../script.js';
 
-const addBtnBook = document.getElementById('addBtnBook');
-const addBookScreen = document.getElementById('addBookScreen');
-const cancelAddBookBtn = document.getElementById('cancelAddBookBtn');
-const bookEditorialInput = document.getElementById('bookEditorialInput');
-const bookGenreInput = document.getElementById('bookGenreInput');
-const bookSubgenreInput = document.getElementById('bookSubgenreInput');
+const addBtnSepar = document.getElementById('addBtnSepar');
+const addSeparForm = document.getElementById('addSeparForm');
+const addSeparScreen = document.getElementById('addSeparScreen');
+const cancelAddSeparBtn = document.getElementById('cancelAddSeparBtn');
+const addSeparToStorageScreen = document.getElementById('addSeparToStorageScreen');
+const separNameTag = document.getElementById('separNameTag');
+const cancelAddBookToStorageBtn = document.getElementById('cancelAddBookToStorageBtn');
+const addSeparToStorageForm = document.getElementById('addSeparToStorageForm');
+const askSeparToStorageScreen = document.getElementById('askSeparToStorageScreen');
+const separAfterTag = document.getElementById('separAfterTag');
+const addAnotherSeparBtn = document.getElementById('addAnotherSeparBtn');
+const addAnotherProductFSeparBtn = document.getElementById('addAnotherProductFSeparBtn');
+const getOutFSepar = document.getElementById('getOutFSepar');
 
-const addBookForm = document.getElementById('addBookForm');
+addBtnSepar.addEventListener('click', startAddSepar);
 
-const addBookToStorageScreen = document.getElementById('addBookToStorageScreen');
+cancelAddSeparBtn.addEventListener('click', cancelAddSepar);
 
-const askProductTypeScreen = document.getElementById('askProductTypeScreen');
-
-const askBookToStorageScreen = document.getElementById('askBookToStorageScreen');
-const bookAfterTag = document.getElementById('bookAfterTag');
-
-const addAnotherProductBtn = document.getElementById('addAnotherProductBtn');
-const addVariableBtn = document.getElementById('addVariableBtn');
-const getOut = document.getElementById('getOut');
-
-addBookForm.addEventListener('submit', function (event) {
+addSeparForm.addEventListener('submit', function (event) {
   event.preventDefault();
-  getSendNewBook();
+  getSendNewSepar();
 });
-addBtnBook.addEventListener('click', startAddBook);
 
-cancelAddBookBtn.addEventListener('click', cancelAddBook);
+cancelAddBookToStorageBtn.addEventListener('click', cancelAddingSeparToStorage);
 
-addAnotherProductBtn.addEventListener('click', startAddBook);
+addSeparToStorageForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  getSendSeparToStorage();
+});
 
-getOut.addEventListener('click', function () {
+addAnotherSeparBtn.addEventListener('click', startAddSepar);
+
+addAnotherProductFSeparBtn.addEventListener('click', startAgainFSepar);
+
+getOutFSepar.addEventListener('click', function () {
   window.location.href = '/fullstorage';
 });
 
-addVariableBtn.addEventListener('click', addVariableBook);
+function startAddSepar () {
+  addSeparForm.reset();
 
-function cancelAddBook () {
-  addBookScreen.classList.remove('active');
-  askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
-}
-
-function startAddBook () {
-  addBookForm.reset();
-  fetch('/dataconfig/editorials/alltoproducts')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.text();
-    })
-    .then(html => {
-      bookEditorialInput.innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
-
-  fetch('/dataconfig/genres/alltoproducts')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.text();
-    })
-    .then(html => {
-      bookGenreInput.innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
-
-  fetch('/dataconfig/subgenres/alltoproducts')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.text();
-    })
-    .then(html => {
-      bookSubgenreInput.innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
   if (!askProductTypeScreen.classList.contains('hide')) {
     askProductTypeScreen.classList.add('hide');
   }
-  if (askBookToStorageScreen.classList.contains('active')) {
-    askBookToStorageScreen.classList.remove('active');
+  if (askSeparToStorageScreen.classList.contains('active')) {
+    askSeparToStorageScreen.classList.remove('active');
   }
-  if (askBookToStorageScreen.classList.contains('active')) {
-    askBookToStorageScreen.classList.remove('active');
+  if (askSeparToStorageScreen.classList.contains('active')) {
+    askSeparToStorageScreen.classList.remove('active');
   }
-  if (!addBookScreen.classList.contains('active')) {
-    addBookScreen.classList.add('active');
+  if (!addSeparScreen.classList.contains('active')) {
+    addSeparScreen.classList.add('active');
   }
   if (!goBackBtn.classList.contains('hide')) {
     goBackBtn.classList.add('hide');
   }
 }
 
-function createBook (data) {
-  fetch('/dataconfig/products/addbook', {
+function cancelAddSepar () {
+  addSeparScreen.classList.remove('active');
+  askProductTypeScreen.classList.remove('hide');
+  goBackBtn.classList.remove('hide');
+}
+
+function getSendNewSepar () {
+  const name = document.getElementById('separNameInput').value;
+  const material = document.getElementById('separMaterialInput').value;
+  const print = document.getElementById('separPrintInput').value;
+  const description = document.getElementById('separDescriptionInput').value;
+  const barcode = document.getElementById('separBarcodeInput').value;
+  const price = document.getElementById('separPriceInput').value;
+
+  const data = {
+    separName: name,
+    separMaterial: material,
+    separPrint: print,
+    separDescription: description,
+    separBarcode: barcode,
+    separPrice: parseFloat(price)
+  };
+  createSepar(data);
+}
+
+function createSepar (data) {
+  fetch('/dataconfig/products/addsepar', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -119,121 +99,45 @@ function createBook (data) {
       return response.json();
     })
     .then(result => {
-      const newBookId = result.book;
-      showBookToStorage(newBookId, data); // Usa el ID como sea necesario
+      const newSeparId = result.separ;
+      showSeparToStorage(newSeparId, data);
     })
     .catch(error => {
       console.error('Error:', error);
     });
 }
 
-let addBookEditorialName;
-let addBookEditorialId;
-
-let addBookGenreName;
-let addBookGenreId;
-let addBookGenreAbv;
-
-let addBookSubgenreName;
-let addBookSubgenreId;
-let addBookSubgenreAbv;
-
-bookEditorialInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookEditorialId = selectedOption.dataset.id;
-  addBookEditorialName = selectedOption.dataset.name;
-});
-
-bookGenreInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookGenreName = selectedOption.dataset.name;
-  addBookGenreId = selectedOption.dataset.id;
-  addBookGenreAbv = selectedOption.dataset.abv;
-});
-
-bookSubgenreInput.addEventListener('change', function () {
-  const selectedOption = this.options[this.selectedIndex];
-  addBookSubgenreName = selectedOption.dataset.name;
-  addBookSubgenreId = selectedOption.dataset.id;
-  addBookSubgenreAbv = selectedOption.dataset.abv;
-});
-
-function getSendNewBook () {
-  const name = document.getElementById('bookNameInput').value;
-  const author = document.getElementById('bookAuthorInput').value;
-  const year = document.getElementById('bookYearInput').value;
-  const editorialName = addBookEditorialName;
-  const editorialId = addBookEditorialId;
-  const barcode = document.getElementById('bookBarcodeInput').value;
-  const price = document.getElementById('bookPriceInput').value;
-  const genName = addBookGenreName;
-  const genId = addBookGenreId;
-  const genAbv = addBookGenreAbv;
-  const subgenName = addBookSubgenreName;
-  const subgenId = addBookSubgenreId;
-  const subgenAbv = addBookSubgenreAbv;
-
-  const data = {
-    bookName: name,
-    bookAuthor: author,
-    bookYear: year,
-    bookEditorialName: editorialName,
-    bookEditorialId: editorialId,
-    bookBarcode: barcode,
-    bookPrice: parseFloat(price),
-    bookGenreName: genName,
-    bookGenreId: genId,
-    bookGenreAbv: genAbv,
-    bookSubgenreName: subgenName,
-    bookSubgenreId: subgenId,
-    bookSubgenreAbv: subgenAbv
-  };
-  createBook(data);
+function showSeparToStorage (newSeparId, data) {
+  addSeparToStorageForm.reset();
+  separNameTag.innerHTML = `Se añadió el producto "${data.separName}" correctamente a la base de datos.
+  Ingresa los datos faltantes para añadir el separador al inventario`;
+  separNameTag.dataset.id = newSeparId;
+  addSeparToStorageScreen.classList.add('active');
+  addSeparScreen.classList.remove('active');
 }
 
-const cancelAddBookToStorageBtn = document.getElementById('cancelAddBookToStorageBtn');
-const bookNameTag = document.getElementById('bookNameTag');
-const addBookToStorageForm = document.getElementById('addBookToStorageForm');
-
-cancelAddBookToStorageBtn.addEventListener('click', cancelAddingToStorage);
-
-addBookToStorageForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  getSendBookToStorage();
-});
-
-function cancelAddingToStorage () {
+function cancelAddingSeparToStorage () {
   askProductTypeScreen.classList.remove('hide');
-  addBookScreen.classList.remove('active');
-  addBookToStorageScreen.classList.remove('active');
+  addSeparScreen.classList.remove('active');
+  addSeparToStorageScreen.classList.remove('active');
   goBackBtn.classList.remove('hide');
 }
 
-function showBookToStorage (newBookId, data) {
-  bookNameTag.innerHTML = `Se ha añadido ${data.bookName} correctamente a la base de datos.
-  Ingresa los datos faltantes para añadir el libro al inventario`;
-  bookNameTag.dataset.id = newBookId;
-  addBookToStorageScreen.classList.add('active');
-  addBookScreen.classList.remove('active');
-}
-
-function getSendBookToStorage () {
-  const kindName = document.getElementById('bookToStorageKindInput').value;
-  const amount = document.getElementById('bookToStorageAmountInput').value;
-  const newPrice = document.getElementById('bookNewpriceInput').value;
-  const bookId = document.getElementById('bookNameTag');
+function getSendSeparToStorage () {
+  const amount = document.getElementById('separToStorageAmountInput').value;
+  const newPrice = document.getElementById('separNewpriceInput').value;
+  const separId = separNameTag.dataset.id;
 
   const data = {
-    bookfs_kind: String(kindName),
-    bookfs_amount: Number(amount),
-    bookfs_price: Number(newPrice),
-    book_id: String(bookId.dataset.id)
+    separfs_amount: Number(amount),
+    separfs_price: Number(newPrice),
+    separ_id: String(separId)
   };
-  addBookToStorage(data);
+  addSeparToStorage(data);
 }
 
-function addBookToStorage (data) {
-  fetch('/fullstorage/products/addbook', {
+function addSeparToStorage (data) {
+  fetch('/fullstorage/products/addsepar', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -246,7 +150,7 @@ function addBookToStorage (data) {
       }
 
       if (response.ok) {
-        startAfterAddBook(data);
+        startAfterAddSepar(data);
       }
       return response.json();
     })
@@ -255,48 +159,18 @@ function addBookToStorage (data) {
     });
 }
 
-function startAfterAddBook (info) {
-  fetch(`/fullstorage/products/books/${info.book_id}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La solicitud falló');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const duplicate = data.duplicate;
-      console.log(duplicate);
-      console.log('Duplicate:', data.duplicate);
-      if (data.duplicate) {
-        addVariableBtn.classList.add('hide');
-      } else {
-        addVariableBtn.classList.remove('hide');
-      }
-    })
-    .catch(error => {
-      console.error('Error al cargar el contenido:', error);
-    });
-
-  bookAfterTag.innerHTML = 'El producto se ha guardado correctamente en el inventario';
-  bookAfterTag.dataset.id = info.book_id;
-  bookAfterTag.dataset.kind = info.bookfs_kind;
-  askBookToStorageScreen.classList.add('active');
-  addBookScreen.classList.remove('active');
-  addBookToStorageScreen.classList.remove('active');
+function startAfterAddSepar (info) {
+  separAfterTag.innerHTML = 'El producto se ha guardado correctamente en el inventario';
+  separAfterTag.dataset.id = info.separ_id;
+  askSeparToStorageScreen.classList.add('active');
+  addSeparScreen.classList.remove('active');
+  addSeparToStorageScreen.classList.remove('active');
 }
 
-function addVariableBook () {
-  const id = bookAfterTag.dataset.id;
-  bookNameTag.dataset.id = id;
-  bookNameTag.innerHTML = 'Ingresa nuevamente los datos faltantes para añadir esta variable del libro al inventario';
-  const bookToStorageKindInput = document.getElementById('bookToStorageKindInput');
-  if (bookAfterTag.dataset.kind === 'Linea') {
-    bookToStorageKindInput.innerHTML = '<option value="Outlet">Outlet</option>';
-  } else {
-    bookToStorageKindInput.innerHTML = '<option value="Linea">Línea</option>';
-  }
-  addBookToStorageForm.reset();
-  addBookToStorageScreen.classList.add('active');
-  askBookToStorageScreen.classList.remove('active');
+function startAgainFSepar () {
+  addSeparScreen.classList.remove('active');
+  addSeparToStorageScreen.classList.remove('active');
+  askSeparToStorageScreen.classList.remove('active');
+  askProductTypeScreen.classList.remove('hide');
+  goBackBtn.classList.remove('hide');
 }
-*/

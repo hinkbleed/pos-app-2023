@@ -88,6 +88,7 @@ CREATE TABLE magBarcodes (
     FOREIGN KEY (mag_id) REFERENCES magazines(mag_id)
 );
 
+SELECT * FROM magBarcodes;
 SELECT * FROM magazines;
 
 DROP TABLE toys;

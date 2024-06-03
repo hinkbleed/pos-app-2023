@@ -1,5 +1,6 @@
 import { validateNewBookInfo } from '../../../schemas/fullstorage/products/bookValidations.js';
 import { structureAllBooks, structureAllMags, structureAllSepars } from '../../../schemas/fullstorage/products/htmlFullProducts.js';
+import { validateNewSeparInfo } from '../../../schemas/fullstorage/products/separValidations.js';
 
 export class FullproductsController {
   constructor ({ fullproductsModel }) {
@@ -63,6 +64,24 @@ export class FullproductsController {
       return res.status(200).json({ duplicate: true, books: idBooks.books });
     } else {
       return res.status(200).json({ duplicate: false, books: idBooks.books });
+    }
+  };
+
+  createSepar = async (req, res) => {
+    const result = validateNewSeparInfo(req.body);
+
+    if (!result.success) {
+      const errorMessages = result.error.errors.map(err => err.message);
+      console.error('Errores de validación:', errorMessages);
+      return res.status(400).json({ errors: errorMessages });
+    }
+
+    try {
+      const newStorageSepar = await this.fullproductsModel.createSepar({ input: result.data });
+      res.status(201).json({ message: 'Separador creado exitosamente', separ: newStorageSepar });
+    } catch (error) {
+      console.error('Error al crear el separador:', error);
+      res.status(500).json({ error: 'Error al crear el separador' });
     }
   };
   /*

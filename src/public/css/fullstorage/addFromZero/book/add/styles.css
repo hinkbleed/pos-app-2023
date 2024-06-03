@@ -351,7 +351,7 @@ body .askBookToStorage-screen .askToStorage-formBox .btns .btn {
   background: transparent;
   border: 1px solid rgba(149, 147, 255, 0.2705882353);
 }
-body .askBookToStorage-screen .askToStorage-formBox .btns .btn#addVariableBtn.hide {
+body .askBookToStorage-screen .askToStorage-formBox .btns .btn#addVariableBookBtn.hide {
   display: none;
 }
 body .askBookToStorage-screen .askToStorage-formBox .btns .btn:hover {

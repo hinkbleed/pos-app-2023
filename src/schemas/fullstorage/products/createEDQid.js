@@ -3,3 +3,8 @@ export function createFullstorageBookEDQid (input) {
   const fullstorageBookEDQid = input.book_id + kindInit;
   return fullstorageBookEDQid;
 }
+
+export function createFullstorageSeparEDQid (input) {
+  const fullstorageSeparEDQid = input.separ_id + 'L';
+  return fullstorageSeparEDQid;
+}

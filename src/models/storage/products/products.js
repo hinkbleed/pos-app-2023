@@ -199,7 +199,7 @@ export class ProductModel {
       await connection.query('UPDATE separIDcounter SET separIDcounter = ?;', [separIDcounter + 1]);
 
       // Si todo ha ido bien, retornar sin lanzar un error
-      return true;
+      return separId;
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);
@@ -294,7 +294,7 @@ export class ProductModel {
       await connection.query('UPDATE magIDcounter SET magIDcounter = ?;', [magIDcounter + 1]);
 
       // Si todo ha ido bien, retornar sin lanzar un error
-      return true;
+      return magId;
     } catch (error) {
       // Si hay un error, lanzar una excepción
       throw new Error('Error creating product: ' + error.message);
