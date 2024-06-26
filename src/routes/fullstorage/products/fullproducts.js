@@ -13,6 +13,7 @@ export const createFullproductsRouter = ({ fullproductsModel }) => {
 
   fullproductsRouter.post('/addbook', fullproductsController.createBook);
   fullproductsRouter.post('/addsepar', fullproductsController.createSepar);
+  fullproductsRouter.post('/addmag', fullproductsController.createMag);
 
   fullproductsRouter.get('/books/:id', fullproductsController.getBooksById);
 

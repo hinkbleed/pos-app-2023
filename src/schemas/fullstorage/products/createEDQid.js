@@ -8,3 +8,8 @@ export function createFullstorageSeparEDQid (input) {
   const fullstorageSeparEDQid = input.separ_id + 'L';
   return fullstorageSeparEDQid;
 }
+
+export function createFullstorageMagEDQid (input) {
+  const fullstorageMagEDQid = input.mag_id + 'L';
+  return fullstorageMagEDQid;
+}

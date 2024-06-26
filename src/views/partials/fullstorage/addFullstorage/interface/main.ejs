@@ -1,0 +1,66 @@
+<main class="addFullstorage-view">
+  <div class="addFullstorage-options-box">
+
+    <div class="filters-box">
+
+
+      <div class="searchBar-box">
+        <div class="search-bar">
+          <input type="text" placeholder="Busca aquí por título, detalles, id, código de barras, etc.">
+          <img src="../svg/search-icon.svg">
+        </div>
+      </div>
+
+      <div class="adding-options">
+        <div class="fromButton" id="addFromZeroBtn">Añadir productos desde cero</div>
+        <div class="fromButton" id="addFromCSV">Subir archivo .CSV</div>
+      </div>
+    </div>
+
+    <div class="products-box">
+
+      <div class="map-box">
+        <div class="content-box">
+          <div class="product-card book-product">
+            <div class="productOptions-ask">
+              <div class="prodBtns editBookBtn editBtn">
+                Editar
+                <img class="btn-icon" src="/svg/edit-icon.svg" />
+
+              </div>
+              <div class="prodBtns addBookToPartyBtn addBtn">
+                Añadir a inventario
+                <img class="btn-icon" src="/svg/add-icon.svg" />
+              </div>
+            </div>
+
+            <div class="product-cardColumn cardBookAmount">
+              <div class="amount-box">${book.bookfs_amount}</div>
+            </div>
+
+            <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
+
+            <div class="product-cardColumn cardBookInfo">${book.book_author}, ${book.book_editorial_name},
+              ${book.book_genre_name}, ${book.book_subgenre_name}, ${book.book_year}</div>
+
+            <div class="product-cardColumn cardBookEDQid">${book.bookfs_id}</div>
+
+            <div class="product-cardColumn cardBookBarcode">${book.barcode_number}</div>
+
+
+            <div class="product-cardColumn cardBookKind">${book.bookfs_kind}</div>
+
+            <div class="product-cardColumn cardBookPrice">$${typeof book.bookfs_price === 'string' ?
+              book.bookfs_price.includes('.') ? book.bookfs_price.padEnd(book.bookfs_price.indexOf('.') + 3, '0') :
+              book.bookfs_price + '.00' : book.bookfs_price.toFixed(2)}</div>` : '<div
+              class="product-cardColumn cardBookPrice">$0.00</div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="innerFade-line"></div>
+</main>

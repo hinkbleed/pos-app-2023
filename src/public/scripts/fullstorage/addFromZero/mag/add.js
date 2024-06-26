@@ -112,28 +112,28 @@ function cancelAddMag () {
 }
 
 function getSendNewMag () {
-  const name = document.getElementById('bookNameInput').value;
-  const author = document.getElementById('bookAuthorInput').value;
-  const year = document.getElementById('bookYearInput').value;
+  const name = document.getElementById('magNameInput').value;
+  const author = document.getElementById('magAuthorInput').value;
+  const year = document.getElementById('magYearInput').value;
   const editorialName = addMagEditorialName;
   const editorialId = addMagEditorialId;
-  const barcode = document.getElementById('bookBarcodeInput').value;
-  const price = document.getElementById('bookPriceInput').value;
+  const barcode = document.getElementById('magBarcodeInput').value;
+  const price = document.getElementById('magPriceInput').value;
   const subgenName = addMagSubgenreName;
   const subgenId = addMagSubgenreId;
   const subgenAbv = addMagSubgenreAbv;
 
   const data = {
-    bookName: name,
-    bookAuthor: author,
-    bookYear: year,
-    bookEditorialName: editorialName,
-    bookEditorialId: editorialId,
-    bookBarcode: barcode,
-    bookPrice: parseFloat(price),
-    bookSubgenreName: subgenName,
-    bookSubgenreId: subgenId,
-    bookSubgenreAbv: subgenAbv
+    magName: name,
+    magAuthor: author,
+    magYear: year,
+    magEditorialName: editorialName,
+    magEditorialId: editorialId,
+    magBarcode: barcode,
+    magPrice: parseFloat(price),
+    magSubgenreName: subgenName,
+    magSubgenreId: subgenId,
+    magSubgenreAbv: subgenAbv
   };
   createMag(data);
 }

@@ -11,9 +11,8 @@ const magsExistenceBox = document.getElementById('magsExistenceBox');
 const nonSelection = document.getElementById('nonSelection');
 
 const addFullstorageBtn = document.getElementById('addToFullstorageBtn');
-const askScreen1 = document.getElementById('askScreen1');
-const cancelTypeBtn = document.getElementById('cancelType');
 const askBtnZero = document.getElementById('askBtnZero');
+const askBtnDatabase = document.getElementById('askBtnDatabase');
 
 // #region LISTENERS
 document.addEventListener('DOMContentLoaded', initFullstorageWin);
@@ -50,9 +49,9 @@ productsSwitch.forEach(checkbox => {
   });
 });
 
-addFullstorageBtn.addEventListener('click', showAddOptions);
-cancelTypeBtn.addEventListener('click', hideAddOptions);
+addFullstorageBtn.addEventListener('click', addToFullstorage);
 askBtnZero.addEventListener('click', startAddFromZero);
+askBtnDatabase.addEventListener('click', startAddDatabase);
 
 // #region FUNCTIONS
 // #region init
@@ -183,14 +182,14 @@ function viewMags () {
   magsExistenceBox.classList.remove('hide');
 }
 
-function showAddOptions () {
-  askScreen1.classList.add('active');
-}
-
-function hideAddOptions () {
-  askScreen1.classList.remove('active');
+function addToFullstorage () {
+  window.location.href = '/fullstorage/addfullstorage';
 }
 
 function startAddFromZero () {
   window.location.href = '/fullstorage/addfromzero';
+}
+
+function startAddDatabase () {
+  window.location.href = '/fullstorage/addfullstorage';
 }

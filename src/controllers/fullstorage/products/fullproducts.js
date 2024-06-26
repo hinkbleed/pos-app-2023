@@ -1,5 +1,6 @@
 import { validateNewBookInfo } from '../../../schemas/fullstorage/products/bookValidations.js';
 import { structureAllBooks, structureAllMags, structureAllSepars } from '../../../schemas/fullstorage/products/htmlFullProducts.js';
+import { validateNewMagInfo } from '../../../schemas/fullstorage/products/magValidation.js';
 import { validateNewSeparInfo } from '../../../schemas/fullstorage/products/separValidations.js';
 
 export class FullproductsController {
@@ -82,6 +83,24 @@ export class FullproductsController {
     } catch (error) {
       console.error('Error al crear el separador:', error);
       res.status(500).json({ error: 'Error al crear el separador' });
+    }
+  };
+
+  createMag = async (req, res) => {
+    const result = validateNewMagInfo(req.body);
+
+    if (!result.success) {
+      const errorMessages = result.error.errors.map(err => err.message);
+      console.error('Errores de validación:', errorMessages);
+      return res.status(400).json({ errors: errorMessages });
+    }
+
+    try {
+      const newStorageMag = await this.fullproductsModel.createMag({ input: result.data });
+      res.status(201).json({ message: 'Libro creado exitosamente', book: newStorageMag });
+    } catch (error) {
+      console.error('Error al crear el libro:', error);
+      res.status(500).json({ error: 'Error al crear el libro' });
     }
   };
   /*

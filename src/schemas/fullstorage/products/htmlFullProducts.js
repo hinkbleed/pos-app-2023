@@ -234,7 +234,7 @@ export function structureAllMags (products) {
       </div>
   `;
   if (products.magazines.length > 0) {
-    products.magazines.sort((a, b) => a.magfs_name.localeCompare(b.magfs_name));
+    products.magazines.sort((a, b) => a.mag_name.localeCompare(b.magfs_name));
     htmlMagazines += `
     <div class="content-box">
       ${products.magazines.map(mag => {

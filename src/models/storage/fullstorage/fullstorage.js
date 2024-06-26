@@ -1,5 +1,5 @@
 import mysql from 'mysql2/promise';
-import { createFullstorageBookEDQid, createFullstorageSeparEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
+import { createFullstorageBookEDQid, createFullstorageMagEDQid, createFullstorageSeparEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
 
 const config = {
   host: 'localhost',
@@ -87,6 +87,7 @@ export class FullproductsModel {
       AS m
       ON mfs.mag_id = m.mag_id;`
     );
+    console.log(fsmagazines);
     return { magazines: fsmagazines };
   }
 
@@ -129,6 +130,23 @@ export class FullproductsModel {
         `INSERT INTO separatorsFullstorage (separfs_id, separ_id, separfs_amount, separfs_price)
         VALUES (?, ?, ?, ?);`,
         [fullstorageSeparId, input.separ_id, input.separfs_amount, input.separfs_price || 0]
+      );
+      return true;
+    } catch (error) {
+      // Si hay un error, lanzar una excepción
+      throw new Error('Error creating product: ' + error.message);
+    }
+  }
+
+  static async createMag ({ input }) {
+    try {
+      const fullstorageMagId = createFullstorageMagEDQid(input);
+
+      // Insertar el libro en la base de datos
+      await connection.query(
+        `INSERT INTO magazinesFullstorage (magfs_id, mag_id, magfs_amount, magfs_price)
+        VALUES (?, ?, ?, ?);`,
+        [fullstorageMagId, input.mag_id, input.magfs_amount, input.magfs_price || 0]
       );
       return true;
     } catch (error) {

@@ -1,0 +1,1107 @@
+body {
+
+  .addFullstorage-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    animation: appear 300ms ease;
+
+    .addFullstorage-options-box {
+      position: relative;
+      width: 100%;
+      height: 91%;
+      display: flex;
+      flex-direction: column;
+
+      .filters-box {
+        position: relative;
+        width: 100%;
+        height: 7%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+
+        .searchBar-box {
+          height: 100%;
+          width: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .search-bar {
+            width: 70%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff51;
+            border-radius: 30px;
+            background: #3074965f;
+            overflow: hidden;
+            box-shadow: 0 0 150px 0 #c3c9ff00;
+            transition: 300ms ease;
+
+            &:focus-within {
+              box-shadow: 0 0 100px 0 #d6bfff60;
+              border: 1px solid #d1d5ff83;
+            }
+
+            input {
+              width: 90%;
+              height: 95%;
+              background: none;
+              border: none;
+              outline: none;
+              color: white;
+              font-size: 20px;
+
+              &::placeholder {
+                font-size: 16px;
+                color: #ffffff6a;
+              }
+            }
+
+            img {
+              width: 5%;
+              filter: invert(1);
+              cursor: pointer;
+            }
+
+          }
+        }
+
+        .adding-options {
+          width: 40%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 50px;
+
+
+          .fromButton {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #00000000;
+            color: #ffffff;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 10px;
+            border: 1px solid #ffffff7b;
+            cursor: pointer;
+            transition: 300ms ease;
+          box-shadow: inset 0 10px 10px 0 #ffffff21, 0 -10px 30px 0 rgba(255, 255, 255, 0);
+
+            &:hover {
+              background: #00000051;
+              border: 1px solid #ffffff0b;
+              box-shadow: inset 0 3px 5px 0 #ffffffb8, 0 -10px 20px 0 #ffffff21;
+            }
+          }
+        }
+      }
+
+      .products-box {
+        position: relative;
+        width: 100%;
+        height: 93%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        .map-box {
+          position: relative;
+          width: 96%;
+          height: 95%;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
+          scrollbar-width: none;
+
+          .content-box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 2px;
+
+            .product-card {
+              overflow: hidden;
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+              padding: 1rem;
+              width: 14rem;
+              height: auto;
+              background-color: rgb(122, 48, 143);
+              background-image: radial-gradient(
+                  circle at 0% 0%,
+                  rgb(37, 7, 44) 15%,
+                  rgba(0, 0, 0, 0) 75%
+                ),
+                radial-gradient(
+                  circle at 100% 100%,
+                  rgb(25, 2, 31, 0.9) 15%,
+                  rgba(0, 0, 0, 0) 150%
+                ),
+                linear-gradient(
+                  135deg,
+                  rgba(24, 8, 28, 0) 0%,
+                  rgb(122, 48, 143) 50%,
+                  rgba(24, 8, 28, 0) 100%
+                );
+              border-radius: 0.5rem;
+            }
+            
+            .card::before {
+              content: "";
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              width: 2rem;
+              height: 2rem;
+              background-color: rgb(122, 48, 143);
+              background-image: linear-gradient(
+                0deg,
+                rgba(118, 42, 180, 1) 0%,
+                rgb(199, 95, 228) 75%
+              );
+              border-radius: 9999px;
+              box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
+            }
+            
+            .card .title {
+              font-size: 1rem;
+              color: white;
+              font-weight: 600;
+            }
+            
+            .card .pricing {
+              font-size: 1.5rem;
+              color: white;
+              font-weight: 600;
+            }
+            
+            .card .pricing .pricing-time,
+            .card .sub-title {
+              font-size: 0.75rem;
+              color: rgb(184, 132, 199);
+              font-weight: 500;
+            }
+            
+            .card .list {
+              display: flex;
+              flex-direction: column;
+              gap: 0.25rem;
+              font-size: 0.75rem;
+              color: white;
+              font-weight: 500;
+              list-style: none;
+            }
+            
+            .card .list .list-item .check {
+              margin-right: 0.25rem;
+              font-size: 1rem;
+              color: rgb(199, 95, 228);
+              font-weight: 900;
+            }
+            
+            .card .button {
+              overflow: hidden;
+              cursor: pointer;
+              position: relative;
+              margin-top: 0.5rem;
+              padding: 0.5rem 0.75rem;
+              width: 100%;
+              height: fit-content;
+              background-color: rgb(122, 48, 143);
+              font-size: 0.75rem;
+              color: white;
+              border: none;
+              border-radius: 0.5rem;
+              box-shadow: 0px 0px 2px 1px rgb(122, 48, 143);
+              transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+            }
+            
+            .card .button .text-button {
+              position: relative;
+              z-index: 10;
+            }
+            
+            .card .button::before,
+            .card .button::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              transition: all 0.3s ease-in-out;
+            }
+            .card .button::before {
+              left: 0;
+              background-image: radial-gradient(
+                circle at 0% 45%,
+                rgba(16, 5, 36, 1) 19%,
+                rgba(16, 5, 36, 0.26) 46%,
+                rgba(16, 5, 36, 0) 100%
+              );
+            }
+            .card .button::after {
+              right: 0;
+              background-image: radial-gradient(
+                circle at 100% 45%,
+                rgba(16, 5, 36, 1) 19%,
+                rgba(16, 5, 36, 0.26) 46%,
+                rgba(16, 5, 36, 0) 100%
+              );
+            }
+            
+            .card .button:hover {
+              box-shadow: 0px 0px 20px 0 rgb(122, 48, 143);
+            }
+            
+            .card .button:hover::before,
+            .card .button:hover::after {
+              width: 0;
+              opacity: 0;
+            }
+            
+
+            .product-card {
+              position: relative;
+              width: 100%;
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              background-color: #00000095;
+              border: 1px solid #ffffff14;
+              border-radius: 5px;
+              overflow: hidden;
+              font-size: 13px;
+              cursor: pointer;
+
+              &:after {
+                content: "";
+                height: 100%;
+                width: 10px;
+                position: absolute;
+                left: 0%;
+                top: 65%;
+                transition: top, opacity;
+                transition-duration: 600ms;
+                transition-timing-function: ease;
+                background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+                box-shadow: 0 0 30px mediumslateblue;
+                opacity: 0;
+                filter: blur(10px);
+                z-index: 19;
+              }
+
+              &:hover:after {
+                top: 35%;
+                opacity: 1;
+              }
+
+              &.book-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardBookAmount {
+                    width: 6%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+
+                  &.cardBookName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardBookInfo {
+                    width: 25%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0 10px;
+                  }
+
+                  &.cardBookEDQid {
+                    width: 18%;
+                    height: 50%;
+                  }
+
+                  &.cardBookBarcode {
+                    width: 15%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 10px;
+                  }
+
+                  &.cardBookKind {
+                    width: 7%;
+                    height: 60%;
+                  }
+
+
+                  &.cardBookPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              &.separator-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardSeparAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
+                  &.cardSeparName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardSeparDetails {
+                    width: 30%;
+                    padding: 0 10px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                  }
+
+                  &.cardSeparEDQid {
+                    width: 15%;
+                    height: 60%;
+                  }
+
+                  &.cardSeparBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardSeparPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              &.magazine-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardMagazineAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
+                  &.cardMagazineName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardMagazineInfo {
+                    width: 30%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0 10px;
+                  }
+
+                  &.cardMagazineEDQid {
+                    width: 15%;
+                    height: 60%;
+                  }
+
+                  &.cardMagazineBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardMagazinePrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              .productOptions-ask {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                transition: 300ms ease;
+                z-index: 10;
+                animation: disappear 300ms ease;
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: row;
+
+                &.active {
+
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: #000000ce;
+                  backdrop-filter: blur(15px);
+                  transition: 300ms ease;
+                  animation: appear 300ms ease;
+                  display: flex;
+                }
+
+                .prodBtns {
+                  width: 20%;
+                  height: 40%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: white;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  color: black;
+                  transition: 300ms ease;
+                  margin: 0 10%;
+
+                  .btn-icon {
+                    transition: 300ms ease;
+                    margin: 0 10px;
+                  }
+
+                  &.editBtn {
+                    &:hover {
+                      background: blue;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+
+                  &.addBtn {
+                    &:hover {
+                      background: #00962d;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+    .fullstorage-list-box {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 90%;
+      height: 84%;
+      overflow-y: scroll;
+      scrollbar-width: none;
+
+      .fullstorage-existence {
+        position: relative;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 300ms;
+
+        .nonselection {
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
+          margin-top: 100px;
+          display: none;
+
+          &.active {
+            display: flex;
+          }
+        }
+
+        .productType-box {
+          position: relative;
+          width: 98%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-end;
+          margin: 0 0 60px;
+
+          &.hide {
+            display: none;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            background: #ffffff;
+            background: radial-gradient(circle, #ffffff74 0%, #00000000 100%);
+            box-shadow: 0 0 20px #ffffff40;
+          }
+
+          .title-box {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            text-shadow: 0 10px 10px #000000;
+            filter: saturate(3);
+            overflow: hidden;
+            background-color: #14141a;
+            background-image: radial-gradient(at 88% 40%,
+                #14141a 0px,
+                transparent 85%),
+              radial-gradient(at 49% 30%, #14141a 0px, transparent 85%),
+              radial-gradient(at 14% 26%, #14141a 0px, transparent 85%),
+              radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+              radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+              radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+            z-index: 100;
+
+            &.book-titleCard {
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(110deg) brightness(1.5) saturate(0.8);
+            }
+
+            &.separator-titleCard {
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(65deg) brightness(1.5) saturate(0.8);
+
+              .type-text {
+                filter: brightness(5);
+                z-index: 100;
+              }
+            }
+
+            &.magazine-titleCard {
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 800px;
+                height: 300px;
+                background: #8b4da9;
+                border-radius: 50%;
+                filter: blur(100px);
+              }
+
+              filter: hue-rotate(-10deg) brightness(1.5) saturate(0.8);
+            }
+
+            .type-text {
+              width: 100%;
+              height: 35%;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 0 50px;
+              font-size: 13px;
+              font-weight: 200;
+              font-style: italic;
+              color: #ffffffcf;
+            }
+
+            .book-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .book-head-item {
+
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.title {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 25%;
+                }
+
+                &.id {
+                  width: 18%;
+                }
+
+                &.barcode {
+                  width: 15%;
+                }
+
+                &.kind {
+                  width: 7%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
+              }
+            }
+
+            .separ-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .separ-head-item {
+
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.name {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 30%;
+                }
+
+                &.id {
+                  width: 15%;
+                }
+
+                &.barcode {
+                  width: 20%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
+              }
+            }
+
+            .mag-thead {
+              width: 100%;
+              height: 65%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .mag-head-item {
+
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+
+                &.amount {
+                  width: 6%;
+                }
+
+                &.title {
+                  width: 20%;
+                }
+
+                &.details {
+                  width: 30%;
+                }
+
+                &.id {
+                  width: 15%;
+                }
+
+                &.barcode {
+                  width: 20%;
+                }
+
+                &.price {
+                  width: 9%;
+                }
+              }
+            }
+          }
+
+
+          .content-box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 2px;
+
+            .product-card {
+              position: relative;
+              width: 100%;
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              background-color: #00000095;
+              border: 1px solid #ffffff14;
+              border-radius: 5px;
+              overflow: hidden;
+              font-size: 13px;
+              cursor: pointer;
+
+              &:after {
+                content: "";
+                height: 100%;
+                width: 10px;
+                position: absolute;
+                left: 0%;
+                top: 65%;
+                transition: top, opacity;
+                transition-duration: 600ms;
+                transition-timing-function: ease;
+                background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+                box-shadow: 0 0 30px mediumslateblue;
+                opacity: 0;
+                filter: blur(10px);
+                z-index: 19;
+              }
+
+              &:hover:after {
+                top: 35%;
+                opacity: 1;
+              }
+
+              &.book-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardBookAmount {
+                    width: 6%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+
+                  &.cardBookName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardBookInfo {
+                    width: 25%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0 10px;
+                  }
+
+                  &.cardBookEDQid {
+                    width: 18%;
+                    height: 50%;
+                  }
+
+                  &.cardBookBarcode {
+                    width: 15%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 10px;
+                  }
+
+                  &.cardBookKind {
+                    width: 7%;
+                    height: 60%;
+                  }
+
+
+                  &.cardBookPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              &.separator-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardSeparAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
+                  &.cardSeparName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardSeparDetails {
+                    width: 30%;
+                    padding: 0 10px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                  }
+
+                  &.cardSeparEDQid {
+                    width: 15%;
+                    height: 60%;
+                  }
+
+                  &.cardSeparBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardSeparPrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              &.magazine-product {
+
+                .product-cardColumn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  &.cardMagazineAmount {
+                    width: 6%;
+                    height: 100%;
+                  }
+
+                  &.cardMagazineName {
+                    width: 20%;
+                    justify-content: flex-start;
+                    padding: 0 10px 0 20px;
+                    z-index: 20;
+                  }
+
+                  &.cardMagazineInfo {
+                    width: 30%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0 10px;
+                  }
+
+                  &.cardMagazineEDQid {
+                    width: 15%;
+                    height: 60%;
+                  }
+
+                  &.cardMagazineBarcode {
+                    width: 20%;
+                  }
+
+                  &.cardMagazinePrice {
+                    width: 9%;
+                    height: 60%;
+                    text-shadow: 0 0 40px white;
+                  }
+                }
+              }
+
+              .productOptions-ask {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                transition: 300ms ease;
+                z-index: 10;
+                animation: disappear 300ms ease;
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: row;
+
+                &.active {
+
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: #000000ce;
+                  backdrop-filter: blur(15px);
+                  transition: 300ms ease;
+                  animation: appear 300ms ease;
+                  display: flex;
+                }
+
+                .prodBtns {
+                  width: 20%;
+                  height: 40%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: white;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  color: black;
+                  transition: 300ms ease;
+                  margin: 0 10%;
+
+                  .btn-icon {
+                    transition: 300ms ease;
+                    margin: 0 10px;
+                  }
+
+                  &.editBtn {
+                    &:hover {
+                      background: blue;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+
+                  &.addBtn {
+                    &:hover {
+                      background: #00962d;
+                      color: white;
+
+                      & .btn-icon {
+                        filter: invert(1);
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+
+          .no-content {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            z-index: 10;
+          }
+        }
+      }
+    }
+
+    .innerFade-line {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: #000a18;
+      background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+      mask-image: linear-gradient(0deg, #000, transparent);
+
+    }
+  }
+}
