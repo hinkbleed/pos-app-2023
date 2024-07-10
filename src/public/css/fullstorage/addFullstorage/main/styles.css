@@ -45,7 +45,7 @@ body .addFullstorage-view .addFullstorage-options-box .filters-box .searchBar-bo
   transition: 300ms ease;
 }
 body .addFullstorage-view .addFullstorage-options-box .filters-box .searchBar-box .search-bar:focus-within {
-  box-shadow: 0 0 100px 0 rgba(214, 191, 255, 0.3764705882);
+  box-shadow: 0 0 100px 0 rgba(214, 191, 255, 0.1098039216);
   border: 1px solid rgba(209, 213, 255, 0.5137254902);
 }
 body .addFullstorage-view .addFullstorage-options-box .filters-box .searchBar-box .search-bar input {
@@ -129,123 +129,74 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   border-radius: 10px;
   gap: 2px;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card {
-  overflow: hidden;
-  position: relative;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .partialscreen {
+  width: 95%;
+  height: 200px;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  display: none;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .partialscreen.active {
+  display: flex;
+  animation: 300ms appear ease;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  display: none;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults.active {
+  display: flex;
+  animation: 300ms appear ease;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .noresult {
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: rgba(128, 128, 128, 0.1803921569);
+  border: 1px solid rgba(128, 128, 128, 0.2588235294);
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .typesign {
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  margin: 0 100px;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  width: 14rem;
-  height: auto;
   background-color: rgb(122, 48, 143);
   background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%), radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%), linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
   border-radius: 0.5rem;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card::before {
-  content: "";
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 2rem;
-  height: 2rem;
-  background-color: rgb(122, 48, 143);
-  background-image: linear-gradient(0deg, rgb(118, 42, 180) 0%, rgb(199, 95, 228) 75%);
-  border-radius: 9999px;
-  box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .title {
-  font-size: 1rem;
-  color: white;
-  font-weight: 600;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .pricing {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: 600;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .pricing .pricing-time,
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .sub-title {
-  font-size: 0.75rem;
-  color: rgb(184, 132, 199);
-  font-weight: 500;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-size: 0.75rem;
-  color: white;
-  font-weight: 500;
-  list-style: none;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .list .list-item .check {
-  margin-right: 0.25rem;
-  font-size: 1rem;
-  color: rgb(199, 95, 228);
-  font-weight: 900;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button {
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: rgb(122, 48, 143);
-  font-size: 0.75rem;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 2px 1px rgb(122, 48, 143);
-  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button .text-button {
-  position: relative;
-  z-index: 10;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button::before,
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button::before {
-  left: 0;
-  background-image: radial-gradient(circle at 0% 45%, rgb(16, 5, 36) 19%, rgba(16, 5, 36, 0.26) 46%, rgba(16, 5, 36, 0) 100%);
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button::after {
-  right: 0;
-  background-image: radial-gradient(circle at 100% 45%, rgb(16, 5, 36) 19%, rgba(16, 5, 36, 0.26) 46%, rgba(16, 5, 36, 0) 100%);
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button:hover {
-  box-shadow: 0px 0px 20px 0 rgb(122, 48, 143);
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button:hover::before,
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .card .button:hover::after {
-  width: 0;
-  opacity: 0;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5843137255);
-  border: 1px solid rgba(255, 255, 255, 0.0784313725);
-  border-radius: 5px;
-  overflow: hidden;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
   cursor: pointer;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card:after {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card:after {
   content: "";
   height: 100%;
   width: 10px;
@@ -255,130 +206,121 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   transition: top, opacity;
   transition-duration: 600ms;
   transition-timing-function: ease;
-  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+  background: linear-gradient(transparent, #c7bdff, transparent);
   box-shadow: 0 0 30px mediumslateblue;
   opacity: 0;
   filter: blur(10px);
   z-index: 19;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card:hover:after {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card:hover:after {
   top: 35%;
   opacity: 1;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product {
+  filter: hue-rotate(130deg) brightness(4) saturate(2);
+  color: #ffffff;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 0 0 40px rgb(0, 0, 0);
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
-  width: 6%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookName {
-  width: 20%;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 25%;
   justify-content: flex-start;
-  padding: 0 10px 0 20px;
+  padding: 0 10px 0 30px;
   z-index: 20;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
-  width: 25%;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 10%;
+  height: 60%;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 15%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookInfo {
+  width: 30%;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 10px;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
-  width: 18%;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 20%;
   height: 50%;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
-  width: 15%;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10px;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product {
+  filter: hue-rotate(65deg) brightness(3) saturate(0.8);
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookKind {
-  width: 7%;
-  height: 60%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
-  width: 9%;
-  height: 60%;
-  text-shadow: 0 0 40px white;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 0 0 40px black;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
-  width: 6%;
-  height: 100%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
-  width: 20%;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 25%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparDetails {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 10%;
+  height: 60%;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 15%;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparInfo {
   width: 30%;
   padding: 0 10px;
   flex-direction: column;
   align-items: flex-start;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
-  width: 15%;
-  height: 60%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
   width: 20%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
-  width: 9%;
   height: 60%;
-  text-shadow: 0 0 40px white;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product {
+  filter: hue-rotate(-10deg) brightness(3) saturate(0.9);
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 0 0 40px black;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
-  width: 6%;
-  height: 100%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
-  width: 20%;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 25%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 10%;
+  height: 60%;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 15%;
+}
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
   width: 30%;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 10px;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
-  width: 15%;
-  height: 60%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
   width: 20%;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
-  width: 9%;
   height: 60%;
-  text-shadow: 0 0 40px white;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -393,7 +335,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   justify-content: flex-end;
   flex-direction: row;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask.active {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask.active {
   right: 0;
   bottom: 0;
   width: 100%;
@@ -405,7 +347,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   animation: appear 300ms ease;
   display: flex;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns {
   width: 20%;
   height: 40%;
   display: flex;
@@ -418,471 +360,23 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   transition: 300ms ease;
   margin: 0 10%;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns .btn-icon {
   transition: 300ms ease;
   margin: 0 10px;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
   background: blue;
   color: white;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
   filter: invert(1);
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
   background: #00962d;
   color: white;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
   filter: invert(1);
-}
-body .addFullstorage-view .fullstorage-list-box {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 90%;
-  height: 84%;
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence {
-  position: relative;
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 300ms;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .nonselection {
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50%;
-  margin-top: 100px;
-  display: none;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .nonselection.active {
-  display: flex;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box {
-  position: relative;
-  width: 98%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin: 0 0 60px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box.hide {
-  display: none;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  background: #ffffff;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4549019608) 0%, rgba(0, 0, 0, 0) 100%);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2509803922);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  text-shadow: 0 10px 10px #000000;
-  filter: saturate(3);
-  overflow: hidden;
-  background-color: #14141a;
-  background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
-  z-index: 100;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.book-titleCard {
-  filter: hue-rotate(110deg) brightness(1.5) saturate(0.8);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.book-titleCard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 800px;
-  height: 300px;
-  background: #8b4da9;
-  border-radius: 50%;
-  filter: blur(100px);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.separator-titleCard {
-  filter: hue-rotate(65deg) brightness(1.5) saturate(0.8);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.separator-titleCard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 800px;
-  height: 300px;
-  background: #8b4da9;
-  border-radius: 50%;
-  filter: blur(100px);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.separator-titleCard .type-text {
-  filter: brightness(5);
-  z-index: 100;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.magazine-titleCard {
-  filter: hue-rotate(-10deg) brightness(1.5) saturate(0.8);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box.magazine-titleCard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 800px;
-  height: 300px;
-  background: #8b4da9;
-  border-radius: 50%;
-  filter: blur(100px);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .type-text {
-  width: 100%;
-  height: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 50px;
-  font-size: 13px;
-  font-weight: 200;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.8117647059);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead {
-  width: 100%;
-  height: 65%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.amount {
-  width: 6%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.title {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.details {
-  width: 25%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.id {
-  width: 18%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.barcode {
-  width: 15%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.kind {
-  width: 7%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .book-thead .book-head-item.price {
-  width: 9%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead {
-  width: 100%;
-  height: 65%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.amount {
-  width: 6%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.name {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.details {
-  width: 30%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.id {
-  width: 15%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.barcode {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .separ-thead .separ-head-item.price {
-  width: 9%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead {
-  width: 100%;
-  height: 65%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.amount {
-  width: 6%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.title {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.details {
-  width: 30%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.id {
-  width: 15%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.barcode {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .title-box .mag-thead .mag-head-item.price {
-  width: 9%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
-  gap: 2px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5843137255);
-  border: 1px solid rgba(255, 255, 255, 0.0784313725);
-  border-radius: 5px;
-  overflow: hidden;
-  font-size: 13px;
-  cursor: pointer;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card:after {
-  content: "";
-  height: 100%;
-  width: 10px;
-  position: absolute;
-  left: 0%;
-  top: 65%;
-  transition: top, opacity;
-  transition-duration: 600ms;
-  transition-timing-function: ease;
-  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
-  box-shadow: 0 0 30px mediumslateblue;
-  opacity: 0;
-  filter: blur(10px);
-  z-index: 19;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card:hover:after {
-  top: 35%;
-  opacity: 1;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
-  width: 6%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookName {
-  width: 20%;
-  justify-content: flex-start;
-  padding: 0 10px 0 20px;
-  z-index: 20;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
-  width: 25%;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 10px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
-  width: 18%;
-  height: 50%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
-  width: 15%;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookKind {
-  width: 7%;
-  height: 60%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
-  width: 9%;
-  height: 60%;
-  text-shadow: 0 0 40px white;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
-  width: 6%;
-  height: 100%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
-  width: 20%;
-  justify-content: flex-start;
-  padding: 0 10px 0 20px;
-  z-index: 20;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparDetails {
-  width: 30%;
-  padding: 0 10px;
-  flex-direction: column;
-  align-items: flex-start;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
-  width: 15%;
-  height: 60%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
-  width: 9%;
-  height: 60%;
-  text-shadow: 0 0 40px white;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
-  width: 6%;
-  height: 100%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
-  width: 20%;
-  justify-content: flex-start;
-  padding: 0 10px 0 20px;
-  z-index: 20;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
-  width: 30%;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 10px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
-  width: 15%;
-  height: 60%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
-  width: 20%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
-  width: 9%;
-  height: 60%;
-  text-shadow: 0 0 40px white;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  transition: 300ms ease;
-  z-index: 10;
-  animation: disappear 300ms ease;
-  display: none;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask.active {
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8078431373);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
-  transition: 300ms ease;
-  animation: appear 300ms ease;
-  display: flex;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns {
-  width: 20%;
-  height: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  color: black;
-  transition: 300ms ease;
-  margin: 0 10%;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
-  transition: 300ms ease;
-  margin: 0 10px;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
-  background: blue;
-  color: white;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
-  filter: invert(1);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
-  background: #00962d;
-  color: white;
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
-  filter: invert(1);
-}
-body .addFullstorage-view .fullstorage-list-box .fullstorage-existence .productType-box .no-content {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: white;
-  z-index: 10;
 }
 body .addFullstorage-view .innerFade-line {
   position: absolute;
@@ -893,4 +387,21 @@ body .addFullstorage-view .innerFade-line {
   background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
   -webkit-mask-image: linear-gradient(0deg, #000, transparent);
           mask-image: linear-gradient(0deg, #000, transparent);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */

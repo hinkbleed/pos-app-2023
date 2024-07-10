@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import { createFullstorageBookEDQid, createFullstorageMagEDQid, createFullstorageSeparEDQid } from '../../../schemas/fullstorage/products/createEDQid.js';
+import { escapeRegExp } from '../../../schemas/universal-formats/escapeRegExp.js';
 
 const config = {
   host: 'localhost',
@@ -119,6 +120,60 @@ export class FullproductsModel {
           WHERE bfs.book_id = ?;`, [id]
     );
     return { books: fsbooksbyid };
+  }
+
+  static async getProductsByQuerySearch (input) {
+    const escapedInput = escapeRegExp(input);
+
+    const [booksbyquerysearch] = await connection.query(
+      `SELECT b.book_id,
+              b.book_name,
+              b.book_author,
+              b.book_year,
+              b.book_editorial_name,
+              b.book_editorial_id,
+              b.book_genre_name,
+              b.book_genre_id,
+              b.book_subgenre_name,
+              b.book_subgenre_id,
+              b.book_price,
+              bbc.barcode_number
+       FROM books AS b
+       LEFT JOIN bookBarcodes AS bbc ON b.book_id = bbc.book_id
+       WHERE b.book_name REGEXP ?;`, [`(^|\\s)${escapedInput}`]
+    );
+
+    const [magazinesbyquerysearch] = await connection.query(
+      `SELECT m.mag_id,
+              m.mag_name,
+              m.mag_author,
+              m.mag_year,
+              m.mag_editorial_name,
+              m.mag_editorial_id,
+              m.mag_subgenre_name,
+              m.mag_subgenre_id,
+              m.mag_price,
+              mbc.barcode_number
+       FROM magazines AS m
+       LEFT JOIN magBarcodes AS mbc ON m.mag_id = mbc.mag_id
+       WHERE m.mag_name REGEXP ?;`, [`(^|\\s)${escapedInput}`]
+    );
+
+    const [separatorsbyquerysearch] = await connection.query(
+      `SELECT s.separ_id,
+              s.separ_name,
+              s.separ_material,
+              s.separ_print,
+              s.separ_description,
+              s.separ_price,
+              sbc.barcode_number
+       FROM separators AS s
+       LEFT JOIN separBarcodes AS sbc ON s.separ_id = sbc.separ_id
+       WHERE s.separ_name REGEXP ?;`, [`(^|\\s)${escapedInput}`]
+    );
+
+    console.log(booksbyquerysearch, separatorsbyquerysearch, magazinesbyquerysearch);
+    return { books: booksbyquerysearch, separators: separatorsbyquerysearch, magazines: magazinesbyquerysearch };
   }
 
   static async createSepar ({ input }) {

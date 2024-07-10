@@ -32,8 +32,26 @@ body header {
   z-index: 100;
   animation: appear 300ms ease;
 }
-body header .go-back {
+body header .logo-box {
   position: relative;
+  left: 5%;
+  top: 0;
+  display: flex;
+  height: 100%;
+  width: 30%;
+  align-items: center;
+}
+body header .logo-box .logo {
+  height: 40px;
+  margin: 40px;
+}
+body header .logo-box .text {
+  font-size: 20px;
+}
+body .go-back {
+  position: relative;
+  left: 0px;
+  top: 21px;
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -46,22 +64,9 @@ body header .go-back {
   display: flex;
   animation: appear 300ms ease;
 }
-body header .go-back img {
+body .go-back img {
   width: 100%;
   filter: invert(100%);
-}
-body header .logo-box {
-  display: flex;
-  height: 100%;
-  width: 30%;
-  align-items: center;
-}
-body header .logo-box .logo {
-  height: 40px;
-  margin: 40px;
-}
-body header .logo-box .text {
-  font-size: 20px;
 }
 body .ver-box {
   position: absolute;

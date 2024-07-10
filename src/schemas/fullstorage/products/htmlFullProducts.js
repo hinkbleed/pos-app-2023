@@ -96,6 +96,70 @@ export function structureAllBooks (products) {
   return htmlBooks;
 }
 
+/*
+export function structureQueryBooks (products) {
+  let htmlBooks = '';
+  let htmlMags = '';
+  let html
+
+  if (products.books.length > 0) {
+    products.books.sort((a, b) => a.book_name.localeCompare(b.book_name));
+    htmlBooks += `
+      ${products.books.map((book) => {
+        return `
+          <div class="hei">
+          ${book.book_name},
+          ${book.book_id},
+          ${book.book_author},
+          ${book.book_editorial_name},
+          ${book.book_genre_name},
+          ${book.book_subgenre_name},
+          ${book.book_price}
+          </div>`;
+        /*
+        return `
+          <div class="product-card book-product">
+            <div class="productOptions-ask">
+              <div class="prodBtns editBookBtn editBtn">
+                Editar
+                <img class="btn-icon" src="/svg/edit-icon.svg" />
+
+              </div>
+              <div class="prodBtns addBookToPartyBtn addBtn">
+                Añadir a inventario
+                <img class="btn-icon" src="/svg/add-icon.svg" />
+              </div>
+            </div>
+
+            <div class="product-cardColumn cardBookAmount">
+              <div class="amount-box">${book.bookfs_amount}</div>
+            </div>
+
+            <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
+
+            <div class="product-cardColumn cardBookInfo">${book.book_author}, ${book.book_editorial_name},
+              ${book.book_genre_name}, ${book.book_subgenre_name}, ${book.book_year}</div>
+
+            <div class="product-cardColumn cardBookEDQid">${book.bookfs_id}</div>
+
+            <div class="product-cardColumn cardBookBarcode">${book.barcode_number}</div>
+            <div class="product-cardColumn cardBookKind">${book.bookfs_kind}</div>
+
+            <div class="product-cardColumn cardBookPrice">$${typeof book.bookfs_price === 'string' ? book.bookfs_price.includes('.') ? book.bookfs_price.padEnd(book.bookfs_price.indexOf('.') + 3, '0') : book.bookfs_price + '.00' : book.bookfs_price.toFixed(2)}</div> : '<div class="product-cardColumn cardBookPrice">$0.00</div>
+          </div>
+        `;
+
+    }).join('')
+      }
+  `;
+  } else {
+    htmlBooks += '';
+  }
+
+  return htmlBooks;
+}
+  */
+
 export function structureAllSepars (products) {
   let htmlSeparators = '';
 
@@ -287,4 +351,150 @@ export function structureAllMags (products) {
   </div >`;
 
   return htmlMagazines;
+}
+
+export function structureQueryBooks (products) {
+  let htmlBooks = '';
+  let htmlSeparators = '';
+  let htmlMagazines = '';
+
+  // Generar HTML para libros
+  htmlBooks = `
+  `;
+  if (products.books.length > 0) {
+    products.books.sort((a, b) => a.book_name.localeCompare(b.book_name));
+    htmlBooks += `
+    <div class="productType-box book-type">
+      <div class="typesign"> Libros
+      </div>
+    ${products.books.map((book, index) => {
+      return `
+        <div class="product-card book-product">
+          <div class="productOptions-menu">
+            <div class="prodBtns editBookBtn editBtn">
+              Editar
+              <img class="btn-icon" src="/svg/edit-icon.svg"/>
+          
+            </div>
+            <div class="prodBtns addBookToPartyBtn addBtn">
+              Añadir a inventario
+              <img class="btn-icon" src="/svg/add-icon.svg"/>
+            </div>
+          </div>
+
+          <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
+
+          ${book.book_price ? `<div class="product-cardColumn cardBookPrice">$${typeof book.book_price === 'string' ? book.book_price.includes('.') ? book.book_price.padEnd(book.book_price.indexOf('.') + 3, '0') : book.book_price + '.00' : book.book_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardBookPrice">$0.00</div>'}
+
+          <div class="product-cardColumn cardBookBarcode">${book.barcode_number}</div>
+
+          <div class="product-cardColumn cardBookInfo">${book.book_author}, ${book.book_editorial_name}, ${book.book_year}, ${book.book_genre_name}, ${book.book_subgenre_name}</div >
+
+          <div class="product-cardColumn cardBookEDQid">${book.book_id}</div>
+        </div >
+
+
+
+      `;
+    }).join('')
+      }
+  `;
+    htmlBooks += `
+    </div > `;
+  } else {
+    htmlBooks = '';
+  }
+
+  // Generar HTML para separadores
+  htmlSeparators = `
+  `;
+  if (products.separators.length > 0) {
+    products.separators.sort((a, b) => a.separ_name.localeCompare(b.separ_name));
+    htmlSeparators += `
+    <div class="productType-box">
+      <div class="typesign"> Separadores
+      </div>
+      ${products.separators.map(separ => {
+      return `
+      <div class="product-card separator-product">
+        <div class="productOptions-ask">
+          <div class="prodBtns editSeparBtn editBtn">
+            Editar
+            <img class="btn-icon" src="/svg/edit-icon.svg"/>
+    
+          </div>
+          <div class="prodBtns addSeparToPartyBtn addBtn">
+            Añadir a inventario
+            <img class="btn-icon" src="/svg/add-icon.svg"/>
+          </div>
+        </div>
+
+        <div class="product-cardColumn cardSeparName separ-toggle-btn">${separ.separ_name}</div>
+
+        ${separ.separ_price ? `<div class="product-cardColumn cardSeparPrice">$${typeof separ.separ_price === 'string' ? separ.separ_price.includes('.') ? separ.separ_price.padEnd(separ.separ_price.indexOf('.') + 3, '0') : separ.separ_price + '.00' : separ.separ_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardSeparPrice">$0.00</div>'}
+
+        <div class="product-cardColumn cardSeparBarcode">${separ.barcode_number}</div>
+        <div class="product-cardColumn cardSeparInfo">${separ.separ_material}, ${separ.separ_print}, ${separ.separ_description}</div>
+        <div class="product-cardColumn cardSeparEDQid">${separ.separ_id}</div>
+      </div>
+        `;
+    }).join('')
+      }
+  `;
+    htmlSeparators += `
+      </div > `;
+  } else {
+    htmlSeparators = '';
+  }
+
+  // Generar HTML para revistas
+  htmlMagazines = `
+  `;
+  if (products.magazines.length > 0) {
+    products.magazines.sort((a, b) => a.mag_name.localeCompare(b.mag_name));
+    htmlMagazines += `
+    <div class="productType-box">
+      <div class="typesign"> Revistas
+      </div>
+      ${products.magazines.map(mag => {
+      return `
+      <div class="product-card magazine-product">
+        <div class="productOptions-ask">
+          <div class="prodBtns editMagBtn editBtn">
+            Editar
+            <img class="btn-icon" src="/svg/edit-icon.svg"/>
+          </div>
+          <div class="prodBtns addMagToPartyBtn addBtn">
+            Añadir a inventario
+            <img class="btn-icon" src="/svg/add-icon.svg"/>
+          </div>
+        </div>
+
+        <div class="product-cardColumn cardMagazineName mag-toggle-btn">${mag.mag_name}</div>
+        
+        ${mag.mag_price ? `<div class="product-cardColumn cardMagazinePrice">$${typeof mag.mag_price === 'string' ? mag.mag_price.includes('.') ? mag.mag_price.padEnd(mag.mag_price.indexOf('.') + 3, '0') : mag.mag_price + '.00' : mag.mag_price.toFixed(2)}</div>` : '<div class="product-cardColumn cardMagazinePrice">$0.00</div>'}
+
+        <div class="product-cardColumn cardMagazineBarcode">${mag.barcode_number}</div>
+        
+        <div class="product-cardColumn cardMagazineInfo">${mag.mag_author}, ${mag.mag_editorial_name}, ${mag.mag_year}, ${mag.mag_subgenre_name}</div >
+
+        <div class="product-cardColumn cardMagazineEDQid">${mag.mag_id}</div>
+      </div>
+        `;
+    }).join('')
+      }
+  `;
+    htmlMagazines += `
+      </div > `;
+  } else {
+    htmlMagazines = '';
+  }
+
+  console.log(htmlBooks + htmlSeparators + htmlMagazines);
+
+  if (htmlBooks === '' && htmlSeparators === '' && htmlMagazines === '') {
+    return '';
+  } else {
+    return htmlBooks + htmlSeparators + htmlMagazines;
+  }
 }

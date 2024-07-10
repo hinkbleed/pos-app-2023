@@ -1,5 +1,5 @@
 import { validateNewBookInfo } from '../../../schemas/fullstorage/products/bookValidations.js';
-import { structureAllBooks, structureAllMags, structureAllSepars } from '../../../schemas/fullstorage/products/htmlFullProducts.js';
+import { structureAllBooks, structureAllMags, structureAllSepars, structureQueryBooks } from '../../../schemas/fullstorage/products/htmlFullProducts.js';
 import { validateNewMagInfo } from '../../../schemas/fullstorage/products/magValidation.js';
 import { validateNewSeparInfo } from '../../../schemas/fullstorage/products/separValidations.js';
 
@@ -65,6 +65,18 @@ export class FullproductsController {
       return res.status(200).json({ duplicate: true, books: idBooks.books });
     } else {
       return res.status(200).json({ duplicate: false, books: idBooks.books });
+    }
+  };
+
+  getProductsByQuerySearch = async (req, res) => {
+    console.log(req.params.input);
+    const queryBooks = await this.fullproductsModel.getProductsByQuerySearch(req.params.input);
+    console.log(queryBooks);
+    const htmlQueryBooks = structureQueryBooks(queryBooks);
+    if (htmlQueryBooks === '') {
+      res.send('<div class="noresult">No hay resultados para tu búsqueda</div>');
+    } else {
+      res.send(htmlQueryBooks);
     }
   };
 
