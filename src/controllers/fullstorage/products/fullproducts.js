@@ -38,67 +38,77 @@ export class FullproductsController {
     }
   };
 
-  createBook = async (req, res) => {
+  addBook = async (req, res) => {
     const result = validateNewBookInfo(req.body);
-
     if (!result.success) {
       const errorMessages = result.error.errors.map(err => err.message);
       console.error('Errores de validación:', errorMessages);
       return res.status(400).json({ errors: errorMessages });
     }
 
-    try {
-      const newStorageBook = await this.fullproductsModel.createBook({ input: result.data });
-      res.status(201).json({ message: 'Libro creado exitosamente', book: newStorageBook });
-    } catch (error) {
-      console.error('Error al crear el libro:', error);
-      res.status(500).json({ error: 'Error al crear el libro' });
-    }
-  };
+    const idBooks = await this.fullproductsModel.getBooksByIdAndKind(result.data);
+    console.log(idBooks.books.length);
+    console.log(idBooks.books);
 
-  getBooksById = async (req, res) => {
-    const idBooks = await this.fullproductsModel.getBooksById(req.params.id);
     if (idBooks.books.length === 0) {
-      return res.status(404).json({ error: 'Error al solicitar datos' });
-    }
-    if (idBooks.books.length === 2) {
-      return res.status(200).json({ duplicate: true, books: idBooks.books });
+      try {
+        const newFullstorageBook = await this.fullproductsModel.createBook({ input: result.data });
+        res.status(201).json({ message: 'Libro creado exitosamente', book: newFullstorageBook });
+      } catch (error) {
+        console.error('Error al crear el libro:', error);
+        res.status(500).json({ error: 'Error al crear el libro' });
+      }
     } else {
-      return res.status(200).json({ duplicate: false, books: idBooks.books });
+      const newPrice = result.data.bookfs_price;
+      console.log(result.data.bookfs_amount + 'nueva cantidad');
+      console.log(idBooks.books[0].bookfs_amount + 'anterior cantridad');
+      const resultAmount = result.data.bookfs_amount + idBooks.books[0].bookfs_amount;
+      console.log(resultAmount + 'Cantidad resultante');
+      try {
+        const upFullstorageBook = await this.fullproductsModel.updateBookById({ input: idBooks.books, resultAmount, newPrice });
+        res.status(201).json({ message: 'Libro actualizado exitosamente', book: upFullstorageBook });
+      } catch (error) {
+        console.error('Error al crear el libro:', error);
+        res.status(500).json({ error: 'Error al crear el libro' });
+      }
     }
   };
 
-  getProductsByQuerySearch = async (req, res) => {
-    console.log(req.params.input);
-    const queryBooks = await this.fullproductsModel.getProductsByQuerySearch(req.params.input);
-    console.log(queryBooks);
-    const htmlQueryBooks = structureQueryBooks(queryBooks);
-    if (htmlQueryBooks === '') {
-      res.send('<div class="noresult">No hay resultados para tu búsqueda</div>');
-    } else {
-      res.send(htmlQueryBooks);
-    }
-  };
-
-  createSepar = async (req, res) => {
+  addSepar = async (req, res) => {
     const result = validateNewSeparInfo(req.body);
-
     if (!result.success) {
       const errorMessages = result.error.errors.map(err => err.message);
       console.error('Errores de validación:', errorMessages);
       return res.status(400).json({ errors: errorMessages });
     }
 
-    try {
-      const newStorageSepar = await this.fullproductsModel.createSepar({ input: result.data });
-      res.status(201).json({ message: 'Separador creado exitosamente', separ: newStorageSepar });
-    } catch (error) {
-      console.error('Error al crear el separador:', error);
-      res.status(500).json({ error: 'Error al crear el separador' });
+    const idSepar = await this.fullproductsModel.getSeparById(result.data);
+    console.log(idSepar);
+    if (idSepar.separators.length === 0) {
+      try {
+        const newStorageSepar = await this.fullproductsModel.createSepar({ input: result.data });
+        res.status(201).json({ message: 'Separador creado exitosamente', separ: newStorageSepar });
+      } catch (error) {
+        console.error('Error al crear el separador:', error);
+        res.status(500).json({ error: 'Error al crear el separador' });
+      }
+    } else {
+      const newPrice = result.data.separfs_price;
+      console.log(result.data.separfs_amount + 'nueva cantidad');
+      console.log(idSepar.separators[0].separfs_amount + 'anterior cantidad');
+      const resultAmount = result.data.separfs_amount + idSepar.separators[0].separfs_amount;
+      console.log(resultAmount + 'Cantidad resultante');
+      try {
+        const upFullstorageSepar = await this.fullproductsModel.updateSeparById({ input: idSepar.separators, resultAmount, newPrice });
+        res.status(201).json({ message: 'Separador actualizado exitosamente', separ: upFullstorageSepar });
+      } catch (error) {
+        console.error('Error al crear el separador:', error);
+        res.status(500).json({ error: 'Error al crear el separador' });
+      }
     }
   };
 
-  createMag = async (req, res) => {
+  addMag = async (req, res) => {
     const result = validateNewMagInfo(req.body);
 
     if (!result.success) {
@@ -107,12 +117,42 @@ export class FullproductsController {
       return res.status(400).json({ errors: errorMessages });
     }
 
-    try {
-      const newStorageMag = await this.fullproductsModel.createMag({ input: result.data });
-      res.status(201).json({ message: 'Libro creado exitosamente', book: newStorageMag });
-    } catch (error) {
-      console.error('Error al crear el libro:', error);
-      res.status(500).json({ error: 'Error al crear el libro' });
+    const idMags = await this.fullproductsModel.getMagazinesById(result.data);
+    console.log(idMags.magazines.length);
+    console.log(idMags.magazines);
+
+    if (idMags.magazines.length === 0) {
+      try {
+        const newFullstorageMag = await this.fullproductsModel.createMag({ input: result.data });
+        res.status(201).json({ message: 'Revista creada exitosamente', mag: newFullstorageMag });
+      } catch (error) {
+        console.error('Error al crear la revista:', error);
+        res.status(500).json({ error: 'Error al crear la revista' });
+      }
+    } else {
+      const newPrice = result.data.magfs_price;
+      console.log(result.data.magfs_amount + 'nueva cantidad');
+      console.log(idMags.magazines[0].magfs_amount + 'anterior cantidad');
+      const resultAmount = result.data.magfs_amount + idMags.magazines[0].magfs_amount;
+      console.log(resultAmount + 'Cantidad resultante');
+      try {
+        const upFullstorageMag = await this.fullproductsModel.updateMagazineById({ input: idMags.magazines, resultAmount, newPrice });
+        res.status(201).json({ message: 'Revista actualizada exitosamente', mag: upFullstorageMag });
+      } catch (error) {
+        console.error('Error al crear la revista:', error);
+        res.status(500).json({ error: 'Error al crear la revista' });
+      }
+    }
+  };
+
+  getProductsByQuerySearch = async (req, res) => {
+    console.log(req.params.input);
+    const queryBooks = await this.fullproductsModel.getProductsByQuerySearch(req.params.input);
+    const htmlQueryBooks = structureQueryBooks(queryBooks);
+    if (htmlQueryBooks === '') {
+      res.send('<div class="noresult">No hay resultados para tu búsqueda</div>');
+    } else {
+      res.send(htmlQueryBooks);
     }
   };
   /*

@@ -1,4 +1,4 @@
-import { askProductTypeScreen, goBackBtn } from '../script.js';
+import { askProductTypeScreen, goBackBtnFZ } from '../script.js';
 
 const addBtnMag = document.getElementById('addBtnMag');
 const addMagForm = document.getElementById('addMagForm');
@@ -100,15 +100,15 @@ function startAddMag () {
   if (!addMagScreen.classList.contains('active')) {
     addMagScreen.classList.add('active');
   }
-  if (!goBackBtn.classList.contains('hide')) {
-    goBackBtn.classList.add('hide');
+  if (!goBackBtnFZ.classList.contains('hide')) {
+    goBackBtnFZ.classList.add('hide');
   }
 }
 
 function cancelAddMag () {
   addMagScreen.classList.remove('active');
   askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }
 
 function getSendNewMag () {
@@ -175,7 +175,7 @@ function cancelAddingMagToStorage () {
   askProductTypeScreen.classList.remove('hide');
   addMagScreen.classList.remove('active');
   addMagToStorageScreen.classList.remove('active');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }
 
 function getSendMagToStorage () {
@@ -185,7 +185,7 @@ function getSendMagToStorage () {
 
   const data = {
     magfs_amount: Number(amount),
-    magfs_price: Number(newPrice),
+    magfs_price: newPrice === '' ? 0 : Number(newPrice),
     mag_id: String(magId.dataset.id)
   };
   addMagToStorage(data);
@@ -227,5 +227,5 @@ function startAgainFMag () {
   addMagToStorageScreen.classList.remove('active');
   askMagToStorageScreen.classList.remove('active');
   askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }

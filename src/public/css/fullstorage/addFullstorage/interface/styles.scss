@@ -29,10 +29,15 @@ body {
     left: 75px;
     width: 90%;
     height: 9%;
-    display: flex;
     align-items: center;
     z-index: 100;
-    animation: appear 300ms ease;
+    animation: disappear 300ms ease;
+    display: none;
+
+    &.active {
+      animation: appear 300ms ease;
+      display: flex;
+    }
 
     .logo-box {
       display: flex;
@@ -74,12 +79,17 @@ body {
     cursor: pointer;
     left: 20px;
     top: 21px;
-    display: flex;
     align-items: center;
     justify-content: center;
     transform: rotate(180deg);
     z-index: 500;
-    animation: appear 300ms ease;
+    animation: disappear 300ms ease;
+    display: none;
+
+    &.active {
+      animation: appear 300ms ease;
+      display: flex;
+    }
 
     img {
       width: 100%;

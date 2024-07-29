@@ -371,12 +371,7 @@ export function structureQueryBooks (products) {
       return `
         <div class="product-card book-product">
           <div class="productOptions-menu">
-            <div class="prodBtns editBookBtn editBtn">
-              Editar
-              <img class="btn-icon" src="/svg/edit-icon.svg"/>
-          
-            </div>
-            <div class="prodBtns addBookToPartyBtn addBtn">
+            <div class="prodBtns addBookToFullstorageBtn addBtn">
               Añadir a inventario
               <img class="btn-icon" src="/svg/add-icon.svg"/>
             </div>
@@ -417,13 +412,8 @@ export function structureQueryBooks (products) {
       ${products.separators.map(separ => {
       return `
       <div class="product-card separator-product">
-        <div class="productOptions-ask">
-          <div class="prodBtns editSeparBtn editBtn">
-            Editar
-            <img class="btn-icon" src="/svg/edit-icon.svg"/>
-    
-          </div>
-          <div class="prodBtns addSeparToPartyBtn addBtn">
+        <div class="productOptions-menu">
+          <div class="prodBtns addSeparToFullstorageBtn addBtn">
             Añadir a inventario
             <img class="btn-icon" src="/svg/add-icon.svg"/>
           </div>
@@ -459,12 +449,8 @@ export function structureQueryBooks (products) {
       ${products.magazines.map(mag => {
       return `
       <div class="product-card magazine-product">
-        <div class="productOptions-ask">
-          <div class="prodBtns editMagBtn editBtn">
-            Editar
-            <img class="btn-icon" src="/svg/edit-icon.svg"/>
-          </div>
-          <div class="prodBtns addMagToPartyBtn addBtn">
+        <div class="productOptions-menu">
+          <div class="prodBtns addMagToFullstorageBtn addBtn">
             Añadir a inventario
             <img class="btn-icon" src="/svg/add-icon.svg"/>
           </div>
@@ -489,8 +475,6 @@ export function structureQueryBooks (products) {
   } else {
     htmlMagazines = '';
   }
-
-  console.log(htmlBooks + htmlSeparators + htmlMagazines);
 
   if (htmlBooks === '' && htmlSeparators === '' && htmlMagazines === '') {
     return '';

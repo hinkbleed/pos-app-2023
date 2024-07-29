@@ -1,8 +1,8 @@
 //  #region Interface
-export const goBackBtn = document.getElementById('goBack');
-
 export const askProductTypeScreen = document.getElementById('askProductTypeScreen');
 
-goBackBtn.addEventListener('click', function () {
+export const goBackBtnFZ = document.getElementById('goBack');
+
+goBackBtnFZ.addEventListener('click', function () {
   window.location.href = '/fullstorage/addfullstorage';
 });

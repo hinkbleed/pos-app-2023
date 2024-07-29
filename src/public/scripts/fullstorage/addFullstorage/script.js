@@ -1,8 +1,12 @@
-const exitBtn = document.getElementById('goBack');
+export const goBackBtnFDB = document.getElementById('goBack');
 
 const addFromZeroBtn = document.getElementById('addFromZeroBtn');
 
-exitBtn.addEventListener('click', function () {
+export const addFullstorageView = document.getElementById('addFullstorageView');
+
+export const headerView = document.getElementById('headerView');
+
+goBackBtnFDB.addEventListener('click', function () {
   window.location.href = '/fullstorage';
 });
 

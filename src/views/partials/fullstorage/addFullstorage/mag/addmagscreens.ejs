@@ -1,0 +1,42 @@
+<div class="addMagToFullstorage-screen" id="addMagToFullstorageScreen">
+  <div class="addToFullstorage-formBox addMagToFullstorage">
+    <div class="tag" id="magNameTag"></div>
+    <form class="form" id="addMagToFullstorageForm">
+
+      <div class="inputs">
+
+        <label for="magToFullstorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="magToFullstorageAmountInput" required>
+
+        <label for="magNewpriceInput">Nuevo precio: <i>(opcional)</i></label>
+        <input type="text" name="prodPrice" id="magNewpriceInput" pattern="\d+(\.\d{1,2})?">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddMagToFullstorageBtn">No agregar a inventario</button>
+        
+        <button type="submit" class="accept" id="AcceptAddMagToFullstorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askMagToFullstorage-screen" id="askMagToFullstorageScreen">
+  <div class="askToFullstorage-formBox askMagToFullstorage">
+    <div class="tag" id="magAfterTag"></div>  
+    <div class="btns">
+      <div  class="btn zero" id="addAnotherMagBtn">Añadir otro producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div  class="btn zero" id="addSameMagBtn">Añadir más de esta revista
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn getout" id="getOutFMag">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

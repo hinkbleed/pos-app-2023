@@ -96,7 +96,6 @@ export class FullproductsModel {
     try {
       const fullstorageBookId = createFullstorageBookEDQid(input);
 
-      // Insertar el libro en la base de datos
       await connection.query(
         `INSERT INTO booksFullstorage (bookfs_id, book_id, bookfs_kind, bookfs_amount, bookfs_price)
         VALUES (?, ?, ?, ?, ?);`,
@@ -109,17 +108,196 @@ export class FullproductsModel {
     }
   }
 
-  static async getBooksById (id) {
+  static async getBooksByIdAndKind (data) {
     const [fsbooksbyid] = await connection.query(
       `SELECT bfs.bookfs_id,
-              bfs.book_id,
-              bfs.bookfs_kind,
-              bfs.bookfs_amount,
-              bfs.bookfs_price
-          FROM booksFullstorage  AS bfs
-          WHERE bfs.book_id = ?;`, [id]
+          bfs.book_id,
+          bfs.bookfs_kind,
+          bfs.bookfs_amount,
+          bfs.bookfs_price
+      FROM booksFullstorage AS bfs
+      WHERE bfs.book_id = ? AND bfs.bookfs_kind = ?;`,
+      [data.book_id, data.bookfs_kind]
     );
     return { books: fsbooksbyid };
+  }
+
+  static async updateBookById ({ input, resultAmount, newPrice }) {
+    console.log(input[0].bookfs_id, resultAmount);
+    if (newPrice === 0) {
+      try {
+        const [result] = await connection.query(
+          `UPDATE booksFullstorage 
+           SET bookfs_amount = ? 
+           WHERE bookfs_id = ?`,
+          [resultAmount, input[0].bookfs_id]
+        );
+        // Comprobar si alguna fila fue actualizada
+        if (result.affectedRows === 0) {
+          throw new Error('No book found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating bookfs_kind: ' + error.message);
+      }
+    } else {
+      try {
+        const [result] = await connection.query(
+          `UPDATE booksFullstorage 
+              SET bookfs_amount = ?,
+                  bookfs_price = ?
+            WHERE bookfs_id = ?`,
+          [resultAmount, newPrice, input[0].bookfs_id]
+        );
+        // Comprobar si alguna fila fue actualizada
+        if (result.affectedRows === 0) {
+          throw new Error('No book found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating bookfs_kind: ' + error.message);
+      }
+    }
+  }
+
+  static async createSepar ({ input }) {
+    try {
+      const fullstorageSeparId = createFullstorageSeparEDQid(input);
+
+      // Insertar el libro en la base de datos
+      await connection.query(
+        `INSERT INTO separatorsFullstorage (separfs_id, separ_id, separfs_amount, separfs_price)
+        VALUES (?, ?, ?, ?);`,
+        [fullstorageSeparId, input.separ_id, input.separfs_amount, input.separfs_price || 0]
+      );
+      return true;
+    } catch (error) {
+      // Si hay un error, lanzar una excepción
+      throw new Error('Error creating product: ' + error.message);
+    }
+  }
+
+  static async getSeparById (data) {
+    const [fsseparsbyid] = await connection.query(
+      `SELECT sfs.separfs_id,
+          sfs.separ_id,
+          sfs.separfs_amount,
+          sfs.separfs_price
+      FROM separatorsFullstorage AS sfs
+      WHERE sfs.separ_id = ?;`,
+      [data.separ_id]
+    );
+    return { separators: fsseparsbyid };
+  }
+
+  static async updateSeparById ({ input, resultAmount, newPrice }) {
+    console.log(input[0].separfs_id, resultAmount);
+    if (newPrice === 0) {
+      try {
+        const [result] = await connection.query(
+          `UPDATE separatorsFullstorage 
+           SET separfs_amount = ? 
+           WHERE separfs_id = ?`,
+          [resultAmount, input[0].separfs_id]
+        );
+        if (result.affectedRows === 0) {
+          throw new Error('No separ found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating separfs_amount: ' + error.message);
+      }
+    } else {
+      try {
+        const [result] = await connection.query(
+          `UPDATE separatorsFullstorage 
+              SET separfs_amount = ?,
+                  separfs_price = ?
+            WHERE separfs_id = ?`,
+          [resultAmount, newPrice, input[0].separfs_id]
+        );
+        // Comprobar si alguna fila fue actualizada
+        if (result.affectedRows === 0) {
+          throw new Error('No separ found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating separfs_price: ' + error.message);
+      }
+    }
+  }
+
+  static async createMag ({ input }) {
+    try {
+      const fullstorageMagId = createFullstorageMagEDQid(input);
+
+      // Insertar el libro en la base de datos
+      await connection.query(
+        `INSERT INTO magazinesFullstorage (magfs_id, mag_id, magfs_amount, magfs_price)
+        VALUES (?, ?, ?, ?);`,
+        [fullstorageMagId, input.mag_id, input.magfs_amount, input.magfs_price || 0]
+      );
+      return true;
+    } catch (error) {
+      // Si hay un error, lanzar una excepción
+      throw new Error('Error creating product: ' + error.message);
+    }
+  }
+
+  static async getMagazinesById (data) {
+    const [fsmagsbyid] = await connection.query(
+      `SELECT mfs.magfs_id,
+          mfs.mag_id,
+          mfs.magfs_amount,
+          mfs.magfs_price
+      FROM magazinesFullstorage AS mfs
+      WHERE mfs.mag_id = ?;`,
+      [data.mag_id]
+    );
+    return { magazines: fsmagsbyid };
+  }
+
+  static async updateMagazineById ({ input, resultAmount, newPrice }) {
+    console.log(input[0].magfs_id, resultAmount);
+    if (newPrice === 0) {
+      try {
+        const [result] = await connection.query(
+          `UPDATE magazinesFullstorage 
+           SET magfs_amount = ? 
+           WHERE magfs_id = ?`,
+          [resultAmount, input[0].magfs_id]
+        );
+        if (result.affectedRows === 0) {
+          throw new Error('No magazines found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating magfs_amount: ' + error.message);
+      }
+    } else {
+      try {
+        const [result] = await connection.query(
+          `UPDATE magazinesFullstorage 
+              SET magfs_amount = ?,
+                  magfs_price = ?
+            WHERE magfs_id = ?`,
+          [resultAmount, newPrice, input[0].magfs_id]
+        );
+        // Comprobar si alguna fila fue actualizada
+        if (result.affectedRows === 0) {
+          throw new Error('No magazines found with the provided ID');
+        }
+        return true;
+      } catch (error) {
+        // Si hay un error, lanzar una excepción
+        throw new Error('Error updating magfs_price: ' + error.message);
+      }
+    }
   }
 
   static async getProductsByQuerySearch (input) {
@@ -174,40 +352,6 @@ export class FullproductsModel {
 
     console.log(booksbyquerysearch, separatorsbyquerysearch, magazinesbyquerysearch);
     return { books: booksbyquerysearch, separators: separatorsbyquerysearch, magazines: magazinesbyquerysearch };
-  }
-
-  static async createSepar ({ input }) {
-    try {
-      const fullstorageSeparId = createFullstorageSeparEDQid(input);
-
-      // Insertar el libro en la base de datos
-      await connection.query(
-        `INSERT INTO separatorsFullstorage (separfs_id, separ_id, separfs_amount, separfs_price)
-        VALUES (?, ?, ?, ?);`,
-        [fullstorageSeparId, input.separ_id, input.separfs_amount, input.separfs_price || 0]
-      );
-      return true;
-    } catch (error) {
-      // Si hay un error, lanzar una excepción
-      throw new Error('Error creating product: ' + error.message);
-    }
-  }
-
-  static async createMag ({ input }) {
-    try {
-      const fullstorageMagId = createFullstorageMagEDQid(input);
-
-      // Insertar el libro en la base de datos
-      await connection.query(
-        `INSERT INTO magazinesFullstorage (magfs_id, mag_id, magfs_amount, magfs_price)
-        VALUES (?, ?, ?, ?);`,
-        [fullstorageMagId, input.mag_id, input.magfs_amount, input.magfs_price || 0]
-      );
-      return true;
-    } catch (error) {
-      // Si hay un error, lanzar una excepción
-      throw new Error('Error creating product: ' + error.message);
-    }
   }
 
   /*

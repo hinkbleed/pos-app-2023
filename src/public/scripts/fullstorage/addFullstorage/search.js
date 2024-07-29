@@ -47,7 +47,7 @@ function fetchQueryProducts (query) {
       return response.text();
     })
     .then(html => {
-      console.log('fetching Books');
+      console.log('fetching products');
       searchImg.classList.remove('active');
       if (!nonSearch.classList.contains('active')) {
         showQueryResults(html);

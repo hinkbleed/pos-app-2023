@@ -1,0 +1,47 @@
+<div class="addBookToFullstorage-screen" id="addBookToFullstorageScreen">
+  <div class="addToFullstorage-formBox addBookToFullstorage">
+    <div class="tag" id="bookNameTag"></div>
+    <form class="form" id="addBookToFullstorageForm">
+
+      <div class="inputs">
+
+        <label for="bookToFullstorageKindInput">Tipo:</label>
+        <select name="prodKind" id="bookToFullstorageKindInput">
+        </select>
+
+        <label for="bookToFullstorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="bookToFullstorageAmountInput" required>
+
+        <label for="bookNewpriceInput">Nuevo precio: <i>(opcional)</i></label>
+        <input type="text" name="prodPrice" id="bookNewpriceInput" pattern="\d+(\.\d{1,2})?">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddBookToFullstorageBtn">No agregar a inventario</button>
+        
+        <button type="submit" class="accept" id="AcceptAddBookToFullstorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askBookToFullstorage-screen" id="askBookToFullstorageScreen">
+  <div class="askToFullstorage-formBox askBookToFullstorage">
+    <div class="tag" id="bookAfterTag"></div>  
+    <div class="btns">
+      <div class="btn variable" id="addVariableBookBtn">Añadir variable de este libro
+        <div class="inner-line variableline"></div>
+      </div>
+      
+      <div class="btn zero" id="addAnotherBookBtn">Añadir otro producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn getout" id="getOutFBook">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

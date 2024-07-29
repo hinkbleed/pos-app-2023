@@ -11,11 +11,9 @@ export const createFullproductsRouter = ({ fullproductsModel }) => {
   fullproductsRouter.get('/separs/all', fullproductsController.getAllSepars);
   fullproductsRouter.get('/mags/all', fullproductsController.getAllMags);
 
-  fullproductsRouter.post('/addbook', fullproductsController.createBook);
-  fullproductsRouter.post('/addsepar', fullproductsController.createSepar);
-  fullproductsRouter.post('/addmag', fullproductsController.createMag);
-
-  fullproductsRouter.get('/books/:id', fullproductsController.getBooksById);
+  fullproductsRouter.post('/addbook', fullproductsController.addBook);
+  fullproductsRouter.post('/addsepar', fullproductsController.addSepar);
+  fullproductsRouter.post('/addmag', fullproductsController.addMag);
 
   fullproductsRouter.get('/search/:input', fullproductsController.getProductsByQuerySearch);
 

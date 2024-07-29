@@ -3,10 +3,14 @@ body .addFullstorage-view {
   width: 100%;
   height: 100%;
   color: #ffffff;
-  display: flex;
   flex-direction: row;
   align-items: flex-end;
+  animation: disappear 300ms ease;
+  display: none;
+}
+body .addFullstorage-view.active {
   animation: appear 300ms ease;
+  display: flex;
 }
 body .addFullstorage-view .addFullstorage-options-box {
   position: relative;
@@ -182,17 +186,16 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem;
   background-color: rgb(122, 48, 143);
   background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%), radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%), linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
   border-radius: 0.5rem;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 200;
   letter-spacing: 0.5px;
   cursor: pointer;
 }
@@ -230,6 +233,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
 }
 body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.book-product .product-cardColumn.cardBookName {
   width: 25%;
+  height: 100%;
   justify-content: flex-start;
   padding: 0 10px 0 30px;
   z-index: 20;
@@ -266,6 +270,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
 }
 body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.separator-product .product-cardColumn.cardSeparName {
   width: 25%;
+  height: 100%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
@@ -299,6 +304,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
 }
 body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
   width: 25%;
+  height: 100%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
@@ -320,7 +326,7 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   width: 20%;
   height: 60%;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -332,51 +338,46 @@ body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .co
   animation: disappear 300ms ease;
   display: none;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-direction: row;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask.active {
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8078431373);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu.active {
+  background: rgba(0, 0, 0, 0.631372549);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
   transition: 300ms ease;
   animation: appear 300ms ease;
   display: flex;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu .prodBtns {
+  position: relative;
+  left: 20%;
   width: 20%;
-  height: 40%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  color: white;
   border: 1px solid white;
   border-radius: 10px;
-  color: black;
   transition: 300ms ease;
   margin: 0 10%;
+  font-size: 15px;
+  font-weight: 400;
+  filter: brightness(0.3);
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns .btn-icon {
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu .prodBtns .btn-icon {
   transition: 300ms ease;
   margin: 0 10px;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
-  background: blue;
-  color: white;
-}
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
   filter: invert(1);
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
-  background: #00962d;
-  color: white;
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu .prodBtns.addBtn:hover {
+  background: #ffffff;
+  color: black;
+  font-weight: 600;
 }
-body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
-  filter: invert(1);
+body .addFullstorage-view .addFullstorage-options-box .products-box .map-box .content-box .queryresults .productType-box .product-card .productOptions-menu .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(0);
 }
 body .addFullstorage-view .innerFade-line {
   position: absolute;
@@ -391,10 +392,12 @@ body .addFullstorage-view .innerFade-line {
 
 @keyframes appear {
   0% {
+    display: flex;
     opacity: 0;
   }
   100% {
     opacity: 1;
+    display: flex;
   }
 }
 @keyframes disappear {

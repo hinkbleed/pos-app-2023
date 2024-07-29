@@ -28,10 +28,14 @@ body header {
   left: 75px;
   width: 90%;
   height: 9%;
-  display: flex;
   align-items: center;
   z-index: 100;
+  animation: disappear 300ms ease;
+  display: none;
+}
+body header.active {
   animation: appear 300ms ease;
+  display: flex;
 }
 body header .logo-box {
   display: flex;
@@ -68,12 +72,16 @@ body .go-back {
   cursor: pointer;
   left: 20px;
   top: 21px;
-  display: flex;
   align-items: center;
   justify-content: center;
   transform: rotate(180deg);
   z-index: 500;
+  animation: disappear 300ms ease;
+  display: none;
+}
+body .go-back.active {
   animation: appear 300ms ease;
+  display: flex;
 }
 body .go-back img {
   width: 100%;

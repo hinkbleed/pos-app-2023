@@ -5,10 +5,15 @@ body {
     width: 100%;
     height: 100%;
     color: #ffffff;
-    display: flex;
     flex-direction: row;
     align-items: flex-end;
-    animation: appear 300ms ease;
+    animation: disappear 300ms ease;
+    display: none;
+
+    &.active {
+      animation: appear 300ms ease;
+      display: flex;
+    }
 
     .addFullstorage-options-box {
       position: relative;
@@ -198,12 +203,11 @@ body {
                   overflow: hidden;
                   position: relative;
                   width: 100%;
-                  height: 50px;
+                  height: 60px;
                   display: flex;
                   flex-direction: row;
                   align-items: center;
                   gap: 0.75rem;
-                  padding: 1rem;
                   background-color: rgb(122, 48, 143);
                   background-image: radial-gradient(circle at 0% 0%,
                       rgb(37, 7, 44) 15%,
@@ -216,8 +220,8 @@ body {
                       rgb(122, 48, 143) 50%,
                       rgba(24, 8, 28, 0) 100%);
                   border-radius: 0.5rem;
-                  font-size: 15px;
-                  font-weight: 300;
+                  font-size: 17px;
+                  font-weight: 200;
                   letter-spacing: 0.5px;
                   cursor: pointer;
 
@@ -257,15 +261,17 @@ body {
 
                       &.cardBookName {
                         width: 25%;
+                        height: 100%;
                         justify-content: flex-start;
                         padding: 0 10px 0 30px;
                         z-index: 20;
                       }
-                      
+
                       &.cardBookPrice {
                         width: 10%;
                         height: 60%;
                       }
+
                       &.cardBookBarcode {
                         width: 15%;
                         flex-direction: column;
@@ -283,7 +289,7 @@ body {
                       &.cardBookEDQid {
                         width: 20%;
                         height: 50%;
-                      }  
+                      }
                     }
                   }
 
@@ -299,11 +305,12 @@ body {
 
                       &.cardSeparName {
                         width: 25%;
+                        height: 100%;
                         justify-content: flex-start;
                         padding: 0 10px 0 20px;
                         z-index: 20;
                       }
-                      
+
                       &.cardSeparPrice {
                         width: 10%;
                         height: 60%;
@@ -339,6 +346,7 @@ body {
 
                       &.cardMagazineName {
                         width: 25%;
+                        height: 100%;
                         justify-content: flex-start;
                         padding: 0 10px 0 20px;
                         z-index: 20;
@@ -367,7 +375,7 @@ body {
                     }
                   }
 
-                  .productOptions-ask {
+                  .productOptions-menu {
                     position: absolute;
                     right: 0;
                     bottom: 0;
@@ -379,58 +387,48 @@ body {
                     animation: disappear 300ms ease;
                     display: none;
                     align-items: center;
-                    justify-content: flex-end;
+                    justify-content: flex-start;
                     flex-direction: row;
 
                     &.active {
-
-                      right: 0;
-                      bottom: 0;
-                      width: 100%;
-                      height: 100%;
-                      background: #000000ce;
-                      backdrop-filter: blur(15px);
+                      background: #000000a1;
+                      backdrop-filter: blur(25px);
                       transition: 300ms ease;
                       animation: appear 300ms ease;
                       display: flex;
                     }
 
                     .prodBtns {
+                      position: relative;
+                      left: 20%;
                       width: 20%;
-                      height: 40%;
+                      height: 60%;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      background: white;
+                      color: white;
                       border: 1px solid white;
                       border-radius: 10px;
-                      color: black;
                       transition: 300ms ease;
                       margin: 0 10%;
+                      font-size: 15px;
+                      font-weight: 400;
+                      filter: brightness(0.3);
 
                       .btn-icon {
                         transition: 300ms ease;
                         margin: 0 10px;
-                      }
-
-                      &.editBtn {
-                        &:hover {
-                          background: blue;
-                          color: white;
-
-                          & .btn-icon {
-                            filter: invert(1);
-                          }
-                        }
+                        filter: invert(1);
                       }
 
                       &.addBtn {
                         &:hover {
-                          background: #00962d;
-                          color: white;
+                          background: #ffffff;
+                          color: black;
+                          font-weight: 600;
 
                           & .btn-icon {
-                            filter: invert(1);
+                            filter: invert(0);
                           }
                         }
                       }
@@ -459,11 +457,13 @@ body {
 
 @keyframes appear {
   0% {
+    display: flex;
     opacity: 0;
   }
 
   100% {
     opacity: 1;
+    display: flex;
   }
 }
 

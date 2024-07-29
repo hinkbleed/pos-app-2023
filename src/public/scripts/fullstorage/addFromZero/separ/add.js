@@ -1,4 +1,4 @@
-import { askProductTypeScreen, goBackBtn } from '../script.js';
+import { askProductTypeScreen, goBackBtnFZ } from '../script.js';
 
 const addBtnSepar = document.getElementById('addBtnSepar');
 const addSeparForm = document.getElementById('addSeparForm');
@@ -6,7 +6,7 @@ const addSeparScreen = document.getElementById('addSeparScreen');
 const cancelAddSeparBtn = document.getElementById('cancelAddSeparBtn');
 const addSeparToStorageScreen = document.getElementById('addSeparToStorageScreen');
 const separNameTag = document.getElementById('separNameTag');
-const cancelAddBookToStorageBtn = document.getElementById('cancelAddBookToStorageBtn');
+const cancelAddSeparToStorageBtn = document.getElementById('cancelAddSeparToStorageBtn');
 const addSeparToStorageForm = document.getElementById('addSeparToStorageForm');
 const askSeparToStorageScreen = document.getElementById('askSeparToStorageScreen');
 const separAfterTag = document.getElementById('separAfterTag');
@@ -23,7 +23,7 @@ addSeparForm.addEventListener('submit', function (event) {
   getSendNewSepar();
 });
 
-cancelAddBookToStorageBtn.addEventListener('click', cancelAddingSeparToStorage);
+cancelAddSeparToStorageBtn.addEventListener('click', cancelAddingSeparToStorage);
 
 addSeparToStorageForm.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -53,15 +53,15 @@ function startAddSepar () {
   if (!addSeparScreen.classList.contains('active')) {
     addSeparScreen.classList.add('active');
   }
-  if (!goBackBtn.classList.contains('hide')) {
-    goBackBtn.classList.add('hide');
+  if (!goBackBtnFZ.classList.contains('hide')) {
+    goBackBtnFZ.classList.add('hide');
   }
 }
 
 function cancelAddSepar () {
   addSeparScreen.classList.remove('active');
   askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }
 
 function getSendNewSepar () {
@@ -120,7 +120,7 @@ function cancelAddingSeparToStorage () {
   askProductTypeScreen.classList.remove('hide');
   addSeparScreen.classList.remove('active');
   addSeparToStorageScreen.classList.remove('active');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }
 
 function getSendSeparToStorage () {
@@ -130,7 +130,7 @@ function getSendSeparToStorage () {
 
   const data = {
     separfs_amount: Number(amount),
-    separfs_price: Number(newPrice),
+    separfs_price: newPrice === '' ? 0 : Number(newPrice),
     separ_id: String(separId)
   };
   addSeparToStorage(data);
@@ -172,5 +172,5 @@ function startAgainFSepar () {
   addSeparToStorageScreen.classList.remove('active');
   askSeparToStorageScreen.classList.remove('active');
   askProductTypeScreen.classList.remove('hide');
-  goBackBtn.classList.remove('hide');
+  goBackBtnFZ.classList.remove('hide');
 }

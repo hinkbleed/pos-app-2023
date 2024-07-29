@@ -12,6 +12,7 @@ export const createConfigproductRouter = ({ productModel }) => {
   productsRouter.post('/addbook', productController.createBook);
   productsRouter.patch('/editbook/:id', productController.updateBook);
   productsRouter.delete('/deletebook/:id', productController.deleteBook);
+  //  productsRouter.get('/bookbyid/:id', productController.getBook);
 
   productsRouter.post('/addsepar', productController.createSepar);
   productsRouter.patch('/editsepar/:id', productController.updateSepar);

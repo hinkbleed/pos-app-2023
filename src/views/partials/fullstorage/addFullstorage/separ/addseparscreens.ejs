@@ -1,0 +1,42 @@
+<div class="addSeparToFullstorage-screen" id="addSeparToFullstorageScreen">
+  <div class="addToFullstorage-formBox addSeparToFullstorage">
+    <div class="tag" id="separNameTag"></div>
+    <form class="form" id="addSeparToFullstorageForm">
+
+      <div class="inputs">
+
+        <label for="separToFullstorageAmountInput">Cantidad: <i>(requerido)</i></label>
+        <input type="number" name="prodAmount" id="separToFullstorageAmountInput" required>
+
+        <label for="separNewpriceInput">Nuevo precio: <i>(opcional)</i></label>
+        <input type="text" name="prodPrice" id="separNewpriceInput" pattern="\d+(\.\d{1,2})?">
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddSeparToFullstorageBtn">No agregar a inventario</button>
+        
+        <button type="submit" class="accept" id="AcceptAddSeparToFullstorageBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="askSeparToFullstorage-screen" id="askSeparToFullstorageScreen">
+  <div class="askToFullstorage-formBox askSeparToFullstorage">
+    <div class="tag" id="separAfterTag"></div>  
+    <div class="btns">
+      <div  class="btn zero" id="addAnotherSeparBtn">Añadir otro producto
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div  class="btn zero" id="addSameSeparBtn">Añadir más de este separador
+        <div class="inner-line zeroline"></div>
+      </div>
+      <div class="btn getout" id="getOutFSepar">Salir al inventario
+        <div class="inner-line getoutline"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
