@@ -6,9 +6,10 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 import { createPasswordRouter } from './routes/login/login.js';
-import { createPartyRouter } from './routes/publicdata/parties/parties.js';
 import { createFullstorageRouter } from './routes/fullstorage/index/fullstorage.js';
 import { createDataconfigRouter } from './routes/dataconfig/index/dataconfig.js';
+import { createPartyconfigRouter } from './routes/partyconfig/partyconfig.js';
+import { createShopRouter } from './routes/shop/shop.js';
 
 export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel, fullproductsModel }) => {
   const app = express();
@@ -32,11 +33,15 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
   app.use('/', appStarter());
   app.use('/login', createPasswordRouter({ passwordModel }));
 
-  app.use('/home', createPartyRouter({ partyModel }));
+  app.use('/home', createPartyconfigRouter({ partyModel }));
 
   app.use('/fullstorage', createFullstorageRouter({ fullproductsModel }));
 
+  app.use('/partyconfig', createPartyconfigRouter({ partyModel }));
+
   app.use('/dataconfig', createDataconfigRouter({ productModel, providorModel, editorialModel, genreModel, subgenreModel, employeeModel }));
+
+  app.use('/shop', createShopRouter({ partyModel, productModel, fullproductsModel, providorModel, editorialModel, genreModel, subgenreModel, employeeModel }));
 
   /*
   app.use('/data/editorials', createEditorialRouter({ editorialModel }));

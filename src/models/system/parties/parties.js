@@ -1,4 +1,5 @@
 import mysql from 'mysql2/promise';
+import { createPartyEDQid } from '../../../schemas/partyconfig/createEDQid.js';
 
 const config = {
   host: 'localhost',
@@ -12,51 +13,46 @@ const connection = await mysql.createConnection(config);
 export class PartyModel {
   static async getAll () {
     const [parties] = await connection.query(
-      'SELECT event_id, event_name, event_start_date, event_end_date, event_location, event_creation_date FROM EDQparties;'
+      'SELECT party_id, party_name, party_startDate, party_endDate, party_place, party_city, party_creationDate FROM parties;'
     );
     return parties;
   }
 
-  /*
-  static async create ({ input }) {
-    const {
-      provName,
-      provResp,
-      provNumber
-    } = input;
-
+  static async createParty ({ input }) {
     const [counterDB] = await connection.query(
-      'SELECT provIDcounter FROM provIDcounter;'
+      'SELECT partyIDcounter FROM partyIDcounter;'
     );
-    const provIDcounter = counterDB[0].provIDcounter;
-    const newIDcounter = provIDcounter + 1;
-    const provId = createProvEDQid(newIDcounter);
+    const partyIDcounter = counterDB[0].partyIDcounter;
+    console.log(partyIDcounter);
+    const newIDcounter = partyIDcounter + 1;
+    const partyId = createPartyEDQid(newIDcounter);
+    console.log(partyId);
+    console.log(input);
 
     try {
       await connection.query(
-        `INSERT INTO providors (prov_id, prov_name, prov_resp, prov_number)
-        VALUES (?, ?, ?, ?);`,
-        [provId, provName, provResp, provNumber]
+        `INSERT INTO parties (party_id, party_name, party_startDate, party_endDate, party_place, party_street, party_adressNumber, party_city, party_postalCode, party_state)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+        [partyId, input.party_name, input.party_startDate, input.party_endDate, input.party_place, input.party_street, input.party_adressNumber, input.party_city, input.party_postalCode, 'Creado']
       );
     } catch (e) {
-      throw new Error('Error creating providor');
+      // Mostrar el error específico
+      console.error('Error creating party:', e.message);
+      console.error('SQL Error Code:', e.code); // Código de error SQL (si está disponible)
+      console.error('SQL Error SQLState:', e.sqlState); // Estado SQL (si está disponible)
+      console.error('SQL Error SQL:', e.sql); // Consulta SQL que causó el error
+      throw new Error('Error creating party: ' + e.message); // Lanzar el error específico
     }
     await connection.query(
-      'UPDATE provIDcounter SET provIDcounter = ?', [newIDcounter]
+      'UPDATE partyIDcounter SET partyIDcounter = ?', [newIDcounter]
     );
     return counterDB;
   }
 
-  static async update ({ newValue }) {
-    await connection.query(
-      'UPDATE provIDcounter SET provIDcounter = ?;',
-      [newValue]
+  static async getPartyById (partyId) {
+    const [party] = await connection.query(
+      'SELECT party_id, party_name, party_startDate, party_endDate, party_place, party_city, party_creationDate, party_state FROM parties WHERE party_id = ?;', [partyId]
     );
-
-    const [currentProvID] = await connection.query(
-      'SELECT provIDcounter FROM provIDcounter'
-    );
-    return currentProvID;
+    return party;
   }
-  */
 }

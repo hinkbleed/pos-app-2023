@@ -52,15 +52,15 @@ body {
     z-index: 500;
     animation: appear 300ms ease;
 
-    img {
-      width: 100%;
-      filter: invert(100%);
-    }
-
     &.hide {
       animation: disappear 100ms ease;
       opacity: 0;
       display: none;
+    }
+
+    img {
+      width: 100%;
+      filter: invert(100%);
     }
   }
 }
@@ -86,7 +86,7 @@ body {
   }
 
   100% {
-    display: none;
     opacity: 0;
+    display: none;
   }
 }

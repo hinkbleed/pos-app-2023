@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logotipo.png" type="image/x-icon">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="/css/shop/interface/styles.css">
+</head>
+
+<body>
+  <%- include('partials/interface/version') %>
+  
+  <%- include('partials/shop/interface/header') %>
+
+    <main class="screen-box" id="screenBox">
+      <%- include('partials/shop/interface/sidebar') %>
+        <div class="module" id="appModule">
+          <%- include('partials/shop/pointofsale/pointofsale') %>
+          <%- include('partials/shop/report/report') %>
+          <%- include('partials/shop/data/data') %>
+          <%- include('partials/shop/data/section') %>
+        </div>
+
+    </main>
+    <script type="module" src="/scripts/shop/interface/script.js"></script>
+    <script type="module" src="/scripts/shop/pointofsale/script.js"></script>
+    <script type="module" src="/scripts/shop/report/script.js"></script>
+    <script type="module" src="/scripts/shop/data/script.js"></script>
+    <script type="module" src="/scripts/shop/data/articles/storage/script.js"></script>
+</body>
+
+</html>

@@ -34,11 +34,12 @@ body .home-box .hub .hubBox {
 body .home-box .hub .hubBox:hover {
   border: 1px solid rgba(255, 255, 255, 0.6156862745);
 }
-body .home-box .hub .hubBox.events-box {
+body .home-box .hub .hubBox.parties-box {
   width: 78%;
+  height: 95%;
   font-size: 20px;
 }
-body .home-box .hub .hubBox.events-box .events-body {
+body .home-box .hub .hubBox.parties-box .parties-body {
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,7 +50,14 @@ body .home-box .hub .hubBox.events-box .events-body {
   scrollbar-width: none;
   gap: 20px;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year {
+body .home-box .hub .hubBox.parties-box .parties-body .no-event {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year {
   width: 100%;
   height: auto;
   display: flex;
@@ -59,7 +67,7 @@ body .home-box .hub .hubBox.events-box .events-body .events-year {
   padding: 0 5px;
   scroll-snap-align: start;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-header {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-header {
   width: 100%;
   height: 80px;
   display: flex;
@@ -67,7 +75,7 @@ body .home-box .hub .hubBox.events-box .events-body .events-year .year-header {
   top: 0;
   font-size: 24px;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-header .eventYear {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-header .partyYear {
   width: -moz-fit-content;
   width: fit-content;
   height: 100%;
@@ -76,81 +84,81 @@ body .home-box .hub .hubBox.events-box .events-body .events-year .year-header .e
   margin: 0 2%;
   font-size: 50px;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body {
   position: relative;
-  width: 86%;
+  width: 85%;
   height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card {
   position: relative;
-  height: 330px;
-  width: 30%;
+  height: 180px;
+  width: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: 0 3% 3% 0;
   background: #000000;
   border-radius: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card::before {
-  width: 200px;
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card::before {
+  width: 300px;
   height: 100px;
   content: "";
   position: absolute;
-  background: rgba(255, 252, 157, 0.2);
+  background: rgba(182, 157, 255, 0.2);
   border-radius: 50%;
-  right: 0;
+  left: 10%;
   bottom: 5%;
   transition: 400ms;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover::before {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover::before {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   bottom: 0;
-  right: 0;
+  left: 0;
   background: #ffffff;
+  filter: blur(0px);
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover .card {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover .partyBox {
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.1921568627);
-  border: 1px solid #000000;
   color: #000000;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover .card .eventName {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover .partyBox .partyName {
   padding: 10px 10px;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover .card .eventLocation {
-  color: #222222;
-}
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover .card .eventDate span {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover .partyBox .partyDate span {
   transform: scale(1.1);
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card:hover .arrow-box {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover .partyBox .partyDetails .partyLocation {
+  color: #222222;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card:hover .arrow-box {
   opacity: 1;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
-  -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
   background: rgba(0, 0, 0, 0);
-  border: 1px solid rgba(255, 255, 255, 0.737254902);
   transition: 400ms;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   color: #ffffff;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card .eventName {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyName {
   width: 100%;
-  height: 42%;
+  height: 45%;
   display: flex;
   align-items: center;
   font-weight: 700;
@@ -161,11 +169,49 @@ body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .eve
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
+  line-clamp: 4;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card .eventLocation {
-  height: 15%;
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyDate {
+  width: 85%;
+  height: 25%;
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyDate span {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  transition: 400ms ease;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyDetails {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyDetails .partyId {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #888888;
+  margin: 0 10px;
+  transition: 400ms ease;
+}
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .partyBox .partyDetails .partyLocation {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,39 +219,10 @@ body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .eve
   font-size: 13px;
   letter-spacing: 1.2px;
   color: #dddddd;
-  margin: 0 25px;
+  margin: 0 10px;
   transition: 400ms ease;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card .eventDate {
-  width: 80%;
-  height: 35%;
-  font-size: 24px;
-  font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-}
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card .eventDate span {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  align-items: center;
-  transition: 400ms ease;
-}
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .card .eventId {
-  position: absolute;
-  bottom: 0;
-  width: 90%;
-  height: 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888888;
-  font-size: 14px;
-  font-weight: 500;
-}
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .arrow-box {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .arrow-box {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -217,12 +234,13 @@ body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .eve
   opacity: 0;
   transition: 800ms ease;
 }
-body .home-box .hub .hubBox.events-box .events-body .events-year .year-body .event-card .arrow-box .entry-arrow {
+body .home-box .hub .hubBox.parties-box .parties-body .parties-year .year-body .party-card .arrow-box .entry-arrow {
   width: 100%;
   transform: rotate(180deg);
 }
 body .home-box .hub .hubBox.options-box {
   width: 20%;
+  height: 95%;
   font-size: 15px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox {
@@ -242,11 +260,12 @@ body .home-box .hub .hubBox.options-box .btnsBox .div-line {
   position: absolute;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.main {
-  height: 25%;
+  height: 20%;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.other {
   height: 60%;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 40px;
   padding: 50px 0;
 }
 body .home-box .hub .hubBox.options-box .btnsBox.session {
@@ -269,7 +288,7 @@ body .home-box .hub .hubBox.options-box .btnsBox .mainBtn {
   border-radius: 3px;
   transition: 300ms ease;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
   background: black;
   color: white;
   z-index: 200;
@@ -289,22 +308,24 @@ body .home-box .hub .hubBox.options-box .btnsBox .mainBtn:hover {
   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.7647058824);
   font-weight: 800;
 }
-body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.newEvent {
+body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.newParty {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 80%;
-  height: 45px;
+  height: 40px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.fullStorage {
+  position: absolute;
+  top: 10%;
   font-size: 14px;
-  width: 60%;
+  width: 65%;
   height: 35px;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.dataConfig {
   font-size: 12px;
-  width: 70%;
-  height: 40px;
+  width: 50%;
+  height: 35px;
   border: 1px solid #7d7dff;
 }
 body .home-box .hub .hubBox.options-box .btnsBox .mainBtn.dataConfig:hover {

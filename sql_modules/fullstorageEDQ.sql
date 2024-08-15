@@ -33,5 +33,11 @@ CREATE TABLE magazinesFullstorage (
     magfs_price FLOAT
 );
 
+SELECT * FROM magazinesFullstorage;
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM magazinesFullstorage WHERE magfs_amount = 500;
+SET SQL_SAFE_UPDATES = 1;
+
+
 INSERT INTO magazinesFullstorage (magfs_id, mag_id, magfs_amount, magfs_price) VALUES
 	("EDQM009HIS02000002L", "EDQM009HIS02000002", 10, 50);

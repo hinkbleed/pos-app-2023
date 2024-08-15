@@ -18,12 +18,10 @@ export const appStarter = () => {
 
   appRouter.get('/fullstorage', (req, res) => res.render('fullstorage', { title: 'EDQ | Full Storage' }));
 
+  appRouter.get('/partyconfig', (req, res) => res.render('partyconfig', { title: 'EDQ | Parties Configuration' }));
+
   appRouter.get('/dataconfig', (req, res) => res.render('dataconfig', { title: 'EDQ | Data Configuration' }));
 
-  appRouter.get('/shop', checkAuthentication, (req, res) => res.render('app', { title: 'EDQ | Shop' }));
-  appRouter.get('/partials/:name', (req, res) => {
-    const name = req.params.name;
-    res.render(`partials/${name}/${name}`);
-  });
+  appRouter.get('/shop', (req, res) => res.render('shop', { title: 'EDQ | Shop' }));
   return appRouter;
 };

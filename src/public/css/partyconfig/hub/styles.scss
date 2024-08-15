@@ -1,0 +1,278 @@
+body {
+
+  .configparty-view {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 91%;
+    color: #ffffff;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation: appear 300ms ease;
+    gap:1%;
+    transition: ease 300ms;
+    display: none;
+
+    &.active {
+      animation: appear 200ms ease;
+      display: flex;
+    }
+
+    .config-hub {
+      height: 96%;
+
+
+
+
+      &.parties-options {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        .option-btn {
+          width: 80%;
+          height: 50px;
+          font-size: 13px;
+          background: #ffffff05;
+          border-radius: 3px;
+          border: 1px solid #ffffff55;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 300ms;
+          margin: 20px 0;
+
+          &:hover {
+            background: #0900215c;
+            box-shadow: 0 0 30px #ffffff26;
+            border: 1px solid #ffffff83;
+          }
+        }
+      }
+
+      &.parties-hub {
+        width: 87%;
+
+        .parties-body {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+          scrollbar-width: none;
+          gap: 20px;
+
+          .events-year {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            padding: 0 5px;
+            scroll-snap-align: start;
+
+            .year-header {
+              width: 100%;
+              height: 80px;
+              display: flex;
+              position: sticky;
+              top: 0;
+              font-size: 24px;
+
+              .eventYear {
+                width: fit-content;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0 2%;
+                font-size: 50px;
+              }
+            }
+
+            .year-body {
+              position: relative;
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              flex-wrap: wrap;
+              gap: 30px;
+
+              .event-card {
+                position: relative;
+                height: 130px;
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #000000;
+                border-radius: 10px;
+                cursor: pointer;
+
+                &::before {
+                  width: 200px;
+                  height: 70px;
+                  content: "";
+                  position: absolute;
+                  background: #000356be;
+                  border-radius: 50%;
+                  left: 30px;
+                  bottom: 10px;
+                  transition: 200ms;
+                }
+                .cardBox {
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: flex-end;
+                  justify-content: center;
+                  gap: 500px;
+                  border-radius: 10px;
+                  backdrop-filter: blur(40px);
+                  transition: 400ms;
+                  color: #ffffff;
+
+                  .eventName {
+                    width: 100%;
+                    height: 42%;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 700;
+                    font-size: 24px;
+                    letter-spacing: 1.2px;
+                    padding: 15px 30px 15px 50px;
+                    transition: 400ms ease;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    line-clamp: 4;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    position: absolute;
+                    top: 0;
+                  }
+
+                  .eventLocation {
+                    width: 200px;
+                    height: 15%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 500;
+                    font-size: 13px;
+                    letter-spacing: 1.2px;
+                    color: #dddddd;
+                    margin: 0 25px 30px;
+                    transition: 400ms ease;
+                  }
+
+                  .eventDate {
+                    width: 300px;
+                    height: 50%;
+                    font-size: 24px;
+                    font-weight: 400;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-evenly;
+                    margin: 0 0 10px 100px;
+
+                    span {
+                      width: 100%;
+                      height: 30%;
+                      display: flex;
+                      align-items: center;
+                      transition: 400ms ease;
+
+                    }
+                  }
+
+                  .eventId {
+                    position: absolute;
+                    bottom: 30px;
+                    width: 90%;
+                    height: 10%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #666666;
+                    font-size: 14px;
+                    font-weight: 500;
+                  }
+
+                }
+
+                &:hover {
+
+                  &::before {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    background: #ffffff;
+                    left: 0;
+                    bottom: 0;
+                  }
+
+                  & .cardBox {
+                    color: #000000;
+
+                    .eventName {
+                      padding: 10px 30px;
+                    }
+
+                    .eventLocation {
+                      color: #111111;
+                    }
+
+                    .eventDate {
+
+                      span {
+                        transform: scale(1.1);
+                      }
+                    }
+                  }
+
+                  & .arrow-box {
+                    opacity: 1;
+                  }
+
+                }
+
+            
+
+                .arrow-box {
+                  position: absolute;
+                  width: 30px;
+                  height: 30px;
+                  bottom: 2%;
+                  right: 2%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 0;
+                  transition: 800ms ease;
+
+                  .entry-arrow {
+                    width: 100%;
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

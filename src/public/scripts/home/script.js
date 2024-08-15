@@ -1,14 +1,18 @@
-const partiesBox = document.getElementById('eventsBox');
+const partiesBox = document.getElementById('partiesBox');
 
-const homeFullStorage = document.getElementById('homeFullStorage');
+const homeFullStorageBtn = document.getElementById('homeFullStorageBtn');
 
-const homeDataConfigBtn = document.getElementById('homeDataConfig');
+const createPartyBtn = document.getElementById('createPartyBtn');
+
+const homeDataConfigBtn = document.getElementById('homeDataConfigBtn');
 
 const homeLogOut = document.getElementById('logout');
 
 document.addEventListener('DOMContentLoaded', initHub);
 
-homeFullStorage.addEventListener('click', viewFullStorage);
+homeFullStorageBtn.addEventListener('click', viewFullStorage);
+
+createPartyBtn.addEventListener('click', createParty);
 
 homeDataConfigBtn.addEventListener('click', viewDataConfig);
 
@@ -17,7 +21,7 @@ homeLogOut.addEventListener('click', function () {
 });
 
 function initHub () {
-  fetch('/home/parties')
+  fetch('/partyconfig/all')
     .then(response => {
       if (!response.ok) {
         throw new Error('La solicitud falló');
@@ -26,7 +30,7 @@ function initHub () {
     })
     .then(html => {
       partiesBox.innerHTML = html;
-      const partycards = document.querySelectorAll('.card');
+      const partycards = document.querySelectorAll('.party-card');
 
       partycards.forEach(card => {
         card.addEventListener('click', goToShop);
@@ -37,12 +41,25 @@ function initHub () {
     });
 }
 
-function goToShop () {
+function goToShop (event) {
+  const partyId = event.currentTarget.getAttribute('id-info');
+  setPartyIdCookie(partyId);
   window.location.href = '/shop';
 }
 
+function setPartyIdCookie (partyId) {
+  const sixteenHours = 16 * 60 * 60;
+  document.cookie = `currentPartyId=${partyId}; max-age=${sixteenHours}; path=/`;
+}
+
+// AQUÍ TERMINA EL DOMLOADED
+
 function viewFullStorage () {
   window.location.href = '/fullstorage';
+}
+
+function createParty () {
+  window.location.href = '/partyconfig/addparty';
 }
 
 function viewDataConfig () {

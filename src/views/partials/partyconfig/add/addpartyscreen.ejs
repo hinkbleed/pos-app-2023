@@ -1,0 +1,41 @@
+<div class="addParty-screen active" id="addPartyScreen">
+  <div class="add-formBox addParty">
+    <div class="tag">Añadir nuevo evento</div>
+    <form class="form" id="addPartyForm">
+
+      <div class="inputs">
+
+        <label for="bookNameInput">Nombre del evento: <i>(requerido)</i></label>
+        <input type="text" name="partyName" id="partyNameInput" required>
+
+        <label for="partyStartDateInput">Fecha de Inicio: <i>(requerido)</i></label>
+        <input type="date" name="partyStartDate" id="partyStartDateInput" required>
+
+        <label for="partyEndDateInput">Fecha de Término: <i>(requerido)</i></label>
+        <input type="date" name="partyEndDate" id="partyEndDateInput" required>
+
+        <label for="partyPlaceInput">Nombre del recinto: <i>(requerido)</i></label>
+        <input type="text" name="partyPlace" id="partyPlaceInput" required>
+
+
+        <label for="partyStreeInput">Calle: <i>(requerido)</i></label>
+        <input type="text" name="partyStreet" id="partyStreetInput" required>
+
+        <label for="partyNumberInput">Número: <i>(requerido)</i></label>
+        <input type="text" name="partyNumber" id="partyNumberInput" pattern="\d+.*">
+
+        <label for="partyCityInput">Ciudad: <i>(requerido)</i></label>
+        <input type="text" name="partyCity" id="partyCityInput" required>
+
+        <label for="partyPostalcodeInput">Código postal: <i>(requerido)</i></label>
+        <input type="text" name="partyNumber" id="partyPostalcodeInput" pattern=".{3,10}" required>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="cancel" id="cancelAddPartyBtn">Cancelar</button>
+        <button type="submit" class="accept" id="AcceptAddBookBtn">Continuar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

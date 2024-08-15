@@ -1,0 +1,259 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas informativas sobre los productos
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../../onts/Raleway/Raleway-VariableFont_wght.ttf');
+  //Esta fuente es para las pantallas quwe tengan que ver con información sobre el negocio
+}
+
+@font-face {
+  font-family: 'Cutive Mono';
+  src: url('../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  color: #c4c4c4;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'DMSans';
+  font-style: normal;
+
+  header {
+    position: relative;
+    width: 100%;
+    height: 6%;
+    background: #295294;
+    background: linear-gradient(100deg, #240942 10%, #272766 51%, #295294 100%);
+    box-shadow: inset 0 -15px 30px 0 #0f0f3a9f;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+    .logo-box {
+      display: flex;
+      height: 100%;
+      width: 30%;
+      align-items: center;
+
+      .logo {
+        height: 40px;
+        margin: 40px;
+      }
+
+      .text {
+        font-size: 20px;
+      }
+    }
+
+
+    span {
+      position: absolute;
+      height: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      text-shadow: 0 0 2px white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 300ms;
+      right: 0;
+      margin: 0 200px 0 0;
+    }
+  }
+
+  .ver-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 7%;
+    height: 25px;
+    background: black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-left: 100px;
+    z-index: 500;
+  }
+
+  .screen-box {
+    width: 100%;
+    height: 94%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+
+    .sidebar {
+      width: 70px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid black;
+      background: #350165;
+      background: linear-gradient(50deg, #135c72 -30%, #100022 60%);
+      position: relative;
+
+      .menu-box {
+        border-radius: 50px;
+        background: #1e0c4a;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 30px 0px;
+        cursor: pointer;
+        transition: 300ms;
+
+        .symbol {
+          width: 35px;
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+
+          .icon {
+            width: 35px;
+            transition: 300ms;
+            filter: invert(1);
+          }
+        }
+
+        &:hover {
+          background: #043450;
+        }
+
+        &.open {
+          height: 230px;
+          border-radius: 5px;
+        }
+
+        .menu {
+          width: 40px;
+          height: 140px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: 300ms;
+          gap: 10px;
+          margin: 20px 0;
+
+          &.hide {
+            display: none;
+          }
+
+          &.appear {
+            animation: 500ms appear;
+          }
+
+          .menu-item {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #001b3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 15px;
+            cursor: pointer;
+            background: #070631;
+            color: #d3d3d3;
+            transition: 200ms ease-in;
+
+            &.active {
+              background: #267cad;
+              border: 1px solid #c7c7c7;
+
+              &>.icon {
+                filter: invert(0%);
+              }
+            }
+
+            .icon {
+              width: 40px;
+              height: 30px;
+              filter: invert(100%);
+
+
+            }
+
+
+            &:hover {
+              border: 1px solid white;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    #appModule {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .shop-view {
+        display: none;
+      }
+
+      .report-view {
+        display: none;
+      }
+
+      .data-view {
+        display: none;
+      }
+
+      .section-data-view {
+        display: none;
+      }
+
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

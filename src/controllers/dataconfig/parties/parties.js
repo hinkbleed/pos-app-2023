@@ -1,4 +1,4 @@
-import { structureParties } from '../../../schemas/dataconfig/parties/htmlParties.js';
+import { structureParties } from '../../../schemas/partyconfig/htmlParties.js';
 
 export class ConfigpartyController {
   constructor ({ partyModel }) {
