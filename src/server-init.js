@@ -9,5 +9,6 @@ import { SubgenreModel } from './models/info/subgenres/subgenres.js';
 import { ProductModel } from './models/storage/products/products.js';
 import { EmployeeModel } from './models/company/employees/employees.js';
 import { FullproductsModel } from './models/storage/fullstorage/fullstorage.js';
+import { ShopModel } from './models/system/shop/shop.js';
 
-createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel, employeeModel: EmployeeModel, fullproductsModel: FullproductsModel });
+createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel, employeeModel: EmployeeModel, fullproductsModel: FullproductsModel, shopModel: ShopModel });

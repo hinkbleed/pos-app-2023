@@ -257,6 +257,7 @@ body .screen-box #appModule .section-data-view .close-win {
   justify-content: center;
   transform: rotate(180deg);
   z-index: 1000;
+  animation: appear 300ms;
   display: flex;
 }
 body .screen-box #appModule .section-data-view .close-win.hide {
@@ -275,9 +276,8 @@ body .screen-box #appModule .section-data-view .article-socket {
   justify-content: center;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox {
-  width: 98%;
-  height: 97%;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -295,169 +295,724 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row 
   justify-content: space-between;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one {
-  height: 10%;
-  justify-content: flex-end;
+  height: 12%;
+  justify-content: flex-start;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-name {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
+  width: 40%;
+  height: 60%;
   display: flex;
-  align-items: center;
-  margin: 0 20%;
+  align-items: flex-end;
+  padding-left: 7%;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-name .text-name {
   font-size: 32px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two {
-  height: 90%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu {
+  width: 60%;
   height: 100%;
-  width: 84%;
-  background: rgba(0, 0, 0, 0.4196078431);
-  border-radius: 15px;
-  border: 1px solid black;
-  overflow: hidden;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads {
-  width: 100%;
-  height: 7%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  border-right: 1px solid white;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item:nth-last-child(1) {
-  border-right: none;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.list-position {
-  width: 4%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-name {
-  width: 22%;
-  justify-content: flex-start;
-  padding: 0 20px;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-price {
-  width: 8%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-barcode {
-  width: 14%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-kind {
-  width: 5%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-providor {
-  width: 7%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.product-edqId {
-  width: 19%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.last-product-inserc {
-  width: 12%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.init-cant {
-  width: 4%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .heads .all-items-head .head-item.current-cant {
-  width: 9%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables {
-  width: 100%;
-  height: 93%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box {
+  height: 80%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3176470588);
+  border-radius: 30px;
+  background: rgba(48, 116, 150, 0.3725490196);
+  overflow: hidden;
+  box-shadow: 0 0 150px 0 rgba(195, 201, 255, 0);
+  transition: 300ms ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar:focus-within {
+  box-shadow: 0 0 100px 0 rgba(214, 191, 255, 0.1098039216);
+  border: 1px solid rgba(209, 213, 255, 0.5137254902);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar input {
+  width: 90%;
+  height: 95%;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar input::-moz-placeholder {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4156862745);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar input::placeholder {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4156862745);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .searchBar-box .search-bar img {
+  width: 5%;
+  filter: invert(1);
+  cursor: pointer;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .buttonBar-box {
+  width: 30%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .buttonBar-box .addBtn {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4823529412);
+  cursor: pointer;
+  transition: 300ms ease;
+  box-shadow: inset 0 10px 10px 0 rgba(255, 255, 255, 0.1294117647), 0 -10px 30px 0 rgba(255, 255, 255, 0);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.one .box-menu .win-menu .buttonBar-box .addBtn:hover {
+  background: rgba(0, 0, 0, 0.3176470588);
+  border: 1px solid rgba(255, 255, 255, 0.0431372549);
+  box-shadow: inset 0 3px 5px 0 rgba(255, 255, 255, 0.7215686275), 0 -10px 20px 0 rgba(255, 255, 255, 0.1294117647);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two {
+  height: 88%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   position: relative;
   font-size: 12px;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table {
   width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
-  overflow: scroll;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table::-webkit-scrollbar {
+  animation: disappear 200ms;
   display: none;
+  /*
+
+  .storage-item {
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: inset 0 0 30px 0px #3404e22a;
+    border-bottom: 1px solid #79797998;
+    cursor: pointer;
+
+    &:nth-child(even) {
+      background: #0000009f;
+    }
+
+    &:hover {
+      background: #130c27;
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 30px;
+    }
+
+    .stg-item-prop {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #83838313;
+
+      &:nth-last-child(1) {
+        border-right: none;
+      }
+
+      &.item-list-option {
+        width: 4%;
+      }
+
+      &.item-name {
+        width: 22%;
+        justify-content: flex-start;
+        padding: 0 20px;
+      }
+
+      &.item-price {
+        width: 8%;
+      }
+
+      &.item-barcode {
+        width: 14%;
+      }
+
+      &.item-kind {
+        width: 5%;
+      }
+
+      &.item-providor {
+        width: 7%;
+      }
+
+
+      &.item-edqId {
+        width: 19%;
+      }
+
+      &.last-item-inserc {
+        width: 12%;
+      }
+
+      &.item-init-cant {
+        width: 4%;
+      }
+
+      &.item-current-cant {
+        width: 9%;
+      }
+    }
+
+  }
+
+  */
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table.active {
+  display: flex;
+  animation: appear 200ms;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox {
   width: 100%;
-  min-height: 30px;
+  height: auto;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox .content-box {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox .no-content {
+  width: 100%;
+  height: auto;
+  padding: 20px;
   display: flex;
   align-items: center;
-  border-radius: 5px;
-  box-shadow: inset 0 0 30px 0px rgba(52, 4, 226, 0.1647058824);
-  border-bottom: 1px solid rgba(121, 121, 121, 0.5960784314);
+  justify-content: center;
+  font-size: 16px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: disappear 200ms;
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table.active {
+  display: flex;
+  animation: appear 200ms;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addSearchHeader {
+  position: fixed;
+  top: 12%;
+  width: 100%;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 24px;
+  gap: 20px;
+  animation: disappear 300ms ease;
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addSearchHeader.active {
+  display: flex;
+  animation: appear 300ms ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addSearchHeader .newProductBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(172, 117, 255, 0.4823529412);
   cursor: pointer;
+  transition: 300ms ease;
+  box-shadow: inset 0 10px 10px 0 rgba(245, 219, 255, 0.1294117647), 0 -10px 30px 0 rgba(255, 255, 255, 0);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item:nth-child(even) {
-  background: rgba(0, 0, 0, 0.6235294118);
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addSearchHeader .newProductBtn:hover {
+  background: rgba(35, 0, 73, 0.3176470588);
+  border: 1px solid rgba(123, 34, 255, 0.4823529412);
+  box-shadow: inset 0 3px 5px 0 rgba(229, 204, 255, 0.7215686275), 0 -10px 20px 0 rgba(194, 145, 255, 0.1294117647);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item:hover {
-  background: #130c27;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults {
+  width: 100%;
+  height: 85%;
+  overflow: scroll;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item:nth-last-child(1) {
-  margin-bottom: 30px;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults::-webkit-scrollbar {
+  display: none;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView {
+  position: relative;
+  width: 98%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin: 0 0 60px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView.hide {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background: #ffffff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4549019608) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2509803922);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 10px 10px #000000;
+  filter: saturate(3);
+  overflow: hidden;
+  background-color: #14141a;
+  background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
+  z-index: 100;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.book-titleCard {
+  filter: hue-rotate(110deg) brightness(1.5) saturate(0.8);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.book-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard {
+  filter: hue-rotate(65deg) brightness(1.5) saturate(0.8);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard .type-text {
+  filter: brightness(5);
+  z-index: 100;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.magazine-titleCard {
+  filter: hue-rotate(-10deg) brightness(1.5) saturate(0.8);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.magazine-titleCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 800px;
+  height: 300px;
+  background: #8b4da9;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .type-text {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+  font-size: 13px;
+  font-weight: 200;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8117647059);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid rgba(131, 131, 131, 0.0745098039);
+  z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop:nth-last-child(1) {
-  border-right: none;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.amount {
+  width: 6%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-list-option {
-  width: 4%;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.title {
+  width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-name {
-  width: 22%;
-  justify-content: flex-start;
-  padding: 0 20px;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.details {
+  width: 25%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-price {
-  width: 8%;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.id {
+  width: 18%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-barcode {
-  width: 14%;
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.barcode {
+  width: 15%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-kind {
-  width: 5%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-providor {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.kind {
   width: 7%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-edqId {
-  width: 19%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.last-item-inserc {
-  width: 12%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-init-cant {
-  width: 4%;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storage-item .stg-item-prop.item-current-cant {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.price {
   width: 9%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .fade-line {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.amount {
+  width: 6%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.name {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.details {
+  width: 30%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.id {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.barcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.price {
+  width: 9%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.amount {
+  width: 6%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.title {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.details {
+  width: 30%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.id {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.barcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.price {
+  width: 9%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  border: 1px solid rgba(255, 255, 255, 0.0784313725);
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 13px;
+  cursor: pointer;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
+  width: 6%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
+  width: 25%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 18%;
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 15%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookKind {
+  width: 7%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
+  width: 6%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparDetails {
+  width: 30%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+  width: 15%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
+  width: 6%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+  width: 30%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+  width: 15%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8078431373);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns {
+  width: 20%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+  margin: 0 10%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+  background: blue;
+  color: white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+  background: #00962d;
+  color: white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .no-content {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .fade-line {
   background: transparent;
   width: 100%;
   height: 7%;
@@ -466,83 +1021,167 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   background: #000000;
   background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu {
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens {
+  position: absolute;
+  z-index: 300;
+  width: 100%;
   height: 100%;
-  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 300ms;
+  display: none;
+  background: rgba(0, 0, 36, 0.7647058824);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 200ms ease;
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox {
+  height: 70%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5333333333);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  gap: 3%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .tag {
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form {
+  width: 90%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs label {
+  width: 80%;
+  font-size: 16px;
+  margin: 10px 60px;
+  height: 25px;
+  align-self: flex-start;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
-  border-radius: 15px;
-  overflow: hidden;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .index-space {
-  width: 100%;
-  height: 65%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 10px;
-  overflow-y: scroll;
-  color: black;
-  scrollbar-width: none;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs label i {
+  font-size: 11px;
+  color: #7d7dff;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .index-space .main-selectors {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .index-space .main-selectors .main-index-btn {
-  width: 100%;
-  height: 35px;
-  background: #e0e0e0;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  border-radius: 50px;
-  border: 1px solid #ffffff;
-  cursor: pointer;
-  transition: 200ms;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .index-space .main-selectors .main-index-btn:hover {
-  background: #d2d2d2;
-  border: 1px solid #aeaeae;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .index-space .main-selectors .main-index-btn.active {
-  background: black;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs input {
+  width: 80%;
+  height: 40px;
+  align-self: center;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
   color: white;
-  border: 1px solid white;
+  padding: 0 10px;
+  font-size: 16px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .options-index {
-  width: 100%;
-  height: 30%;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 20px 0;
-  gap: 10px;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs select {
+  width: 80%;
+  height: 40px;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .options-index .storage-btn {
-  width: 100%;
-  height: 50px;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs select option {
+  background: black;
   display: flex;
+  justify-content: space-between;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs select option span {
+  font-size: 11px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns {
+  width: 90%;
+  height: 20%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .options-index .storage-btn:hover {
-  text-shadow: 0 0 1px black;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-menu .options-index .storage-btn.add {
-  font-size: 20px;
-  transition: 200ms;
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
 }
 
 @keyframes appear {

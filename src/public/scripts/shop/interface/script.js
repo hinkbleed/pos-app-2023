@@ -1,3 +1,5 @@
+export const screenBox = document.getElementById('screenBox');
+
 const lastSection = getCookie('lastSection');
 const partyId = getCookie('currentPartyId');
 const symbolBtn = document.getElementById('symbol');
@@ -7,7 +9,6 @@ const dataBtn = document.getElementById('dataBtn');
 const menuBox = document.getElementById('menuBox');
 const menu = document.getElementById('menu');
 const menuItems = document.querySelectorAll('.menu-item');
-const screenBox = document.getElementById('screenBox');
 const partyHeaderInfo = document.getElementById('partyHeaderInfo');
 const partyNameSpan = document.getElementById('partyNameSpan');
 const partyIdSpan = document.getElementById('partyIdSpan');

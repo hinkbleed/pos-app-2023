@@ -1,7 +1,8 @@
+export const closeWinBtn = document.getElementById('closeDataWin');
+
 const dataOptionBtn = document.querySelectorAll('.dataOptionBtn');
 const artModules = document.querySelectorAll('.articleBox');
 const sectionView = document.getElementById('sectionDataView');
-const closeWinBtn = document.getElementById('closeDataWin');
 
 dataOptionBtn.forEach((button, index) => {
   button.addEventListener('click', () => {

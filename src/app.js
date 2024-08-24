@@ -11,7 +11,7 @@ import { createDataconfigRouter } from './routes/dataconfig/index/dataconfig.js'
 import { createPartyconfigRouter } from './routes/partyconfig/partyconfig.js';
 import { createShopRouter } from './routes/shop/shop.js';
 
-export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel, fullproductsModel }) => {
+export const createApp = ({ productModel, providorModel, editorialModel, passwordModel, partyModel, genreModel, subgenreModel, employeeModel, fullproductsModel, shopModel }) => {
   const app = express();
   app.disable('x-powered-by');
   app.use(json());
@@ -41,7 +41,7 @@ export const createApp = ({ productModel, providorModel, editorialModel, passwor
 
   app.use('/dataconfig', createDataconfigRouter({ productModel, providorModel, editorialModel, genreModel, subgenreModel, employeeModel }));
 
-  app.use('/shop', createShopRouter({ partyModel, productModel, fullproductsModel, providorModel, editorialModel, genreModel, subgenreModel, employeeModel }));
+  app.use('/shop', createShopRouter({ partyModel, shopModel }));
 
   /*
   app.use('/data/editorials', createEditorialRouter({ editorialModel }));

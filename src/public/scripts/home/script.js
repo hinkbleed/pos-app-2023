@@ -48,7 +48,7 @@ function goToShop (event) {
 }
 
 function setPartyIdCookie (partyId) {
-  const sixteenHours = 16 * 60 * 60;
+  const sixteenHours = 20 * 60 * 60;
   document.cookie = `currentPartyId=${partyId}; max-age=${sixteenHours}; path=/`;
 }
 

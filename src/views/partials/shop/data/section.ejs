@@ -6,51 +6,186 @@
     <div class="articleBox storage-box">
 
       <div class="row one">
+
         <div class="box-name">
-          <p class="text-name">Inventario: 57 artículos</p>
+          <p class="text-name" id="storageNameBox">Inventario: milochomil artículos</p>
+        </div>
+
+        <div class="box-menu">
+          <div class="win-menu">
+
+            <div class="searchBar-box">
+              <div class="search-bar">
+                <input type="text" id="storageSearchTypingInput">
+                <img src="../svg/search-icon.svg">
+              </div>
+            </div>
+
+            <div class="buttonBar-box">
+              <div class="storage-btn addBtn" id="storageAddBtn" mode-info="storage">+ Añadir productos</div>
+            </div>
+          </div>
         </div>
 
       </div>
       <div class="row two storage-screen">
         <div class="win-tables">
-          <div class="heads">
-            <div class="all-items-head">
-              <div class="head-item list-position">#</div>
-              <div class="head-item product-name">Nombre del artículo</div>
-              <div class="head-item product-price">Precio</div>
-
-              <div class="head-item product-barcode">Barcode</div>
-              <div class="head-item product-kind">Tipo</div>
-              <div class="head-item product-providor">Prov.</div>
-              <div class="head-item product-edqId">EDQ ID</div>
-              <div class="head-item last-product-inserc">lst inserc</div>
-              <div class="head-item init-cant">init</div>
-              <div class="head-item current-cant">curr</div>
-            </div>
-          </div>
           <div class="items-tables">
-            <div class="inv-table" id="stgTable">
+            <div class="inv-table active" id="stgTable">
+              <div class="searchingimg" id="searchImg">
+                Buscando ... ...
+              </div>
+              <div class="storageDataBox" id="bookStorageView">
+              </div>
+              <div class="storageDataBox" id="separStorageView">
+              </div>
+              <div class="storageDataBox" id="magStorageView">
+              </div>
+            </div>
+            <div class="add-table" id="addTable">
+              <div id="addSearchHeader">
+                Escribe en la barra de búsqueda para encontrar un producto o puedes
+                <div class="newProductBtn" id="newProductBtn"> Registrar un nuevo producto en BD</div>
+              </div>
+              <div class="addDataBox addDBResults">
+                <div class="productAddView" id="bookAddView">
+                </div>
+                <div class="productAddView" id="separAddView">
+                </div>
+                <div class="productAddView" id="magAddView">
+                </div>
+              </div>
+              <div class="addDataBox addQueryResults" id="addQueryResults">
+              </div>
+            </div>
+            <!--
+            <div class="meh">
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+              hth <br>
+              regtb <br>
+              tgrhbsf <br>
+              ggdfg <br>
+            </div>
+            -->
+          </div>
+          <div class="fade-line"></div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="addToPartyScreens">
+
+      <div class="addBookToPartyScreen mainAddScreen">
+        <div class="addToParty-formBox addBookToParty">
+          <div class="tag" id="partyNameTag"></div>
+          <div class="tag" id="addBookNameTag"></div>
+          <form class="form" id="addBookToPartyForm">
+
+            <div class="inputs">
+
+              <label for="bookToPartyAmountInput">Cantidad: <i>(requerido)</i></label>
+              <input type="number" name="prodAmount" id="bookToPartyAmountInput" required>
+
+              <label for="bookToPartyNewpriceInput">Precio para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="bookToPartyNewpriceInput" pattern="\d+(\.\d{1,2})?">
 
             </div>
-            <div class="fade-line"></div>
-          </div>
-        </div>
-        <div class="win-menu">
-          <div class="index-space">
 
-            <div class="main-selectors">
-              <div class="main-index-btn active">Todos los artículos</div>
-              <div class="main-index-btn">Libros y revistas</div>
-              <div class="main-index-btn">Separadores</div>
-              <div class="main-index-btn">Juguetes</div>
-              <div class="main-index-btn">Bolígrafos</div>
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelAddBookToPartyBtn">No agregar a este evento</button>
+
+              <button type="submit" class="accept" id="AcceptAddBookToPartyBtn">Continuar</button>
             </div>
-          </div>
-          <div class="options-index">
-            <div class="storage-btn add">+ Añadir artículos</div>
-            <div class="storage-btn config">Editar Inventario</div>
-          </div>
+          </form>
         </div>
+
+      </div>
+
+      <div class="addSeparToPartyScreen mainAddScreen">
+        <div class="addToParty-formBox addSeparToParty">
+          <div class="tag" id="partyNameTag"></div>
+          <div class="tag" id="addSeparNameTag"></div>
+          <form class="form" id="addSeparToPartyForm">
+
+            <div class="inputs">
+
+              <label for="separToPartyAmountInput">Cantidad: <i>(requerido)</i></label>
+              <input type="number" name="prodAmount" id="separToPartyAmountInput" required>
+
+              <label for="separToPartyNewpriceInput">Precio para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="separToPartyNewpriceInput" pattern="\d+(\.\d{1,2})?">
+
+            </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelAddSeparToPartyBtn">No agregar a este evento</button>
+
+              <button type="submit" class="accept" id="AcceptAddSeparToPartyBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
 
@@ -59,21 +194,18 @@
         <div class="box-name">
           <p class="text-name">Configuración de Descuentos</p>
         </div>
+        <div class="box-menu">
+          <div class="win-menu">
 
-      </div>
-      <div class="row two">
-      </div>
-    </div>
-
-    <!--  <div class="data-box add-item-wtf">
-        <div class="row one">
-        <div class="box-name">
-          <p class="text-name">Añadir artículo(?)</p>
+            <div class="buttonBar-box">
+              <div class="discount-btn addBtn">+ Añadir artículos</div>
+            </div>
+          </div>
         </div>
 
       </div>
       <div class="row two">
       </div>
-    </div> -->
+    </div>
   </div>
 </div>

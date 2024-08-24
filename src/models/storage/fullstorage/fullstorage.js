@@ -88,7 +88,6 @@ export class FullproductsModel {
       AS m
       ON mfs.mag_id = m.mag_id;`
     );
-    console.log(fsmagazines);
     return { magazines: fsmagazines };
   }
 
