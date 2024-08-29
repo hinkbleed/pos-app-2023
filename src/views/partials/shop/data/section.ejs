@@ -32,22 +32,28 @@
         <div class="win-tables">
           <div class="items-tables">
             <div class="inv-table active" id="stgTable">
+
               <div class="searchingimg" id="searchImg">
                 Buscando ... ...
               </div>
-              <div class="storageDataBox" id="bookStorageView">
+
+              <div class="storageDBResults" id="storageDBResults">
+                <div class="storageDataBox" id="bookStorageView">
+                </div>
+                <div class="storageDataBox" id="separStorageView">
+                </div>
+                <div class="storageDataBox" id="magStorageView">
+                </div>
               </div>
-              <div class="storageDataBox" id="separStorageView">
-              </div>
-              <div class="storageDataBox" id="magStorageView">
-              </div>
+              
+              <div class="storageDataBox storageQueryResults" id="storageQueryResults"></div>
             </div>
             <div class="add-table" id="addTable">
               <div id="addSearchHeader">
                 Escribe en la barra de búsqueda para encontrar un producto o puedes
                 <div class="newProductBtn" id="newProductBtn"> Registrar un nuevo producto en BD</div>
               </div>
-              <div class="addDataBox addDBResults">
+              <div class="addDataBox addDBResults" id="addDBResults">
                 <div class="productAddView" id="bookAddView">
                 </div>
                 <div class="productAddView" id="separAddView">
@@ -134,11 +140,37 @@
       </div>
     </div>
 
+    <div class="articleBox discounts-box">
+      <div class="row one">
+        <div class="box-name">
+          <p class="text-name">Descuentos</p>
+        </div>
+        <div class="box-menu">
+          <div class="win-menu">
+
+            <div class="buttonBar-box">
+              <div class="discount-btn addBtn" id="addDiscountBtn">+ Añadir descuento</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row two discounts-screen">
+        <div class="win-tables">
+          <div class="discountBoxes" id="discountBoxes">
+          </div>
+          
+          <div class="fade-line"></div>
+        </div>
+      </div>
+    </div>
+
+    
     <div class="addToPartyScreens">
 
       <div class="addBookToPartyScreen mainAddScreen">
         <div class="addToParty-formBox addBookToParty">
-          <div class="tag" id="partyNameTag"></div>
+          <div class="tag" id="bookPartyNameTag"></div>
           <div class="tag" id="addBookNameTag"></div>
           <form class="form" id="addBookToPartyForm">
 
@@ -164,7 +196,7 @@
 
       <div class="addSeparToPartyScreen mainAddScreen">
         <div class="addToParty-formBox addSeparToParty">
-          <div class="tag" id="partyNameTag"></div>
+          <div class="tag" id="separPartyNameTag"></div>
           <div class="tag" id="addSeparNameTag"></div>
           <form class="form" id="addSeparToPartyForm">
 
@@ -187,25 +219,169 @@
         </div>
 
       </div>
+
+      <div class="addMagToPartyScreen mainAddScreen">
+        <div class="addToParty-formBox addMagToParty">
+          <div class="tag" id="magPartyNameTag"></div>
+          <div class="tag" id="addMagNameTag"></div>
+          <form class="form" id="addMagToPartyForm">
+
+            <div class="inputs">
+
+              <label for="magToPartyAmountInput">Cantidad: <i>(requerido)</i></label>
+              <input type="number" name="prodAmount" id="magToPartyAmountInput" required>
+
+              <label for="magToPartyNewpriceInput">Precio para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="magToPartyNewpriceInput" pattern="\d+(\.\d{1,2})?">
+
+            </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelAddMagToPartyBtn">No agregar a este evento</button>
+
+              <button type="submit" class="accept" id="AcceptAddMagToPartyBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="editBookAmountToPartyScreen mainEditScreen">
+        <div class="editToParty-formBox editBookAmountToParty">
+          <div class="tag" id="bookAmountPartyNameTag"></div>
+          <div class="tag" id="editBookAmountNameTag"></div>
+          <div class="tag" id="editBookAmountSignTag">
+            Sólo ingresa los datos que vas a actualizar, puedes dejar datos en blanco
+          </div>
+          <form class="form" id="editBookAmountToPartyForm">
+
+            <div class="inputs">
+
+              <label for="bookAmountToPartyInput">Nuevas piezas por añadir: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="bookAmountToPartyInput">
+              
+              <label for="bookNewpriceToPartyInput">Precio actualizado para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="bookNewpriceToPartyInput" pattern="\d+(\.\d{1,2})?">
+
+            </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelEditBookAmountToPartyBtn">No editar la información de este libro</button>
+
+              <button type="submit" class="accept" id="AcceptEditBookAmountToPartyBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="editSeparAmountToPartyScreen mainEditScreen">
+        <div class="editToParty-formBox editSeparAmountToParty">
+          <div class="tag" id="separAmountPartyNameTag"></div>
+          <div class="tag" id="editSeparAmountNameTag"></div>
+          <div class="tag" id="editSeparAmountSignTag">
+            Sólo ingresa los datos que vas a actualizar, puedes dejar datos en blanco
+          </div>
+          <form class="form" id="editSeparAmountToPartyForm">
+
+            <div class="inputs">
+
+              <label for="separAmountToPartyInput">Nuevas piezas por añadir: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="separAmountToPartyInput">
+              
+              <label for="separNewpriceToPartyInput">Precio actualizado para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="separNewpriceToPartyInput" pattern="\d+(\.\d{1,2})?">
+
+            </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelEditSeparAmountToPartyBtn">No editar la información de este libro</button>
+
+              <button type="submit" class="accept" id="AcceptEditSeparAmountToPartyBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="editMagAmountToPartyScreen mainEditScreen">
+        <div class="editToParty-formBox editMagAmountToParty">
+          <div class="tag" id="magAmountPartyNameTag"></div>
+          <div class="tag" id="editMagAmountNameTag"></div>
+          <div class="tag" id="magSeparAmountSignTag">
+            Sólo ingresa los datos que vas a actualizar, puedes dejar datos en blanco
+          </div>
+          <form class="form" id="editMagAmountToPartyForm">
+
+            <div class="inputs">
+
+              <label for="magAmountToPartyInput">Nuevas piezas por añadir: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="magAmountToPartyInput">
+              
+              <label for="magNewpriceToPartyInput">Precio actualizado para este evento: <i>(opcional)</i></label>
+              <input type="number" name="prodAmount" id="magNewpriceToPartyInput" pattern="\d+(\.\d{1,2})?">
+
+            </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelEditMagAmountToPartyBtn">No editar la información de este libro</button>
+
+              <button type="submit" class="accept" id="AcceptEditMagAmountToPartyBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
 
-    <div class="articleBox discounts-box">
-      <div class="row one">
-        <div class="box-name">
-          <p class="text-name">Configuración de Descuentos</p>
-        </div>
-        <div class="box-menu">
-          <div class="win-menu">
+    <div class="addDiscountsScreens">
+      
+      <div class="addDiscountToDBScreen mainAddScreen">
+        <div class="addToParty-formBox addDiscountToDB">
+          <div class="tag" id="addDiscountNameTag">
+            Ingresa la información necesaria para guardar el descuento
+          </div>
+          <form class="form" id="addDiscountToDBForm">
 
-            <div class="buttonBar-box">
-              <div class="discount-btn addBtn">+ Añadir artículos</div>
+            <div class="inputs">
+
+              <label for="discountAmountInput">Cantidad del descuento: <i>(requerido)</i></label>
+              <input type="number" name="discountAmount" id="discountAmountInput" required>
+
+              <label for="discountKindInput">Selecciona un tipo de descuento: <i>(requerido)</i></label>
+
+              <select name="discountKind" id="discountKindInput" required>
+                <option value="porcentaje">% / Porcentaje</option>
+                <option value="valor monetario">MXN / Valor Monetario</option>
+              </select>
+
             </div>
+
+            <div class="btns">
+              <button type="button" class="cancel" id="cancelAddDiscountToDBBtn">No agregar a este evento</button>
+
+              <button type="submit" class="accept" id="AcceptAddDiscountToDBBtn">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="deleteDiscountFromDBScreen mainAddScreen mainDeleteScreen">
+        <div class="addToParty-formBox deleteFromDB-AskingBox addDiscountToDB">
+          <div class="tag" id="deleteDiscountNameTag">
+            ¿Segura que deseas eliminar este descuento?
+            No hay forma de recuperar esta información una vez eliminada
+          </div>
+          <div class="btns">
+            <button type="button" class="cancel" id="cancelDeleteDiscountFromDBBtn">No eliminar</button>
+
+            <button type="button" class="accept" id="AcceptDeleteDiscountFromDBBtn">Continuar</button>
           </div>
         </div>
 
       </div>
-      <div class="row two">
-      </div>
     </div>
+
   </div>
 </div>

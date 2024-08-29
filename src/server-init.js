@@ -10,5 +10,6 @@ import { ProductModel } from './models/storage/products/products.js';
 import { EmployeeModel } from './models/company/employees/employees.js';
 import { FullproductsModel } from './models/storage/fullstorage/fullstorage.js';
 import { ShopModel } from './models/system/shop/shop.js';
+import { DiscountModel } from './models/system/discounts/discounts.js';
 
-createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel, employeeModel: EmployeeModel, fullproductsModel: FullproductsModel, shopModel: ShopModel });
+createApp({ productModel: ProductModel, providorModel: ProvidorModel, editorialModel: EditorialModel, passwordModel: PasswordModel, partyModel: PartyModel, genreModel: GenreModel, subgenreModel: SubgenreModel, employeeModel: EmployeeModel, fullproductsModel: FullproductsModel, shopModel: ShopModel, discountModel: DiscountModel });

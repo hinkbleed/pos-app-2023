@@ -423,112 +423,537 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   width: 100%;
   height: 100%;
   flex-direction: column;
+  align-items: center;
   animation: disappear 200ms;
   display: none;
-  /*
-
-  .storage-item {
-    width: 100%;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: inset 0 0 30px 0px #3404e22a;
-    border-bottom: 1px solid #79797998;
-    cursor: pointer;
-
-    &:nth-child(even) {
-      background: #0000009f;
-    }
-
-    &:hover {
-      background: #130c27;
-    }
-
-    &:nth-last-child(1) {
-      margin-bottom: 30px;
-    }
-
-    .stg-item-prop {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-right: 1px solid #83838313;
-
-      &:nth-last-child(1) {
-        border-right: none;
-      }
-
-      &.item-list-option {
-        width: 4%;
-      }
-
-      &.item-name {
-        width: 22%;
-        justify-content: flex-start;
-        padding: 0 20px;
-      }
-
-      &.item-price {
-        width: 8%;
-      }
-
-      &.item-barcode {
-        width: 14%;
-      }
-
-      &.item-kind {
-        width: 5%;
-      }
-
-      &.item-providor {
-        width: 7%;
-      }
-
-
-      &.item-edqId {
-        width: 19%;
-      }
-
-      &.last-item-inserc {
-        width: 12%;
-      }
-
-      &.item-init-cant {
-        width: 4%;
-      }
-
-      &.item-current-cant {
-        width: 9%;
-      }
-    }
-
-  }
-
-  */
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table.active {
-  display: flex;
   animation: appear 200ms;
+  display: flex;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #searchImg {
+  width: 95%;
+  height: 200px;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #searchImg.active {
+  display: flex;
+  animation: 300ms appear ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: disappear 200ms;
+  display: none;
+  overflow: scroll;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox {
   width: 100%;
   height: auto;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox .content-box {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box {
   width: 100%;
   height: auto;
-  padding: 20px;
-}
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table .storageDataBox .no-content {
-  width: 100%;
-  height: auto;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2px;
+  margin: 0 0 30px 0;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .typesign {
+  width: 100%;
+  height: 50px;
+  font-size: 22px;
+  padding: 0 100px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  border: 1px solid rgba(255, 255, 255, 0.0784313725);
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 13px;
+  cursor: pointer;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
+  width: 6%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
+  width: 25%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 18%;
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 15%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookKind {
+  width: 7%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
+  width: 6%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparInfo {
+  width: 30%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+  width: 15%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
+  width: 6%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 20%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+  width: 30%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+  width: 15%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 20%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 9%;
+  height: 60%;
+  text-shadow: 0 0 40px white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask.active {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8078431373);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns {
+  position: relative;
+  left: 20%;
+  width: 20%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+  margin: 0 10%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+  background: blue;
+  color: white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+  background: #00962d;
+  color: white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageDBResults .storageDataBox .no-content {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults {
+  width: 100%;
+  height: 85%;
+  flex-direction: column;
+  align-items: center;
+  animation: disappear 200ms;
+  display: none;
+  overflow: scroll;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .noresult {
+  width: 95%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: rgba(128, 128, 128, 0.1803921569);
+  border: 1px solid rgba(128, 128, 128, 0.2588235294);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box {
+  width: 98%;
+  height: auto;
+  padding: 10px 0;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .typesign {
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  margin: 0 100px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgb(122, 48, 143);
+  background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%), radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%), linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
+  border-radius: 0.5rem;
+  font-size: 17px;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, #c7bdff, transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product {
+  filter: hue-rotate(130deg) brightness(4) saturate(2);
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px rgb(0, 0, 0);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 30px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookInfo {
+  width: 25%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 20%;
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 13%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookKind {
+  width: 7%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product {
+  filter: hue-rotate(65deg) brightness(3) saturate(0.8);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px black;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparInfo {
+  width: 25%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+  width: 25%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product {
+  filter: hue-rotate(-10deg) brightness(3) saturate(0.9);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px black;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+  width: 25%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+  width: 25%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu.active {
+  background: rgba(0, 0, 0, 0.631372549);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu .prodBtns {
+  position: relative;
+  left: 20%;
+  width: 30%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: 300ms ease;
+  margin: 0 10%;
+  font-size: 15px;
+  font-weight: 400;
+  filter: brightness(0.3);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu .prodBtns.editBtn:hover {
+  background: #ffffff;
+  color: black;
+  font-weight: 600;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .inv-table #storageQueryResults .productType-box .product-card .productOptions-menu .prodBtns.editBtn:hover .btn-icon {
+  filter: invert(0);
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table {
   position: relative;
@@ -540,8 +965,8 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   display: none;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table.active {
-  display: flex;
   animation: appear 200ms;
+  display: flex;
 }
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addSearchHeader {
   position: fixed;
@@ -582,15 +1007,23 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   border: 1px solid rgba(123, 34, 255, 0.4823529412);
   box-shadow: inset 0 3px 5px 0 rgba(229, 204, 255, 0.7215686275), 0 -10px 20px 0 rgba(194, 145, 255, 0.1294117647);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults {
   width: 100%;
   height: 85%;
+  flex-direction: column;
+  align-items: center;
+  animation: disappear 200ms;
+  display: none;
   overflow: scroll;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults::-webkit-scrollbar {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults::-webkit-scrollbar {
   display: none;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView {
   position: relative;
   width: 98%;
   height: auto;
@@ -600,10 +1033,10 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   justify-content: flex-end;
   margin: 0 0 60px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView.hide {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView.hide {
   display: none;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView::after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -613,7 +1046,7 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   background: radial-gradient(circle, rgba(255, 255, 255, 0.4549019608) 0%, rgba(0, 0, 0, 0) 100%);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2509803922);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box {
   position: sticky;
   top: 0;
   width: 100%;
@@ -627,10 +1060,10 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   background-image: radial-gradient(at 88% 40%, #14141a 0px, transparent 85%), radial-gradient(at 49% 30%, #14141a 0px, transparent 85%), radial-gradient(at 14% 26%, #14141a 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(263, 93%, 56%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(284, 100%, 84%) 0px, transparent 85%), radial-gradient(at 100% 99%, rgb(255, 123, 242) 0px, transparent 85%);
   z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.book-titleCard {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.book-titleCard {
   filter: hue-rotate(110deg) brightness(1.5) saturate(0.8);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.book-titleCard::after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.book-titleCard::after {
   content: "";
   position: absolute;
   top: 0;
@@ -641,10 +1074,10 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   border-radius: 50%;
   filter: blur(100px);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.separator-titleCard {
   filter: hue-rotate(65deg) brightness(1.5) saturate(0.8);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard::after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.separator-titleCard::after {
   content: "";
   position: absolute;
   top: 0;
@@ -655,14 +1088,14 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   border-radius: 50%;
   filter: blur(100px);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.separator-titleCard .type-text {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.separator-titleCard .type-text {
   filter: brightness(5);
   z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.magazine-titleCard {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.magazine-titleCard {
   filter: hue-rotate(-10deg) brightness(1.5) saturate(0.8);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box.magazine-titleCard::after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box.magazine-titleCard::after {
   content: "";
   position: absolute;
   top: 0;
@@ -673,7 +1106,7 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   border-radius: 50%;
   filter: blur(100px);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .type-text {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .type-text {
   width: 100%;
   height: 35%;
   display: flex;
@@ -685,106 +1118,106 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   font-style: italic;
   color: rgba(255, 255, 255, 0.8117647059);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead {
   width: 100%;
   height: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.amount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.amount {
   width: 6%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.title {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.title {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.details {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.details {
   width: 25%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.id {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.id {
   width: 18%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.barcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.barcode {
   width: 15%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.kind {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.kind {
   width: 7%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .book-thead .book-head-item.price {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .book-thead .book-head-item.price {
   width: 9%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead {
   width: 100%;
   height: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.amount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.amount {
   width: 6%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.name {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.name {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.details {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.details {
   width: 30%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.id {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.id {
   width: 15%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.barcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.barcode {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .separ-thead .separ-head-item.price {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .separ-thead .separ-head-item.price {
   width: 9%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead {
   width: 100%;
   height: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.amount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.amount {
   width: 6%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.title {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.title {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.details {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.details {
   width: 30%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.id {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.id {
   width: 15%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.barcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.barcode {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .title-box .mag-thead .mag-head-item.price {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .title-box .mag-thead .mag-head-item.price {
   width: 9%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box {
   width: 100%;
   height: auto;
   display: flex;
@@ -794,7 +1227,7 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   border-radius: 10px;
   gap: 2px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card {
   position: relative;
   width: 100%;
   height: 50px;
@@ -808,7 +1241,7 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   font-size: 13px;
   cursor: pointer;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card:after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card:after {
   content: "";
   height: 100%;
   width: 10px;
@@ -824,124 +1257,124 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   filter: blur(10px);
   z-index: 19;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card:hover:after {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card:hover:after {
   top: 35%;
   opacity: 1;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookAmount {
   width: 6%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookName {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookName {
   width: 20%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookInfo {
   width: 25%;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 10px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookEDQid {
   width: 18%;
   height: 50%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookBarcode {
   width: 15%;
   flex-direction: column;
   align-items: center;
   padding: 0 10px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookKind {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookKind {
   width: 7%;
   height: 60%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.book-product .product-cardColumn.cardBookPrice {
   width: 9%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
   width: 6%;
   height: 100%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparName {
   width: 20%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparDetails {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparDetails {
   width: 30%;
   padding: 0 10px;
   flex-direction: column;
   align-items: flex-start;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
   width: 15%;
   height: 60%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
   width: 9%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
   width: 6%;
   height: 100%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
   width: 20%;
   justify-content: flex-start;
   padding: 0 10px 0 20px;
   z-index: 20;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
   width: 30%;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 10px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
   width: 15%;
   height: 60%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
   width: 20%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
   width: 9%;
   height: 60%;
   text-shadow: 0 0 40px white;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -953,10 +1386,10 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   animation: disappear 300ms ease;
   display: none;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-direction: row;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask.active {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask.active {
   right: 0;
   bottom: 0;
   width: 100%;
@@ -968,7 +1401,9 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   animation: appear 300ms ease;
   display: flex;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns {
+  position: relative;
+  left: 20%;
   width: 20%;
   height: 60%;
   display: flex;
@@ -981,28 +1416,28 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   transition: 300ms ease;
   margin: 0 10%;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns .btn-icon {
   transition: 300ms ease;
   margin: 0 10px;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn {
   display: none;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover {
   background: blue;
   color: white;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.editBtn:hover .btn-icon {
   filter: invert(1);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover {
   background: #00962d;
   color: white;
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .content-box .product-card .productOptions-ask .prodBtns.addBtn:hover .btn-icon {
   filter: invert(1);
 }
-body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table .addDBResults .productAddView .no-content {
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addDBResults .productAddView .no-content {
   width: 100%;
   height: 100px;
   display: flex;
@@ -1012,7 +1447,411 @@ body .screen-box #appModule .section-data-view .article-socket .articleBox .row.
   color: white;
   z-index: 10;
 }
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults {
+  width: 100%;
+  height: 85%;
+  flex-direction: column;
+  align-items: center;
+  animation: disappear 200ms;
+  display: none;
+  overflow: scroll;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .noresult {
+  width: 95%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: rgba(128, 128, 128, 0.1803921569);
+  border: 1px solid rgba(128, 128, 128, 0.2588235294);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box {
+  width: 98%;
+  height: auto;
+  padding: 10px 0;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .typesign {
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  margin: 0 100px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgb(122, 48, 143);
+  background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%), radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%), linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
+  border-radius: 0.5rem;
+  font-size: 17px;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, #c7bdff, transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product {
+  filter: hue-rotate(130deg) brightness(4) saturate(2);
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px rgb(0, 0, 0);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 30px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookInfo {
+  width: 25%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookEDQid {
+  width: 20%;
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookBarcode {
+  width: 13%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookKind {
+  width: 7%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.book-product .product-cardColumn.cardBookPrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product {
+  filter: hue-rotate(65deg) brightness(3) saturate(0.8);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px black;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparInfo {
+  width: 25%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparEDQid {
+  width: 25%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparBarcode {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.separator-product .product-cardColumn.cardSeparPrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product {
+  filter: hue-rotate(-10deg) brightness(3) saturate(0.9);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 40px black;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineAmount {
+  width: 5%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineName {
+  width: 20%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0 10px 0 20px;
+  z-index: 20;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineInfo {
+  width: 25%;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineEDQid {
+  width: 25%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazineBarcode {
+  width: 15%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card.magazine-product .product-cardColumn.cardMagazinePrice {
+  width: 10%;
+  height: 60%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  z-index: 10;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu.active {
+  background: rgba(0, 0, 0, 0.631372549);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu .prodBtns {
+  position: relative;
+  left: 20%;
+  width: 20%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: 300ms ease;
+  margin: 0 10%;
+  font-size: 15px;
+  font-weight: 400;
+  filter: brightness(0.3);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu .prodBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu .prodBtns.addBtn:hover {
+  background: #ffffff;
+  color: black;
+  font-weight: 600;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .items-tables .add-table #addQueryResults .productType-box .product-card .productOptions-menu .prodBtns.addBtn:hover .btn-icon {
+  filter: invert(0);
+}
 body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.storage-screen .win-tables .fade-line {
+  background: transparent;
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  bottom: 0;
+  background: #000000;
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card {
+  position: relative;
+  width: 250px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+  border: 1px solid rgba(255, 155, 250, 0.0784313725);
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 30px 20px 30px;
+  gap: 5px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card:after {
+  content: "";
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0%;
+  top: 65%;
+  transition: top, opacity;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, rgb(199, 189, 255), transparent);
+  box-shadow: 0 0 30px mediumslateblue;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 19;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card:hover:after {
+  top: 35%;
+  opacity: 1;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .optionsViewToggle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask {
+  position: absolute;
+  left: 90%;
+  bottom: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  background: transparent;
+  transition: 300ms ease;
+  animation: disappear 300ms ease;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask.active {
+  left: 10%;
+  bottom: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8078431373);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 300ms ease;
+  animation: appear 300ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask .discBtns {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  transition: 300ms ease;
+  margin: 0 10%;
+  font-size: 15px;
+  z-index: 50;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask .discBtns .btn-icon {
+  transition: 300ms ease;
+  margin: 0 10px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask .discBtns.deleteBtn:hover {
+  background: #ff0000;
+  color: white;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discountOptions-ask .discBtns.deleteBtn:hover .btn-icon {
+  filter: invert(1);
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discount-cardColumn {
+  height: 40%;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .discount-card .discount-cardColumn.cardDiscountAmount {
+  font-size: 32px;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .discountBoxes .no-content {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+body .screen-box #appModule .section-data-view .article-socket .articleBox .row.two.discounts-screen .win-tables .fade-line {
   background: transparent;
   width: 100%;
   height: 7%;
@@ -1031,9 +1870,6 @@ body .screen-box #appModule .section-data-view .article-socket .addToPartyScreen
   justify-content: center;
   animation: disappear 300ms;
   display: none;
-  background: rgba(0, 0, 36, 0.7647058824);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
 }
 body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens.active {
   animation: appear 300ms;
@@ -1047,6 +1883,9 @@ body .screen-box #appModule .section-data-view .article-socket .addToPartyScreen
   align-items: center;
   justify-content: center;
   animation: disappear 200ms ease;
+  background: rgba(0, 0, 36, 0.7647058824);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   display: none;
 }
 body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen.active {
@@ -1078,6 +1917,12 @@ body .screen-box #appModule .section-data-view .article-socket .addToPartyScreen
   font-weight: 400;
   font-size: 16px;
   text-align: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .tag .idTag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20px;
+  margin: 0 5px;
 }
 body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form {
   width: 90%;
@@ -1179,6 +2024,375 @@ body .screen-box #appModule .section-data-view .article-socket .addToPartyScreen
   border: 1px solid rgba(255, 255, 255, 0.7921568627);
 }
 body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainAddScreen .addToParty-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 200ms ease;
+  background: rgba(0, 0, 0, 0.7647058824);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox {
+  height: 70%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5333333333);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  gap: 3%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .tag {
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .tag .idTag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20px;
+  margin: 0 5px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form {
+  width: 90%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs label {
+  width: 80%;
+  font-size: 16px;
+  margin: 10px 60px;
+  height: 25px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs label i {
+  font-size: 11px;
+  color: #7d7dff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs input {
+  width: 80%;
+  height: 40px;
+  align-self: center;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs select {
+  width: 80%;
+  height: 40px;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs select option {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs select option span {
+  font-size: 11px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns {
+  width: 90%;
+  height: 20%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .screen-box #appModule .section-data-view .article-socket .addToPartyScreens .mainEditScreen .editToParty-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens {
+  position: absolute;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 200ms ease;
+  background: rgba(0, 0, 36, 0.7647058824);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: none;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.active {
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.mainDeleteScreen {
+  background: rgba(255, 255, 255, 0.7647058824);
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.mainDeleteScreen .deleteFromDB-AskingBox {
+  background: black;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.mainDeleteScreen .deleteFromDB-AskingBox .tag {
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.mainDeleteScreen .deleteFromDB-AskingBox .btns {
+  height: 50%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen.mainDeleteScreen .deleteFromDB-AskingBox .btns button {
+  height: 30%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox {
+  height: 70%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5333333333);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  gap: 3%;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .tag {
+  width: 90%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form {
+  width: 90%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs label {
+  width: 80%;
+  font-size: 16px;
+  margin: 10px 60px;
+  height: 25px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs label i {
+  font-size: 11px;
+  color: #7d7dff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs input {
+  width: 80%;
+  height: 40px;
+  align-self: center;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs select {
+  width: 80%;
+  height: 40px;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs select option {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs select option span {
+  font-size: 11px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns {
+  width: 90%;
+  height: 20%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns {
+  width: 90%;
+  height: 15%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .screen-box #appModule .section-data-view .article-socket .addDiscountsScreens .mainAddScreen .addToParty-formBox .btns button.accept:hover {
   background: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;

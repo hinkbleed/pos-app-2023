@@ -18,7 +18,7 @@ const productSchema = z.object({
   }).max(99999, 'price must be less than or equal to 99999')
 });
 
-export function validateBookToPartyInfo (object) {
+export function validateSeparToPartyInfo (object) {
   return productSchema.safeParse(object);
 }
 
@@ -39,6 +39,6 @@ const productPartialSchema = z.object({
   }).max(99999, 'price must be less than or equal to 99999')
 });
 
-export function validateBookToPartyPartialInfo (object) {
+export function validateSeparToPartyPartialInfo (object) {
   return productPartialSchema.safeParse(object);
 }

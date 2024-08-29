@@ -21,12 +21,3 @@ closeWinBtn.addEventListener('click', () => {
     sectionView.classList.remove('active');
   }, 300);
 });
-
-const mainIndexBtn = document.querySelectorAll('.main-index-btn');
-
-mainIndexBtn.forEach((button) => {
-  button.addEventListener('click', () => {
-    mainIndexBtn.forEach((btn) => btn.classList.remove('active'));
-    button.classList.add('active');
-  });
-});
