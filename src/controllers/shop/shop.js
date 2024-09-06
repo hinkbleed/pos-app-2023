@@ -4,7 +4,8 @@ import { validateMagazineToPartyInfo, validateMagazineToPartyPartialInfo } from 
 import { validateSeparToPartyInfo, validateSeparToPartyPartialInfo } from '../../schemas/partyconfig/separValidations.js';
 import { structurePartyData } from '../../schemas/shop/dataParties.js';
 import { structureDiscountsData } from '../../schemas/shop/htmlDiscounts.js';
-import { structureAddPartyQueryFullproducts, structureAllPartyBooks, structureAllPartyMagazines, structureAllPartySeparators, structureStoragePartyQueryProducts } from '../../schemas/shop/htmlShop.js';
+import { structurePosQuery } from '../../schemas/shop/htmlPos.js';
+import { structureAddPartyQueryFullproducts, structureAllPartyBooks, structureAllPartyMagazines, structureAllPartySeparators, structureStoragePartyQueryProducts } from '../../schemas/shop/htmlData.js';
 
 export class ShopController {
   constructor ({ partyModel, shopModel, fullproductsModel, discountModel }) {
@@ -318,5 +319,13 @@ export class ShopController {
       console.error('Error al eliminar el descuento:', error);
       res.status(500).json({ error: 'Error al eliminar el descuento' });
     }
+  };
+
+  getPosProducts = async (req, res) => {
+    const query = req.params.input;
+    const id = req.params.id;
+    const posProducts = await this.shopModel.getPosProducts(query, id);
+    const htmlPosProducts = structurePosQuery(posProducts);
+    res.send(htmlPosProducts);
   };
 }

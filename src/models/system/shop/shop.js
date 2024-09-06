@@ -389,4 +389,82 @@ export class ShopModel {
     console.log({ books: booksbyquerysearch, separators: separatorsbyquerysearch, magazines: magazinesbyquerysearch });
     return { books: booksbyquerysearch, separators: separatorsbyquerysearch, magazines: magazinesbyquerysearch };
   }
+
+  static async getPosProducts (input, id) {
+    const escapedInput = escapeRegExp(input);
+
+    const [firstBookSearch] = await connection.query(
+      `SELECT bpa.fs_id, 
+              bpa.party_id,
+              bpa.current_amount,
+              bpa.party_price,
+              bfs.bookfs_id,
+              bfs.book_id,
+              bfs.bookfs_kind,
+              bfs.bookfs_price,
+              b.book_id,
+              b.book_name,
+              b.book_author,
+              b.book_year,
+              b.book_editorial_name,
+              b.book_genre_name,
+              b.book_subgenre_name,
+              b.book_price,
+              bbc.barcode_number
+       FROM bookPartyAssignments as bpa
+       LEFT JOIN booksFullstorage AS bfs ON bpa.fs_id = bfs.bookfs_id
+       LEFT JOIN books AS b ON bfs.book_id = b.book_id
+       LEFT JOIN bookBarcodes AS bbc ON bfs.book_id = bbc.book_id
+       WHERE (b.book_name REGEXP ? OR bbc.barcode_number REGEXP ?)
+       AND bpa.party_id = ?;`, [`(^|\\s)${escapedInput}`, `(^|\\s)${escapedInput}`, id]
+    );
+
+    const [firstSeparatorSearch] = await connection.query(
+      `SELECT spa.fs_id, 
+              spa.party_id,
+              spa.current_amount,
+              spa.party_price,
+              sfs.separfs_id,
+              sfs.separ_id,
+              sfs.separfs_price,
+              s.separ_id,
+              s.separ_name,
+              s.separ_material,
+              s.separ_print,
+              s.separ_description,
+              s.separ_price,
+              sbc.barcode_number
+       FROM separatorPartyAssignments AS spa
+       LEFT JOIN separatorsFullstorage AS sfs ON spa.fs_id = sfs.separfs_id
+       LEFT JOIN separators AS s ON sfs.separ_id = s.separ_id
+       LEFT JOIN separBarcodes AS sbc ON sfs.separ_id = sbc.separ_id
+       WHERE (s.separ_name REGEXP ? OR sbc.barcode_number REGEXP ?)
+       AND spa.party_id = ?;`, [`(^|\\s)${escapedInput}`, `(^|\\s)${escapedInput}`, id]
+    );
+
+    const [firstMagazineSearch] = await connection.query(
+      `SELECT mpa.fs_id, 
+              mpa.party_id,
+              mpa.current_amount,
+              mpa.party_price,
+              mfs.magfs_id,
+              mfs.mag_id,
+              mfs.magfs_price,
+              m.mag_id,
+              m.mag_name,
+              m.mag_author,
+              m.mag_year,
+              m.mag_editorial_name,
+              m.mag_subgenre_name,
+              m.mag_price,
+              mbc.barcode_number
+       FROM magazinePartyAssignments AS mpa
+       LEFT JOIN magazinesFullstorage AS mfs ON mpa.fs_id = mfs.magfs_id
+       LEFT JOIN magazines AS m ON mfs.mag_id = m.mag_id
+       LEFT JOIN magBarcodes AS mbc ON mfs.mag_id = mbc.mag_id
+       WHERE (m.mag_name REGEXP ? OR mbc.barcode_number REGEXP ?)
+       AND mpa.party_id = ?;`, [`(^|\\s)${escapedInput}`, `(^|\\s)${escapedInput}`, id]
+    );
+    return { books: firstBookSearch, separators: firstSeparatorSearch, magazines: firstMagazineSearch };
+  }
 }

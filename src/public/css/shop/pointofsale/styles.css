@@ -17,221 +17,430 @@ body .screen-box #appModule .shop-view {
   flex-direction: column;
 }
 body .screen-box #appModule .shop-view .list-box {
-  width: 100%;
-  height: 65%;
-  display: flex;
   position: relative;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
 }
-body .screen-box #appModule .shop-view .list-box .shop-list-box {
+body .screen-box #appModule .shop-view .list-box .shopList-box {
+  position: relative;
   width: 70%;
   height: 100%;
   background: #000a18;
   color: #ffffff;
-  overflow-y: scroll;
-  position: relative;
-  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-body .screen-box #appModule .shop-view .list-box .shop-list-box table {
-  width: 100%;
-  height: auto;
-  border-collapse: collapse;
-  position: relative;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead {
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header {
+  position: absolute;
+  top: 0;
   background: #000000;
   color: #e3e3e3;
-  height: 25px;
-  font-size: 12px;
-  position: sticky;
-  top: 0;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr {
-  box-shadow: 0 0 30px 0px rgba(74, 77, 255, 0.4666666667);
   width: 100%;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr th {
-  border-left: 2px solid #ffffff;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th1 {
-  border-left: none;
-  width: 40px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th2 {
-  width: 660px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th3 {
-  width: 100px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th4 {
-  width: 100px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th5 {
-  width: 100px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table thead tr .th6 {
-  width: 100px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody {
-  color: white;
-  font-size: 15px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow {
-  height: 40px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow:hover {
-  background: #040a30;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow.selected {
-  background: #130538;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow th,
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td {
-  border-bottom: 1px solid #280096;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td {
-  border-left: 1px solid #0f2442;
-  text-align: center;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td:nth-child(2) {
-  text-align: start;
-  padding: 0 50px;
-}
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td:nth-child(4) {
+  height: 10%;
+  font-size: 12px;
+  box-shadow: 0 0 30px 0px rgba(74, 77, 255, 0.4666666667);
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  height: 40px;
-  gap: 5px;
 }
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td:nth-child(4) .amount-btn {
-  width: 25px;
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem {
+  border-left: 2px solid #ffffff;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  font-size: 15px;
 }
-body .screen-box #appModule .shop-view .list-box .shop-list-box table tbody .ticketRow td:nth-child(4) .amount-numb {
-  cursor: default;
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th1 {
+  border-left: none;
+  width: 40px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th2 {
+  width: 660px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th3 {
+  width: 100px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th4 {
+  width: 100px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th5 {
+  width: 100px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th6 {
+  width: 100px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: green;
+  overflow: scroll;
+  /*
+  .ticketRow {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background: red;
+
+    &:hover {
+      background: #040a30;
+    }
+
+    &.selected {
+      background: #130538;
+    }
+
+    .shopBodyItem {
+      border-bottom: 1px solid #280096;
+      border-left: 1px solid #0f2442;
+
+
+      &:nth-child(2) {
+        text-align: start;
+        padding: 0 50px;
+      }
+
+
+      &:nth-child(4) {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 40px;
+        gap: 5px;
+
+        .amount-btn {
+          width: 25px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .amount-numb {
+          cursor: default;
+        }
+      }
+
+    }
+
+
+  }
+    */
 }
 body .screen-box #appModule .shop-view .list-box .item-box {
   width: 30%;
   height: 100%;
   border: 1px solid #000000;
-  box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.2549019608);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2549019608);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #232b53;
+  background: #000222;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-search {
-  height: 80px;
+  width: 100%;
+  height: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-search #searchItem {
-  width: 95%;
-  height: 35px;
-  background: white;
+body .screen-box #appModule .shop-view .list-box .item-box .item-search #posSearchBar {
+  width: 90%;
+  height: 37px;
+  background: rgba(255, 255, 255, 0.8666666667);
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #808080;
   transition: 300ms;
+  box-shadow: 0 0 100px 2px rgba(0, 17, 255, 0.3137254902);
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-search #searchItem:hover {
+body .screen-box #appModule .shop-view .list-box .item-box .item-search #posSearchBar:hover {
   border: 1px solid #ffffff;
-  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.3137254902);
+  box-shadow: 0 0 50px 0px rgba(0, 17, 255, 0.3137254902);
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-search #searchItem:focus-within {
+body .screen-box #appModule .shop-view .list-box .item-box .item-search #posSearchBar:focus-within {
+  background: white;
   border: 1px solid #808080;
-  box-shadow: 0 0 20px 1px #ffffff;
+  box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.4745098039);
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-search #searchItem #typeSearch {
-  width: 290px;
+body .screen-box #appModule .shop-view .list-box .item-box .item-search #posSearchBar #posSearchTypingInput {
+  width: 90%;
   height: 25px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 15px;
   font-size: 20px;
   background: transparent;
   outline: none;
   border: none;
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-search #searchItem .search-icon {
-  width: 30px;
-  margin: 0 8px 0 0;
+body .screen-box #appModule .shop-view .list-box .item-box .item-search #posSearchBar .search-icon {
+  width: 8%;
+  margin: 0 5px 0 0;
+  cursor: pointer;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .div-line {
-  width: 90%;
-  height: 1px;
-  background: white;
-  box-shadow: 0 0 5px 1px white;
-  margin: 5px 0 30px 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  background: radial-gradient(circle, #ffffff 0%, rgba(0, 0, 0, 0) 90%);
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info {
-  height: 400px;
+  position: relative;
+  height: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
-}
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #itemTitle {
-  width: 300px;
-  height: 110px;
-  display: flex;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
   color: #ffffff;
+  overflow: scroll;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .itemBoxAdvertise {
+  position: absolute;
+  top: 0;
+  height: 30%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 28px;
+  display: none;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .itemBoxAdvertise.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults {
+  height: 100%;
+  width: 85%;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  overflow: scroll;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  gap: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4823529412);
+  cursor: pointer;
+  transition: 300ms ease;
+  box-shadow: inset 0 10px 10px 0 rgba(255, 255, 255, 0.1294117647), 0 -10px 30px 0 rgba(255, 255, 255, 0);
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card:hover {
+  background: rgba(0, 0, 0, 0.3176470588);
+  border: 1px solid rgba(255, 255, 255, 0.0431372549);
+  box-shadow: inset 0 3px 5px 0 rgba(255, 255, 255, 0.7215686275), 0 -10px 20px 0 rgba(255, 255, 255, 0.1294117647);
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookName {
+  height: 25%;
+  width: 100%;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookInfo {
+  height: 20%;
+  width: 100%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookKind {
+  height: 20%;
+  width: 100%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookEDQid {
+  height: 15%;
+  width: 100%;
+  font-size: 10px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookBarcode {
+  height: 20%;
+  width: 80%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardSeparName {
+  height: 25%;
+  width: 100%;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardSeparInfo {
+  height: 40%;
+  width: 100%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardSeparEDQid {
+  height: 15%;
+  width: 100%;
+  font-size: 10px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardSeparBarcode {
+  height: 20%;
+  width: 80%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagName {
+  height: 25%;
+  width: 100%;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagInfo {
+  height: 40%;
+  width: 100%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagEDQid {
+  height: 15%;
+  width: 100%;
+  font-size: 10px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagBarcode {
+  height: 20%;
+  width: 80%;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot {
+  position: absolute;
+  right: 10px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardBookAmount {
+  bottom: 20%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardBookPrice {
+  bottom: 5%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardSeparAmount {
+  bottom: 20%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardSeparPrice {
+  bottom: 5%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardMagAmount {
+  bottom: 20%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardDot.cardMagPrice {
+  bottom: 5%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .noresult {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+  color: #ffffff;
+  transition: 300ms ease;
+  font-size: 28px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox {
+  height: 100%;
+  width: 85%;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox.active {
+  animation: appear 200ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemTitle {
+  height: 35%;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
   text-shadow: 2px 2px 5px #212121;
   overflow: hidden;
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #price {
-  width: 300px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  font-weight: 500;
-  color: #ffffff;
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemDetails {
+  height: 20%;
+  text-align: end;
+  font-size: 24px;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px #212121;
+  padding-left: 15%;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemKind {
+  height: 10%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
   text-shadow: 2px 2px 5px #212121;
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #price span {
-  font-size: 60px;
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemPrice {
+  height: 25%;
+  font-size: 35px;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px #212121;
+  gap: 15px;
 }
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #itemDetail {
-  width: 300px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemPrice span {
+  font-size: 70px;
+}
+body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posCodebarNumber {
+  height: 10%;
+  font-weight: 500;
   font-size: 20px;
-  font-weight: 500;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px #212121;
-}
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #codebarImg {
-  width: 200px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #codebarImg img {
-  height: 100%;
-}
-body .screen-box #appModule .shop-view .list-box .item-box .item-info #codebarNumb {
-  width: 200px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 body .screen-box #appModule .shop-view .pago {
   width: 100%;
-  height: 35%;
+  height: 30%;
   display: flex;
   flex-direction: row;
   align-items: center;

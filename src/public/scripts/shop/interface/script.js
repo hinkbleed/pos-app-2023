@@ -105,8 +105,9 @@ function fetchShopData () {
 }
 
 function fetchPosData () {
-  console.log('Fetching Point of sale data');
+  console.log('POS init');
 }
+
 function loadCSS (href) {
   const cssModule = document.getElementById('cssModule');
   if (cssModule) {

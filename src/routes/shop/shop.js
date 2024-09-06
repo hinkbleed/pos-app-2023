@@ -21,12 +21,13 @@ export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, dis
   shopRouter.post('/data/storage/updatemag', shopController.updateMagazineToParty);
 
   shopRouter.get('/search/fullstorage/:input', shopController.getFullproductsByQuerySearch);
-
   shopRouter.get('/search/partystorage/:id/:input', shopController.getPartyproductsByQuerySearch);
 
   shopRouter.post('/discounts/add', shopController.saveDiscount);
   shopRouter.get('/discounts/getall', shopController.getAllDiscounts);
   shopRouter.delete('/discounts/delete/:id', shopController.deleteDiscount);
+
+  shopRouter.get('/pos/search/:id/:input', shopController.getPosProducts);
 
   /*
   partyconfigRouter.use('/providors', createConfigprovidorRouter({ partyconfigModel }));
