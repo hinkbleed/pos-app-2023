@@ -25,10 +25,6 @@ export function structureAllProducts (products) {
               <img class="btn-icon" src="/svg/edit-icon.svg"/>
           
             </div>
-            <div class="prodBtns addBookToPartyBtn addBtn">
-              Añadir a inventario
-              <img class="btn-icon" src="/svg/add-icon.svg"/>
-            </div>
           </div>
           <div class="product-cardColumn cardBookName book-toggle-btn">${book.book_name}</div>
 
@@ -83,10 +79,6 @@ export function structureAllProducts (products) {
             <img class="btn-icon" src="/svg/edit-icon.svg"/>
     
           </div>
-          <div class="prodBtns addSeparToPartyBtn addBtn">
-            Añadir a inventario
-            <img class="btn-icon" src="/svg/add-icon.svg"/>
-          </div>
         </div>
         <div class="product-cardColumn cardSeparName separ-toggle-btn">${separ.separ_name}</div>
 
@@ -128,10 +120,6 @@ export function structureAllProducts (products) {
           <div class="prodBtns editMagBtn editBtn">
             Editar
             <img class="btn-icon" src="/svg/edit-icon.svg"/>
-          </div>
-          <div class="prodBtns addMagToPartyBtn addBtn">
-            Añadir a inventario
-            <img class="btn-icon" src="/svg/add-icon.svg"/>
           </div>
         </div>
         <div class="product-cardColumn cardMagazineName mag-toggle-btn">${mag.mag_name}</div>

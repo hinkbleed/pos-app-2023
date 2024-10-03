@@ -1,3 +1,5 @@
+import { fetchReportBalance, fetchReportPayments, fetchReportTickets } from '../report/script.js';
+
 export const screenBox = document.getElementById('screenBox');
 
 const lastSection = getCookie('lastSection');
@@ -86,26 +88,12 @@ function sectionSelector (section) {
     loadCSS(`/css/shop/${section}/styles.css`);
     selectBtn(section);
     setSectionCookie(section);
-
-    if (section === 'report') {
-      fetchShopData();
-    }
-    if (section === 'pointofsale') {
-      fetchPosData();
-    }
-  } else {
-    loadCSS('/css/shop/data/styles.css');
-    selectBtn('shop');
-    setSectionCookie('data');
   }
-}
-
-function fetchShopData () {
-  console.log('Fetching Report data');
-}
-
-function fetchPosData () {
-  console.log('POS init');
+  if (section === 'report') {
+    fetchReportTickets(partyId);
+    fetchReportBalance(partyId);
+    fetchReportPayments(partyId);
+  }
 }
 
 function loadCSS (href) {

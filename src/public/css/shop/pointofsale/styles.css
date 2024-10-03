@@ -11,6 +11,7 @@
   src: url("../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf");
 }
 body .screen-box #appModule .shop-view {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -27,11 +28,15 @@ body .screen-box #appModule .shop-view .list-box .shopList-box {
   position: relative;
   width: 70%;
   height: 100%;
-  background: #000a18;
+  background: rgb(0, 49, 138);
+  background: linear-gradient(0deg, #000064 -50%, #000a18 60%);
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header {
   position: absolute;
@@ -47,7 +52,7 @@ body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header 
   align-items: center;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem {
-  border-left: 2px solid #ffffff;
+  border-left: 1px solid #ffffff;
   height: 100%;
   display: flex;
   align-items: center;
@@ -55,30 +60,35 @@ body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header 
   font-size: 15px;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th1 {
-  border-left: none;
-  width: 40px;
+  width: 5%;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th2 {
-  width: 660px;
+  width: 45%;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th3 {
-  width: 100px;
+  width: 10%;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th4 {
-  width: 100px;
+  width: 20%;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th5 {
-  width: 100px;
+  width: 10%;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-header .shopHeaderItem.th6 {
-  width: 100px;
+  width: 10%;
+  border-right: 1px solid #ffffff;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body {
   position: relative;
   width: 100%;
   height: 90%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body::-webkit-scrollbar {
+  display: none;
 }
 body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products {
   width: 100%;
@@ -86,62 +96,107 @@ body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .s
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: green;
-  overflow: scroll;
-  /*
-  .ticketRow {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    background: red;
-
-    &:hover {
-      background: #040a30;
-    }
-
-    &.selected {
-      background: #130538;
-    }
-
-    .shopBodyItem {
-      border-bottom: 1px solid #280096;
-      border-left: 1px solid #0f2442;
-
-
-      &:nth-child(2) {
-        text-align: start;
-        padding: 0 50px;
-      }
-
-
-      &:nth-child(4) {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        height: 40px;
-        gap: 5px;
-
-        .amount-btn {
-          width: 25px;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-        }
-
-        .amount-numb {
-          cursor: default;
-        }
-      }
-
-    }
-
-
-  }
-    */
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: 300ms;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow:hover {
+  background: #040a30;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow.selected {
+  background: #130538;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #280096;
+  border-left: 1px solid #0f2442;
+  border-right: 1px solid #0f2442;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemPosition {
+  width: 5%;
+  font-weight: 200;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemName {
+  width: 45%;
+  justify-content: flex-start;
+  padding: 0 0 0 50px;
+  font-size: 15px;
+  font-weight: 500;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemPrice {
+  width: 10%;
+  font-size: 19px;
+  font-weight: 200;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn {
+  height: 50%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.568627451);
+  transition: 300ms;
+  font-size: 13px;
+  border-radius: 8px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn.less {
+  background: rgba(255, 255, 255, 0.0352941176);
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn.less:hover {
+  background: rgba(255, 89, 0, 0.6431372549);
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn.amount-numb {
+  background: black;
+  font-size: 21px;
+  font-weight: 200;
+  height: 80%;
+  width: 30%;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn.more {
+  background: rgba(255, 255, 255, 0.0352941176);
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemAmount .amount-btn.more:hover {
+  background: rgba(72, 0, 255, 0.6784313725);
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemSubtotal {
+  width: 10%;
+  text-shadow: 0 0 20px white;
+  font-size: 17px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemDiscount {
+  width: 10%;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemDiscount .selectDiscount {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  text-shadow: 0 0 20px white;
+  text-align: center;
+  font-size: 15px;
+}
+body .screen-box #appModule .shop-view .list-box .shopList-box .shopList-body .shopList-products .ticketRow .shopBodyItem.itemDiscount .selectDiscount option {
+  background: black;
 }
 body .screen-box #appModule .shop-view .list-box .item-box {
   width: 30%;
@@ -155,7 +210,7 @@ body .screen-box #appModule .shop-view .list-box .item-box {
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-search {
   width: 100%;
-  height: 15%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +258,7 @@ body .screen-box #appModule .shop-view .list-box .item-box .div-line {
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info {
   position: relative;
-  height: 85%;
+  height: 90%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -252,23 +307,23 @@ body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryR
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  gap: 15px;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card {
   position: relative;
   width: 100%;
-  height: 130px;
-  border-radius: 10px;
-  border: 1px solid white;
+  height: 150px;
   display: flex;
   flex-direction: column;
   padding: 0 10px;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.3098039216);
   color: #ffffff;
-  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4823529412);
   cursor: pointer;
   transition: 300ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin-bottom: 10px;
   box-shadow: inset 0 10px 10px 0 rgba(255, 255, 255, 0.1294117647), 0 -10px 30px 0 rgba(255, 255, 255, 0);
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card:hover {
@@ -292,11 +347,16 @@ body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryR
   height: 20%;
   width: 100%;
   font-size: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookEDQid {
   height: 15%;
   width: 100%;
   font-size: 10px;
+  display: flex;
+  align-items: center;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardBookBarcode {
   height: 20%;
@@ -326,14 +386,14 @@ body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryR
   font-size: 15px;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagName {
-  height: 25%;
+  height: 45%;
   width: 100%;
   font-size: 22px;
   display: flex;
   justify-content: center;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posQueryResults .posResultsBox .posProduct-card .posProduct-cardRow.cardMagInfo {
-  height: 40%;
+  height: 20%;
   width: 100%;
   font-size: 15px;
 }
@@ -422,6 +482,10 @@ body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBo
   font-size: 15px;
   font-weight: 400;
   text-shadow: 2px 2px 5px #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 body .screen-box #appModule .shop-view .list-box .item-box .item-info .posInfoBox .posItemInfo#posItemPrice {
   height: 25%;
@@ -454,7 +518,7 @@ body .screen-box #appModule .shop-view .pago .list-options {
   background: transparent;
   width: 250px;
   height: 170px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -509,20 +573,48 @@ body .screen-box #appModule .shop-view .pago .list-options .list-btn#verListasGu
   color: white;
   text-shadow: 0 0 50px #ffffff;
 }
+body .screen-box #appModule .shop-view .pago .giveMoney-options {
+  position: absolute;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .pago .giveMoney-options .giveMoneyBtn {
+  cursor: pointer;
+  width: 60%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .shop-view .pago .giveMoney-options .giveMoneyBtn:hover {
+  background: rgba(255, 255, 255, 0.7411764706);
+  color: black;
+  font-weight: 800;
+  border: 1px solid #313164;
+}
 body .screen-box #appModule .shop-view .pago .div-line {
   width: 1px;
   height: 85%;
   background: #757575;
   box-shadow: 0 0 5px 1px #454545;
   position: absolute;
-  left: 310px;
+  left: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 body .screen-box #appModule .shop-view .pago .payment-options {
   background: transparent;
-  width: 600px;
+  width: 50%;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -568,7 +660,7 @@ body .screen-box #appModule .shop-view .pago .payment-options .payment-options-b
   padding: 0 20px;
 }
 body .screen-box #appModule .shop-view .pago .payment-options .payment-options-box .payment-input {
-  width: 300px;
+  width: 250px;
   height: 150px;
   display: flex;
   flex-direction: column;
@@ -581,16 +673,18 @@ body .screen-box #appModule .shop-view .pago .payment-options .payment-options-b
   margin: 0;
 }
 body .screen-box #appModule .shop-view .pago .payment-options .payment-options-box .payment-input input {
-  width: 250px;
+  width: 200px;
   height: 40px;
   border: 1px solid #939393;
   outline: none;
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 500;
   border-radius: 5px;
   background: #000000;
   color: #d7d7d7;
   padding: 0 10px;
   transition: 300ms;
+  text-align: right;
   font-family: "cutive mono";
 }
 body .screen-box #appModule .shop-view .pago .payment-options .payment-options-box .payment-input input:hover {
@@ -624,7 +718,7 @@ body .screen-box #appModule .shop-view .pago .total-options {
   justify-content: space-around;
   margin: 0 30px 10px 0;
 }
-body .screen-box #appModule .shop-view .pago .total-options .total-price {
+body .screen-box #appModule .shop-view .pago .total-options .total-priceBox {
   color: #ffffff;
   text-shadow: 0px 0px 2px #ffffff;
   font-size: 40px;
@@ -634,10 +728,10 @@ body .screen-box #appModule .shop-view .pago .total-options .total-price {
   justify-content: center;
   font-family: "cutive mono";
 }
-body .screen-box #appModule .shop-view .pago .total-options .total-price span {
+body .screen-box #appModule .shop-view .pago .total-options .total-priceBox div {
   font-size: 70px;
 }
-body .screen-box #appModule .shop-view .pago .total-options .accept-payment {
+body .screen-box #appModule .shop-view .pago .total-options .acceptPaymentBtn {
   color: #e6e6e6;
   font-size: 15px;
   width: 100%;
@@ -651,23 +745,401 @@ body .screen-box #appModule .shop-view .pago .total-options .accept-payment {
   cursor: pointer;
   transition: 500ms;
 }
-body .screen-box #appModule .shop-view .pago .total-options .accept-payment:hover {
+body .screen-box #appModule .shop-view .pago .total-options .acceptPaymentBtn:hover {
   border: 1px solid rgb(204, 0, 255);
+}
+body .screen-box #appModule .shop-view .saleScreens {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen {
+  position: relative;
+  width: 98%;
+  height: 96%;
+  background: #15042c;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin::-webkit-scrollbar {
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList {
+  width: 90%;
+  height: auto;
+  background: #aeaeae;
+  border: 1px solid #000000;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem {
+  width: 99%;
+  height: 70px;
+  border: 1px solid #000000;
+  margin: 5px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart {
+  width: 30%;
+  height: 50%;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketPosition {
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketName {
+  width: 73%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketSubtotal {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketAmount {
+  width: 23%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketPrice {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketBeforeSubtotal {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .ticketWin .ticketList .ticketItem .itemPart.ticketDiscount {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #000000;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin {
+  width: 40%;
+  height: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMoneyTotal {
+  width: 100%;
+  height: 20%;
+  color: white;
+  font-size: 64px;
+  display: flex;
+  align-items: flex-start;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod {
+  width: 100%;
+  height: 40%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  font-size: 22px;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMethodText {
+  width: 100%;
+  height: 25%;
+  font-size: 24px;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyCard {
+  width: 90%;
+  height: 25%;
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyCard.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyTransfer {
+  width: 80%;
+  height: 25%;
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyTransfer.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyCash {
+  width: 60%;
+  height: 25%;
+  display: none;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMethod .paymentMoneyCash.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMoneyGiven {
+  width: 80%;
+  height: 10%;
+  color: white;
+  background: transparent;
+  font-size: 32px;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator .paymentMoneyChange {
+  width: 100%;
+  height: 25%;
+  color: white;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator input[type=number]::-webkit-inner-spin-button,
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .paymentCalculator input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .confirmPayment {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .confirmPayment .confirmPaymentBtn {
+  font-size: 56px;
+  cursor: pointer;
+  color: #e6a8ff;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .confirmPayment .confirmPaymentBtn:hover {
+  color: white;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .confirmPayment .cancelPaymentBtn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #7fb1ca;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .shop-view .saleScreens .confirmSaleScreen .paymentWin .confirmPayment .cancelPaymentBtn:hover {
+  color: white;
+}
+body .screen-box #appModule .shop-view .ticketWellDone {
+  position: absolute;
+  bottom: 35%;
+  left: 15%;
+  width: 40%;
+  height: 70px;
+  background: rgba(88, 165, 170, 0.7607843137);
+  background: linear-gradient(20deg, rgba(88, 165, 170, 0.7607843137) 0%, rgba(64, 196, 112, 0.7607843137) 20%, rgba(18, 255, 0, 0.7607843137) 100%);
+  border-radius: 20px;
+  font-size: 32px;
+  justify-content: center;
+  align-items: center;
+  animation: disappear 500ms;
+  display: none;
+}
+body .screen-box #appModule .shop-view .ticketWellDone.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .ticketWrongDone {
+  position: absolute;
+  bottom: 35%;
+  left: 3%;
+  width: 63%;
+  height: 80px;
+  background: rgba(154, 56, 71, 0.7607843137);
+  background: linear-gradient(20deg, rgba(140, 24, 78, 0.7607843137) 0%, rgba(77, 12, 57, 0.7607843137) 15%, rgba(185, 0, 0, 0.7607843137) 100%);
+  border-radius: 20px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 30px;
+  animation: disappear 500ms;
+  display: none;
+}
+body .screen-box #appModule .shop-view .ticketWrongDone.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox {
+  position: relative;
+  width: 97%;
+  height: 98%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .tag {
+  font-size: 22px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form {
+  width: 30%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form label {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form label i {
+  color: #a26eeb;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form select {
+  width: 80%;
+  height: 7%;
+  background: black;
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form input {
+  width: 80%;
+  height: 7%;
+  background: black;
+  color: white;
+  margin-bottom: 30px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.3960784314);
+  font-size: 17px;
+  border-radius: 10px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form textarea {
+  width: 80%;
+  height: 20%;
+  background: black;
+  color: white;
+  margin-bottom: 30px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.3960784314);
+  font-size: 17px;
+  border-radius: 10px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form .btns {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form .btns button {
+  width: 40%;
+  height: 40%;
+  background: transparent;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 300ms ease;
+  font-size: 18px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form .btns button.cancel:hover {
+  background: #492460;
+  border: 1px solid #200034;
+  font-size: 20px;
+}
+body .screen-box #appModule .shop-view .giveMoneyScreens .giveMoneyInfoBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: black;
+  font-size: 20px;
 }
 
 @keyframes appear {
   0% {
+    display: none;
     opacity: 0;
   }
   100% {
+    display: flex;
     opacity: 1;
   }
 }
 @keyframes disappear {
   0% {
+    display: flex;
     opacity: 1;
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

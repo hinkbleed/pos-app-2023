@@ -3,22 +3,25 @@ import { validateDiscountInfo } from '../../schemas/partyconfig/discountValidati
 import { validateMagazineToPartyInfo, validateMagazineToPartyPartialInfo } from '../../schemas/partyconfig/magValidations.js';
 import { validateSeparToPartyInfo, validateSeparToPartyPartialInfo } from '../../schemas/partyconfig/separValidations.js';
 import { structurePartyData } from '../../schemas/shop/dataParties.js';
-import { structureDiscountsData } from '../../schemas/shop/htmlDiscounts.js';
+import { structureDiscountsData, structurePosDiscounts } from '../../schemas/shop/htmlDiscounts.js';
 import { structurePosQuery } from '../../schemas/shop/htmlPos.js';
 import { structureAddPartyQueryFullproducts, structureAllPartyBooks, structureAllPartyMagazines, structureAllPartySeparators, structureStoragePartyQueryProducts } from '../../schemas/shop/htmlData.js';
+import { validateNewTicketInfo } from '../../schemas/shop/ticketValidation.js';
+import { structureReportBalance, structureReportPayments, structureReportTickets } from '../../schemas/shop/htmlTickets.js';
+import { validateNewPaymentInfo } from '../../schemas/shop/paymentValidation.js';
 
 export class ShopController {
-  constructor ({ partyModel, shopModel, fullproductsModel, discountModel }) {
+  constructor ({ partyModel, shopModel, fullproductsModel, discountModel, ticketsModel }) {
     this.partyModel = partyModel;
     this.shopModel = shopModel;
     this.fullproductsModel = fullproductsModel;
     this.discountModel = discountModel;
+    this.ticketsModel = ticketsModel;
   }
 
   getPartyById = async (req, res) => {
     const party = await this.partyModel.getPartyById(req.params.id);
     const structuredParty = structurePartyData(party);
-    console.log(structuredParty);
     res.send(structuredParty);
   };
 
@@ -327,5 +330,69 @@ export class ShopController {
     const posProducts = await this.shopModel.getPosProducts(query, id);
     const htmlPosProducts = structurePosQuery(posProducts);
     res.send(htmlPosProducts);
+  };
+
+  getPosDiscounts = async (req, res) => {
+    const discounts = await this.discountModel.getAllDiscounts();
+    const htmlDiscounts = structurePosDiscounts(discounts);
+    res.send(htmlDiscounts);
+  };
+
+  saveNewTicket = async (req, res) => {
+    const result = validateNewTicketInfo(req.body);
+    const partyId = req.params.id;
+
+    if (!result.success) {
+      const errorMessages = result.error.errors.map(err => err.message);
+      console.error('Errores de validación:', errorMessages);
+      return res.status(400).json({ errors: errorMessages });
+    }
+
+    try {
+      const newTicket = await this.ticketsModel.createTicket({ input: result.data, partyId });
+      res.status(201).json({ message: 'Ticket creado exitosamente', ticket: newTicket });
+    } catch (error) {
+      console.error('Error al crear el ticket:', error);
+      res.status(500).json({ error: 'Error al crear el ticket' });
+    }
+  };
+
+  getAllTicketsToParty = async (req, res) => {
+    const partyId = req.params.id;
+    const tickets = await this.ticketsModel.getAllTicketsToParty(partyId);
+    const htmlTickets = structureReportTickets(tickets);
+    res.send(htmlTickets);
+  };
+
+  saveNewPayment = async (req, res) => {
+    const result = validateNewPaymentInfo(req.body);
+    const partyId = req.params.id;
+
+    if (!result.success) {
+      const errorMessages = result.error.errors.map(err => err.message);
+      console.error('Errores de validación:', errorMessages);
+      return res.status(400).json({ errors: errorMessages });
+    }
+    try {
+      const newPayment = await this.ticketsModel.createPayment({ input: result.data, partyId });
+      res.status(201).json({ message: 'Pago creado exitosamente', payment: newPayment });
+    } catch (error) {
+      console.error('Error al crear el pago:', error);
+      res.status(500).json({ error: 'Error al crear el pago' });
+    }
+  };
+
+  getAllPaymentsToParty = async (req, res) => {
+    const partyId = req.params.id;
+    const payments = await this.ticketsModel.getAllPaymentsToParty(partyId);
+    const htmlPayments = structureReportPayments(payments);
+    res.send(htmlPayments);
+  };
+
+  getBalanceToParty = async (req, res) => {
+    const partyId = req.params.id;
+    const balance = await this.ticketsModel.getBalanceToParty(partyId);
+    const htmlBalance = structureReportBalance(balance);
+    res.send(htmlBalance);
   };
 }

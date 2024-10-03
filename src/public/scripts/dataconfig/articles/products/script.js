@@ -220,5 +220,6 @@ function showAskScreen () {
 }
 
 function finishAskScreen () {
+  startProductsView();
   askScreen.classList.remove('active');
 }

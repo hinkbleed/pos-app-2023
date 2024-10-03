@@ -165,7 +165,7 @@ body .screen-box .sidebar .menu-box .menu .menu-item {
   transition: 200ms ease-in;
 }
 body .screen-box .sidebar .menu-box .menu .menu-item.active {
-  background: #267cad;
+  background: #5dd2c6;
   border: 1px solid #c7c7c7;
 }
 body .screen-box .sidebar .menu-box .menu .menu-item.active > .icon {

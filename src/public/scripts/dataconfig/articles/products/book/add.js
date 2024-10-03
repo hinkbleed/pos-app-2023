@@ -24,7 +24,7 @@ function createBook (data) {
       if (!response.ok) {
         throw new Error('Error al enviar los datos al servidor.');
       }
-      addBookForm.reset();
+      completeAddingBook();
       return response.json();
     })
     .catch(error => {
@@ -154,4 +154,9 @@ cancelAddBookBtn.addEventListener('click', cancelAddBookScreen);
 
 function cancelAddBookScreen () {
   addBookScreen.classList.remove('active');
+}
+
+function completeAddingBook () {
+  addBookScreen.classList.remove('active');
+  addBookForm.reset();
 }

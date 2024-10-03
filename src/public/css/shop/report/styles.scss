@@ -23,31 +23,18 @@ body {
     #appModule {
 
       .report-view {
+        position: relative;
         width: 100%;
         height: 100%;
-        background: #000a18;
-        color: black;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        position: relative;
-
-        .report-hub-box {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          color: white;
-
-          box-shadow: inset 0 0 70px 0px #041830;
-          padding: 10px;
-          gap: 10px;
-
-
+        background: #000a18;
+        color: white;
+        box-shadow: inset 0 0 70px 0px #041830;
+        padding: 10px;
+        gap: 10px;
 
           .report-box {
             height: 100%;
@@ -288,28 +275,26 @@ body {
                         .head-item {
                           width: 30%;
                           height: 40px;
-                          font-size: 16px;
+                          font-size: 18px;
 
                           display: flex;
                           align-items: center;
 
-                          &.venta-id {
-                            font-family: monospace;
-                            font-weight: 100;
-                            justify-content: center;
+                          &.ticket-id {
+                            font-size: 13px;
+                            font-weight: 500;
+                            justify-content: left;
 
                           }
 
-                          &.date-hour {
+                          &.ticket-hour {
                             font-size: 14px;
                             align-items: flex-start;
                             padding: 5px;
                           }
 
-                          &.venta-price-box {
+                          &.ticket-price-box {
                             justify-content: flex-end;
-
-
 
                             .price-carats {
                               height: 30px;
@@ -437,12 +422,12 @@ body {
                               align-items: center;
                               justify-content: center;
 
-                              &.cant {
+                              &.amount {
                                 width: 5%;
                                 justify-content: flex-end;
                               }
 
-                              &.titulo {
+                              &.name {
                                 width: 40%;
                                 justify-content: flex-start;
                                 padding: 0 30px;
@@ -454,11 +439,11 @@ body {
                                 padding: 0 30px;
                               }
 
-                              &.precio {
+                              &.price {
                                 width: 10%;
                               }
 
-                              &.disc {
+                              &.discount {
                                 width: 10%;
                               }
 
@@ -467,9 +452,22 @@ body {
                               }
                             }
                           }
+
+                          .concept {
+                            font-size: 24px;
+                          }
                         }
                       }
                     }
+                  }
+
+                  .no-content {
+                    width: 100%;
+                    height: 300px;
+                    font-size: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                   }
                 }
               }
@@ -481,9 +479,178 @@ body {
               border-radius: 8px;
               box-shadow: 0 0 50px #002047;
               background: #000a18;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start;
+              overflow-y: scroll;
+              scrollbar-width: none;
+              padding: 10px 10px;
+
+              .balance-box-module {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .balance-day {
+                  width: 100%;
+                  height: auto;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 20px;
+
+                  .balance-day-header  {
+                    width: 100%;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .day-date {
+                      width: 100%;
+                      height: 100%;
+                      font-size: 24px;
+                      display: flex;
+                      align-items: center;
+                      text-align: center;
+                    }
+                  }
+
+                  .balance-day-ventas {
+                    width: 100%;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .balance-ventas-title {
+                      width: 100%;
+                      height: 20%;
+                      display: flex;
+                      align-items: center;
+                      padding-left: 30px;
+                      font-size: 19px;
+                      font-weight: 800;
+                    }
+
+                    .balance-ventas-body {
+                      width: 95%;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      font-size: 15px;
+
+                      .balance-ventas-detail {
+                        width: 70%;
+                        height: 25%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        &.subtotal {
+                          width: 100%;
+                          font-size: 19px;
+                          color: #86ff86;
+                        }
+                      }
+                    }
+                  }
+
+                  .balance-day-pagos {
+                    width: 100%;
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .balance-pagos-title {
+                      width: 100%;
+                      height: 50px;
+                      display: flex;
+                      align-items: center;
+                      padding-left: 30px;
+                      font-size: 19px;
+                      font-weight: 800
+                    }
+
+                    .balance-pagos-body {
+                      width: 95%;
+                      height: 100px;
+                      display: flex;
+                      flex-direction: column;
+                      font-size: 15px;
+
+                      .balance-pagos-detail {
+                        width: 70%;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        &.subtotal {
+                          width: 100%;
+                          font-size: 19px;
+                          color: #e96161;
+                        }
+                      }
+                    }
+                  }
+
+                  .balance-day-total {
+                    width: 100%;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .balance-day-title {
+                      width: 100%;
+                      height: 20%;
+                      display: flex;
+                      align-items: center;
+                      padding-left: 30px;
+                      font-size: 19px;
+                      font-weight: 800;
+                    }
+
+                    .balance-day-body {
+                      width: 95%;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      font-size: 15px;
+
+                      .balance-day-detail {
+                        width: 70%;
+                        height: 25%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        &.total {
+                          width: 100%;
+                          font-size: 19px;
+                          color: #5798ff;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .no-content {
+                  width: 100%;
+                  height: 300px;
+                  font-size: 24px;
+                  display: flex;
+                  align-items: center;
+                  text-align: center;
+                }
+              }
             }
           }
-        }
       }
     }
   }

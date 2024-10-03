@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { ShopController } from '../../controllers/shop/shop.js';
 
-export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, discountModel }) => {
+export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, discountModel, ticketsModel }) => {
   const shopRouter = Router();
 
-  const shopController = new ShopController({ partyModel, shopModel, fullproductsModel, discountModel });
+  const shopController = new ShopController({ partyModel, shopModel, fullproductsModel, discountModel, ticketsModel });
 
   shopRouter.get('/partybyid/:id', shopController.getPartyById);
 
@@ -20,18 +20,21 @@ export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, dis
   shopRouter.post('/data/storage/updatesepar', shopController.updateSeparatorToParty);
   shopRouter.post('/data/storage/updatemag', shopController.updateMagazineToParty);
 
-  shopRouter.get('/search/fullstorage/:input', shopController.getFullproductsByQuerySearch);
-  shopRouter.get('/search/partystorage/:id/:input', shopController.getPartyproductsByQuerySearch);
-
   shopRouter.post('/discounts/add', shopController.saveDiscount);
   shopRouter.get('/discounts/getall', shopController.getAllDiscounts);
   shopRouter.delete('/discounts/delete/:id', shopController.deleteDiscount);
 
-  shopRouter.get('/pos/search/:id/:input', shopController.getPosProducts);
+  shopRouter.get('/search/fullstorage/:input', shopController.getFullproductsByQuerySearch);
+  shopRouter.get('/search/partystorage/:id/:input', shopController.getPartyproductsByQuerySearch);
 
-  /*
-  partyconfigRouter.use('/providors', createConfigprovidorRouter({ partyconfigModel }));
-  */
+  shopRouter.get('/pos/search/:id/:input', shopController.getPosProducts);
+  shopRouter.get('/pos/discounts/alltorows', shopController.getPosDiscounts);
+  shopRouter.post('/pos/ticket/savenew/:id', shopController.saveNewTicket);
+  shopRouter.post('/pos/payment/savenew/:id', shopController.saveNewPayment);
+
+  shopRouter.get('/report/tickets/all/:id', shopController.getAllTicketsToParty);
+  shopRouter.get('/report/payments/all/:id', shopController.getAllPaymentsToParty);
+  shopRouter.get('/report/balance/:id', shopController.getBalanceToParty);
 
   return shopRouter;
 };

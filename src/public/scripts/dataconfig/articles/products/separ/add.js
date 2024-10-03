@@ -40,7 +40,7 @@ function createSepar (data) {
       if (!response.ok) {
         throw new Error('Error al enviar los datos al servidor.');
       }
-      addSeparForm.reset();
+      completeAddingSeparator();
       return response.json();
     })
     .catch(error => {
@@ -58,4 +58,9 @@ cancelAddSeparBtn.addEventListener('click', cancelAddSeparScreen);
 
 function cancelAddSeparScreen () {
   addSeparScreen.classList.remove('active');
+}
+
+function completeAddingSeparator () {
+  addSeparScreen.classList.remove('active');
+  addSeparForm.reset();
 }

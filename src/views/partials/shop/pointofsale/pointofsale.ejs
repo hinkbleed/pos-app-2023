@@ -1,31 +1,21 @@
 <div class="shop-view" id="mainShopView">
   <div class="list-box">
     <div class="shopList-box" id="shopListBox">
-    
-        <div class="shopList-header">
-            <div class="shopHeaderItem th1">#</div>
-            <div class="shopHeaderItem th2">Título</div>
-            <div class="shopHeaderItem th3">Precio</div>
-            <div class="shopHeaderItem th4">Cantidad</div>
-            <div class="shopHeaderItem th5">Subtotal</div>
-            <div class="shopHeaderItem th6">%</div>
-        </div>
 
-        <div class="shopList-body" id="shopList">
-          <div class="shopList-products" id="shopListProducts">
-            <div class="ticketRow">
-              <div class="shopBodyItem itemAmount">1</div>
-              <div class="shopBodyItem itemName">Narraciones Extraordinarias, BOEK</div>
-              <div class="shopBodyItem itemPrice">$90</div>
-              <div class="shopBodyItem itemAmount">
-                <div class="amount-btn less">-</div>
-                <div class="amount-btn amount-numb">3</div>
-                <div class="amount-btn more">+</div>
-              </div>
-              <div class=" shopBodyItem itemSubtotal">270</div>
-            </div>
-          </div>
+      <div class="shopList-header">
+        <div class="shopHeaderItem th1">#</div>
+        <div class="shopHeaderItem th2">Título</div>
+        <div class="shopHeaderItem th3">Precio</div>
+        <div class="shopHeaderItem th4">Cantidad</div>
+        <div class="shopHeaderItem th5">Subtotal</div>
+        <div class="shopHeaderItem th6">%</div>
+      </div>
+
+      <div class="shopList-body" id="shopList">
+        <div class="shopList-products" id="shopListProducts">
+
         </div>
+      </div>
     </div>
     <div class="item-box">
 
@@ -53,18 +43,6 @@
         </div>
 
         <div class="posInfoBox" id="posInfoBox">
-
-          <div class="posItemInfo" id="posItemTitle">20 mil leguas de viaje submarino</div>
-
-          <div class="posItemInfo" id="posItemDetails">Julio Verne, Novela, Ciencia Ficción, 2018
-          </div>
-
-          <div class="posItemInfo" id="posItemKind">Línea, BOEK</div>
-
-          <div class="posItemInfo" id="posItemPrice"><span> 110.00</span>MXN</div>
-
-          <div class="posItemInfo" id="posCodebarNumber">34534552434</div>
-
         </div>
       </div>
 
@@ -78,6 +56,9 @@
       </div>
       <div class="list-btn" id="verListasGuardadas">Listas guardadas</div>
     </div>
+    <div class="giveMoney-options">
+      <div class="giveMoneyBtn" id="giveMoneyBtn">Hacer un pago</div>
+    </div>
     <div class="div-line"></div>
     <div class="payment-options">
       <div class="payment-options-title">Métodos de pago:</div>
@@ -87,20 +68,96 @@
           <p>Transferencia</p>
           <p>Efectivo</p>
         </div>
-        <div class="payment-input">
-          <input type="number" />
-          <input type="number" />
-          <div class="input-efe">3875.00</div>
-        </div>
+        <form class="payment-input">
+          <input class="cardTypingInput" id="cardTypingInput" />
+          <input class="transferTypingInput" id="transferTypingInput" />
+          <input class="cashTypingInput" id="cashTypingInput" />
+        </form>
       </div>
     </div>
     <div class="total-options">
-      <div class="total-price" id="totalPrice">
-        $<span id="totalPriceValue">3875.00</span>
+      <div class="total-priceBox" id="totalPriceBox">
+        $<div id="totalPriceValue">0.00</div>
       </div>
-      <div class="list-btn accept-payment" id="acceptPayment">
+      <div class="list-btn acceptPaymentBtn" id="acceptPaymentBtn">
         Aceptar pago
       </div>
+    </div>
+  </div>
+  <div class="saleScreens" id="saleScreens">
+    <div class="confirmSaleScreen" id="confirmSaleScreen">
+
+      <div class="ticketWin" id="ticketWin">
+
+        <div class="ticketList" id="ticketList">
+        </div>
+
+      </div>
+
+      <div class="paymentWin" id="paymentWin">
+
+        <div class="paymentCalculator" id="paymentCalculator">
+
+          <div class="paymentMoneyTotal" id="paymentMoneyTotal">
+          </div>
+
+          <div class="paymentMethod" id="paymentMethod">
+
+            <div class="paymentMethodText">Recibe:</div>
+
+            <div class="paymentMoneyCard" id="paymentMoneyCard"></div>
+
+            <div class="paymentMoneyTransfer" id="paymentMoneyTransfer"></div>
+
+            <div class="paymentMoneyCash" id="paymentMoneyCash"></div>
+
+          </div>
+
+          <input type="number" class="paymentMoneyGiven" id="paymentMoneyGiven">
+
+          <div class="paymentMoneyChange" id="paymentMoneyChange">
+          </div>
+
+        </div>
+
+        <div class="confirmPayment">
+          <div class="confirmPaymentBtn" id="confirmPaymentBtn">Confirmar compra</div>
+          <div class="cancelPaymentBtn" id="cancelPaymentBtn">Regresar</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ticketWellDone" id="ticketWellDone">
+
+  </div>
+  <div class="ticketWrongDone" id="ticketWrongDone">
+
+  </div>
+
+  <div class="giveMoneyScreens" id="giveMoneyScreens">
+    <div class="giveMoneyInfoBox">
+      <div class="tag">Ingresa los datos del pago</div>
+      <form class="form" id="giveMoneyForm">
+        
+        <label for="giveMoneyTypeInput">Tipo de pago: <i>(requerido)</i></label>
+        <select name="giveMoneyType" id="giveMoneyTypeInput" placeholder="Selecciona una editorial">
+          <option value="cash">EFECTIVO</option>
+        </select>
+
+        <label for="giveMoneyAmountInput">Cantidad a pagar: <i>(requerido)</i></label>
+        <input type="text" name="giveMoneyAmoutn" id="giveMoneyAmountInput" pattern="\d+(\.\d{1,2})?">
+
+        <label for="giveMoneyConceptInput">Concepto: <i>(requerido)</i></label>
+        <textarea type="text" name="giveMoneyConcept" id="giveMoneyConceptInput" required></textarea>
+
+        <div class="btns">
+          <button type="button" class="cancel" id="cancelNewGiveMoneyBtn">Cancelar</button>
+          <button type="submit" class="accept" id="addNewGiveMoneyBtn">Aceptar</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

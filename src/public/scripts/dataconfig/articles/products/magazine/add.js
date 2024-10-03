@@ -24,7 +24,7 @@ function createMag (data) {
       if (!response.ok) {
         throw new Error('Error al enviar los datos al servidor.');
       }
-      addMagForm.reset();
+      completeAddingMagazine();
       return response.json();
     })
     .catch(error => {
@@ -119,4 +119,9 @@ cancelAddMagBtn.addEventListener('click', cancelAddMagScreen);
 
 function cancelAddMagScreen () {
   addMagScreen.classList.remove('active');
+}
+
+function completeAddingMagazine () {
+  addMagScreen.classList.remove('active');
+  addMagForm.reset();
 }

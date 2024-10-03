@@ -34,3 +34,22 @@ export function structureDiscountsData (discounts) {
 
   return htmlDiscounts;
 }
+
+export function structurePosDiscounts (discounts) {
+  let htmlDiscounts = '';
+  if (discounts.length > 0) {
+    discounts.sort((a, b) => a.discount_kind.localeCompare(b.discount_kind));
+    htmlDiscounts += `
+    ${discounts.map((discount) => {
+      return `
+        <option value="${parseFloat(discount.discount_amount)}">${discount.discount_amount}%</option>
+      `;
+    }).join('')
+      }
+  `;
+  } else {
+    htmlDiscounts += '<div class="no-content">Sin descuentos disponibles</div>';
+  }
+
+  return htmlDiscounts;
+}

@@ -54,7 +54,7 @@ export function structurePosQuery (products) {
             
           <div class="posProduct-cardRow cardSeparName productName">${separ.separ_name}</div>
 
-          <div class="posProduct-cardRow cardSeparInfo cardProductInfo productInfo" query-info="book">${separ.separ_material}, ${separ.separ_print}, ${separ.separ_description}</div>
+          <div class="posProduct-cardRow cardSeparInfo cardProductInfo productInfo" query-info="separ">${separ.separ_material}, ${separ.separ_print}, ${separ.separ_description}</div>
 
           <div class="posProduct-cardRow cardSeparEDQid productId">${separ.separfs_id}</div>
 
@@ -90,7 +90,7 @@ export function structurePosQuery (products) {
             
           <div class="posProduct-cardRow cardMagName productName">${mag.mag_name}</div>
 
-          <div class="posProduct-cardRow cardMagInfo cardProductInfo productInfo" query-info="book">${mag.mag_author}, ${mag.mag_subgenre_name}, ${mag.mag_editorial_name}, ${mag.mag_year}</div>
+          <div class="posProduct-cardRow cardMagInfo cardProductInfo productInfo" query-info="mag">${mag.mag_author}, ${mag.mag_subgenre_name}, ${mag.mag_editorial_name}, ${mag.mag_year}</div>
 
           <div class="posProduct-cardRow cardMagEDQid productId">${mag.magfs_id}</div>
 
