@@ -32,7 +32,7 @@ dataBtn.addEventListener('click', () => {
   sectionSelector('data');
 });
 
-function interfaceStarter (section) {
+export function interfaceStarter (section) {
   console.log('Current Party ID:', partyId);
   if (partyId) {
     screenBox.setAttribute('id-info', partyId);
@@ -54,32 +54,42 @@ function interfaceStarter (section) {
   sectionSelector(section);
 }
 
+function getMonthName (date) {
+  const months = [
+    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+  ];
+  return months[date.getUTCMonth()]; // Cambiado a getUTCMonth
+}
+
 function fillShop (party) {
   const id = party.party_id;
   const name = party.party_name;
   const place = party.party_place;
   const city = party.party_city;
+
   const startDate = new Date(party.party_startDate);
-  const startYear = startDate.getFullYear();
+  const startYear = startDate.getUTCFullYear(); // Cambiado a getUTCFullYear
   const startMonth = getMonthName(startDate);
-  const startDay = startDate.getDate();
+  const startDay = startDate.getUTCDate(); // Cambiado a getUTCDate
+
   const endDate = new Date(party.party_endDate);
-  const endYear = new Date(endDate).getFullYear();
+  const endYear = endDate.getUTCFullYear(); // Cambiado a getUTCFullYear
   const endMonth = getMonthName(endDate);
-  const endDay = endDate.getDate();
+  const endDay = endDate.getUTCDate(); // Cambiado a getUTCDate
+
   const status = party.party_state;
-  partyHeaderInfo.innerHTML = `
-  ${name}, ${startYear}
-  `;
+
+  partyHeaderInfo.innerHTML = `${name}, ${startYear}`;
   partyNameSpan.innerHTML = `${name}`;
   partyIdSpan.innerHTML = `${id}`;
   partyPlaceSpan.innerHTML = `${place}, ${city}`;
   partyDatesSpan.innerHTML = `
     ${startDay === endDay && startMonth === endMonth && startYear === endYear
-    ? `${startDay} de ${startMonth} del ${startYear}`
-    : startYear === endYear
-    ? `Del ${startDay} de ${startMonth} al ${endDay} de ${endMonth} del ${endYear}`
-    : `Del ${startDay} de ${startMonth} del ${startYear} al ${endDay} de ${endMonth} del ${endYear}`}`;
+      ? `${startDay} de ${startMonth} del ${startYear}`
+      : startYear === endYear
+      ? `Del ${startDay} de ${startMonth} al ${endDay} de ${endMonth} del ${endYear}`
+      : `Del ${startDay} de ${startMonth} del ${startYear} al ${endDay} de ${endMonth} del ${endYear}`}
+  `;
   partyStatusSpan.innerHTML = `Estado: ${status}`;
 }
 
@@ -140,13 +150,6 @@ function showItems () {
 function change () {
   menu.classList.toggle('hide');
   menu.classList.toggle('appear');
-}
-
-function getMonthName (date) {
-  const months = [
-    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-  ];
-  return months[date.getMonth()];
 }
 
 function setSectionCookie (value) {

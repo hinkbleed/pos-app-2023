@@ -33,4 +33,23 @@ export class PartyconfigController {
     res.status(201).json({ message: 'Evento creado exitosamente', party: newParty });
     return newParty;
   };
+
+  updateParty = async (req, res) => {
+    const partyId = req.params.id;
+    const result = validateParty(req.body);
+    console.log(result);
+    if (!result.success) {
+      console.error(result.error.errors);
+      return res.status(400).json({ error: JSON.parse(result.error.message) });
+    }
+
+    try {
+      const newPartyInfo = await this.partyModel.updateParty({ input: result.data, partyId });
+      res.status(201).json({ message: 'Evento actualizado exitosamente', party: newPartyInfo });
+      return newPartyInfo;
+    } catch (error) {
+      console.error('Error al actualizar el evento:', error);
+      res.status(500).json({ message: 'Error al actualizar el evento', error: error.message });
+    }
+  };
 }

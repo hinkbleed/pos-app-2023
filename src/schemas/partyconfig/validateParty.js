@@ -32,15 +32,3 @@ const partySchema = z.object({
 export function validateParty (object) {
   return partySchema.safeParse(object);
 }
-/*
-const partialBookSchema = z.object({
-  bookPrice: z.number({
-    invalid_type_error: 'price must be a number'
-  }).positive()
-});
-
-export function validatePartialBook (object) {
-  return partialBookSchema.safeParse(object);
-}
-
-*/

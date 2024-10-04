@@ -15,6 +15,7 @@ export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, dis
   shopRouter.post('/data/storage/addbook', shopController.saveBookToParty);
   shopRouter.post('/data/storage/addsepar', shopController.saveSeparatorToParty);
   shopRouter.post('/data/storage/addmagazine', shopController.saveMagazineToParty);
+  shopRouter.get('/data/partyconfig/partybyid/:id', shopController.getPartyById);
 
   shopRouter.post('/data/storage/updatebook', shopController.updateBookToParty);
   shopRouter.post('/data/storage/updatesepar', shopController.updateSeparatorToParty);

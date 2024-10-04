@@ -1,11 +1,3 @@
-// Función para obtener el nombre del mes
-function getMonthName (date) {
-  const months = [
-    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-  ];
-  return months[date.getMonth()];
-}
-
 // Función para organizar eventos por año
 function groupPartiesByYear (parties) {
   return parties.reduce((partiesByYear, party) => {
@@ -16,27 +8,41 @@ function groupPartiesByYear (parties) {
   }, {});
 }
 
+// Función para capitalizar el primer carácter del día y mes
+function capitalizeDayAndMonth (string) {
+  return string.split(' ').map(word => {
+    if (word !== 'de') {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+    return word;
+  }).join(' ');
+}
+
 // Función para construir el HTML de los eventos
 function buildPartyHtml (party) {
-  const startDate = new Date(party.party_startDate);
-  const endDate = new Date(party.party_endDate);
-  const startDay = startDate.getDate();
-  const startMonth = getMonthName(startDate);
-  const startYear = new Date(startDate).getFullYear();
-  const endYear = new Date(endDate).getFullYear();
-  const endDay = endDate.getDate();
-  const endMonth = getMonthName(endDate);
+  const startDate = new Date(party.party_startDate).toLocaleDateString('es-ES', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+  });
+  const endDate = new Date(party.party_endDate).toLocaleDateString('es-ES', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+  });
+
+  const formattedStartDate = capitalizeDayAndMonth(startDate);
+  const formattedEndDate = capitalizeDayAndMonth(endDate);
+
+  const startDay = new Date(party.party_startDate).getDate();
+  const endDay = new Date(party.party_endDate).getDate();
+
+  const sameDate = startDay === endDay && startDate === endDate;
 
   return `
     <div class="party-card" id-info="${party.party_id}">
       <div class="partyBox">
         <p class="partyName">${party.party_name}</p>
         <p class="partyDate">
-          ${startDay === endDay && startMonth === endMonth && startYear === endYear
-          ? `<span>${startDay} de ${startMonth} del ${startYear}</span>`
-          : (startYear === endYear
-          ? `<span>Del ${startDay} de ${startMonth} al ${endDay} de ${endMonth} del ${endYear}</span>`
-          : `<span>Del ${startDay} de ${startMonth} del ${startYear} al ${endDay} de ${endMonth} del ${endYear}</span>`)}
+          ${sameDate
+          ? `<span>${formattedStartDate}</span>`
+          : `<span>Del ${formattedStartDate} al ${formattedEndDate}</span>`}
         </p>
         <div class="partyDetails">
           <p class="partyLocation">${party.party_place}, ${party.party_city}</p>

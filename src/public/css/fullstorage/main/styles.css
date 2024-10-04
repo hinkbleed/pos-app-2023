@@ -48,7 +48,7 @@ body .fullstorage-view .fullstorage-options-box .store-options .fs-button:hover 
 body .fullstorage-view .fullstorage-options-box .filters-box {
   position: relative;
   width: 90%;
-  height: 6%;
+  height: 5%;
   display: flex;
   flex-direction: row;
 }

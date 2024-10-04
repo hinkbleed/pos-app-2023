@@ -51,8 +51,46 @@ export class PartyModel {
 
   static async getPartyById (partyId) {
     const [party] = await connection.query(
-      'SELECT party_id, party_name, party_startDate, party_endDate, party_place, party_city, party_creationDate, party_state FROM parties WHERE party_id = ?;', [partyId]
+      'SELECT party_id, party_name, party_startDate, party_endDate, party_place, party_street, party_adressNumber, party_city, party_postalCode, party_creationDate, party_state FROM parties WHERE party_id = ?;', [partyId]
     );
     return party;
+  }
+
+  static async updateParty ({ input, partyId }) {
+    try {
+      // Actualizar los datos de la fiesta en la tabla 'parties'
+      await connection.query(
+        `UPDATE parties
+         SET party_name = ?,
+             party_startDate = ?,
+             party_endDate = ?,
+             party_place = ?,
+             party_street = ?,
+             party_adressNumber = ?,
+             party_city = ?,
+             party_postalCode = ?,
+             party_state = ?
+         WHERE party_id = ?;`,
+        [
+          input.party_name,
+          input.party_startDate,
+          input.party_endDate,
+          input.party_place,
+          input.party_street,
+          input.party_adressNumber,
+          input.party_city,
+          input.party_postalCode,
+          'Actualizado',
+          partyId
+        ]
+      );
+    } catch (e) {
+      // Manejo de errores
+      console.error('Error updating party:', e.message);
+      console.error('SQL Error Code:', e.code);
+      console.error('SQL Error SQLState:', e.sqlState);
+      console.error('SQL Error SQL:', e.sql);
+      throw new Error('Error updating party: ' + e.message);
+    }
   }
 }

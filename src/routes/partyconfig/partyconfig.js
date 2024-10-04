@@ -8,6 +8,7 @@ export const createPartyconfigRouter = ({ partyModel }) => {
 
   partyconfigRouter.get('/all', partyconfigController.getAll);
   partyconfigRouter.post('/createparty', partyconfigController.createParty);
+  partyconfigRouter.patch('/updateparty/:id', partyconfigController.updateParty);
 
   partyconfigRouter.get('/addparty', (req, res) => res.render('addparty', { title: 'EDQ | Add Party' }));
   /*

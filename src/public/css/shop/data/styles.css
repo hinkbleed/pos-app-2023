@@ -11,6 +11,7 @@
   src: url("../../../fonts/Cutive_Mono/CutiveMono-Regular.ttf");
 }
 body .screen-box #appModule .data-view {
+  position: relative;
   width: 100%;
   height: 100%;
   color: #ffffff;
@@ -115,14 +116,27 @@ body .screen-box #appModule .data-view .data-hub .data-hub-section .section.part
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 70px;
 }
 body .screen-box #appModule .data-view .data-hub .data-hub-section .section.partyConfig .partyOptions .partyOpt {
-  width: 100%;
-  height: 15%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 13%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.4901960784);
+  padding: 0 25px;
+  border-radius: 10px;
+  transition: 300ms ease;
+  cursor: pointer;
+}
+body .screen-box #appModule .data-view .data-hub .data-hub-section .section.partyConfig .partyOptions .partyOpt:hover {
+  background: white;
+  color: black;
+  border: 1px solid white;
 }
 body .screen-box #appModule .data-view .data-hub .data-hub-section .section.partyInfo {
   width: 100%;
@@ -224,6 +238,236 @@ body .screen-box #appModule .data-view .data-hub .data-hub-section .section.part
 body .screen-box #appModule .data-view .data-hub .data-hub-section .section.partyInfo .logBox .logout:hover {
   background: rgba(255, 0, 0, 0.2862745098);
   border: 1px solid #ff0000;
+}
+body .screen-box #appModule .data-view .editPartyData-screen {
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 40%, #17455a 100%);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  border: 1px solid rgba(54, 24, 97, 0.7764705882);
+  border-radius: 20px;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .data-view .editPartyData-screen.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: rgba(24, 1, 37, 0.4235294118);
+  box-shadow: 0 0 100px #000000, inset 0 0 100px rgba(21, 14, 75, 0.1607843137);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-weight: 400;
+  font-size: 16px;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs label {
+  width: 35%;
+  font-size: 16px;
+  margin: 10px 60px;
+  height: 40px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs label i {
+  font-size: 11px;
+  color: #7d7dff;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs input {
+  width: 40%;
+  height: 45px;
+  align-self: center;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs select {
+  width: 40%;
+  height: 40px;
+  margin: 0 0 30px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5529411765);
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs select option {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs select option span {
+  font-size: 11px;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs input[type=number]::-webkit-inner-spin-button,
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns {
+  width: 90%;
+  height: 5%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns button {
+  width: 40%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns button.cancel {
+  background: rgba(255, 0, 0, 0.1607843137);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3803921569);
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns button.cancel:hover {
+  background: rgba(255, 0, 0, 0.462745098);
+  border: 1px solid #ff0000;
+  color: #ffffff;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns button.accept {
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7921568627);
+}
+body .screen-box #appModule .data-view .editPartyData-screen .edit-formBox .form .btns button.accept:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3137254902);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  gap: 50px;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen.active {
+  animation: appear 300ms;
+  display: flex;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen .askTitle {
+  width: 50%;
+  height: 80px;
+  background: black;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  border: 1px solid #ff9900;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen .askBtns {
+  width: 50%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen .askBtns .confirmBtn {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 200ms;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen .askBtns .confirmBtn.cancel:hover {
+  background: #1c0051;
+  border: 1px solid #0c0022;
+}
+body .screen-box #appModule .data-view .editPartyData-screen .askConfirmEdit-screen .askBtns .confirmBtn.accept:hover {
+  background: #003b51;
+  border: 1px solid #001822;
+}
+body .screen-box #appModule .data-view .successPartyEdit {
+  position: absolute;
+  bottom: 40%;
+  left: 15%;
+  width: 45%;
+  height: 8%;
+  background: #59ea67;
+  background: linear-gradient(15deg, #00840d 0%, #00733f 20%, #008418 100%);
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  text-shadow: 0 0 10px white;
+  animation: disappear 300ms;
+  display: none;
+}
+body .screen-box #appModule .data-view .successPartyEdit.active {
+  animation: appear 300ms;
+  display: flex;
 }
 body .screen-box #appModule .section-data-view {
   position: absolute;
@@ -2400,10 +2644,6 @@ body .screen-box #appModule .section-data-view .article-socket .addDiscountsScre
 
 @keyframes appear {
   0% {
-    opacity: 0;
-    display: none;
-  }
-  50% {
     opacity: 0;
     display: none;
   }

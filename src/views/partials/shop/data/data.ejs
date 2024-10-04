@@ -13,10 +13,12 @@
         <p class="section-title">Configuración del evento</p>
 
         <div class="partyOptions">
-          <div class="partyOpt">Editar datos</div>
+
+          <div class="partyOpt" id="editPartyDataBtn">Editar datos</div>
+          
+          <div class="partyOpt">Generar reporte del evento</div>
           <!--
             <div class="partyOpt">Cambiar estado del evento</div>
-            <div class="partyOpt">Generar reporte completo</div>
             <div class="partyOpt">Responsable(s) del evento</div>
           -->
         </div>
@@ -46,5 +48,60 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="editPartyData-screen" id="editPartyDataScreen">
+    <div class="edit-formBox editParty" id="editFormBox">
+      <div class="tag" id="editPartyTag"></div>
+      <form class="form" id="editPartyForm">
+  
+        <div class="inputs">
+  
+          <label for="editPartyNameInput">Nombre del evento: <i>(requerido)</i></label>
+          <input type="text" name="partyName" id="editPartyNameInput" required>
+  
+          <label for="editPartyStartDateInput">Fecha de Inicio: <i>(requerido)</i></label>
+          <input type="date" name="partyStartDate" id="editPartyStartDateInput" required>
+  
+          <label for="editPartyEndDateInput">Fecha de Término: <i>(requerido)</i></label>
+          <input type="date" name="partyEndDate" id="editPartyEndDateInput" required>
+  
+          <label for="editPartyPlaceInput">Nombre del recinto: <i>(requerido)</i></label>
+          <input type="text" name="partyPlace" id="editPartyPlaceInput" required>
+  
+  
+          <label for="editPartyStreetInput">Calle: <i>(requerido)</i></label>
+          <input type="text" name="partyStreet" id="editPartyStreetInput" required>
+  
+          <label for="editPartyNumberInput">Número: <i>(requerido)</i></label>
+          <input type="text" name="partyNumber" id="editPartyNumberInput">
+  
+          <label for="editPartyCityInput">Ciudad: <i>(requerido)</i></label>
+          <input type="text" name="partyCity" id="editPartyCityInput" required>
+  
+          <label for="editPartyPostalcodeInput">Código postal: <i>(requerido)</i></label>
+          <input type="text" name="partyNumber" id="editPartyPostalcodeInput" pattern=".{3,10}" required>
+        </div>
+  
+        <div class="btns">
+          <button type="button" class="cancel" id="cancelEditPartyBtn">Cancelar</button>
+          <button type="submit" class="accept" id="AcceptEditPartyBtn">Continuar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="askConfirmEdit-screen" id="confirmEditScreen">
+      <div class="askTitle">
+        Revisa que la información sea correcta antes de continuar
+      </div>
+      <div class="askBtns">
+        <div class="confirmBtn cancel" id="cancelConfirmPartyEditBtn">Volver</div>
+        <div class="confirmBtn accept" id="acceptConfirmPartyEditBtn">Continuar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="successPartyEdit" id="SuccesPartyEdit">
+    ¡Evento actualizado correctamente!
   </div>
 </div>
