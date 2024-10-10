@@ -184,6 +184,9 @@ export function structureReportPayments (payments) {
 export function structureReportBalance (balance) {
   let htmlBalance = '';
   if (balance.length > 0) {
+    // Ordena los días en orden inverso (más reciente primero)
+    balance.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     balance.forEach(day => {
       console.log(day.date);
       const dayDate = new Date(day.date).toLocaleDateString('es-ES', {

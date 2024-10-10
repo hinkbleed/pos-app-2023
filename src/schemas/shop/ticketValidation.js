@@ -22,7 +22,6 @@ const productSchema = z.object({
     required_error: 'Product Info is required'
   }),
   price: z.number({
-    invalid_type_error: 'Price must be a positive number',
     required_error: 'Price is required'
   }),
   amount: z.number().positive({
