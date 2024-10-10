@@ -9,6 +9,7 @@ import { structureAddPartyQueryFullproducts, structureAllPartyBooks, structureAl
 import { validateNewTicketInfo } from '../../schemas/shop/ticketValidation.js';
 import { structureReportBalance, structureReportPayments, structureReportTickets } from '../../schemas/shop/htmlTickets.js';
 import { validateNewPaymentInfo } from '../../schemas/shop/paymentValidation.js';
+import { createPDF } from '../../schemas/pdfTools/createPDF.js';
 
 export class ShopController {
   constructor ({ partyModel, shopModel, fullproductsModel, discountModel, ticketsModel }) {
@@ -394,5 +395,23 @@ export class ShopController {
     const balance = await this.ticketsModel.getBalanceToParty(partyId);
     const htmlBalance = structureReportBalance(balance);
     res.send(htmlBalance);
+  };
+
+  generateFullreportPDF = async (req, res) => {
+    const party = await this.partyModel.getPartyById(req.params.id);
+    const structuredParty = structurePartyData(party);
+
+    const partyFullData = [structuredParty];
+
+    const stream = res.writeHead(200, {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment; filename=partyFullreport.pdf'
+    });
+
+    createPDF(
+      (data) => stream.write(data),
+      () => stream.end(),
+      partyFullData
+    );
   };
 }

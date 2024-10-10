@@ -104,6 +104,11 @@ function sectionSelector (section) {
     fetchReportBalance(partyId);
     fetchReportPayments(partyId);
   }
+  if (!section) {
+    loadCSS('/css/shop/data/styles.css');
+    selectBtn('data');
+    setSectionCookie('data');
+  }
 }
 
 function loadCSS (href) {

@@ -16,6 +16,11 @@ const confirmEditScreen = document.getElementById('confirmEditScreen');
 const cancelConfirmPartyEditBtn = document.getElementById('cancelConfirmPartyEditBtn');
 const acceptConfirmPartyEditBtn = document.getElementById('acceptConfirmPartyEditBtn');
 const SuccesPartyEdit = document.getElementById('SuccesPartyEdit');
+//  const generateFullreportDataBtn = document.getElementById('generateFullreportDataBtn');
+const generateFullreportDataScreen = document.getElementById('generateFullreportDataScreen');
+const generateFullreportSign = document.getElementById('generateFullreportSign');
+const cancelGenerateFullreportBtn = document.getElementById('cancelGenerateFullreportBtn');
+const acceptGenerateFullreportBtn = document.getElementById('acceptGenerateFullreportBtn');
 
 dataOptionBtn.forEach((button, index) => {
   button.addEventListener('click', () => {
@@ -54,6 +59,20 @@ cancelConfirmPartyEditBtn.addEventListener('click', () => {
 
 acceptConfirmPartyEditBtn.addEventListener('click', () => {
   getSendNewPartyInfo();
+});
+
+/*
+generateFullreportDataBtn.addEventListener('click', () => {
+  startGenerateFullreportScreens();
+});
+*/
+
+cancelGenerateFullreportBtn.addEventListener('click', () => {
+  cancelGenerateFullreportScreens();
+});
+
+acceptGenerateFullreportBtn.addEventListener('click', () => {
+  savePartyReportPdf();
 });
 
 function startEditPartyInterface () {
@@ -177,4 +196,28 @@ function showSuccesMessage () {
   setTimeout(() => {
     SuccesPartyEdit.classList.remove('active');
   }, 5000);
+}
+
+/*
+function startGenerateFullreportScreens () {
+  generateFullreportSign.classList.add('active');
+  generateFullreportDataScreen.classList.add('active');
+}
+  */
+
+function cancelGenerateFullreportScreens () {
+  generateFullreportSign.classList.remove('active');
+  generateFullreportDataScreen.classList.remove('active');
+}
+
+function savePartyReportPdf () {
+  fetch(`/shop/generatefullreport/${partyId}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('La solicitud falló');
+      }
+    })
+    .catch(error => {
+      console.error('Error al generar el pdf:', error);
+    });
 }

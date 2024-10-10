@@ -37,5 +37,7 @@ export const createShopRouter = ({ partyModel, shopModel, fullproductsModel, dis
   shopRouter.get('/report/payments/all/:id', shopController.getAllPaymentsToParty);
   shopRouter.get('/report/balance/:id', shopController.getBalanceToParty);
 
+  shopRouter.get('/generatefullreport/:id', shopController.generateFullreportPDF);
+
   return shopRouter;
 };
