@@ -15,9 +15,7 @@ CREATE TABLE companyPasswords (
 );
 
 INSERT INTO employeePasswords (employee_password) VALUES
-	("Lobo"),
-    ("tonto");
+	("lobo");
     
 INSERT INTO companyPasswords (company_password) VALUES
-	("silicio"),
-    ("Command");
+	("perc");
