@@ -1,0 +1,4 @@
+Ajuste de Base de datos respecto a los datos redundantes, inútiles e incorrectos
+
+Manejo de CSS para configuración de temas de usuario
+
