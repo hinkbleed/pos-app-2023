@@ -17,9 +17,6 @@ CREATE TABLE parties (
 );
 
 SELECT * FROM parties;
-UPDATE parties
-SET party_state = "Creado"
-WHERE party_id = "EDQPRTY00090005";
 
 DROP TABLE partyIDcounter;
 CREATE TABLE partyIDcounter (
