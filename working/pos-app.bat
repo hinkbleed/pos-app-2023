@@ -1,5 +1,6 @@
 @echo off
 
+rem Nos dirigimos a la carpeta de origen
 cd "C:\Users\distr\development\pos-quiroz\dev"
 
 rem Ejecutar el comando 'npm start' definido en el package.json
