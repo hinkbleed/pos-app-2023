@@ -1,6 +1,5 @@
 @echo off
 
-rem Cambiar al directorio del proyecto
 cd "C:\Users\distr\development\pos-quiroz\dev"
 
 rem Ejecutar el comando 'npm start' definido en el package.json
