@@ -1,0 +1,33 @@
+<div class="listUploadingForm-screen" id="listUploadingFormScreen">
+  <div class="ask-box">
+    <form id="listUploadingForm">
+      <div class="tag">Selecciona el archivo .csv:</div>
+    
+      <div class="file-upload">
+        <input type="file" id="csvFileInput" name="csvFile" accept=".csv" required>
+      </div>
+
+      <div class="tag">Selecciona el tipo de inventario:</div>
+    
+      <div class="listKind">
+        <label class="type-btn toDatastorage">
+          <input type="radio" name="inventoryType" value="toDatastorage" id="toDatastorageOpt" required>
+          Base de datos (ej. Título, autor, año, editorial, género, subgénero, precio).
+          <div class="innerType-line toDatastorage"></div>
+        </label>
+    
+        <label class="type-btn toFullstorage">
+          <input type="radio" name="inventoryType" value="toFullstorage" id="toFullstorageOpt">
+          Inventario (ej. Id, tipo, cantidad, precio).
+          <div class="innerType-line toFullstorage"></div>
+        </label>
+      </div>
+      
+      <div class="formButtons">
+        <button type="submit" id="processCsvButton">Cargar y procesar</button>
+      </div>
+    </form>
+    
+  </div>
+
+</div>

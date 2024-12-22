@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('../../../../fonts/DM_Sans/DMSans-VariableFont_wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #000a18;
+  background: linear-gradient(140deg, #000a18 50%, #17455a 100%);
+  color: #c4c4c4;
+  font-family: 'DMSans';
+  font-style: normal;
+  backdrop-filter: blur(100px);
+
+  .ver-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 7%;
+    height: 25px;
+    background: black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-left: 100px;
+    z-index: 500;
+  }
+
+  .go-back {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    left: 20px;
+    top: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(180deg);
+    z-index: 500;
+    animation: appear 300ms ease;
+
+    &.hide {
+      animation: disappear 100ms ease;
+      opacity: 0;
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      filter: invert(100%);
+    }
+  }
+}
+
+
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

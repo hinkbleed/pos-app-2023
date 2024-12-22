@@ -8,6 +8,8 @@ export const createFullstorageRouter = ({ fullproductsModel }) => {
 
   fullstorageRouter.get('/addfromzero', (req, res) => res.render('addfromzero', { title: 'EDQ | Add from zero' }));
 
+  fullstorageRouter.get('/addfromfile', (req, res) => res.render('addfromfile', { title: 'EDQ | Add from file' }));
+
   fullstorageRouter.get('/addfullstorage', (req, res) => res.render('addfullstorage', { title: 'EDQ | Add to Full Storage' }));
   return fullstorageRouter;
 };

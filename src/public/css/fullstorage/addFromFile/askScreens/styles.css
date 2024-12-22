@@ -1,0 +1,130 @@
+body .listUploadingForm-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  animation: appear 200ms ease;
+  display: flex;
+}
+body .listUploadingForm-screen.hide {
+  animation: disappear 200ms ease;
+  display: none;
+}
+body .listUploadingForm-screen .ask-box {
+  height: 80%;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.4823529412);
+  box-shadow: 0 0 100px #000000;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2745098039);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  padding: 0 0 20px;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 18px;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .file-upload {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 300ms ease;
+  font-weight: 500;
+  padding: 30px;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn.toFullstorage {
+  background: transparent;
+  border: 1px solid rgba(0, 81, 255, 0.5529411765);
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn.toFullstorage:hover {
+  background: #0051ff;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn.toDatastorage {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 140, 0.5529411765);
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn.toDatastorage:hover {
+  background: #ff008c;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn:hover {
+  font-weight: 800;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn .innerType-line {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn .innerType-line.toFullstorage {
+  background: #0051ff;
+  background: radial-gradient(circle, #0051ff 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #0051ff;
+}
+body .listUploadingForm-screen .ask-box #listUploadingForm .listKind .type-btn .innerType-line.toDatastorage {
+  background: #ff008c;
+  background: radial-gradient(circle, #ff008c 0%, rgba(0, 115, 139, 0) 100%);
+  box-shadow: 0 0 20px #ff008c;
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */

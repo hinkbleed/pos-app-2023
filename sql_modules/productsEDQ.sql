@@ -86,7 +86,7 @@ CREATE TABLE magBarcodes (
     barcode_number VARCHAR(255) NOT NULL,
     mag_id VARCHAR(255),
     FOREIGN KEY (mag_id) REFERENCES magazines(mag_id)
-);
+);	
 
 SELECT * FROM magBarcodes;
 SELECT * FROM magazines;

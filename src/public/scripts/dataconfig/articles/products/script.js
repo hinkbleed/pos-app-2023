@@ -53,10 +53,8 @@ function showBookOptions (event) {
   editAskElement.classList.toggle('active');
 
   const editBookBtn = editAskElement.querySelector('.editBookBtn');
-  const addBookToPartyBtn = editAskElement.querySelector('.addBookToPartyBtn');
 
   editBookBtn.addEventListener('click', startEditBook);
-  addBookToPartyBtn.addEventListener('click', startAddToPartyBook);
 }
 
 function showSeparOptions (event) {
@@ -64,10 +62,8 @@ function showSeparOptions (event) {
   editAskElement.classList.toggle('active');
 
   const editSeparBtn = editAskElement.querySelector('.editSeparBtn');
-  const addSeparToPartyBtn = editAskElement.querySelector('.addSeparToPartyBtn');
 
   editSeparBtn.addEventListener('click', startEditSepar);
-  addSeparToPartyBtn.addEventListener('click', startAddToPartySepar);
 }
 
 function showMagOptions (event) {
@@ -75,10 +71,8 @@ function showMagOptions (event) {
   editAskElement.classList.toggle('active');
 
   const editMagBtn = editAskElement.querySelector('.editMagBtn');
-  const addMagToPartyBtn = editAskElement.querySelector('.addMagToPartyBtn');
 
   editMagBtn.addEventListener('click', startEditMag);
-  addMagToPartyBtn.addEventListener('click', startAddToPartyMag);
 }
 
 function startEditBook (event) {
@@ -122,10 +116,6 @@ function startEditBook (event) {
   editBookScreen.classList.add('active');
 }
 
-function startAddToPartyBook () {
-  console.log('agregando libro');
-}
-
 function startEditSepar (event) {
   console.log('editando separador');
   const separId = event.target.closest('.product-card').querySelector('.cardSeparEDQid').textContent;
@@ -160,10 +150,6 @@ function startEditSepar (event) {
   document.getElementById('separPriceEditInput').value = `${separPriceValue}`;
 
   editSeparScreen.classList.add('active');
-}
-
-function startAddToPartySepar () {
-  console.log('añadiendo separador');
 }
 
 function startEditMag (event) {
@@ -205,10 +191,6 @@ function startEditMag (event) {
   document.getElementById('magPriceEditInput').value = `${magPriceValue}`;
 
   editMagScreen.classList.add('active');
-}
-
-function startAddToPartyMag () {
-  console.log('añadiendo revista');
 }
 
 function startProductsView () {

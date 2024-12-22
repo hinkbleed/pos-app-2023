@@ -11,8 +11,6 @@ const magsExistenceBox = document.getElementById('magsExistenceBox');
 const nonSelection = document.getElementById('nonSelection');
 
 const addFullstorageBtn = document.getElementById('addToFullstorageBtn');
-const askBtnZero = document.getElementById('askBtnZero');
-const askBtnDatabase = document.getElementById('askBtnDatabase');
 
 // #region LISTENERS
 document.addEventListener('DOMContentLoaded', initFullstorageWin);
@@ -50,8 +48,6 @@ productsSwitch.forEach(checkbox => {
 });
 
 addFullstorageBtn.addEventListener('click', addToFullstorage);
-askBtnZero.addEventListener('click', startAddFromZero);
-askBtnDatabase.addEventListener('click', startAddDatabase);
 
 // #region FUNCTIONS
 // #region init
@@ -183,13 +179,5 @@ function viewMags () {
 }
 
 function addToFullstorage () {
-  window.location.href = '/fullstorage/addfullstorage';
-}
-
-function startAddFromZero () {
-  window.location.href = '/fullstorage/addfromzero';
-}
-
-function startAddDatabase () {
   window.location.href = '/fullstorage/addfullstorage';
 }

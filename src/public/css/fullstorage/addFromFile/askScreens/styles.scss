@@ -1,0 +1,147 @@
+body {
+  .listUploadingForm-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: appear 200ms ease;
+    display: flex;
+    &.hide {
+      animation: disappear 200ms ease;
+      display: none;
+    }
+  
+    .ask-box {
+      height: 80%;
+      width: 60%;
+      background: #0000007b;
+      box-shadow: 0 0 100px #000000;
+      border-radius: 5px;
+      border: 1px solid #ffffff46;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      backdrop-filter: blur(50px);
+      padding: 0 0 20px;
+  
+      #listUploadingForm {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .tag {
+          width: fit-content;
+          height: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          font-weight: 100;
+          font-size: 18px;
+        }
+  
+        .file-upload {
+          width: 80%;
+          height: 20%;
+          display: flex;
+          align-items: center;
+        }
+    
+        .listKind {
+          width: 80%;
+          height: 20%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+    
+          .type-btn {
+            position: relative;
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 300ms ease;
+            font-weight: 500;
+            padding: 30px;
+    
+            &.toFullstorage {
+              background: transparent;
+              border: 1px solid #0051ff8d;
+    
+              &:hover {
+                background: #0051ff;
+              }
+            }
+    
+            &.toDatastorage {
+              background: transparent;
+              border: 1px solid #ff008c8d;
+    
+              &:hover {
+                background: #ff008c;
+              }
+            }
+    
+            &:hover {
+              font-weight: 800;
+            }
+    
+            .innerType-line {
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              height: 1px;
+    
+              &.toFullstorage {
+                background: #0051ff;
+                background: radial-gradient(circle, #0051ff 0%, #00738b00 100%);
+                box-shadow: 0 0 20px #0051ff;
+              }
+    
+              &.toDatastorage {
+                background: #ff008c;
+                background: radial-gradient(circle, #ff008c 0%, #00738b00 100%);
+                box-shadow: 0 0 20px #ff008c;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}

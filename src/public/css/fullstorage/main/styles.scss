@@ -1,9 +1,10 @@
 body {
 
   .fullstorage-view {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 91%;
     color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -13,7 +14,7 @@ body {
     .fullstorage-options-box {
       position: relative;
       width: 100%;
-      height: 91%;
+      height: 100%;
       display: flex;
       flex-direction: row;
 
@@ -52,6 +53,7 @@ body {
         }
       }
 
+      /*
       .filters-box {
         position: relative;
         width: 90%;
@@ -132,6 +134,7 @@ body {
           }
         }
       }
+      */
 
     }
 
@@ -140,7 +143,7 @@ body {
       right: 0;
       bottom: 0;
       width: 90%;
-      height: 91%;
+      height: 96%;
       overflow-y: scroll;
       scrollbar-width: none;
 
